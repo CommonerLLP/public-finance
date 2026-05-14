@@ -78,6 +78,54 @@ def ensure_db(db_path=DEFAULT_DB_PATH):
                 "parsing_status": "TEXT DEFAULT 'pending'",
             },
         )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS scheme_allocations (
+                id               TEXT PRIMARY KEY,
+                doc_id           TEXT REFERENCES budget_docs(id),
+                level            TEXT NOT NULL,
+                state            TEXT,
+                fiscal_year      TEXT NOT NULL,
+                demand_no        TEXT,
+                scheme_name      TEXT NOT NULL,
+                scheme_canonical TEXT NOT NULL,
+                col_type         TEXT NOT NULL,
+                revenue_cr       REAL,
+                capital_cr       REAL,
+                total_cr         REAL,
+                extracted_at     TEXT NOT NULL
+            )
+            """
+        )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS scheme_expenditures (
+                id               TEXT PRIMARY KEY,
+                doc_id           TEXT REFERENCES budget_docs(id),
+                level            TEXT NOT NULL,
+                state            TEXT,
+                fiscal_year      TEXT NOT NULL,
+                demand_no        TEXT,
+                scheme_name      TEXT NOT NULL,
+                scheme_canonical TEXT NOT NULL,
+                col_type         TEXT NOT NULL,
+                revenue_cr       REAL,
+                capital_cr       REAL,
+                total_cr         REAL,
+                extracted_at     TEXT NOT NULL
+            )
+            """
+        )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS scheme_canonical_map (
+                source_name TEXT PRIMARY KEY,
+                canonical   TEXT NOT NULL,
+                level       TEXT,
+                notes       TEXT
+            )
+            """
+        )
         conn.commit()
     finally:
         conn.close()
@@ -166,6 +214,92 @@ def _extension_from_path(path):
         return None
     suffix = Path(path).suffix.lower().lstrip(".")
     return suffix or None
+
+
+_ICDS_CANONICAL_SEEDS = [
+    ("Integrated Child Development Services", "icds_anganwadi_services", "central"),
+    ("ICDS", "icds_anganwadi_services", None),
+    ("Umbrella ICDS", "icds_anganwadi_services", "central"),
+    ("Anganwadi Services", "icds_anganwadi_services", None),
+    (
+        "Saksham Anganwadi and POSHAN 2.0 (Umbrella ICDS - Anganwadi Services, "
+        "Poshan Abhiyan, Scheme for Adolescent Girls)",
+        "icds_anganwadi_services",
+        "central",
+    ),
+    ("Saksham Anganwadi and POSHAN 2.0", "icds_anganwadi_services", "central"),
+]
+
+
+def seed_canonical_map(db_path=DEFAULT_DB_PATH):
+    ensure_db(db_path)
+    conn = sqlite3.connect(db_path)
+    try:
+        for source_name, canonical, level in _ICDS_CANONICAL_SEEDS:
+            conn.execute(
+                "INSERT OR IGNORE INTO scheme_canonical_map "
+                "(source_name, canonical, level) VALUES (?, ?, ?)",
+                (source_name, canonical, level),
+            )
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def get_canonical(source_name, db_path=DEFAULT_DB_PATH):
+    conn = sqlite3.connect(db_path)
+    try:
+        row = conn.execute(
+            "SELECT canonical FROM scheme_canonical_map WHERE source_name = ?",
+            (source_name,),
+        ).fetchone()
+        return row[0] if row else None
+    finally:
+        conn.close()
+
+
+def _alloc_id(doc_id, scheme_canonical, fiscal_year, col_type):
+    key = f"{doc_id}|{scheme_canonical}|{fiscal_year}|{col_type}"
+    return hashlib.sha256(key.encode()).hexdigest()[:16]
+
+
+def upsert_scheme_allocation(
+    *,
+    doc_id,
+    level,
+    state,
+    fiscal_year,
+    demand_no,
+    scheme_name,
+    scheme_canonical,
+    col_type,
+    revenue_cr,
+    capital_cr,
+    total_cr,
+    db_path=DEFAULT_DB_PATH,
+):
+    ensure_db(db_path)
+    row_id = _alloc_id(doc_id, scheme_canonical, fiscal_year, col_type)
+    conn = sqlite3.connect(db_path)
+    try:
+        conn.execute(
+            """
+            INSERT OR IGNORE INTO scheme_allocations (
+                id, doc_id, level, state, fiscal_year, demand_no,
+                scheme_name, scheme_canonical, col_type,
+                revenue_cr, capital_cr, total_cr, extracted_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                row_id, doc_id, level, state, fiscal_year, demand_no,
+                scheme_name, scheme_canonical, col_type,
+                revenue_cr, capital_cr, total_cr,
+                datetime.now().isoformat(timespec="seconds"),
+            ),
+        )
+        conn.commit()
+    finally:
+        conn.close()
 
 
 def upsert_probe_result(
