@@ -17,13 +17,17 @@ from pathlib import Path
 
 import pdfplumber
 
-# Simple fallback if python-dotenv isn't installed; 
-# in production we should add it to requirements.txt
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass
+# Explicit .env loading for environment sovereignty
+# We look for .env in the parent directory of this script (the project root)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+ENV_PATH = PROJECT_ROOT / ".env"
+
+if ENV_PATH.exists():
+    with open(ENV_PATH, "r") as f:
+        for line in f:
+            if line.strip() and not line.startswith("#"):
+                key, _, value = line.partition("=")
+                os.environ[key.strip()] = value.strip()
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from metadata import DEFAULT_DB_PATH, upsert_probe_result
@@ -153,6 +157,8 @@ def run(state: str | None, limit: int | None, db_path: Path, provider_type: str)
         upsert_probe_result(doc_id=doc_id, db_path=db_path, **result)
         scores = f"(A:{result['austerity_score']}, E:{result['extravagance_score']})"
         print(f"{result['parser_route']} {scores}")
+        if result['error']:
+            print(f"    ERROR: {result['error']}")
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Probe indexed PDFs for parser routing and Counter-Revolution audit.")
