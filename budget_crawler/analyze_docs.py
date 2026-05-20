@@ -17,6 +17,14 @@ from pathlib import Path
 
 import pdfplumber
 
+# Simple fallback if python-dotenv isn't installed; 
+# in production we should add it to requirements.txt
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from metadata import DEFAULT_DB_PATH, upsert_probe_result
 from llm_providers import get_provider
@@ -151,7 +159,12 @@ def main() -> None:
     parser.add_argument("--state", help="Filter by state (e.g. Rajasthan)")
     parser.add_argument("--limit", type=int, help="Max docs to probe")
     parser.add_argument("--db", default=str(DEFAULT_DB_PATH), help="SQLite DB path")
-    parser.add_argument("--provider", default="regex", choices=["regex", "ollama"], help="Intelligence provider")
+    parser.add_argument(
+        "--provider", 
+        default="regex", 
+        choices=["regex", "ollama", "openrouter"], 
+        help="Intelligence provider"
+    )
     args = parser.parse_args()
     run(state=args.state, limit=args.limit, db_path=Path(args.db), provider_type=args.provider)
 
