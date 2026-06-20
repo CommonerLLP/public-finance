@@ -32,7 +32,7 @@ State coverage is early — 1 of 36 states fully scraped, 4 partially, 31 untouc
 - **ICDS fiscal pipeline** — `icds_timeseries.py`, `dfg_projection_extractor.py`,
   `icds_inflation_table.py`; 5-year BE/RE/Actuals for Saksham Anganwadi +
   POSHAN 2.0; Finance Ministry vs. MWCD projection gap documented.
-- **Minimum wage scraper framework** (`budget_crawler/min_wage/`) — base
+- **Minimum wage scraper framework** (`publicfinance/min_wage/`) — base
   classes, state registry, CLI. Kerala implemented and verified.
 
 ### Partial / known issues

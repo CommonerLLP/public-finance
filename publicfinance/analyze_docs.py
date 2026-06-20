@@ -4,8 +4,8 @@ Enhanced with 'Austerity' and 'Extravagance' markers based on Melinda Cooper's f
 Supports multiple intelligence providers (Regex, Ollama).
 
 Usage:
-  python3 budget_crawler/analyze_docs.py --state Rajasthan
-  python3 budget_crawler/analyze_docs.py --provider ollama --state Rajasthan
+  python3 publicfinance/analyze_docs.py --state Rajasthan
+  python3 publicfinance/analyze_docs.py --provider ollama --state Rajasthan
 """
 import argparse
 import os

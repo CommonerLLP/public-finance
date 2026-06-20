@@ -1,8 +1,8 @@
 import sqlite3
 import tempfile
 from pathlib import Path
-from budget_crawler.metadata import ensure_db, upsert_probe_result
-from budget_crawler.llm_providers import RegexProvider
+from publicfinance.metadata import ensure_db, upsert_probe_result
+from publicfinance.llm_providers import RegexProvider
 
 def _make_tmp_db():
     tmp = tempfile.NamedTemporaryFile(suffix=".db", delete=False)
@@ -42,7 +42,7 @@ def test_upsert_probe_result_inserts_row():
     assert row == ("test_doc_001", 1, 0)
 
 
-from budget_crawler.analyze_docs import classify_route, probe_pdf
+from publicfinance.analyze_docs import classify_route, probe_pdf
 
 
 def test_classify_route_text_pdf():

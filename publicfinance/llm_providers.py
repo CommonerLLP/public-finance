@@ -154,7 +154,7 @@ class OpenRouterProvider(BaseProvider):
         
         headers = {
             "Authorization": f"Bearer {self.api_key}",
-            "HTTP-Referer": "https://github.com/CommonerLLP/budget-crawler",
+            "HTTP-Referer": "https://github.com/CommonerLLP/public-finance",
             "X-Title": "CommonerLLP OBI Engine"
         }
         
