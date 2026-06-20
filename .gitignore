@@ -37,6 +37,7 @@ cbga_scrapers/
 # Agent working directories
 /.claude/
 /.brainstorm/
+/.agents/
 
 # Local output / screenshots / generated data
 /screen/
@@ -46,7 +47,7 @@ cbga_scrapers/
 /docs/superpowers/plans/
 
 # Symlink to external volume
-/data 2
+/data
 
 # Root-level scratch investigation scripts
 /find_3604.py

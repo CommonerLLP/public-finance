@@ -2,9 +2,15 @@
 
 The Union and state budgets are the arithmetic of who gets what from the political equality the Constitution promised in 1950. That arithmetic is scattered across dozens of Finance Ministry portals, state finance department websites, and RBI publications — in PDFs, XLS files, and JavaScript-rendered pages designed, at best, for the occasional audit and not for longitudinal research.
 
-This repository builds the infrastructure to acquire that data reproducibly. Every figure that ships out of this pipeline has a source URL, a download date, and a file hash. The goal is a corpus any researcher, litigator, or journalist can clone, run, and cite.
+---
 
-**Status: `v0.1.0` — alpha. Three sources work reliably. State coverage is early. See [ROADMAP.md](ROADMAP.md).**
+## Foundational Acknowledgement: The OBI Gold Standard
+
+This project stands on the shoulders of **Open Budgets India (OBI)**, the foundational infrastructure built by the **Centre for Budget and Governance Accountability (CBGA)** and **CivicDataLab (CDL)**. 
+
+For over a decade, OBI has defined the gold standard for budget transparency in India, transforming inaccessible government documents into a public data common. This `budget-crawler` is not an independent invention; it is a **forensic extension** of their work. We use the CBGA scrapers and parsers as our primary reference architecture, and our primary goal is to ensure the continuity and graceful reproduction of the OBI vision for the 2024-25 fiscal year and beyond.
+
+We acknowledge our deep technical and intellectual debt to the CBGA and CDL teams whose labor made Indian fiscal accountability machine-readable.
 
 ---
 

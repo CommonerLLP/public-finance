@@ -7,6 +7,26 @@ import os
 import re
 import requests
 
+# KrutiDev 010 to Unicode mapping (Core markers)
+# This allows the machine and LLMs to read legacy-encoded UP budgets.
+KRUTIDEV_MAP = {
+    "foRr": "वित्त",
+    "ea=h": "मंत्री",
+    "ctV": "बजट",
+    "vuqekuksa": "अनुमानों",
+    "Hkk\"k.k": "भाषण",
+    "th0,l0Mh0ih0": "जीएसडीपी",
+    "yk[k": "लाख",
+    "djksM": "करोड़",
+    "izfr'kr": "प्रतिशत",
+}
+
+def krutidev_to_unicode(text):
+    """Simple mapping for core fiscal terms in legacy fonts."""
+    for k, v in KRUTIDEV_MAP.items():
+        text = text.replace(k, v)
+    return text
+
 class BaseProvider:
     def analyze_signals(self, text):
         raise NotImplementedError
@@ -36,9 +56,10 @@ class RegexProvider(BaseProvider):
 
     def _count(self, text, markers):
         count = 0
-        text_lower = text.lower()
+        # Transliterate legacy font (KrutiDev) to Unicode for analysis
+        clean_text = krutidev_to_unicode(text.lower())
         for marker in markers:
-            count += len(re.findall(marker, text_lower))
+            count += len(re.findall(marker, clean_text))
         return count
 
     def analyze_signals(self, text):
@@ -73,8 +94,9 @@ class OllamaProvider(BaseProvider):
             raise RuntimeError(f"Ollama generation failed: {e}")
 
     def analyze_signals(self, text):
-        # We only send a sample to stay within local context limits
-        sample = text[:2000]
+        # Transliterate legacy font (KrutiDev) to Unicode for analysis
+        readable_text = krutidev_to_unicode(text)
+        sample = readable_text[:2000]
         prompt = f"""
         Analyze the following budget text using the Melinda Cooper framework.
         Identify signals of:
@@ -114,7 +136,9 @@ class OpenRouterProvider(BaseProvider):
         if not self.api_key:
             return {"error": "Missing API Key", "austerity_score": 0, "extravagance_score": 0, "provider": "openrouter:error"}
             
-        sample = text[:3000] # Give it enough context for Devanagari
+        # Transliterate legacy font (KrutiDev) to Unicode for analysis
+        readable_text = krutidev_to_unicode(text)
+        sample = readable_text[:3000] # Give it enough context for Devanagari
         prompt = f"""
         Analyze the following budget text.
         Identify signals of:
@@ -144,9 +168,18 @@ class OpenRouterProvider(BaseProvider):
             response = requests.post(self.url, headers=headers, json=payload, timeout=60)
             response.raise_for_status()
             result = response.json()
+            
+            if 'choices' not in result:
+                print(f"  DEBUG: OpenRouter Error Response: {result}")
+                return {"error": "Invalid API Response", "austerity_score": 0, "extravagance_score": 0, "provider": "openrouter:error"}
+
             content = result['choices'][0]['message']['content']
             data = json.loads(content)
             data["provider"] = f"openrouter:{self.model}"
+            
+            # Diagnostic print for the first successful run
+            print(f"  DEBUG: LLM Response for signals: {data}")
+            
             return data
         except Exception as e:
             return {"error": str(e), "austerity_score": 0, "extravagance_score": 0, "provider": "openrouter:error"}
