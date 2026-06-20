@@ -31,8 +31,14 @@ _Last updated: 2026-05-20. Branch: feat/icds-pipeline._
 ### What's broken or incomplete
 
 **Uttar Pradesh** (`UttarPradeshBudgetsScraper`)
+- ✓ **Breakthrough (2026-05-20):** Cracked KrutiDev encoding; captured **₹30.25 Lakh Crore GSDP** from Budget Speech.
+- ✓ **Intelligence:** Successfully ran Open-Model audit (A:2, E:6) via Llama-3.
+- **Gap:** Still missing `khand4` (Detailed Demand), `SND`, `khand6`.
 
-The scraper works but covers the wrong documents and only one year.
+**Rajasthan** (`RajasthanBudgetsScraper`)
+- ✓ **Breakthrough (2026-05-20):** Captured **88 fiscal indicators** (GSDP, PCI) from Economic Review.
+- ✓ **Intelligence:** Successfully ran Open-Model audit (A:6, E:4) via Llama-3.
+- **Gap:** History pull pending.
 
 `budget.up.nic.in` has 6 document sections across ~10 years each:
 

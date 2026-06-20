@@ -44,7 +44,7 @@ def _ckan_get(endpoint: str, params: dict) -> dict:
     req = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "CommonerLLP-budget-research/1.0 ()",
+            "User-Agent": "CommonerLLP-budget-research/1.0",
             "Accept": "application/json",
         },
     )
@@ -112,7 +112,7 @@ def download_pdf(url: str, dest: Path, dry_run: bool) -> str:
         req = urllib.request.Request(
             url,
             headers={
-                "User-Agent": "CommonerLLP-budget-research/1.0 ()",
+                "User-Agent": "CommonerLLP-budget-research/1.0",
             },
         )
         with urllib.request.urlopen(req, timeout=60) as resp:
