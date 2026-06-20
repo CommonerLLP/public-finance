@@ -1,4 +1,4 @@
-# budget-crawler — common operations.
+# public-finance — common operations.
 # `make help` lists everything.
 
 VENV   := .venv
@@ -31,7 +31,7 @@ clean:
 	find . -name "*.pyc" -delete
 
 help:
-	@echo "budget-crawler operations:"
+	@echo "public-finance operations:"
 	@echo "  make test          — run pytest tests/ (write tests as you implement scrapers)"
 	@echo "  make sync-agents   — regenerate CLAUDE.md + AGENTS.md from CONTEXT.md"
 	@echo "  make audit         — run pip-audit on dependencies"

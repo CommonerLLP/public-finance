@@ -1,4 +1,4 @@
-"""CLI: python -m budget_crawler.min_wage.run --state kerala [--all]"""
+"""CLI: python -m publicfinance.min_wage.run --state kerala [--all]"""
 
 from __future__ import annotations
 

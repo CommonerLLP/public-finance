@@ -1,17 +1,17 @@
 # Citation File Format — https://citation-file-format.github.io/
-# When the budget-crawler repository goes public on GitHub, this file lets
+# When the public-finance repository goes public on GitHub, this file lets
 # Zotero / Mendeley / EndNote and GitHub's "Cite this repository" button
 # render correct citations automatically. Update `version`, `date-released`,
 # and `doi` on each tagged release.
 cff-version: 1.2.0
-title: "budget-crawler: An extraction and analysis pipeline for the Raja Rammohun Roy Library Foundation Annual Reports"
+title: "public-finance: An extraction and analysis pipeline for the Raja Rammohun Roy Library Foundation Annual Reports"
 message: "If you use this software or the data it produces, please cite it as below."
 type: software
 authors:
   - name: "Commoner"
     affiliation: "CommonerLLP"
     website: "https://theright2read.org"
-repository-code: "https://github.com/CommonerLLP/budget-crawler"
+repository-code: "https://github.com/CommonerLLP/public-finance"
 url: "https://theright2read.org"
 abstract: >
   An extraction, OCR, and analysis pipeline for RRRLF Annual Reports
@@ -43,9 +43,9 @@ date-released: "2026-05-12"
 # add: doi: "10.5281/zenodo.XXXXXXX"
 preferred-citation:
   type: software
-  title: "budget-crawler: An extraction and analysis pipeline for the Raja Rammohun Roy Library Foundation Annual Reports"
+  title: "public-finance: An extraction and analysis pipeline for the Raja Rammohun Roy Library Foundation Annual Reports"
   authors:
     - name: "Commoner"
   year: 2026
   version: "0.1.0-pre"
-  url: "https://github.com/CommonerLLP/budget-crawler"
+  url: "https://github.com/CommonerLLP/public-finance"

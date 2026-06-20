@@ -1,4 +1,4 @@
-# budget-crawler
+# public-finance
 
 The Union and state budgets are the arithmetic of who gets what from the political equality the Constitution promised in 1950. That arithmetic is scattered across dozens of Finance Ministry portals, state finance department websites, and RBI publications — in PDFs, XLS files, and JavaScript-rendered pages designed, at best, for the occasional audit and not for longitudinal research.
 
@@ -8,7 +8,7 @@ The Union and state budgets are the arithmetic of who gets what from the politic
 
 This project stands on the shoulders of **Open Budgets India (OBI)**, the foundational infrastructure built by the **Centre for Budget and Governance Accountability (CBGA)** and **CivicDataLab (CDL)**. 
 
-For over a decade, OBI has defined the gold standard for budget transparency in India, transforming inaccessible government documents into a public data common. This `budget-crawler` is not an independent invention; it is a **forensic extension** of their work. We use the CBGA scrapers and parsers as our primary reference architecture, and our primary goal is to ensure the continuity and graceful reproduction of the OBI vision for the 2024-25 fiscal year and beyond.
+For over a decade, OBI has defined the gold standard for budget transparency in India, transforming inaccessible government documents into a public data common. This `public-finance` is not an independent invention; it is a **forensic extension** of their work. We use the CBGA scrapers and parsers as our primary reference architecture, and our primary goal is to ensure the continuity and graceful reproduction of the OBI vision for the 2024-25 fiscal year and beyond.
 
 We acknowledge our deep technical and intellectual debt to the CBGA and CDL teams whose labor made Indian fiscal accountability machine-readable.
 
@@ -55,46 +55,46 @@ The analytical frame is accountability, not audit. The question every scraper is
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python budget_crawler/db_init.py
+python publicfinance/db_init.py
 ```
 
 ### RBI State Finances
 
 ```bash
 # Preview without downloading
-python budget_crawler/rbi_budgets_scraper.py --dry-run
+python publicfinance/rbi_budgets_scraper.py --dry-run
 
 # Download current publication
-python budget_crawler/rbi_budgets_scraper.py
+python publicfinance/rbi_budgets_scraper.py
 
 # Download a specific archived year
-python budget_crawler/rbi_budgets_scraper.py --url <url> --fiscal-year 2023-24
+python publicfinance/rbi_budgets_scraper.py --url <url> --fiscal-year 2023-24
 ```
 
 ### Union Budget Demand for Grants
 
 ```bash
 # Download all archive years for a demand number
-python budget_crawler/union_budget_scraper.py --demand 101 --out data/union_budget
+python publicfinance/union_budget_scraper.py --demand 101 --out data/union_budget
 
 # Dry run
-python budget_crawler/union_budget_scraper.py --demand 101 --dry-run
+python publicfinance/union_budget_scraper.py --demand 101 --dry-run
 ```
 
 ### State budget scrapers
 
 ```bash
 # Rajasthan 2025-26 (works)
-python budget_crawler/state_budget_scrapers.py rajasthan --fiscal-year 2025-26
+python publicfinance/state_budget_scrapers.py rajasthan --fiscal-year 2025-26
 
 # Uttar Pradesh 2026-27 (partial)
-python budget_crawler/state_budget_scrapers.py uttar-pradesh --fiscal-year 2026-27
+python publicfinance/state_budget_scrapers.py uttar-pradesh --fiscal-year 2026-27
 
 # Kerala known sample (4 documents)
-python budget_crawler/state_budget_scrapers.py kerala --fiscal-year 2025-26 --known-sample
+python publicfinance/state_budget_scrapers.py kerala --fiscal-year 2025-26 --known-sample
 
 # Dry-run any state before downloading
-python budget_crawler/state_budget_scrapers.py <state> --fiscal-year <year> --dry-run
+python publicfinance/state_budget_scrapers.py <state> --fiscal-year <year> --dry-run
 ```
 
 Available state choices: `assam`, `tamil-nadu`, `kerala`, `uttar-pradesh`, `rajasthan`, `madhya-pradesh`

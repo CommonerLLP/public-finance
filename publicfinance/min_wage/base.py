@@ -11,7 +11,7 @@ from typing import Iterable, Literal, Optional
 
 import requests
 
-UA = "Mozilla/5.0 (research; CommonerLLP budget-crawler)"
+UA = "Mozilla/5.0 (research; CommonerLLP public-finance)"
 
 # Categorical scheduling status for a (state, comparable_employment_type) pair.
 SchedulingStatusEnum = Literal[

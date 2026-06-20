@@ -2,7 +2,7 @@ import sqlite3
 import tempfile
 import openpyxl
 from pathlib import Path
-from budget_crawler.metadata import (
+from publicfinance.metadata import (
     ensure_db,
     seed_canonical_map,
     get_canonical,
@@ -131,7 +131,7 @@ def test_upsert_scheme_allocation_idempotent():
 # union_budget_scraper tests
 # ---------------------------------------------------------------------------
 
-from budget_crawler.union_budget_scraper import parse_demand_xls
+from publicfinance.union_budget_scraper import parse_demand_xls
 
 
 def _make_fixture_xls() -> Path:
@@ -239,7 +239,7 @@ def test_parse_demand_xls_produces_three_col_types():
 # extract_scheme_data tests
 # ---------------------------------------------------------------------------
 
-from budget_crawler.extract_scheme_data import extract_xls_doc, extract_pdf_wcd_demand
+from publicfinance.extract_scheme_data import extract_xls_doc, extract_pdf_wcd_demand
 
 
 def test_extract_xls_doc_writes_allocations():

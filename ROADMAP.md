@@ -1,4 +1,4 @@
-# budget-crawler — ROADMAP
+# public-finance — ROADMAP
 
 _Last updated: 2026-05-20. Branch: feat/icds-pipeline._
 
@@ -83,7 +83,7 @@ Scraper written for 2017-18 only. Not run. 5 years of CivicDataLab expenditure X
 
 ---
 
-### Minimum wages layer (`budget_crawler/min_wage/`)
+### Minimum wages layer (`publicfinance/min_wage/`)
 
 Scraper framework built. Kerala implemented (4 Labour Dept gazette PDFs). CLC (central) has 4 VDA notification PDFs. Rajasthan has 1 file. All other 33 state directories are empty.
 

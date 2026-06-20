@@ -1,6 +1,6 @@
 import pandas as pd
 
-from budget_crawler.nha_oope import NHA_OOPE_COLUMNS, build_nha_oope_frame, write_nha_oope_csv
+from publicfinance.nha_oope import NHA_OOPE_COLUMNS, build_nha_oope_frame, write_nha_oope_csv
 
 
 def test_build_nha_oope_frame_has_normalized_columns_and_units():

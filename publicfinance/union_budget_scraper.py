@@ -17,7 +17,7 @@ from metadata import DEFAULT_DB_PATH, index_budget_doc, make_doc_id
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-_USER_AGENT = "Mozilla/5.0 (compatible; budget-crawler; github.com/CommonerLLP/budget-crawler)"
+_USER_AGENT = "Mozilla/5.0 (compatible; public-finance; github.com/CommonerLLP/public-finance)"
 
 _ARCHIVE_YEARS = [
     ("2026-27", "https://www.indiabudget.gov.in/doc/eb/sbe{demand}.xlsx"),

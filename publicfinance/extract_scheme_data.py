@@ -3,8 +3,8 @@ Extraction layer — reads indexed budget documents and writes scheme-level
 allocation rows to scheme_allocations.
 
 Usage:
-    .venv/bin/python budget_crawler/extract_scheme_data.py --level central
-    .venv/bin/python budget_crawler/extract_scheme_data.py --state Rajasthan
+    .venv/bin/python publicfinance/extract_scheme_data.py --level central
+    .venv/bin/python publicfinance/extract_scheme_data.py --state Rajasthan
 """
 
 import argparse
