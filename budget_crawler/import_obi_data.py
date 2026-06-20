@@ -37,5 +37,13 @@ def import_icds_timeseries(csv_path, db_path=DEFAULT_DB_PATH):
     print(f"  Successfully imported {count} historical records.")
 
 if __name__ == "__main__":
-    csv_input = "/Volumes/m1-storage/fiddlewiddle/budget-crawler/data/icds_budget_timeseries.csv"
-    import_icds_timeseries(csv_input)
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Import OBI/CBGA historical ICDS timeseries CSV into scheme_allocations."
+    )
+    parser.add_argument("csv_path", help="Path to icds_budget_timeseries.csv")
+    parser.add_argument("--db", default=str(DEFAULT_DB_PATH), help="SQLite DB path")
+    args = parser.parse_args()
+
+    import_icds_timeseries(args.csv_path, db_path=args.db)

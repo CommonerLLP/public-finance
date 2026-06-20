@@ -36,6 +36,24 @@ def normalize_to_crore(value_str, unit):
         return val / 10000.0
     return val
 
+def detect_document_unit(text):
+    """Find the table's declared monetary unit from its caption/header.
+
+    Indian budget tables declare their unit once, in a caption (e.g.
+    "(₹ in crore)", "(लाख रुपये में)"), NOT on every row. We must read that
+    declaration rather than guess per-row, or we silently mis-scale figures
+    (the crore/lakh trap). Returns "Thousand" / "Lakh" / "Crore", or None when
+    no explicit declaration is found.
+    """
+    head = text.lower()
+    if re.search(r"in\s+thousand|हजार\s*(में|रुपये|रुपए)", head):
+        return "Thousand"
+    if re.search(r"\blakh\b|\(\s*lakh|लाख\s*(में|रुपये|रुपए)|\(\s*लाख", head):
+        return "Lakh"
+    if re.search(r"\bcrore\b|\(\s*crore|करोड़\s*(में|रुपये|रुपए)|\(\s*करोड़", head):
+        return "Crore"
+    return None
+
 def upsert_fiscal_indicator(db_path, doc_id, indicator_name, value, unit, major_head=None):
     """Writes a single fiscal indicator to the database."""
     ensure_db(db_path)
@@ -82,18 +100,25 @@ def extract_from_pdf(pdf_path, state, year, db_path):
         print(f"  SAVED Transliterated: GSDP: {clean_val} Lakh Crore -> {curr_val} Cr")
         results.append("जीएसडीपी")
 
+    # Read the unit ONCE from the document caption, not per-row. Default to
+    # Crore (the dominant convention in Indian budget tables) and warn loudly
+    # rather than silently assume Lakh and divide every row by 100.
+    doc_unit = detect_document_unit(clean_text)
+    if doc_unit is None:
+        print("  WARN: no explicit unit declaration found in document; "
+              "assuming Crore (values NOT scaled). Verify against source.")
+    unit = doc_unit or "Crore"
+
     lines = clean_text.splitlines()
     for line in lines:
         # Match lines with a label followed by 2-3 columns of numbers
         match = re.search(r"^(.*?)\s{2,}([\d,\.-]+)\s{2,}([\d,\.-]+)", line.strip())
-        
+
         if match:
             indicator, v1, v2 = match.groups()
             if re.match(r"^\d+$", indicator.strip()):
                 continue
-                
-            unit = "Crore" if "cr" in indicator.lower() or "करोड़" in indicator.lower() else "Lakh"
-            
+
             curr_val = normalize_to_crore(v2, unit)
             
             upsert_fiscal_indicator(
