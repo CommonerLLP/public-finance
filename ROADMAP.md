@@ -53,11 +53,9 @@ _Last updated: 2026-05-20. Branch: feat/icds-pipeline._
 
 Fix: add the 3 missing sections to `UP_SOURCE_PAGES`; remove the year-filter and pull all years from each page.
 
-**Gujarat** (`gujarat_scraper.py`)
+**Gujarat** (`finance_gujarat_scraper.py`)
 
-Wrong source entirely. The scraper is built on `OBIUtils` and targets `openbudgetsindia.org`. The files on volume are CMO press-release PDFs (budget circulars, speeches, ebooks) pulled manually — not from the Finance Department. No grant-level data exists. The actual Gujarat Finance Dept portal (`finance.gujarat.gov.in`) has never been touched.
-
-Fix: rewrite against `finance.gujarat.gov.in` using `ScrappingUtils`, discard `gujarat_scraper.py`.
+✓ **Breakthrough:** Rewrote against `finance.gujarat.gov.in`. Successfully pulled 531 PDFs across multiple grant departments. Obsolete `gujarat_scraper.py` discarded.
 
 **Tamil Nadu** (`TamilNaduBudgetsScraper`)
 
@@ -99,7 +97,7 @@ State coverage: 1 of 36 fully scraped.
 Fix what is broken. Add history to what works. Target: 6–8 functioning state scrapers.
 
 - [ ] UP: add `khand4`, `SND`, `khand6` to `UP_SOURCE_PAGES`; pull all years not just current
-- [ ] Gujarat: rewrite against `finance.gujarat.gov.in`; discard `gujarat_scraper.py`
+- [x] Gujarat: rewrite against `finance.gujarat.gov.in`; discard `gujarat_scraper.py`
 - [ ] TN: Playwright-based scraper for `tnbudget.tn.gov.in`
 - [ ] Kerala: run known-sample + resolve dynamic portal
 - [ ] Rajasthan: pull historical years (portal has multi-year archive)
@@ -118,6 +116,8 @@ Coverage across major states. Structured output layer.
 
 ### `1.0.0` — mission
 Automated, reproducible acquisition of Indian public finance data — Union Government and all major states — with structured output (CSV + SQLite) that any researcher can clone, run, and trust.
+
+**Linked Open Data (5-Star):** Serve the official List of Major and Minor Heads of Account (LMMHA) as a fully machine-readable SKOS/RDF ontology on GitHub Pages to act as the central semantic dictionary for Indian finance.
 
 Definition of done:
 - Union Budget: all major demand numbers, 10+ years

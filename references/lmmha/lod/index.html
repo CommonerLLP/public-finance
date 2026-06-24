@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List of Major and Minor Heads of Account (LMMHA)</title>
+    <style>
+        #pylode {
+            position: fixed;
+            top: 205px;
+            left: -150px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
+
+        #profile {
+            font-style: italic;
+            font-size: 1.25em;
+            color: darkred!important;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        ul.pylodelitlist {
+            list-style-type: none;
+            margin-left: -40px;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-bottom: 10px;
+        }
+
+        #metadata dd p {
+          margin: 0 0 1em 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        div.hierarchy {
+            margin-bottom: 30px;
+            background-color: #F4FFFF;
+            padding: 10px;
+        }
+
+        ul.hierarchy {=
+            padding: 5px 25px 5px 25px;
+        }
+
+        ul.hierarchy li {
+            margin-top:5px;
+        }
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 {
+            font: italic 100% sans-serif;
+            margin-bottom: 10px;
+        }
+        h6 { font: small-caps 100% sans-serif }
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: left;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        sup {
+            margin-left: -3px;
+        }
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        #toc {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            height: 100%;
+            overflow-y: auto;
+            padding: 10px;
+            border: solid 1px navy;
+            font-size: small;
+            width: 180px;
+        }
+        #toc h3 {
+            margin-top: 5px;
+        }
+
+        #toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #toc .first > li {
+            margin-top: 5px;
+        }
+
+        #toc .second,
+        #toc .third {
+            padding-left: 10px;
+        }
+
+        #content {
+            width: calc(100% - 150px);
+        }
+
+        .hover_property {
+            cursor: help;
+            text-decoration: none;
+            border-bottom: dashed 1px;
+        }
+
+        .setclass {
+            list-style-type: none;
+        }
+
+        code{
+            word-wrap: break-word;
+          }
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        td {
+            word-wrap: break-word;
+        }
+        #legend table.entity {
+            width: 25%;
+        }
+	</style>
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script id="schema.org" type="application/ld+json">
+[
+  {
+    "@id": "https://data.commonerllp.org/ontology/lmmha/scheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "List of Major and Minor Heads of Account (LMMHA)"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@language": "en",
+        "@value": "Controller General of Accounts, India"
+      }
+    ]
+  }
+]
+	</script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section" id="metadata">
+        <h1>List of Major and Minor Heads of Account (LMMHA)</h1>
+        <h2>Metadata</h2>
+        <dl>
+          <div>
+            <dt>
+              <strong>IRI</strong>
+            </dt>
+            <dd>
+              <code>https://data.commonerllp.org/ontology/lmmha/scheme</code>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
+            </dt>
+            <dd><p>List of Major and Minor Heads of Account (LMMHA)</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/publisher" title="An entity responsible for making the resource available. Defined in DCMI Metadata Terms">Publisher</a>
+            </dt>
+            <dd><p>Controller General of Accounts, India</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#hasTopConcept" title="Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies. Defined in SKOS Vocabulary">Has Top Concept</a>
+            </dt>
+            <dd>
+              <ul class="pylodelitlist">
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0005">Central Goods and Services Tax Heads Provisional Assessment, during investigation, credit due to Inverted duty structure, Tax Refund for international tourists, head as credit entry. After the completion of reconciliation process, the same entry would be cleared by minus Credit to this Minor Head and Credit to appropriate minor head. and as a plus entry in the States Accounts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0006">State Goods and Services Tax Governments. Heads Provisional Assessment, during investigation, credit due to Inverted duty structure, Tax Refund for international tourists, head as credit entry. After the completion of reconciliation process, the same entry would be cleared by minus Credit to this Minor Head and Credit to appropriate minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0007">Union Territory Goods and Services Tax</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0008">Integrated Goods and Services Tax</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0020">Corporation Tax 101 Income Tax on Companies Income tax on companies - (i) Advance payment of Tax. (ii) Collections from self assessment. (iii) Collections from regular assessment (includes the proceeds, if any, by way of Super Tax). (v) Deductions from interest on securities under section 193 of the Income Tax Act, 1961. (vi) Deductions from dividends under section 194 of the Income Tax Act, 1961. (vii) Deductions from interest payments other than interest on securities under section 194-A of the Income Tax Act, 1961. (viii) Deductions from prize winnings from Lotteries and Crossword puzzles under section 194 B of the Income Tax Act, 1961. (ix) Deductions from winnings from Horse Races under section 194-BB of the Income Tax Act, 1961. (x) Deductions from payments to contractors and sub-contractors under section (xi) Deductions from payments of Insurance Commission etc. under section 194- D of the Income Tax Act, 1961. (xii) Deductions from payments to non-resident sportsmen/sports associations under section 194-E of the Income Tax Act, 1961. (xiii) Deductions from Commission etc. on sale of Lottery tickets under section (xiv) Deductions from Commission, brokerage etc. under section 194-H of the Income Tax Act, 1961. (xv) Deduction of Income-Tax from rent under section 194-I of the Income-Tax Act, 1961 (xvi) Deduction of Income-Tax from fees for Professional or Technical Services under section 194-J of the Income-Tax Act, 1961 (xvii) Deduction of Income-Tax from income in respect of units of a Mutual Fund under section 194-K of the Income-Tax Act, 1961 (xviii) Deductions under section 195 of the Income Tax Act, 1961 from Non- Resident Individuals/Foreign Companies. (xix) Deductions of income tax from income from Units referred to in section 115 AB under section 196-B of Income Tax Act, 1961. (xx) Deductions of Income Tax from Income from foreign currency bonds or shares of Indian Company under section 196-C of the Income Tax Act, 1961. (xxi) Collection at source under section 206-C of the Income Tax Act, 1961 from alcoholic liquor sales. (xxii) Collection at source under section 206-C of the Income Tax Act, 1961 from forest produces sales. (xxiii) Deduct - refunds. (xxiv) Collection at source under section 206-C of the Income Tax Act, 1961 from Liquor for Human Consumption and Tendu Leaves. (xxv) Collection at source under section 206-C of the Income Tax Act, 1961 from Timber obtained under Forest Lease. (xxvi) Collection at source under section 206-C of the Income Tax Act, 1961 from Timber obtained by any Mode other than a Forest Lease. (xxvii) Collection at source under section 206-C of the Income Tax Act, 1961 from any other Forest Product (not being Timber Leaves). (xxviii)Collection at source under section 206-C of the Income Tax Act, 1961 from Scrap. (xxix) Collection at Source under Section 206 – C of Income Tax Act, 1961 from Contractors or licensee or lease relating to Parking lots. (xxx) Collection at Source under Section 206 – C of Income Tax Act, 1961 from Contractors or licensee or lease relating to Toll Plaza. (xxxi) Collection at Source under Section 206 – C of Income Tax Act, 1961 from Contractors or licensee or lease relating to Mining and Quarrying. (xxxii) Collection at Source on transfer of certain immovable property other than agricultural land under Section 194-I A of Income Tax Act, 1961. (xxxiii) Income by way of interest from infrastructure debt fund under Section (xxxiv) Income by way of interest from specified company payable to a non- resident under Section 194LC of Income Tax Act, 1961. (xxxv) Tax Collected at Source on sale of certain minerals under Section 206C of Income Tax Act, 1961. (xxxvi) Tax Collected at Source on sale of bullion and jewellery under Section 206C of Income Tax Act, 1961. Surtax - (i) All collections including deductions. (ii) Deduct-Refunds. Surcharge – (i) Advance payment of Tax (ii) Deduction of Tax at source (iii) Self Assessment collection (iv) All other collections (v) Deduct-Refunds (i) Other items (includes proceeds, if any, of the Erstwhile Excess Profits Tax, Business Profits Tax, Super Tax and Super Profits Tax). (ii) Sale proceeds of TDS Books. (iii) Deduct-Refunds. the Z.A.O, CBDT concerned, pending transfer to the relevant minor heads on the basis of detailed account rendered by the Designated offices of Income Tax. This Minor Head will be divided into the following sub-heads: - (a) Tax Collections (b) Deduct-Refunds (i) Tax Collections (ii) Interest on Tax entry’ in the State accounts. (i) Penalties under Income Tax Act, 1961 (ii) Penalties under the Black Money (Undisclosed Foreign Income and Assets) and Imposition of Tax Act, 2016</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0021">Non-Corporate Tax 101 Income Tax on Union Emoluments including (i) Collections including deductions. (ii) Deduct-Refunds. (i) Advance payment of Tax. (ii) Collections from self assessment. (iii) Collections from regular assessment (includes the proceeds, if any, by way of Super Tax). (v) Deductions under Section 192 from Government employees other than Union Government Employees. (vi) Deductions under Section 192 from employees other than Government Employees. (vii) Deductions from interest on securities under Section 193 of the Income Tax Act, 1961. (viii) Deductions from dividends under Section 194 of the Income Tax Act, 1961. (ix) Deductions from interest payments other than 'Interest on Securities under Section 194-A of the Income Tax Act, 1961. (x) Deductions from prize winnings in Lotteries and crossword puzzles under Section 194-B of the Income Tax Act, 1961. (xi) Deductions from winnings from Horse Races under Section 194-BB of Income Tax Act, 1961. (xii) Deductions from payments to contractions and sub-contractors under Section (xiii) Deductions from insurance commissions etc. under Section 194-D of the Income Tax Act, 1961. (xiv) Deductions from payments to non-resident sportsman/sport association under Section 194-E of Income Tax Act, 1961. (xv) Deductions from payments in respect of deposits under National Saving Scheme under Section 194 EE of the Income Tax Act, 1961. (xvi) Deductions on account of repurchase of Units by Mutual Funds or Unit Trust of India under Section 194-F of the Income Tax Act, 1961. (xvii) Deductions from Commission etc. on sale of Lottery Tickets under Section (xviii) Deductions from Commission, Brokerage etc. under Section 194-H of the Income Tax Act, 1961. (xix) Deduction of Income-Tax from rent under Section 194-I of the Income-Tax Act, 1961 (xx) Deduction of Income-Tax from fees for Professional or Technical Services under Section 194-J of the Income-Tax Act, 1961 (xxi) Deduction of Income-Tax from income in respect of units of a Mutual Fund under Section 194-K of the Income-Tax Act, 1961 (xxii) Deductions under Section 195 of the Income Tax Act, 1961from Non Resident Individuals / Foreign Companies (xxvi) Deductions of Income Tax from Income from foreign currency bonds or shares of Indian Company under Section 196-C of the Income Tax Act, (xxvii) Collections at source under Section 206-C of the Income Tax Act, 1961 from alcoholic liquor sales. (xxviii)Collections at source under Section 206-C of the Income Tax Act, 196l from forest produce sales. (xxix) Deduct - Refunds. (xxx) Collections at source under Section 206-C of the Income Tax Act, 1961 from Liquor for Human Consumption and Tendu Leaves. (xxxi) Collections at source under Section 206-C of the Income Tax Act, 1961 from Timber obtained under Forest Lease. (xxxii) Collections at source under Section 206-C of the Income Tax Act, 1961 from Timber obtained by any Mode other than a Forest Lease. (xxxiii)Collections at source under Section 206-C of the Income Tax Act, 1961 from any other Forest Product (not being Timber Leaves). (xxxiv) Collections at source under Section 206-C of the Income Tax Act, 1961 from Scrap. (xxxv) Collection at Source under Section 206 – C of Income Tax Act, 1961 from Contractors or licensee or lease relating to Parking lots. (xxxvi) Collection at Source under Section 206 – C of Income Tax Act, 1961 from Contractors or licensee or lease relating to Toll Plaza. (xxxvii) Collection at Source under Section 206 – C of Income Tax Act, 1961 from Contractors or licensee or lease relating to Mining and Quarrying. (xxxviii) Collection at Source on transfer of certain immovable property other than agricultural land under Section 194-IA of Income Tax Act, 1961. (xxxix) Income by way of interest from infrastructure debt fund under Section (xl) Income by way of interest from specified company payable to a non-resident under Section 194-LC of Income Tax Act, 1961. (xli) Tax Collected at Source on sale of certain minerals under Section 206-C of Income Tax Act, 1961. (xlii) Tax Collected at Source on sale of bullion and jewellery under Section 206- C of Income Tax Act, 1961. (i) Advance payment of tax. (ii) Deductions of Tax at source. (iii) Self-assessment Collections. (iv) All other collections. (v) Deduct-Refunds. (i) Leave salary contributions. (ii) Sale proceeds of dead stocks, wastepaper and other articles (The cost of which was met from Office Expenses). (iii) Other-items. (iv) Deduct-Refunds. entry’ in the State accounts. (i) Penalties under Income Tax Act, 1961 (ii) Penalties under the Black Money (Undisclosed Foreign Income and Assets) and Imposition of Tax Act, 2016 Taxes on Agricultural Income</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0023">Hotel Receipts Tax 101 Collections from hotels which are Act, 1980: (a) Advance payment tax (b) Collections from self assessment (c) Collections from regular assessment (d) Deduct-Refunds (a) Fines, and interest recoveries etc. (b) Deduct-Refunds entry in the state account.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0024">Interest Tax (a) Advance interest tax from banks (b) Ordinary collections of interest tax from banks (c) Deduct-Refunds (a) Miscellaneous collections (viz. Interest etc.) (b) Deduct-Refunds ‘plus-entry’ in the State accounts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0026">Fringe Benefit Tax (a) Advance tax (b) Self Assessment Tax (c) Tax on Regular Assessment (d) Deduct-Refunds ‘plus-entry’ in the State accounts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0028">Other Taxes on Income and Expenditure entry’ in the State accounts. (a) Corporate Payment, (b) Non-corporate Payment. (a) Tax Collection (b) Pradhan Mantri Garib Kalyan Cess (c) Penalty (c) Taxes on Property, Capital and Other Transactions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0029">Land Revenue 101 Land Revenue/Tax minor head under this major head. It will include the following receipts for which distinct sub-heads may be opened: - (i) Recovery of the Cost of maintenance of Boundary pillars. (ii) Leave salary contributions (iii) Sale proceeds of dead stock, waste paper and other articles, the cost of which was met from office expenses and (iv) Other items Stamps and Registration Fees</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0031">Miscellaneous Tax Receipts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0032">Taxes on Wealth ‘plus- entry’ in the States Accounts (i) Gross Collection (ii) Deduct Refunds</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0034">Securities Transaction Tax (a) Tax on Self Assessment (b) Tax on Regular Assessment (c) Deduct- Refunds ‘plus-entry’ in State accounts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0035">Taxes on Immovable 101 Ordinary Collections Property other than Agricultural Land Gross Collections: (i) Urban Areas (ii) Non - Urban Areas Deduct-Refunds Net Collections (d) Taxes on Commodities and Services other than Goods and Services Tax</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0036">Commodities Transaction Tax (a) Advance Tax (b) Tax on Self Assessment (c) Tax on Regular Assessment (d) Deduct-Refunds ‘plus-entry’ in the State accounts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0037">Customs below this major head. ‘Deduct Drawbacks’ will appear as a distinct sub-head under 'Imports'. (i) Coffee (ii) Coir (iii) Lac (iv) Mica (v) Tobacco (unmanufactured) (vi) Oil cakes and meals (vii) Marine Products (viii) Cashew kernel (ix) Black Pepper (x) Cardamom (Act 65) (xi) Cardamom (A.P. Cess) (xii) Other agricultural produce (xiii) Iron ore (xiv) Animal feed (xv) Turmeric (xvi) Turmeric Powder (xvii) Hides and Skins (xviii) Raw Wool (xix) Cardamom (A.P. Cess Act, 1940) (xx) Other articles (a) Recoveries on account of Customs Establishment at a private wharf unless credited by deduction from charges. (b) Commission on little Bases Light Dues and on Straits' Light Dues. (c) Ware houses and wharf rents. (d) Fees for registration of Cargo boats. by the Reserve Bank of India. The conversion charges payable to Bombay Mint and the expenditure to be reimbursed to R.B.I. and other incidental expenses on the sale of gold by auction would be accounted for under the new sub head ‘Deduct - other charges’ to be opened under this minor head. (i) Confiscated gold (ii) Confiscated silver (iii) Confiscated foreign currencies/instruments. (iv) Fees, Fines, Forfeitures and Penalties. (v) Other confiscated goods. ‘plus-entry’ in the State accounts. Union Excise Duties</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0039">State Excise other related receipts, for accountal of receipts on account of sale of liquor etc. undertaken as a trading operation by the States. Please see Note head’ 1475-Other General Economic Services’. Sale proceeds of confiscated Cocaine. Proceeds of fines when realised by judicial officers will be credited to ‘Administration of Justice’ (Major Head 0070) in Excise office compound, rents of Godowns, contributions towards Cost of Special establishment and other miscellaneous receipts which cannot be accommodated under other sub heads below this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0040">Taxes on Sales, Trade etc. 101 Receipts under Central Sales Tax Act (i) Tax Collections (ii) Surcharge (iii) Licence and Registration fees (iv) Other Receipts (v) Deduct-Refunds The sub head ‘Surcharge’ will record receipts on account of surcharge levied under the Sale Tax Act .The subhead ‘Other Receipts’ will record miscellaneous receipts such as penalty, fines etc, in the administration of the Tax laws. recorded under this minor head. recorded under the minor head ‘State Sales Tax’. These minor heads are intended to record receipts from taxes levied under separate legislations. Trade Tax, commerce Tax etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0041">Taxes on Vehicles 101 Receipts under the Indian Motor Vehicles Act recorded under a separate sub head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0042">Taxes on Goods and Passengers Inland Water-Way only. are levied by an Act of the Legislature. In other cases, these receipts will be recorded under the major head ‘1054-Roads and Bridges’ levied a tax on entry of goods into local areas for consumption, use or sale of goods therein. This minor head will be divided into the following sub-heads: (a) Tax Collections (b) Deduct-Refunds</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0043">Taxes and Duties on Electricity</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0044">Service Tax (a) Tax Collections (b) Other Receipts (c) Deduct Refunds (d) Penalties The sub-head (b) viz. ‘Other Receipts’ will record interest, etc. leviable on delayed payments of Service Tax. entry’ in the State accounts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0045">Other Taxes and Duties on Commodities and Services 101 Entertainment Tax (a) Tax Collections (b) Other Receipts (c) Deduct-Refunds The sub-head ‘Other Receipts’ will record miscellaneous receipts like penalties, fine etc. in the administration of the relevant Acts/Regulations. (a) Tax on travel by Air (b) Tax on travel by Sea (c) Deduct-Refunds other minor heads below this major head. Fees’, ‘Licence Fees’ and other Miscellaneous Receipts. ‘plus-entry’ in the State accounts. a) Equalisation Levy payable by taxpayer (deductor), b) Equalisation Levy payable as per demand raised by Income Tax Department, c) Miscellaneous Receipts, d) Penalties, Fine etc., e) Refund.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0046">Currency, Coinage and Mint 101 Currency Note Press following sub-heads: - (i) Receipts from printing of Bank Note. (ii) Receipts from printing of one Rupee Note. (iii) Other Receipts Alloy Coins'. (a) Assay Fees (b) Other Receipts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0047">Other Fiscal Services 101 Smugglers and Foreign Exchange Manipulator (a) Rent (b) Interest on Dividends (c) Sale proceeds of properties (d) Fines, Forfeitures and Miscellaneous (a) Value of stamps supplied to the P and T Department, State Governments etc (b) Other receipts. under all Acts including ‘receipts on account of penalties imposed for compounding of contravention of FEMA-1999’ &amp; ‘Gold Control Act’. (ii) Distinct sub-heads may be opened for each Act. (iii)The Fines, Forfeitures and Miscellaneous under ‘Smugglers and Foreign Exchange Manipulator (Forfeiture of Property Act, 1976)’ will continue to be classified under Minor Head ‘101- Smugglers and Foreign Exchange Manipulator (Forfeiture of Property Act, 1976) [See foot note 1(d) above].</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0049">Interest Receipts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0050">Dividends and Profits 101 Dividends from Public Undertakings Govt. Companies. operative Societies. (a) Gross Contributions-Current. (b) Gross Contributions-Deferred dividends in respect of the period from 1978- (c) Deduct-amount transferred to '0049-Interest receipts’. See also note below the major head ‘0049’. (d) Subsidy to Railways towards dividend relief and other Concessions (for Railways only). here. under the L.I.C. Act, 1956 and the rules and regulations made there under which are in the nature of share of profits are recorded under this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0051">Public Service Commission 104 UPSC/SSC Examination Fees.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0055">Police 101 Police supplied to other Governments (a) Contributions for Railway Police (b) Recoveries from other Governments. Companies and persons and recoveries on account of village Police, Police supplied to Municipal, Cantonment and Town Funds. Police will be accounted for under this head. (a) Collections by District authorities. (b) Other Collections. receipts on account of public conveyances under the Public Conveyances Act, Fees for licenses for storing petroleum if issued by police officers and any other fees levied for services controlled by I.G.P, but excluding fees, fines and forfeiture realised by State H.Q. Police.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0056">Jails 102 Sale of Jail Manufactures services, if any, including hire of convicts and recoveries of transportation and jail charges from other Governments. departments (If the manufactures are constituted on commercial lines and are declared as commercial activities of Jail Department) and other governments and private parties etc. If the Jail manufactures are not declared as commercial activities, the sale proceeds to other departments of the Government are treated as reduction of expenditure under ‘2056-Jail’. Receipts in respect of Jail Presses are creditable to ‘0058-Stationery and Printing’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0057">Supplies and Disposals 102 Fees for procurement of stores</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0058">Stationery and Printing 101 Stationery receipts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0059">Public Works</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0070">Other Administrative Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0071">Contributions and Recoveries towards Pension and Other Retirement Benefits</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0075">Miscellaneous General Services (a) Miscellaneous Receipts-This sub-head will include the following receipts: - (i) Unclaimed loans written off to revenue. (ii) Adjustments of Write off of unclaimed securities of current loans. (iii) Lapsed Wasika pensions payable in lieu of interest on Oudh loans. (iv) Sale proceeds of toshakhana. (v) Receipts from Bombay Land Scheme. (vi) Contributions from State Governments for refugee relief. (vii) Interest from banks on delayed remittances and excess/double reimbursement. (viii) Forfeited amount under the scheme 11.55%, 8 year tenor Government Stock, (ix) Other Miscellaneous Receipts (b) Investor’s Education and Protection Fund-Grants and donations received from State Governments, Companies and other Institutions will be credited to this sub-head. (a) Unpaid dividends (b) Unpaid application money received by companies for allotment of securities and due for refund (c) Unpaid Matured Deposits (d) Unpaid Matured Debentures (e) Interest accrued on the amounts referred to in sub-heads (a) to (d)</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0076">Defence Services - Army long term imprisonment which are finally credited to Government (b) recoveries from officers and other ranks towards equipment and clothing lost or damaged or found deficient, and other recoveries on account of pay and allowances of Army personnel are recorded under this minor head. heads: - (a) Rents of buildings, furniture etc. (b) Recoveries on account of supply of water and electricity. (c) Receipts from disposal of surplus lands, buildings etc. (d) Receipts from Military Engineering Services Stores. (e) Other receipts. (a) Sale of Dairy Products (b) Sale of Grain and Fodder (c) Other Receipts A. Army Service Corps Stores Recoveries on account of sale of surplus, etc., stores, value of stores issued on payment and other miscellaneous receipts. Total sub-head A B. Animals C. Army Ordnance Corps Stores Sale proceeds of surplus, etc. stores, value of stores issued on payment and other miscellaneous receipts Total Sub-Head C D. Medical and veterinary stores Sale proceeds of surplus etc., stores, value of stores issued on payment and other miscellaneous receipts. E. Engineer stores (E.S.Ds.) - Sale proceeds of surplus, etc., stores, value of stores issued on payment and other miscellaneous receipts. (a) Contributions from Local Governments and other parties towards the cost of training their personnel. (b) Hospital Stoppages. (c) Other miscellaneous receipts.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0077">Defence services-Navy</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0078">Defence Services - Air Force</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0079">Defence Services – Coordination &amp; Services ( Directorate of Ordnance)</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0080">Defence Services – Research &amp; Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0081">Defence Services – HQ IDS and Joint Staff</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0202">Education, Sports, Art and Culture</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0210">Medical and Public Health</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0211">Family Welfare</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0215">Water Supply and Sanitation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0216">Housing</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0217">Urban Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0220">Information and Publicity</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0221">Broadcasting</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0230">Labour and Employment accounted for under distinct sub-heads below this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0235">Social Security and Welfare</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0250">Other Social Services cost of administration of Religious and Charitable Endowments Acts. the unclaimed deposit is transferred.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0401">Crop Husbandry classified at Sub-Head level and the nature of receipts i.e. Excess Farmers’ share of premiums surrendered by Agriculture Insurance Company, Penalty imposed on Agriculture Insurance Company or Interest earned by Agriculture Insurance Company, etc. may be classified at Detailed Head level.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0403">Animal Husbandry</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0404">Dairy Development with suitable sub-heads thereunder.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0405">Fisheries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0406">Forestry and Wild Life</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0407">Plantations</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0408">Food Storage and Warehousing transferring amount representing sale proceeds of commodities received from World for Food Programme.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0415">Agricultural Research and Education</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0425">Co-operation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0435">Other Agricultural Programmes agricultural products.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0506">Land Reforms expenditure on account of Land ceiling for Agricultural Land will be recorded under minor head '102-Consolidation of Holdings' below major head ‘2506-Land Reforms’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0515">Other Rural Development Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0551">Hill Areas</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0552">North Eastern Areas</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0575">Other Special Areas programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0700">Major Irrigation Each Commercial Project will be a sub-major head Each Non-Commercial Project will be a sub-major head and irrigation cess. infringement of canal Rules.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0701">Medium Irrigation Each Commercial Project will be a sub-major head Each Non-Commercial Project will be a sub-major head and irrigation cess. infringement of canal Rules.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0702">Minor Irrigation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0801">Power</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0802">Petroleum Collections’. production under production Sharing Contracts from discovered fields and exploration block’ may be opened under this head. of oil’ may be opened under this minor head. Lease Rent on oil fields taken on lease from the Government for exploration of oil may be opened under this minor head. Policy’ may be opened under these minor heads. under this Minor Head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0803">Coal and Lignite</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0810">Non Conventional Sources of Energy</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0851">Village and Small Industries 101 Industrial Estates amenities provided at the Industrial Estates. Receipts from Government units located at the Industrial Estates will, however, be recorded under relevant minor heads under this major head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0852">Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0853">Non-ferrous Mining and Metallurgical Industries collections'. may be opened below this Minor Head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/0875">Other Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1001">Indian Railways - Miscellaneous Receipts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1002">Indian Railways- Commercial Lines- Revenue Receipts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1003">Indian Railways-Strategic Lines Revenue Receipt</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1051">Ports and Light Houses</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1052">Shipping</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1053">Civil Aviation booked under major head '0070-Other Administrative Services'.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1054">Roads and Bridges Passengers'. accounted for under a sub-head ‘Fees for use of National Highways permanent Bridges.’ &amp; equipment.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1055">Road Transport Each Departmental undertaking will be a minor detailed heads such as ‘Traffic Receipts’, ‘Workshop Receipts’ etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1056">Inland Water Transport Each Departmental undertaking/Project will be a detailed heads such as ‘Traffic Receipts’, 'Workshop Receipts' etc. Roads and Bridges-Tolls on Roads'.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1075">Other Transport Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1201">Postal Receipts head 'Other receipts' under a distinct sub-head prior to their allocation, and on their allocation, the amounts may be transferred to the concerned minor heads/sub- heads below '1201-Postal Receipts' and '1225-Telecommunication Receipts' as the case may be. stamps which may be shown under distinct sub-heads. net receipts or net payments, and if it is a net payment, it will be included in the relevant Demands for Grant. different types of services rendered by the P &amp; T Department relating to postal services (e.g.) Fees for window delivery tickets, post boxes and bags, rent and taxes etc., special recoveries of rent from professional letter writers, recoveries from other Government departments for services rendered, advertisement receipts etc. sale of waste paper, dead stock etc., in respect of office furniture and other miscellaneous items. (i) Gross Amounts realised by sale of Passport fees stamps. (ii) Deduct-Amounts transferred to ‘0070 - Other Administrative Services - Other Services-Passport and visa fees.’ (iii) Net Amount of fees retained by the Postal Department-Commission on sale of Passport fees stamps. (i) Gross amount realised by sale of Central Recruitment Fee Stamps. (ii) Deduct amount transferred to ‘0051-Public Service Commission-UPSC/SSC Examination Fees’ (iii) Net amount of fees retained by the department as Service Charges- Commission on sale of Recruitment Fee Stamps. At the end of the financial year, no amount will remain booked under sub- head (i) above. (i) Gross Amounts realised by sale of Passport Application Forms. (ii) Deduct - Amounts transferred to ‘0070-Other Administrative Services - 60- Other Services - 116-Passport Fees’, (iii) Net amount of fees retained by the Postal Department - ‘Commission on sale of Passport Application Forms’. (i) Gross amount realised by sale of UPSC Forms. (ii) Deduct-Amount transferred to '0051-Public Service Commission - 104 UPSC/SSC Examination Fees’. (iii) Net amount of fees retained by the Postal Department-Service Charges for sale of UPSC Forms. and Other Retirement Benefits’</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1225">Telecommunication Receipts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1275">Other Communication Services 102 Receipts from Monitoring Organisation (i) Cellular Services (ii) Basic Services (iii) Others (for Radio Paging etc.). Wireless Planning and Coordination Organisation’, ‘104- Telecommunications License Fee’ and ‘105- Universal Access levy’ will not be operational for fresh transactions w.e.f. 01-04-2019.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1401">Atomic Energy Research</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1425">Other Scientific Research</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1452">Tourism</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1453">Foreign Trade and Export Promotion 101 Receipts from Export Trade</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1456">Civil Supplies</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1475">Other General Economic Services commission received by court liquidators under Banking Companies Act. Act, Money Lenders Act, Chit Funds Act, and fees under Insurance Act. Emergency Risks (Undertakings) Insurance Scheme / War Risks (Marine Hulls) Reinsurance Scheme / Emergency Risks (Factories) Insurance Scheme may be recorded under distinct sub-heads under this minor head. sales tax and Excise duties) on account of sale of liquor etc. in States/Union Territories which purchase and sell liquor, Country spirits, Country fermented liquor etc. as a trading operation. The excise duty on such sales, however continue to be recorded under ‘0039-State Excise’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1601">Grants-in-aid from Central Government</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1605">External Grant Assistance as a Minor Head, where considered necessary.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/1606">Aid Material and Equipment EXPENDITURE HEADS (REVENUE ACCOUNT) Parliament, 2011 State/Union Territory Legislatures</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2013">Council of Ministers head will also include the salary and allowances of ‘Parliamentary Secretaries’. The expenditure on personal staff attached to Ministers/Deputy Ministers etc. will be recorded under Secretariat expenditure major head concerned except in the case of Prime Minister's office, which will be recorded under the minor head ‘Prime Minister's office’ under this major head. charges, maintenance and running of vehicles etc; rent of buildings, if any, acquired for residence of Ministers, and paid by the Public Works Department will, however, be recorded under ‘2216-Housing 01-Government. Residential Buildings-Lease charges’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2014">Administration of Justice Counsels and Solicitors, Legal Remembrance, Public Prosecutors, Government Pleaders etc. Legal charges including Pleaders' fees for instituting and defending suits etc. will be debited to the department concerned. Special Courts Act.1979.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2015">Elections and their establishment at State Headquarters and the districts. for Assembly and Parliamentary constituencies. Separate sub-heads may be opened to record distinguishable expenditure on assembly and parliamentary constituencies. Legislative Council respectively, and also expenditure on Bye-elections. Separate sub-heads may be opened, if necessary, to record expenditure on election to Lok Sabha, Rajya Sabha, Legislative Assembly and Legislative Council.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2016">Audit (i) Collection of Taxes on Income and Expenditure Collection of Taxes on Income and Expenditure Corporation Tax, Taxes on Wealth, Securities Transaction Tax and Other Taxes are in the first instance accounted for under the Minor Heads ‘Direction and Administration’, ‘Collection Charges – Income Tax’ and ‘Other Expenditure’ below this Major Head and at the end of the year the total cost of collection is apportioned among ‘Income Tax’, ‘Taxes on Wealth’, ‘Security Transaction Tax’ and ‘Other Taxes’. The formula for apportionment of cost of various Direct Taxes will be in accordance with the Office Memorandum issued for this purpose from time to time by the office of CBDT. The shares of the cost of collection so worked out are transferred to the minor Heads ‘Taxes on Wealth’, ‘Securities Transaction Tax’ and ‘Other Taxes’ (this will include expenditure on collection of residuary Estate Duty and Gift Tax) under Major Head Taxes’ (this would include expenditure on residuary FBT, BCTT, Expenditure Tax, Interest Tax etc.) under this Major Head and Research, Statistics and Publications. (ii) Collection of Taxes on Property, Capital and Other Transactions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2029">Land Revenue Holdings’ for general land revenue purposes. See also Note major head ‘2506-Land Reforms’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2030">Stamps and Registration</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2031">Collection of Taxes on Wealth, Securities Transaction Tax and Other Taxes. 102 Taxes on Wealth Expenditure’ (Minor heads ‘101-Estate Duty’ and ‘103-Gift Tax’ under this major head stand deleted w.e.f. 01.04.2012).</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2035">Collection of Other Taxes on Property and Capital Transactions (iii) Collection of Taxes on Commodities and Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2037">Customs minor head: (i) Import appraising SIB, SVB, Legal Docks and Postal appraising and Air Customs appraisement. (ii) Import Department. (iii) Import Bond Department. (iv) Internal Audit Department. (v) Statistical Department. (vi) Import Manifest Clearance Department. (vii) Refund Department. (viii) Cash and Accounts Department (Excluding expenditure accounts). (ix) Revenues Control Laboratory. (x) Customs House Laboratory. (xi) Draw Back Department. (xii) Export Department (including Export Appraising and Export Refunds). minor head: (i) Preventive Deptt. (ii) Collector of Customs (Preventive) (iii) Air Customs (Other than staff employed on appraisement work). Product Scheme. Supreme Court.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2038">Union Excise Duties the minor head ‘Preventive and other functions’ under the major head ‘2037- Customs’. See also General Direction 3.5.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2039">State Excise and control of private distilleries. Departmental distilleries will be recorded under the major head. ‘2875-Other Industries 60-Other Industries 800-Other Expenditure’. State Government and the cost of purchase of Bhang, Ganja etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2040">Taxes on Sales, Trade etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2041">Taxes on Vehicles Collection Charges under Central Goods and Services Tax &amp; Integrated Goods and Services Tax Collection Charges under State Goods and Services Tax Collection Charges under Union Territory Goods and Services Tax</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2045">Other Taxes and Duties on Commodities and Services Inspectorate. vend fees, license fees etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2046">Currency, Coinage and Mint (i) Management (ii) Operation and Maintenance (iii) Renewals and Replacements (iv) Machinery and Equipments (v) Other Expenditure (To include pension/gratuities and interest on Capital and Transfer to Depreciation Fund) (vi) Land (vii) Buildings (viii) Deduct depreciation (for presses only). (vi, vii, and viii do not form part of working expenditure) taken over at par in the Mints. It also includes loss on circulation of small coins, if any, which may be recorded under a separate sub-head. (i) Mint Masters, Estt. for each of the Mints covering 'Mint Organisations', including Assay Bullion and Operating Depts. (ii) Works (iii) Suspense, to record expenditure on purchase of Gold, Silver, Platinum, etc for manufacture of medals.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2047">Other Fiscal Services also the State Small Savings Organisation. (i) Payment to Employees Provident Fund Organisations (ii) Payments to State Governments etc. (iii) Interest on Deposits in the Additional Wages Deposits Account (iv) Interest on Deposits in the Additional D.A. Deposit Account (v) Interest on Deposits in the Additional D.A. Deposits Account (New) (i) Central Government Employees and Employees of U.Ts without Legislature (ii) Employees of U.Ts with Legislature (iii) State Government Employees (iv) Local Authority Employees (v) Non- Government Employees, other than Local Authority Employees below the Major Head 2046. Office, Calcutta, and the Central Stamp Store, Nasik under distinct sub heads.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2048">Appropriation for reduction or avoidance of debt reduction or avoidance of debt other than specific appropriations for regularly Constituted Sinking Funds.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2049">Interest Payments</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2051">Public Service Commission</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2052">Secretariat-General Services Secretariat, Finance Department, Home Department, Law Department, Revenue Department etc.) dealing with policy formulation etc. of functions under ‘A-General Services’. other offices of the State Govt. not identifiable with any particular function.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2053">District Administration</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2054">Treasury and Accounts Administration be recorded under the major head for that department</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2055">Police connection with ‘Order’ police are ultimately recoverable from Railways. general (e.g. Subsidised rations, Contributions to amenities funds, running expenses of police, Hospital etc.).</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2056">Jails which are treated as expenditure under Major head ‘2058-Stationery and Printing’. State.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2057">Supplies and Disposals Purchase Disposal &amp; Inspection Organisations like the D G S &amp; D, Other than the organisation of Civil Supplies whose expenditure will be debited to the major head ‘3456-Civil Supplies’. State Governments) will be recorded under the respective minor heads. The pay, allowances etc. of common Director General /Director will be shown under the wing having major activity. A similar procedure may be adopted for the overseas organisation like India Store Department, London and India Supply Missions, Washington.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2058">Stationery and Printing manuals etc. and their distribution including charges of Book Depots. The Cost of printing of Text Books will be recorded under the major head ‘2202-Education’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2059">Public Works</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2061">External Affairs this head only under special instructions of Government. conference / meeting.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2062">Vigilance</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2070">Other Administrative Services Tribunals the charges on which according to their importance or for any other reason cannot conveniently be adjusted under functional major heads. (i) Direction and Administration (ii) Protection and Control (iii) Training (iv) Other Expenditure Bureau of Narcotics. The proportionate charges relatable to the opium and alkaloid factories, is then transferred to the appropriate sub-head under the relevant minor head under ‘2875-Other Industries 01-Opium and Alkaloid Industries’, through a deduct entry under this minor head. and maintenance of vehicles not relating to any particular service/department and purchase and maintenance of aircrafts, if any, maintained by Government not as a regular public service. like catering, other than expenditure on construction, maintenance and repairs of the buildings which will be recorded under '2059-Public Works' or ‘4059 Capital outlay on Public Works' as the case may be. training institutes, and other general training institutes etc. (i) Explosives Act. (ii) Petroleum Act (iii) Indian Arms Act (iv) Carbide of Calcium Rules. (v) Rice-Milling Industry (Regulation) Act. (vi) Other Acts and Regulations. departments other than the Defence department, and paid by a department nominated by Government and not passed on to the occupying department, (b) deportation of foreigners (c) rewards for destruction of wild animals.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2071">Pensions and other Retirement Benefits</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2075">Miscellaneous General Services the administrative expenditure relating exclusively for lotteries only. Where the administrative expenditure is incurred for other purposes as well, the expenditure should be booked to the major head ‘2070- Other Administrative Services’. families and dependents of ex-rulers and (b) payments arising out of the Bombay Land Scheme. Please also see Note (i) Fiscal Performance linked Debt Relief and (ii) Security Expenditure linked Debt Relief.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2076">Defence Services-Army buildings and other revenue works of the Army, by the Military Engineering Service other than those relating to Coordination &amp; Services (Directorate of ordnance), research and development organisations. Military farms and Inspection organisations for which separate minor heads have been provided. Defence Production Department which may be shown under a distinct sub-head, if necessary.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2077">Defence Services-Navy</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2078">Defence Services-Air Force</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2079">Defence Services Coordination &amp; Services (Directorate of Ordnance) expenses, etc. Organisation, Inspection Organisation, M.E.S. etc. ‘903’ and ‘904’ will not be operational for fresh transactions w.e.f. 01-04-2024.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2080">Defence Services-Research &amp; Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2081">Defence Services-HQ IDS and Joint Staff</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2202">General Education</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2203">Technical Education training and education in trades to pre-matric or middle school students. The minor head ‘Polytechnics’ will record expenditure on institutions imparting education and training to post-matric students for a diploma course.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2204">Sports and Youth Services be recorded under this minor head. Hostels, National Cadet Corps, National discipline schemes etc. which will be recorded under distinct sub-heads.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2205">Art and Culture culture, including educational institutions imparting education on art and culture. education in fine arts like Music, Drama, Art, Sculpture etc. and assistance to non- government institutions imparting such education. Archaeology of the State Governments, while the minor head ‘Archaeological Survey ‘will record expenditure on Archaeological Survey of India, including expenditure on preservation of ancient monuments etc. libraries attached to educational institutions and departments.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2210">Medical and Public Health</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2211">Family Welfare Family Welfare Bureaus, and District Family Welfare Bureaus in the States. In the Centre the expenditure on the following items is recorded under this Head. (i) Technical Wing at Headquarters. (ii) Regional Health Offices and (iii) Other Offices. school children against diptheria, polio and typhoid and of expectant mothers against tetanus and (ii) prophylaxis against nutritional anaemia for mothers and children and nutritional programme for control of blindness among children. Primary Health Centres, (ii) Supply of additional vehicles for supervision at District Family Welfare Bureaus, (iii) Supply of vehicles and equipment to regional Family Welfare Training Centres and (iv) Health Transport Organisation at the Centre. (i) Sterility Centres and Helpers Scheme; (ii) Supply of surgical equipment to rural and urban family welfare Centres; (iii) Maintenance of beds and static sterilisation units; (iv) Conventional contraceptives; (v) Postpartum Centres; (vi) Supply of surgical equipment to selected hospitals; (vii) Construction of sterilisation theatres; (viii) Selected Area Programme; (ix) Intensive District Programme; and (x) Establishment of additional beds. (i) Expenditure on Family Welfare in Railways, P &amp; T and Defence; (ii) Nirodh Schemes; (iii) Central Family Welfare Corps Doctors; (iv) Awards and (v) Vehicles, etc. (i) Mass education programme including orientation camps; (ii) Mass mailing schemes and (iii) Audio visual equipments and also expenditure incurred by the Ministry of Information and Broadcasting. (i) Regional Family Welfare Centres in states (Old and New); (ii) Training of A.N.M.S and Dais and Local Health visitors; (iii) Training of personnel through I.M.A., Homoeopathic and I.S.M. Practitioners; (iv) Teaching of Family Welfare in medical colleges and (v) Demographic Research Centre. (i) Central Family Welfare Field units; (ii) Training of personnel through I.M.A.; (iii) Stipends to medical students; (iv) Family Welfare Training Centres; (v) Expenditure on L.S.M. and Homoeopathy and (vi) Experimental projects. (i) Village Health Guides; (ii) Postpartum Centres; (i) National component (ii) District/sub-Project component (c) Water Supply, Sanitation, Housing and Urban Development.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2215">Water Supply and Sanitation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2216">Housing</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2217">Urban Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2220">Information and Publicity</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2221">Broadcasting</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2225">Welfare of Scheduled Castes, Scheduled Tribes Other Backward Classes and Minorities</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2230">Labour, Employment and Skill Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2235">Social Security and Welfare</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2236">Nutrition</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2245">Relief on account of Natural Calamities</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2250">Other Social Services beyond India. the unclaimed deposit is refunded.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2251">Secretariat-Social Services heads may be opened for the different wings of the secretariat dealing with policy formulation etc. relating to functions falling in this sector.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2401">Crop Husbandry farms other than seed farms (vide Note under distinct sub-heads. Thus there will be distinct sub-heads for Jute, Cotton, Sugarcane, Potato, Tobacco, Coconut, Cashew, Arecanut, Pepper, Cardamom etc. farmers' training and education. agricultural machinery and implements including tractors. Nurseries, Kitchen gardens and Orchards, and suitable sub-heads for individual scheme or a group of schemes may be opened, with appropriate grouping under ‘Fruits’, ‘Vegetables’ and ‘Nursery’. It will, however, exclude expenditure on forest nursery' which will be recorded under the major head '2406-Forestry and Wild life.'</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2402">Soil and Water Conservation waterlogged areas, reclamation of ravine, heavy rainfall areas and forest areas, besides bunding works on agricultural lands.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2403">Animal Husbandry</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2404">Dairy Development as a minor head and will have the following sub-heads with suitable detailed heads there under, as may be found necessary, viz:- (i) Administration (iv) Distribution (ii) Procurement (v) Land and Buildings (iii) Processing (vi) Other expenditure (b) Milk Supply Schemes which are not declared as commercial will however be treated as sub-head below the Minor Head ‘Diary Development Projects’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2405">Fisheries sub-heads viz., (i) off-shore fisheries and (ii) Deep sea fisheries. The latter covers pearl and chank fisheries.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2406">Forestry and Wild Life</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2407">Plantations</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2408">Food, Storage and Warehousing</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2415">Agricultural Research and Education</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2416">Agricultural Financial Institutions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2425">Co-operation are of a Composite/General Type and cannot be properly identified with and classified under any of the various functional heads. co-operative principles, ideology and philosophy amongst the members of Co- operative Societies.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2435">Other Agricultural Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2501">Special Programmes for Rural Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2505">Rural Employment</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2506">Land Reforms Development and for the development and cultivation of ceiling surplus land assigned to the landless. recorded under this head. Other Rural Development 2515 Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2551">Hill Areas</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2552">North Eastern Areas</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2553">MPs Local Area Development Scheme</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2575">Other Special Area Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2700">Major Irrigation Each Commercial project will be a sub major head Each Non-Commercial project will be a sub major head (i) Work Charged Establishment (ii) Other Maintenance Expenditure improvements below the sub-major head ‘80-General’ to record the following expenditure: - (i) Expenditure on common establishment not pertaining exclusively to any of the sub-major heads under this major head or the corresponding Capital major head. (ii) Expenditure on common establishments not related to any particular project opened as minor head under various sub-major heads. (iii) Expenditure on general planning and research connected with irrigation, Navigation, Embankment and Drainage works.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2701">Medium Irrigation Each Commercial project will be a sub major head Each Non-Commercial project will be a sub major head (i) Work Charged Establishment (ii) Other Maintenance Expenditure improvements below the sub-major head ‘80-General’ to record the following expenditure: - (i) Expenditure on common establishment not pertaining exclusively to any of the sub-major heads under this major head or the corresponding Capital major head. (ii) Expenditure on common establishments not related to any particular project opened as minor head under various sub-major heads. (iii) Expenditure on General planning and research connected with irrigation, Navigation, Embankment and Drainage works.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2702">Minor Irrigation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2711">Flood Control and Drainage</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2801">Power</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2802">Petroleum</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2803">Coal and Lignite coal and coke' as a distinct sub-head. This will also include expenditure of the Coal Controller and his establishment, subsidies for transport of coal and expenditure on schemes for guarantee of advances to collieries etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2810">New and Renewable Energy</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2851">Village and Small Industries and Small Industries' may be recorded under suitable sub-heads as indicated below: - Management Operation and maintenance Renewals and replacements Buildings Machinery and equipment Other expenditure (to record interest on capital and contribution to funds etc.) Co-operation for specific industry will be booked under a separate sub-head e.g. Handloom Co-operatives, Sericulture Co-operatives etc. on them is solely for a specific industry e.g. Handloom, Handicrafts, and Coir etc. Industrial Estates. There will be a distinct sub-head for each Industrial Estate. Expenditure on Government Units in the Industrial Estates, will however, be recorded under the relevant programme minor heads under this major head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2852">Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/2875">Other Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3001">Indian Railways-Policy Formulation, Direction, Research and Other Miscellaneous Organisation Indian Railways code for the Accounts Department. Lines. final heads of account: - (a) Charges, the allocation of which is not known or which cannot immediately be carried to a final head (b) Inter- departmental transactions awaiting acceptance by other departments (c) Expenditure irregularly incurred for other than Public purpose in anticipation of receipts of deposits or pending realisation of the amount expended (d) Payments made in advance for stores to be supplied or transfer debits for value of stores supplied pending receipt of materials. (i) Net earnings paid to worked lines; (ii) Subsidy and rebate; and (iii) Miscellaneous Payments. Railway line under this head and will record payments of subsidy to Branch lines worked by the owning companies themselves and charges for land separately.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3002">Indian Railways- Commercial Lines-Working Expenses</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3005">Payments to General Revenues (a) Current dividend. (b) Deferred dividend in respect of the period from 1978-79 onwards. (c) Subsidy to Railways towards Dividend Relief and other concessions.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3006">Appropriation from Railway Surplus</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3007">Repayment of Loans taken from General Revenues</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3051">Ports and Light Houses</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3052">Shipping</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3053">Civil Aviation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3054">Roads and Bridges</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3055">Road Transport offices etc. following sub-heads with suitable detailed heads there under: - (a) Management (b) Operation (c) Repairs and Maintenance (d) Users' facilities (e) Buildings (f) Other expenditure (will include interest on Capital and Contribution to Funds).</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3056">Inland Water Transport offices etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3075">Other Transport Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3201">Postal Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3225">Telecommunication Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3230">Dividends to General Revenues payments from Telecommunication surplus should be recorded under distinct sub- heads under this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3231">Appropriations from Telecommunications Surplus</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3232">Repayment of Loans taken from General Revenues by Telecommunication</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3252">Satellite systems Note fresh transactions w.e.f. 2016-17.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3275">Other Communication Services and ‘103- Compensation to Service provider for Universal service obligation’ will not be operational for fresh transaction w.e.f. 01-04-2019.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3401">Atomic Energy Research</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3402">Space Research</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3403">Earth System Science sub-head ‘Research Expedition to South Indian Ocean’ under this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3425">Other Scientific Research</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3435">Ecology and Environment</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3451">Secretariat-Economic Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3452">Tourism</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3455">Meteorology Aviation, Agriculture Meteorology, Hydrometeorology, Seismological services and Agency Services. and repairs of the various instruments. part of other minor heads.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3456">Civil Supplies and '2057-Supplies and Disposals'. This Major Head will record expenditure on civil supply schemes other than those relating to food grains and pulses, such as on procurement and distribution of vanaspati, edible oils, kerosene cement etc. The element of subsidies in respect of these schemes will be transferred and finally adjusted under the minor head ‘Consumer Subsidies’. expenditure of union territories without legislature (Delhi, Chandigarh etc.) and grants-in-aid to autonomous bodies and institutions. Grants assistance to be provided to States and Union Territory Governments, out of the 'Consumer Welfare Fund', may be classified under relevant sub-major and minor heads below major heads '3601 - Grants-in-aid to State Governments' and '3602 - Grants-in-aid to Union Territory Governments'. General Financial and 3465 Trading Institutions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3466">International Financial Institutions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3475">Other General Economic Services capital major head ‘5475-Capital Outlay on Other General Economic Services’ transferred to revenue), and administrative expenditure for enforcing the land ceiling laws for which separate sub-heads may be opened. Act, Regional Directors, Company Law Board and Court Liquidators under Banking Companies Act. of Indian Partnership Act, Money Lenders Act and Chit Fund Act. (ii) Expenditure on trade representatives of State Governments. Expenditure connected with Emergency Risk (Goods) Insurance Scheme/Emergency Risks (Undertakings) Insurance Schemes/War Risks (Marine Hulls) Re-Insurance Schemes/Emergency Risks (Factories) Insurance Schemes may be booked under distinct sub- heads below this minor head. be opened as a sub-head under this minor head. D. Grants-In-Aid and Contributions Grants-in-aid to State 3601 Governments (l)</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3602">Grants-in-aid to Union Territory Governments with Legislature</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3604">Compensation and Assignments to Local Bodies and Panchayati Raj Institutions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3605">Technical and Economic Co-operation with other countries Programmes. See also General Direction No. 3.2.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/3606">Aid Materials and Equipments and commodities received from the foreign countries. In the Central books the value of the materials etc. received will be adjusted by debit to this major head by per contra credit to the receipt major head '1606—Aid Material &amp; Equipments’. In the case of aid received by or passed on to the State/UT Governments, another adjustment on the basis of its value will be made in the Central books under ‘3601/3602-Grants-in-aid to State/UTGovernments’or’7601/7602-Loans to State /UT Governments’, as the case may be, depending upon the manner of the utilisation of the aid by the State/U.T. Governments and provisions made therefore in the Central Budget. In the books of the State/U.T. Governments, the corresponding receipt will be shown against the major head ‘1601—Grants-in-aid from Central Government-02 Grants, for State/Union Territory Plan Schemes—103 Grants against External Assistance received in kind’ or ‘6004—Loans and Advances from the Central Government-02 Loans for State/Union Territory Plan Schemes-103 Loans against External Assistance received in kind,’ as the case may be, per contra debit to '3606—etc.' which will be relieved on the basis of sanctions after the materials are issued/utilised. The expenditure by State/U.T. will be shown in their books against the relevant functional major/ minor etc. head. In cases where there is an obligation to create a fund for the aid materials, accounts of such funds will be maintained on pro-forma by the departments concerned.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4000">Miscellaneous Capital Receipts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4016">Capital Outlay on Audit Capital Outlay on Currency, 4046 Coinage and Mint Deduct-depreciation (e) suspense and (f) Other expenditure. Plant and Machinery and (d) Other expenditure. relevant minor head, as per paragraph 4.3 of the General Directions. These minor heads have been retained temporarily till the balances (upto 1992-93) are segregated and transferred to the relevant minor heads. to the share holders of the RBI, consequent upon the nationalisation of the Banks, w.e.f 1.1.1949. of those imported, should be debited to the minor head ‘Nickel Coinage Account’ below the Major Head ‘8656-Coinage Account’ by contra credit (minus debit) to the Major Head ‘4046-Capital Outlay on Currency, Coinage and Mint’-Imports of Coins from Abroad-Deduct Receipts and Recoveries on Capital Outlay’. While the Debit to the Major Head’8656-Coinage Account’ will be for the face value of the coins, the minus debit to the Major Head ‘4046’ will be for the purchase price or for the proportionate purchase price in case the entire imported coins are not issued for circulation. The difference between the two should be taken as profit to be accounted for under the Mint Profit Account below the Major Head ‘8656-Coinage Account’. Capital Outlay on Other 4047 Fiscal Services (i) Land (ii) Buildings (iii) Plant and Machinery (iv)Other Expenditure and (v) Deduct-Depreciation. (i) Management (ii) Land (iii) Buildings (iv) Plant and Machinery (v) Suspense and (vi) Other Expenditure.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4055">Capital Outlay on Police etc. depending upon the schemes followed by various States. be booked under the respective minor heads. This would also record expenditure on capital expenditure relating to Central Bureau of Investigation.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4058">Capital Outlay on Stationery and Printing Expenditure’</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4059">Capital Outlay on Public Works</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4070">Capital Outlay on Other Administrative Services Tribunals the charges on which according to their importance or for any other reason cannot conveniently be adjusted under functional major heads.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4075">Capital Outlay on Miscellaneous General Services Government of United Kingdom for meeting the liabilities in respect of sterling pensions. With effect from 1-4-55, this liability was finally taken over by the Government of United Kingdom who in turn repaid to the Government of India, in</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4076">Capital Outlay on Defence Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4210">Capital Outlay on Medical and Public Health</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4211">Capital Outlay on Family Welfare (c) Capital Account of Water Supply, Sanitation, Housing</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4215">Capital Outlay on Water Supply and Sanitation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4220">Capital Outlay on Information and Publicity</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4221">Capital Outlay on Broadcasting</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4225">Capital Outlay on Welfare of Scheduled Castes, Scheduled Tribes, Other Backward Classes and Minorities</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4235">Capital Outlay on Social Security and Welfare</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4236">Capital Outlay on Nutrition</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4250">Capital Outlay on other Social Services C. Capital Account of Economic Services (a) Capital Account of Agriculture and Allied Activities</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4401">Capital Outlay on Crop Husbandry programme minor heads, wherever necessary. farms other than seed farms. head below this Minor Head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4402">Capital Outlay on Soil and Water Conservation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4403">Capital Outlay on Animal Husbandry Capital outlay on Dairy 4404 Development run milk supply schemes also.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4405">Capital Outlay on Fisheries Capital Outlay on Forestry 4406 and Wild Life</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4407">Capital Outlay on Plantations</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4416">Investments in Agricultural Financial Institutions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4425">Capital Outlay on Co- operation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4435">Capital Outlay on Other Agricultural Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4515">Capital Outlay on other Rural Development Programmes (c) Capital Account of Special Areas Programme</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4551">Capital Outlay on Hill Areas</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4552">Capital Outlay on North Eastern Areas Capital Outlay on other Special Areas Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4701">Capital Outlay on Medium Irrigation Each Commercial project will be a sub major head Each Non-Commercial project will be a sub major head Works’, ‘Spill Way’, ‘Barrage’, ‘Weir’, ‘Buildings’, ’Canals’, ‘Branches’, ’Distributaries’, ‘Water Courses’. In addition, sub heads with nomenclature ‘Advances to other Governments and agencies for common works’ and ‘Deduct- Advances recovered from other Governments and agencies for common works’, may be opened wherever necessary. ‘Locks’, ‘Quays’, ‘Wharfs and jetties’, ‘Dredging’ and ‘Buildings’. Capital Outlay on Minor 4702 Irrigation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4705">Capital Outlay on Command Area Development Capital Outlay on Flood 4711 Control projects</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4801">Capital Outlay on Power Projects Generation Generation Generation Distribution ‘Tail Race Channel’, ‘Generating Plant and Machinery’, ‘Transmission’, ‘Distribution’, 'Ancillary Works', 'Machinery and equipment, 'Buildings' and 'Other expenditure'. handing systems'. Water Treatment and Cooling', Transmission', 'Distribution', 'Ancillary Works', 'Buildings' and 'Other expenditure'. distribution schemes, which cannot be related as such to specific generating systems such as 'Hydro' or ‘Thermo' electric schemes. with suitable sub-heads there under. Expenditure of non-scheme nature such as that on ‘Load Dispatching Institute’ will however be recorded under the major head ‘4701-Capital Outlay on Major and Medium Irrigation’ and ‘4801-Capital Outlay on Power Projects’ as the case may be. Minor Head ‘104-Fast Breeder Reactors’ will not be operational for fresh transactions w.e.f. 01-04-2019. 01-04-2021 (corrigendum).</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4802">Capital Outlay on Petroleum</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4803">Capital outlay on Coal and Lignite</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4810">Capital Outlay on New and Renewable Energy Capital Outlay on Village 4851 and Small Industries Capital Outlay on Iron and 4852 Steel Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4853">Capital Outlay on Non- Ferrous Mining and Metallurgical Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4855">Capital Outlay on Fertilizer Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4856">Capital Outlay on Petrochemical Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4857">Capital Outlay on Chemicals and Pharmaceutical Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/4885">Other Capital Outlay on Industries and Minerals</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5002">Capital Outlay on Indian Railways-Commercial Lines</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5003">Capital Outlay on Indian Railways-Strategic Lines Capital bearing Dividend 01 Liability</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5051">Capital Outlay on Ports and Light Houses</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5052">Capital Outlay on Shipping</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5054">Capital Outlay on Roads and Bridges (l)</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5055">Capital Outlay on Road Transport</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5056">Capital Outlay on Inland Water Transport</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5075">Capital Outlay on Other Transport Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5201">Capital Outlay on Postal Services (a) Land (b) Buildings (c) Mail motor vehicles (d) Other motor vehicles and launches; and (e) Internal plant (i) Land (ii) Buildings (i) Civil Engineering store suspense (a) Debit Stock (b) Credit Issued to New Assets (c) Net Deposits (d) Recoveries: (e) Net Suspense (ii) Purchase (a) Debits (b) Credits (c) Net Debits (iii) Miscellaneous Civil Engineering Advances. (a) Debits (b) Credits (c) Net Debits</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5225">Capital Outlay on Telecommunication Services (l)</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5275">Capital Outlay on other Communication Services Organisation. (i) Capital Account of Science Technology and Environment</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5401">Capital Outlay on Atomic Energy Research expenditure on the acquisition of common land. The expenditure on the acquisition of land relating to a programme will, however, be booked under a sub-head ‘Land’ under the relevant programme minor head. Atomic Research’, ‘206-Centre for Advanced Technology’, ‘400-Other Research Facilities’ will not be operational for fresh transactions w.e.f. 01-04-2019. 01-04-</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5402">Capital Outlay on Space Research Capital Outlay on Earth 5403 System Science</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5425">Capital Outlay on other Scientific and Environmental Research (j) Capital Account of General Economic Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5452">Capital Outlay on Tourism</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5465">Investments in General Financial and Trading Institutions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5467">Capital outlay on Investment of National Investment Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/5475">Capital Outlay on other General Economic Services. this head. Zamindari system, when it is decided to capitalise the expenditure. debited to this head by per contra credit to the head '6001-Intemal Debt of the Central Government-compensation and other Bonds'/'6003 Internal Debt of the State Government-compensation and other Bonds' as the case may be in the sector 'Public Debt'. and Warehousing'. This minor head will record expenditure on civil supply schemes other than those relating to food grains and pulses such as on procurement and distribution of Vanaspati, Edible Oils, Kerosene etc. D. Grants-in-aid and Contributions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6001">Internal Debt of Central Government (a) Market loans bearing interest (b) Market loans not bearing interest (c) Market Loans suspense. Each denomination of loan will appear as a distinct detailed head under the sub-head (a) above. The amounts representing unclaimed balance of old loans which have been notified for discharge and have ceased to bear interest from the due date of discharge will be transferred from the sub-head (a) above to the sub-head (b) and will appear under corresponding detailed heads under the latter sub-head. These unclaimed balances are usually retained in Government Accounts as debt for</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6002">External Debt appear as a sub-head under the relevant minor heads. replenishment by Controller of Aid, Accounts and Audit (CAA&amp;A) pending transfer to existing functional minor head under the major head ‘6002-External Debt (a) 213-Loans from International Development Association (b) 216-Loans from International Bank for Reconstruction and Development (c) 250-Loans from Asian Development Bank. Internal debt of the State 6003 Government under this minor head. Accounts for 20 years from the date of their maturity after which the balances are transferred to Revenue by credit to the head '0075-Miscellaneous General Services will be debited to the head '2075-Miscellaneous General Services 800- Other Expenditure. Loans and Advances from 6004 the Central Government</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6005">External Debt Suspense Direct Payment Procedure i.e. when the amount is required to be paid by the importer. Payments to Suppliers abroad out of external loans by the Donors will initially be taken as a credit against the relevant grant/loan minor head under the major heads '1605-External Grant Assistance', '6002-External Debt' per contra minus credit to this major/minor head. This minus credit will be relieved when the deposit is received from the Indian importer.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6075">Loans for Miscellaneous General services Loans for Education, 6202 Sports, Art and Culture.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6211">Loans for Family Welfare</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6215">Loans for Water Supply and Sanitation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6216">Loans for Housing</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6217">Loans for Urban Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6221">Loans for Broadcasting Loans for Welfare of 6225 Scheduled Castes, Scheduled Tribes, Other Backward Classes and Minorities</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6245">Loans for Relief on account of Natural Calamities</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6401">Loans for Crop Husbandry Improvement Act’ and ‘Agriculturist's Loan Act’. If they are related to the function 'Agriculture'. If however, such loans are for the purpose of ‘Minor Irrigation’, ‘Soil Conservation’ or ‘Area Development’ they will be accounted for under the relevant minor heads below the Major head ‘6402-Loans for soil and water conservation’. This minor head will also include transactions on account of loans for the development and cultivation of ceiling surplus land assigned to the landless. Loans for Soil and Water 6402 Conservation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6403">Loans for Animal Husbandry Loans for Dairy 6404 Development</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6405">Loans for Fisheries Loans for Forestry and Wild 6406 Life</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6407">Loans for Plantations</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6416">Loans to Agricultural Financial Institutions</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6425">Loans for Co-operation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6435">Loans for other Agricultural Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6505">Loans for Rural Employment</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6506">Loans for Land Reforms Loans for other Rural 6515 Development programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6551">Loans for Hill Areas</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6552">Loans for North Eastern Areas Loans for other Special Areas 6575 Programmes</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6700">Loans for Major Irrigation Each Commercial project will be a sub major head Each Non-Commercial project will be a sub major head</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6701">Loans for Medium Irrigation Each Commercial project will be a sub major head Each Non-Commercial project will be a sub major head</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6702">Loans for Minor Irrigation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6705">Loans for Command Area Development Loans for Flood Control 6711 Projects Loans for Power Projects electric (excluding diesel), diesel and Hydro-electric power and their transmission and distribution will be accounted for under the minor heads, ‘Thermal Power Generation’, ‘Diesel/gas power generation’, ‘Hydel Generation and ‘Transmission and Distribution’ respectively. Other loans to Electricity Boards, not identifiable with any of these minor heads will be accounted for under the minor head ‘Other Loans to Electricity Boards’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6802">Loans for Petroleum</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6803">Loans for Coal and Lignite Loans for New and 6810 Renewable Energy</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6851">Loans for Village and Small Industries Loans for Iron and Steel 6852 Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6853">Loans for non-Ferrous Mining and Metallurgical Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6855">Loans for Fertilizer Industries Loans for Petro-Chemical 6856 Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6857">Loans for Chemical and Pharmaceutical Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6859">Loans for Telecommunication and Electronic Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6861">Loans for Atomic Energy Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/6875">Loans for other Industries</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7002">Loans to Railways liability for this period is extinguished. Loans for Ports and Light 7051 Houses</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7052">Loans for Shipping</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7053">Loans for Civil Aviation</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7055">Loans for Road Transport</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7056">Loans for Inland Water Transport Loans for Other Transport 7075 Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7225">Loans for Telecommunication services Loans for other 7275 Communication Services</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7425">Loans for Other Scientific Research</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7452">Loans for Tourism</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7453">Loans for Foreign Trade Export Promotion Loans for General Financial 7465 and Trading Institutions Loans to International Financial Institutions organisation/Institution.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7475">Loans for Other General Economic Services Loans and Advances to State 7601 Governments</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7605">Advances to Foreign Governments the Government of Hungary.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7610">Loans to Government Servants etc Parliament and State Legislatures, Members of Parliament/Members of State Legislatures for the purchase of motor conveyances and House Building advance to Members of State Legislatures shall be, recorded under this Major Head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7615">Miscellaneous Loans</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7810">Inter State Settlement Government to another under the financial settlement on the setting up of new States or under the States Re-organisation Acts as well as the financial settlement between the centre and foreign countries. Minor heads other than those provided for may be opened as and when necessary. These minor heads will close to Government in the Ledger. H. Transfer to Contingency Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/7999">Appropriation to the Contingency Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8000">Contingency Fund Contingency Fund, and debited under the major head ‘7999- Appropriations to Contingency Fund’, will be credited under this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8001">National Savings Deposits National Savings 8002 Certificates Cash Certificates, Savings Certificates of different denominations etc. head ‘0075-Miscellaneous General Services 101-Unclaimed Deposits’, at the end of</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8006">Public Provident Funds</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8007">Investments of National Small Savings Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8008">Income and Expenditure of National Small Savings Fund of Small Savings Collections Subscribers</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8009">State Provident Funds</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8010">Trusts and Endowments and other Nagpur Temples’ and ‘Non-Transferable Note at 4% (Madras)’. maintenance of Madho Rao' will be recorded under separate sub-heads under this minor head. This minor head will include inter alia transactions relating to 'Deposits of Assam Willamson Education Endowments Fund (Assam)' 'Deposits of Gopal Chandra Trust Fund ‘(Assam)’, 8% and 6% Perpetual loans (Madras and other similar trusts, if any, for each of which there will be specific sub-heads). Insurance and Pension 8011 Funds State Governments with specific sub-heads for Life Insurance Schemes and General Insurance Schemes. of Govt. servants, Bengal Un-covenanted Service Family Fund, General Family Pension Fund of GRADE IV Governments Servants, Hindu Family Annuity Fund etc., under distinct sub-heads. distinct sub-heads. by all concerned accounting authorities, Apportionment thereof will however be done by the C.G.A.'s Organisation between the following two sub-heads: - (a) Insurance fund (b) Savings Fund Territory as the case may be e.g. ‘Punjab State Government Employees' Group Insurance Scheme’. This minor head will have two sub-heads viz: - (a) Insurance Funds (b) Savings Fund Special Deposits and 8012 Accounts ‘01-Scrips Issued’ ‘02-Scrips Written Back’. Deposit (vi) 06- Status Holders Incentive Scheme (SHIS) Scrips Deposit Scrips Deposit ‘01-Scrips Issued’ ‘02-Scrips Written Back’.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8013">Other Deposits and Accounts</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8031">Other Savings Deposits deposit notified from time to time such as One Year, Three year and Five Year Time Deposits, 5 Years, 10 Years, 15 Years Cumulative Time Deposit Accounts, Treasury Savings Bank Deposits, Treasury Fixed time deposits, etc run by the State Governments.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8032">Other Savings Certificates Cash Certificates, Savings Certificates of different denominations etc. run by the State Governments.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8115">Depreciation/Renewal Reserve Funds purchased from these funds are also credited to these heads. department/undertaking may be recorded under a distinct sub-head below these minor heads. this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8116">Revenue Reserve Funds</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8117">Development Funds (a) All works relating to amenities for passengers and other Railway users including additions to existing or new works, provided that, where the original cost of the existing work was charged to Revenue, being within the new Minor Works limit, the whole cost of a new work replacing the old one shall be charged to the Development Fund. The items which constitute amenity works are listed in Note 2 (A) below para 910 of Indian Railway General Code, Vol. I. (b) Labour Welfare works including additions to existing or new works estimated to cost individually above Rs. 25,000. (c) Un-remunerative works for improvement of operational efficiency costing more than Rs. 3 lakhs each. (d) The cost of construction of New Lines, completed before 1st April, 1955 or in progress on that date which are necessary but un-remunerative. For this purpose the cost of an un-remunerative project except land will, in the first instance, be charged to the Railway Development Fund and adjustment between Capital and Railway Development Fund will be made after the results of actual working in the sixth or any earlier year after opening are available so that the yield on the portion debited to Capital reached the prescribed standard of remunerativeness, the balance being debited to the Railway Development Fund to the extent necessary. Each such case will be decided by the Railway Board. The details of expenditure to be booked under items (a), (b) and (c) above are given in the explanatory Note Nos. 47, 48 and 49 respectively in Appendix- xi to the Indian Railway Code for Accounts Department, Part I (Third Reprint. 1957). Interest on the balances of this fund as well as interest and dividends on securities purchased from this fund are also credited to this fund.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8118">Capital Reserve Funds Receipts (i) Appropriation from Posts and Telegraphs Surplus. (ii) Supplementary Depreciation towards inflationary element. General and other Reserve 8121 Funds Government commercial departments such as the General Reserve Fund of Light Houses and Lightships, and Deposits of other Reserve Funds of Government commercial undertakings. Each fund may be recorded under a distinct sub-head. payments over the years, that will otherwise arise. Reserve Funds of the Nuclear Power Schemes. For this purpose a separate sub-head may be opened for the Contingency Reserve Fund of each Nuclear Power Station. (i) 01-Unclaimed Deposits (ii) 02-Interest on Unclaimed Deposits. Compensatory Afforestation, Additional Compensatory Afforestation, Penal Compensatory Afforestation, Net Present Value of Forest Land, Protected Areas (National Parks, Wildlife, Sanctuaries) etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8222">Sinking Funds</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8223">Famine Relief Fund Bengal Famine Insurance Fund’ in West Bengal, the nomenclature of this minor head may be modified accordingly. When more than one fund other than this statutory fund is in operation in any State e.g. Famine Fund Deposit Account (Bihar) each such fund may be exhibited under a separate sub-head, below this minor head. The account of this fund may be exhibited under the following distinct sub-heads: - Transfers from the revenue account Interest receipts. Gain on realization of securities Other receipts Transfers to the revenue account. Transfers to general balances for repayment of debt. Transfers to the general balance for financing loans to cultivators etc. Loss on realization of securities. Other payments. Wherever it is decided to transfer amount from this fund to general balance either for repayment of debt or for financing loans to cultivators etc. such amounts shall be debited to the sub-heads ‘Transfers to general balance for repayment of debt’ and ‘Transfers to general balances for financing loans to cultivators etc.’ respectively by per contra credit to ‘8680- Miscellaneous Government Account 101-Ledger Balance Adjustment account’. Calamities of all types such as floods, drought, earth-quakes etc. Central Road and 8224 Infrastructure Fund (l) (i) A duty of excise and customs on motor spirit (commonly known as petrol) and high-speed diesel oil; (ii) Road and Infrastructure Cess; (iii) Grants and Loans by the Central Government. The amount sanctioned each year for transfer to this fund is credited to concerned The accounting procedure for allocations from this fund and expenditure therefrom</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8225">Roads and Bridges Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8228">Revenue Reserve Funds (Gujarat)' and similar other temporary Revenue Reserve Funds, if any, in other States, which should be distinctly recorded under sub-heads below this minor head. Development and Welfare 8229 Funds ‘Scholarship Fund', 'Education Cess Fund', 'Non - Government Schools and ‘Colleges Loan Fund (Assam),' 'Fund for Development of Hindi and other State Languages' etc., which would be recorded under distinct sub-heads. Where any such fund is invested, the corresponding investments should also be exhibited under a distinct sub-head. of Haffkine Institute', ‘Fund for development of Water Supply (Madras)' etc., which should be recorded under distinct sub-heads. Where any of the funds are invested, the corresponding investment should also be exhibited under distinct sub-head. Cess Fund' etc. which should be recorded under distinct sub-heads. Where any of the funds are invested, the corresponding investments should also be exhibited under distinct sub-heads. Textile Fund' 'Reserve Fund for protection of Sugar Industry' etc. as distinct sub- heads. If any of these funds are invested, the investment accounts should be exhibited under distinct sub-heads. Investment Account' etc. as distinct sub-heads. Fund’, ‘Coal Mines Central Rescue Station Fund’, ‘Kerala Mining Areas Welfare Fund’ ‘Salt Mines Welfare Fund’ etc. will appear as distinct sub heads under this minor head. Development and Reserve Fund (Mysore)', 'Village Development Fund', 'Fund for village reconstruction and Harijan uplift', 'Teachers gratuity fund', ‘Fund for the benefit of cotton growers', 'Fishermen's relief fund', 'Flood and Fire emergency fund', 'Sugar Research and Labour Housing Fund', 'Fund for the promotion of education amongst the educationally backward classes' etc. as distinct sub-heads. adjusted by per -contra credit to sub-head 'Deduct - Amount met from Consumer Welfare Fund' under the minor head 'Transfer from reserve funds' below major heads ‘3456’, ‘3601’ &amp; ‘3602’ which may be opened according to the need. Kosh’ at Sub-Head level.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8230">Special Railway Safety Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8231">Railway Safety Fund Rural Employment 8232 Guarantee Funds</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8235">General and other Reserve Funds corresponding investments should be shown under distinct sub-heads. Also includes transactions pertaining to the following funds which should be recorded under distinct sub heads. (i) Emergency Risks (Goods) Insurance Fund, 1962 (ii) Emergency Risks (Factories) Insurance Fund, 1962 (iii) Emergency Risks (Goods) Insurance Fund, 1971 (iv) Emergency Risks (Undertakings) Insurance Fund, 1971 (v) War Risks (Marine Hulls) Re-insurance Fund, 1971 (i) Publication Fund (Assam). (ii) Magh Mela Fund (U.P) (iii) Nazul Fund (Lucknow). (iv) Motor Transport Reserve Fund. (v) State Equalisation Fund. (vi) Silver Redemption Fund. recorded under distinct sub-heads under this minor head. Territory, as the case may be.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8336">Civil Deposits (which were also earning interest with the banks) under Emigration Rules, 1983 and which are transferred by State Bank of India, Bombay and State Bank of Patiala, New Delhi to Government Accounts. (Each Sub-Head may be divided into Detailed Head for various activities viz. Compensatory Afforestation, Additional Compensatory Afforestation, Penal Compensatory Afforestation, Net Present Value of Forest Land, Protected Areas (National Parks, Wildlife, Sanctuaries) etc. Compensatory Afforestation, Additional Compensatory Afforestation, Penal Compensatory Afforestation, Net Present Value of Forest Land, Protected Areas (National Parks, Wildlife, Sanctuaries) etc.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8337">Deposits of Railways head under this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8338">Deposits of Local Funds sub-head. have been declared as Local Funds. Deposits in respect of each such fund will be recorded under a distinct sub-head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8342">Other Deposits separate sub-head. a distinct sub-head for each type of deposit.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8443">Civil Deposits administration. Principal Account Officers of Ministries/Departments. Defence Departments, and Security Deposits realised by the Police Department under the Motor Vehicles Tax Act or other Acts. In the case of earnest money deposits of intending tenderers of the P.W.D., these relating to successful tenderers, where the Departmental officers of the P.W.D. desire that these deposits should be transferred to the credit of the P.W. Department as security deposit of contractors, they may be transferred to the minor head ‘P.W.D. deposits' in terms of 188 of Central Government Accounts (R &amp; P) Rules 1983. This head also includes cash security deposits realised under the financial rules of the Government and Security Deposits under Emigration Rules, 1983. Cash security deposits of subordinates of the P.W.D. realised in public works divisions will, however, be credited under the minor head 'public works deposits'. Income-tax Officers who receive such deposits may be distinguished in inner columns. Civil or Criminal Court Deposits). Details such as ‘Wards’ and ‘Attached Estates Deposits’ and ‘Trusts and Endowments’ may be kept in the local accounts. of interest on the securities held by the Accountants General and other Government Officers acting as Treasurers of Charitable Endowments under the Charitable Endowments Act and also for making payment of arrears of interest etc. from out of the accretions and balances lying at the credit of this head. and other outside bodies etc., on account of value of stores purchased by them through the Director General of Supplies and Disposals of Government of India or other Central stores purchases organisations etc. in the State Government Credit/Loan agreements are adjusted under a sub-head ‘Purchases under Credit/Loan agreements’, while those relating to other purchase and procurements, viz. through the I.S.M. etc. are taken to a sub-head ‘Other purchases.’ Suitable detailed heads may be opened for each Credit/Loan agreements wherever necessary. Another sub- head ‘Miscellaneous’ is intended to account for the rupee deposits made by the State Electricity Boards on account of inspection charges. ‘Deposits under Section 22-D of Minimum Wages Act, 1948’, ‘Deposits under the Contract Labour (Regulations and Abolition) Act, 1970’, ‘Deposits of the surplus estates of deceased officers, deserters and others of the Indian Army’, ‘Deposits under the Bombay Public Conveyance Act’, etc. independent of Government for payment of compensation for land acquired for such bodies are credited to this head. Fees deposited by the Indian Nationals for procurement of Educational Certificates etc. for them from the Bangladesh authorities (Through Indian High Commission in Bangladesh) will also be recorded under this minor head. undistributed assets of companies in official or voluntary liquidation. Insurance under Section 93 years from the date on which any sums have been made over to the Superintendent of Insurance an order of a Court of competent jurisdiction has not been obtained at the instance of any claimant to such sums for their disposal, the said sums shall become the property of Government. heads: - distinct sub heads. payments have not been taken within the prescribed period after they become payable under the P.F. rules, should be transferred to these heads at the end of each year, and dealt with under the ordinary rules relating to deposits, namely that action shall be taken to lapse all deposits to Government, keeping in view the provisions of Rule 189 of Central Government (Receipt and Payment) Rules, 1983 or Rule 635 of C.T.Rs. or the corresponding provisions in the State Treasury Rules/Codes etc. The amount should, by transfer, be credited to the head of account ‘0075-Misc. General services-unclaimed deposits’, after keeping a note in the Register of deposits against the relevant items. brought under the other distinct minor heads under this major head. These include ‘Deposits of the District Chowkidar Reward Fund, Assam’, ‘Deposits of the Assam Village Development Fund’, ‘Deposits of the Coal field Recruiting Organisation’, ‘Municipal Taxes on Government Residential Buildings’, ‘Sinhastha Mela Fund (MP)’, ‘Official Receivers Remuneration Fund’, ‘Cash Deposits of retiring Government servants’ etc. Separate sub-heads may be opened for each of these deposits, under this minor head.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8444">Defence Deposits</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8445">Railway Deposits etc. pending distribution thereof to the Depositors.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8446">Postal Deposits</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8447">Telecommunication Deposits</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8448">Deposits of Local Funds Parishad Funds’ etc. which may be exhibited under distinct sub-heads. be shown under distinct sub-heads.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8449">Other Deposits taken from Government. Governments are initially recorded under this minor head, pending eventual transfer to the major head ‘Internal Debt of the State Governments/Central Government Market Loans’ on receipt of details from the Reserve Bank of India, Bombay. which cannot be accommodated under any of the other minor heads under this major head. Separate sub-heads may be opened for each type of such deposits. (i) Transition Account under Indo-US Agreement, 1974. (ii) Cooley Account under the Indo-US Agreement, 1974. (iii) Rupee Account under the Indo-US Agreement, 1974. (iv) Dollar Denominated Account under the Indo-US Agreement, 1974. IBRD Loan No. No……….. (JPY) …………etc. Customs Act, 1962’. These Sub-heads will be credited from the un-apportioned components of IGST</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8450">Balance Account of Union Territories</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8451">Bhopal Gas Leak Disaster Relief Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8452">National Investment Fund</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8453">Income and Expenditure Account of National Investment Fund Funds under Treasury 8454 Single Account (TSA) System Each Department will be a Minor Heads may be opened corresponding to Sub Major Head the Section ‘Expenditure Heads (Revenue Implementing Agencies including Statutory Bodies and Central Public Sector Enterprises (CPSEs). Section ‘Expenditure Heads (Revenue Account)’ to which the Grants are being awarded. For this purpose, the nomenclature of the Minor Head may indicate the function as per sub-major head or as per major head, in the absence of a sub-major head, on the revenue expenditure side followed by the programme minor head. For example &quot;Adult Education - Rural Functional Literacy Programmes&quot;, &quot;Crop Husbandry - Agricultural Engineering&quot;, &quot;Consumer Industries - Textiles&quot; etc. When the nomenclature of the sub-major head does not give an indication of the concerned function, the nomenclature of the Minor head will indicate the name of the major head also within brackets after the sub-major head. For example &quot;General (Medical &amp; Public Health) - Health Statistics and Evaluation&quot;, &quot;General (Nutrition) - Diet Surveys and Nutrition Planning&quot; etc. Where it is not possible to identify the Grants with any programme distinctly, the minor head will indicate the relevant sub- major/major head as above followed by the words &quot;Other Grants&quot;, e.g. &quot;General (Education) - Other Grants”, &quot;Crop Husbandry - Other Grants&quot;, etc. Sub and Detailed Heads corresponding to the Section ‘Expenditure Heads (Revenue Account)’ to which the Grants are being awarded. Under each Minor Head separate Sub-head ‘99-Uncredited items under Treasury Single Account System’ may be opened.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8455">Settlement Account with India Post Payments Bank (IPPB) This Sub-Head 02 will be divided into following Detailed-Heads: would be zero.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8550">Civil Advances Sub-Heads Detailed Heads Advance for Survey Advances for boundary pillars. Operations Excise Advances Abkary Advances departmental purposes. Separate sub heads may be opened for departmental advances granted by High Commission for India in London. and advances to the families for deceased Government servants under the provisions of Rule 262 This will also include transactions of the nature of Special Advances. For each such advance, a separate sub-head may be opened.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8551">Defence Advances</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8552">Railway Advances</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8553">Postal Advances</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8554">Telecommunication Advances</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8656">Coinage Accounts have to be excluded from the general available cash balance) by credit for the opening and debit for the closing balance of each account. Principal Accounts Officer, Department of Economic Affairs, Ministry of Finance. Remittances'. Ministry of Finance Deptt. of Economic Affairs on receiving the requisite information from the Mint Master through the latter's monthly account, debiting Coinage Accounts (Part I Bronze and Copper Coinage Account) with the nominal value of coins manufactured by per contra credit to (i) the Capital head ‘4046- Capital Outlay on Currency, Coinage and Mint’ to the extent of the value of the material utilised and (ii) Coinage Accounts (Part II-Mint Profit Account) for the difference representing gross profit on manufacture. The amount of gross profit adjusted is intimated to the Principal Accounts Officer, Department of Economic Affairs, Ministry of Finance to enable them to complete part II. portion which belongs to the amount of coins issued for circulation that is passed out of Mint and Depots combined. The sum of the gross profits brought forward from follows: -</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8658">Suspense Accounts (excepting Defence, Railways, Posts and Telecommunications), State Governments and Union Territories Governments/Administrations. The amounts placed under various suspense minor heads below this major head will be cleared by minus debit or minus credit as the case may be. in the books of a Central P.A.O. separated Accounts Officers of Union Territories, and by Accountants General where the other party involved is a P.A.O. Separate sub-heads ‘Transactions adjustable (Name of the Central PAO/State Accountant General / Railways /Defence/ Posts/Telecommunication Accounts Officer concerned) will be opened under this minor head for each Accounts Officer with whom transactions are to be settled. This minor head is not to be operated in cases where the transactions of Receipts and Payments that are eventually to be credited or debited under Consolidated Fund excepting the transfer of outstanding balances under HBA/MCA from one Ministry/Department to another. For such cases General Directions No. 2.3 and 3.1 may please be referred to. P.A.O. Supply would continue to operate this minor head as hitherto fore. Sub-head (a) is meant to be operated upon in the books of Accountant General to accommodate provisionally difference noticed between figures incorporated in Treasury Lists of Payments/Cash Accounts, and the corresponding schedules of payments/receipts accompanying thereto, which could not be rectified at the stage of incorporation of the figure of the list of Payments/Cash Account in the Detail Book. Cases where the schedules themselves are wanting along with the supporting vouchers etc. may also be adjusted under this sub-head. The amounts initially kept under this sub-head will be cleared and taken to the heads of accounts concerned when the differences are settled on receipts of necessary clarifications/wanting schedules etc. from the Treasury Officers. Sub-head (b) will be operated upon by compilation sections of A.G.'s Offices when during the course of compilation of vouchers with reference to the Schedules of payments from treasuries, vouchers are found wanting and thereby a difference is credited between the Schedule of totals and total of the vouchers compiled. By operating on this head, response by minus debit should be made in the classified Abstracts to the full amount of the debit earlier given to the head 'Departmental Adjusting Account' (equal to the totals of Treasury Schedules). The amounts initially taken under this sub-head will be cleared minus entries under this sub-head by per contra debit to the head of account concerned. Sub-head(c) is meant for initial recording of expenditure on account of payment of outstation pay allowances etc. for March by bank drafts issued in the month of March which is to be adjusted against the final head of account in the accounts for the month of April. Such initial debits will be cleared by affording minus debits. Sub-head (d) will be operated upon by Accountants General to adjust provisionally items received through the Inward Settlement Account from other Accountants General / Pay and Accounts Officers for which full particulars/vouchers etc. are wanting. Sub-head (e) will be operated in circumstances where the original cheque had been cancelled and fresh cheque in lieu thereof had been issued but later on the original cheque had been found to have been enchased. This sub-head will be cleared by recovery of the amount from the payee or otherwise written off. Sub-head (g), (h), (i) and (j) are meant to be operated only in the State Section of the books of an Accountant General for affecting settlement of transactions with Railways, Defence, Posts and Telecommunication arising in his books. Detailed heads corresponding to each Accounts Officer or Railways / Defence / Posts / Telecommunications with whom transactions are required to be settled by each Accountant General may be opened under these sub-heads according to actual requirements. Sub-head (k) will be operated upon by the Accountant General of U.T. Governments/Administrations in the Central Section for initial accounting and subsequent settlement of transactions originating in their accounts which are finally adjustable in the accounts of another Accountant General. The heads at (l) and (m) will be operated upon for adjustments of missing credits/debits of House Building Advance/Motor conveyance Advances relating to pre-departmentalisation period on the basis of collateral evidence. These Heads will also be operated upon in the Accounts of State Governments for adjusting the missing credit/debit of H.B.A. / M.C.A. of the State Government Employees adjusted on collateral evidence basis. The sub-head at (n) will be operated by all the Civil Accounts Officers including Accountants General in whose books the N.D.F. collections appear as deduction from the salary etc. bill of the Government servants. This head will be cleared by issue of cheque/demand draft in favour of the R.B.I. The sub-head at (o) will be operated upon by PAOs to account for the un-credited items under E Payments, received from the accredited bank. This head shall be cleared by issuing Cheques to the concerned parties or otherwise in consultation with DDO concerned. From 1-4-93, this minor head will not be operated for fresh transactions by the Central Pay and Accounts Offices excepting Cabinet Secretariat. However, this head will be operated for clearing the old balances. State Government This minor head will be used for settlement or transactions between public works divisions rendering accounts to the same Accountant General and will be operated in the State Books receiving compiled accounts from the Public Works Divisions. The intention is that this minor head will exclusively be operated upon initially as a transitory head by a Works Division which renders services/makes supplies to another Works Division (or accept some receipts/revenue on behalf of another Division pending issue of cheques or Bank Drafts by it to the Division clearance thereof by it on receipt of cheque or bank draft from the recipient Division or pending concerned). For the detailed procedure to be followed in this regard a reference is invited to Appendix 7 to C.P.W A. Code. Offices which are banking with Public Sector Banks. Amounts of cheques issued by the concerned PAO and by cheque drawing D.D.Os in account with the PAO, paid by the accredited Public Sector Bank will be credited to this minor head by affording per contra minus credit to '8670- Cheques and Bills etc'. Amount of receipts scrolls by the Public Sector Banks will be debited to this minor head by affording corresponding credit to the relevant receipt heads. On receipt of the monthly statement of transactions from the R.B.I. (C.A.S.) Nagpur credits and debits under this minor head will be cleared by the Principal Accounts Office by affording minus credits and minus debits to the extent of amounts adjusted on account of these transactions in the books of the R.B.I. This minor head has been introduced with a view to keep apart total amount of the transactions which have occurred at Public Sector Banks but which are yet to be adjusted against the Central Government Account maintained by the R.B.I. (C.A.S.) Nagpur. The progressive balances outstanding on credit and debit sides under the minor head Public Sector Banks Suspense in the books of the Principal Accounts Officer concerned will represent respectively the payments and receipts of the Ministry/Department handled by its accredited Public Sector Bank for which either settlement remains to be effected between the Public Sector Bank and the Reserve Bank of India or non-clearances therefrom by the Principal Accounts Offices due to non-receipts of monthly statement (s) of transactions from the RBI CAS, Nagpur before the close of the monthly accounts of relevant month. Causes for the said non- settlement will generally be (i) delay in receipt of memorandum of transaction (s) by link bank from branch banks, (ii) delay or omission on the part of link banks in including the amount of branch bank memorandum in their daily advice to Reserve Bank of India, (iii) difference between amounts indicated in branch bank memo (which gets reflected in link bank advice) and the correct amounts of cheques paid / receipt challans scrolled and (iv) erroneous classification of transactions of a Ministry/Department against another Ministry/Department in its advice (s) by a branch or link bank of a Public Sector Bank which handles transactions of more than one Ministry/Department. Similarly, in the monthly Civil Accounts of the Government of India consolidated by the Controller General of Accounts, progressive figures of credit and debit balances outstanding under the head ‘Public Sector Bank Suspense’ will give a total picture thereof relating to all Civil Ministries/Departments put together. and by Accountants General of U.T. Governments / Administrations in their Central Section of account in connection with debits and credits appearing in bank scrolls on account of cash settlement of inward accounts received by him on account of inter- Government transactions from a separated Pay and Accounts Office or Accounts Officers of Defence, Railways, Post and Telecommunication pending adjusting of the accounts received from the other party. Separate sub-heads ‘Transactions adjustable by ............... (Name of the Central PAO/Defence/Railways/Posts/ Telecommunication Accounts Officer) ‘Shall be opened under this major head for each Accounts Officer with whom the transactions are to be settled. The amounts so adjusted will be cleared by minus debit or minus credit, as the case may be. issuing advices to the Reserve Bank of India, Central Accounts Section, Nagpur to effect transfer from the balances of Central Government (Civil) to that of the State Government (except J&amp;K and Sikkim Governments) in connection with payment of loans, grants-in-aid, State Government share of Income-Tax, Union Excise duty etc. by debiting the concerned heads in their books. This Suspense head will be cleared by means of a minus credit by per contra credit to the head ‘8675- Deposits with Reserve Bank- Central Civil’ on receipt subsequently of the clearance memo from the Reserve Bank of India, Central Accounts Section and Nagpur. At the time of repayment of loan and payment of interest thereon by the State Government, the State Accountant General advises the Reserve Bank of India, Central Accounts Section and Nagpur with a copy to the Principal Accounts office of the Ministry/Department concerned. On receipt of the advice the Central Accounts Office of the Reserve Bank of India, Nagpur debits the balances of State Government and passes on the credit to the Central Government under intimation to the Principal Accounts Office concerned .On receipt of the copy of the advice from the Accountant General and/or the intimation from Central Accounts Office of the Reserve Bank of India, the Principal Accounts Office credits the appropriate loan/interest head by contra debit to 'Reserve Bank Suspense - Central Accounts Office'. On receipt of clearance memo from the Reserve Bank, the Principal Accounts Office links it with the copy of the advice from the A.G. and /or intimation from the Reserve Bank and clears the suspense head by ‘minus ‘ debit by per contra debit to the head ‘8675 Deposits with the Reserve Bank - Central Civil’ by means of a Transfer Entry. The State Accountant General debits this suspense head on receipt of copy of advice from the Principal Accounts Office of the Union Ministry/ Department in State Section of his books by per contra credit to the relevant minor heads under the appropriate major head. At the time of issue of an advice for repayment of loan and payment of interest thereon to the Reserve Bank of India, Central Accounts Section, Nagpur, the State Accountant General debits the relevant State head of Account by per contra credit to this suspense head. This suspense head will be cleared by means of minus credit on receipt of clearance memo from the Reserve Bank by credit to ‘8675 - Deposits with Reserve Bank - States - CAS Reserve Bank’. for the provisional adjustment of departmental receipts and payments which are entered by the treasury in separate Schedules. The amounts so adjusted are cleared by minus credit and minus debit afforded through the Departmental Classified Abstract in which the transactions are finally brought to account. This head is also used for the provisional adjustment of inter- departmental transfers. deducted at source, while effecting payments of interest on State Government securities, of salary bills of State Government employees, of pension bills etc. by State Treasury officers/State Pay and Accounts Officers/ other Departmental Officers who render compiled accounts of State Government as well as from interest payments on State Government securities made at Public Debit offices of the R.B.I in the books of State Accountants General to enable them to settle transactions with Zonal Accounts Officers concerned of C.B.D T by means of Cheques/Bank Draft. accounts should be credited or debited in the first instance to this minor head and under the appropriate sub-head from among those specified below: - Receipts I. Renewals and enfacement fees on G.P. Note. II. Commission for management of Public Debt. III. Brokerage commission etc. on new loans. IV. Postage and telegram charges and out of pocket expenses in connection with new loans V. Postage and telegram charges reimbursed to Public Debt office VI. Miscellaneous. VII. Balance due from the Reserve Bank VIII. Cost of note forms Payments IX Charge for remittance of treasure: (a) Police escort charges. (b) Cost of boxes cart and coolie hire etc (c) Pay and allowance of pardars. (d) Railway and Steamer freights. X Dividend on R.B Shares XI Miscellaneous. XII Balance due to the R.B.I. Transactions on account of Reserve Bank occurring at treasuries or Sub-treasuries should be carried by the State Government in whose Jurisdiction the Treasury is situated, until they are cleared by the Accountant General / Pay and Accounts Officer (Department of Economic Affairs) with the Reserve Bank. Transactions brought to account under this head by adjustment in Accounts Offices should be classified as Central or State according as the Office of the origin is Central or State. Explanation: - Charges for remittances of treasure, for which the RBI is liable, include charges for keeping currency chests supplied with sufficient Note and coins. Charges for remittance of small coins between regular Small Coin Depots and treasuries and sub-treasuries where there are currency chests charges for remittance of un-current coins when sent separately. Scheme made from A.I.S. Officers of a State cadre shall be classified under the sub- head ‘Subscriptions’ pending adjustment by State Accountant General against advance payments made by the State Governments to the Central Government. The advance payments made by the State Governments to the Centre Government shall be classified under the sub-head payment to Central Government of the subscriptions in respect of A.I.S. Officers Group Insurance Scheme. ‘This Minor Head will be operated for direct purchases of stores in cases where payment has not been made in the same month in which stores have been received. This Minor Head will be cleared when cheque is issued to the Supplier/Contractor. Unclaimed balances for more than three complete account years under this Minor Head shall be cleared by credit to Revenue’. However, in exceptional cases as referred to in Rule 140 of General Financial Rules, 2005, where indents have to be projected to DGS&amp;D, the payment made to PAO (Supply) by the PAO of the Division will be classified as minus credit under a distinct sub-head ‘Payment for purchases through DGS&amp;D’ under this minor head in the books of the PAO. On receipt of stores, the Divisions will credit the value of stores under a distinct sub-head ‘Purchase pending payment/adjustment under this minor head per contra Debit to Suspense Stock’. The PAO memo when received from the office of the PAO, the Divisions after verifying the correctness of the amount with reference to materials received will credit to the sub-head ‘Payment for purchases through DGS&amp;D’ below this minor head per contra minus credit to the sub-head ‘Purchases pending payment/adjustment’ under which credit was originally given on receipt of the materials. The credits under the sub-head ‘Payment for purchases through DGS&amp;D’ appearing in Divisional Accounts on account of adjustment of PAO Memos will be paired off/netted with the minus credit under this sub-head given by the PAO of the Division. (b) State The cost of stores received either by purchase or through inter-divisional transfers, shall be accounted for initially under this suspense head in all cases where the payment had not been made in the same month of receipt of stores. This head shall be cleared by a contra entry (minus credit) on making payment to the supplier/Division supplying stores. Unclaimed balances for more than three complete account years under this minor head shall be cleared by credit to revenue. Services Tax (GST) deducted at source, in the books of Central P.A.O., separated Accounts Offices of Union Territories and State Accountants General to enable them to settle transactions with CBIC as per instructions issued by Department of Revenue from time to time. Authority i.e. Pr. CCA, CBIC towards refund of State GST on behalf of States/UTs on the basis of sanctions generated by the Governments of States/UTs. The amounts placed under various sub-heads below this Minor Head shall be cleared by debiting the concerned State’s account by issuance of Inter-Government Adjustment Advice to RBI.</a>
+                </li>
+                <li>
+                  <a href="https://data.commonerllp.org/ontology/lmmha/major/8659">Suspense Accounts (Defence) minus credit as the case may be. of outward claims arising in their books for the eventual settlement with the PAOs of Central Government/ Department. Separate sub-heads will be operated under this minor head for each Ministry/ Department. The inward claims received from other Ministries/Departments are not to be booked to this head in cases where the particulars are not available. Such items may be classified under the minor heads ‘Expenditure Awaiting Transfers to other Heads / Departments’ or ‘Receipts Awaiting Transfers’ under the functional expenditure / receipt heads respectively as the case may be pending transfer to the concerned Minor/Sub/Detailed head of Account. Accountants General. The inward claims received from Accountants General and which cannot be accounted for under the final head(s) at once due to want of particulars, vouchers, etc. shall be accounted for under the minor heads ‘Expenditure Awaiting Transfer to other heads / Departments / Receipts Awaiting Transfer to other heads’, as the case may be, pending transfer to the final heads of account. Payments of the Ministry of Defence originate through Public Sector Banks with a view to keep apart the total amount of transactions which are yet to be adjusted against the balances of Defence Accounts maintained by RBI, CAS, Nagpur. The transactions accounted by RBI, CAS, Nagpur but for which the respective scrolls have not been received from Public Sector Banks or there are differences in the amount reported etc. will also be classified under this head. These may be kept distinct from the RBI Suspense which relates only to differences relating to the RBI Branches. This head is to be operated while adjusting D.M.S. (Datewise Monthly Statement) or the total of debit and credit scrolls received from Public Sector Banks by affording minus credit to Cheques &amp; Bills and minus debit to Remittances into Banks in the case of Cheques and MROs (Military Receivable Orders) respectively. Nagpur by issuing advices. Other transactions in respect of RBI which need to be kept under Suspense will also be accommodated under this head. This minor head is also operated for the reversal of erroneous debits passed on by PAO, Supply to the Controller of Defence Accounts by issue of advice through RBI, CAS, Nagpur. Also see Note (i) HBA Suspense (ii) MCA Suspense (iii) NDF Suspense (iv) Un-credited items under e-payments (v) Other Transactions For sub-heads (i) and (ii) please see note on Sub-head (l) and (m) below Note below the major head ‘8658-Suspense Accounts’. Sub-head (iii) will be operated where NDF collections appear as deductions from salary bills etc. of Government servants. This head will be cleared by issue of Cheques / Bank Drafts in favour of the Reserve Bank of India. Sub-head ‘(iv) Un-credited items under e-payments’ will be operated upon by Controller of Defence Accounts to account for the un-credited items under E- Payments, received from the accredited bank. This head shall be cleared by issuing cheques to the concerned parties or otherwise in consultation with DDO concerned. Suspense Accounts 8660 (Railways) adjustment of the cost of Railway freight in connection with remittances of treasure. Each Railway Accounts Officer will prepare monthly bills for the amounts of credit Note and Railway warrants issued by the Reserve Bank, or on its behalf by Treasury Officers etc. and submit them to the Central Accounts Section of the Reserve Bank at Nagpur which will make payment by cheque, drafts or remittance transfer receipts. Bills for amounts of commission due on these credit Note and Railway warrants will be similarly dealt with. Also see Note Suspense Accounts’. Suspense Accounts (Postal) 8661 Suspense Accounts 8662 (Telecommunication)</a>
+                </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div id="namespaces">
+        <h2>Namespaces</h2>
+        <dl>
+          <dt id="dcterms">dcterms</dt>
+          <dd>
+            <code>http://purl.org/dc/terms/</code>
+          </dd>
+          <dt id="lmmha">lmmha</dt>
+          <dd>
+            <code>https://data.commonerllp.org/ontology/lmmha/</code>
+          </dd>
+          <dt id="rdf">rdf</dt>
+          <dd>
+            <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+        </dl>
+      </div>
+      <div id="legend">
+        <h2>Legend</h2>
+        <table class="entity"></table>
+      </div>
+    </div>
+    <div id="pylode">
+      <p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+          <span id="p">p</span>
+          <span id="y">y</span>
+          <span>LODE</span>
+        </a>
+        <a href="https://github.com/rdflib/pyLODE/release/3.5.1" id="version">3.5.1</a>
+        <span> with the </span>
+        <a href="https://linked.data.gov.au/def/ontpub" id="profile">OntPub</a>
+        <span>profile</span>
+      </p>
+    </div>
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <ul class="first">
+        <li>
+          <h4>
+            <a href="#metadata">Metadata</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#namespaces">Namespaces</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#dcterms">dcterms</a>
+            </li>
+            <li>
+              <a href="#lmmha">lmmha</a>
+            </li>
+            <li>
+              <a href="#rdf">rdf</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#legend">Legend</a>
+          </h4>
+          <ul class="second"></ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

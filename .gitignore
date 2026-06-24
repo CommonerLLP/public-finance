@@ -55,3 +55,12 @@ cbga_scrapers/
 /extract_libraries.py
 /extract_local_data.py
 .env
+
+# Local agent coordination files
+CONTEXT.md
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+WORKING.md
+memory/
+notes/

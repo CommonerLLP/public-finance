@@ -4,9 +4,12 @@
 
 # Current
 
+- [ ] **Fiscal-federal map: cross-check top-6 specimens** (TN/KA/MH/MP/Assam/Gujarat) vs RBI State Finances / state Budgets; log both sources → `verified_facts.md`. (Map: `notes/fiscal_federal_extraction_map.md`.)
+- [ ] **Pull primary-doc text:** BBMP appendix d5 (slab tables, ₹26,352cr capex); MH Cabinet excise order; MP borrowing/FRBM line.
+- [ ] **RTI:** Karnataka state-BCG contract/GO; TN-BCG & Telangana Rising 2047 scopes/fees; West investment-promotion consultancies.
+- [ ] **Decide deliverable:** (a) op-ed pillar / (b) cross-state table + harden top-6 / (c) Karnataka deep-dive. Gujarat "manufactured prudence" = 2nd blade for Debt-vs-Death op-ed.
 - [ ] UP scraper: add `khand4`, `SND`, `khand6` to `UP_SOURCE_PAGES`; remove year-filter to pull full history
 - [ ] Gujarat remaining 19 years download: run `finance_gujarat_scraper.py --page budget --years "2021-22,...,2002-03"` then other page types
-- [ ] Delete old `gujarat_scraper.py` (OBI-based, replaced by `finance_gujarat_scraper.py`)
 - [ ] ICDS DDG data quality: verify 2021-22 zero-cut anomaly and 2020-21 pdfplumber artifact vs. Reports 326 and 314
 - [ ] ICDS case study §3 correction: "every year" → "every POSHAN-era year with reliable data (2018-19, 2020-21, 2022-23, 2025-26)"
 - [ ] Min wages: stage `publicfinance/min_wage/` for v0.2.0; implement TN, KA, MH
@@ -32,6 +35,12 @@
 
 # Archive
 
+- [x] 2026-06-24 — Created 5-Star Semantic Web Linked Open Data (LOD) pipeline for LMMHA (`publicfinance/lmmha_skos_exporter.py`).
+- [x] 2026-06-24 — Set up `.github/workflows/publish_lod.yml` to publish LMMHA ontology to GitHub Pages.
+- [x] 2026-06-24 — Deleted obsolete `gujarat_scraper.py` and updated README/ROADMAP for `finance_gujarat_scraper.py`.
+- [x] 2026-06-20 — Built fiscal-federal extraction map across ~19 states (`notes/fiscal_federal_extraction_map.md`).
+- [x] 2026-06-20 — Acquired Karnataka RMC excise draft + BCG↔BBMP report (5 deliverables, RTI/OpenCity).
+- [x] 2026-06-20 — Fixed partial-recall MCP -32000 (pymupdf dependency drift).
 - [x] 2026-06-20 — Finalized 'Prose of Austerity' White Paper op-ed.
 - [x] 2026-06-20 — Extracted UP and Punjab library minor head codes for theright2read.
 - [x] 2026-05-20 — v0.1.0 tagged and pushed to CommonerLLP/public-finance on GitHub
