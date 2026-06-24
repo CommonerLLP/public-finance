@@ -1,0 +1,61 @@
+name: Publish LMMHA Linked Open Data
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'references/lmmha/lmmha_clean.json'
+      - 'publicfinance/lmmha_skos_exporter.py'
+      - '.github/workflows/publish_lod.yml'
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install rdflib pylode
+
+      - name: Generate Semantic Web Files (TTL & JSON-LD)
+        run: |
+          python publicfinance/lmmha_skos_exporter.py
+
+      - name: Generate HTML Documentation using PyLODE
+        run: |
+          pylode references/lmmha/lod/lmmha.ttl -o references/lmmha/lod/index.html -p ontpub
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire lod directory
+          path: 'references/lmmha/lod'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
