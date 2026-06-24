@@ -49,6 +49,41 @@ def inject_search(html_path):
         .lmmha-search-item strong {
             color: #005A9C;
         }
+
+        /* Responsive overrides for PyLODE */
+        @media screen and (max-width: 800px) {
+            body {
+                padding-right: 10px !important;
+                margin: 10px !important;
+                padding-top: 70px !important; /* space for search bar */
+            }
+            #toc {
+                position: static !important;
+                width: 100% !important;
+                border: 1px solid navy !important;
+                height: auto !important;
+                max-height: 300px !important;
+                margin-bottom: 20px !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+            }
+            #lmmha-search-container {
+                right: 10px !important;
+                top: 10px !important;
+                width: calc(100% - 20px) !important;
+            }
+            #pylode {
+                display: none !important; /* Hide the watermark on mobile */
+            }
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+            }
+            td {
+                white-space: normal !important;
+                word-wrap: break-word !important;
+            }
+        }
     </style>
     
     <div id="lmmha-search-container">
