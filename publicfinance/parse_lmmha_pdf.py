@@ -4,8 +4,8 @@ import re
 
 def get_lines(page):
     words = page.extract_words()
-    # Sort words by top and then by left
-    words.sort(key=lambda w: (round(w['top'], 1), w['x0']))
+    # Sort words by top purely
+    words.sort(key=lambda w: w['top'])
     
     lines = []
     current_line = []
@@ -18,10 +18,12 @@ def get_lines(page):
         elif abs(w['top'] - current_top) < 3:
             current_line.append(w)
         else:
+            current_line.sort(key=lambda x: x['x0'])
             lines.append(current_line)
             current_top = w['top']
             current_line = [w]
     if current_line:
+        current_line.sort(key=lambda x: x['x0'])
         lines.append(current_line)
         
     return lines
@@ -56,9 +58,9 @@ def parse_lmmha(pdf_path):
                     continue
                 
                 # Major Head: Code is 4 digits
-                if 95 <= x0 <= 105 and re.match(r'^\d{4}\s', text):
+                if 95 <= x0 <= 105 and re.match(r'^\d{4}(\s|$)', text):
                     code = text[:4]
-                    name = text[5:].strip()
+                    name = text[5:].strip() if len(text) > 4 else ""
                     # Remove footnotes like (1), (2)
                     name = re.sub(r'\s*\(\d+\).*$', '', name)
                     current_major = code
@@ -69,17 +71,17 @@ def parse_lmmha(pdf_path):
                         "minors": {}
                     }
                 # Sub-Major Head: Code is 2 digits
-                elif (95 <= x0 <= 140) and re.match(r'^\d{2}\s', text):
+                elif (95 <= x0 <= 140) and re.match(r'^\d{2}(\s|$)', text):
                     code = text[:2]
-                    name = text[3:].strip()
+                    name = text[3:].strip() if len(text) > 2 else ""
                     name = re.sub(r'\s*\(\d+\).*$', '', name)
                     current_submajor = code
                     if current_major:
                         major_heads[current_major]["submajors"][code] = {"name": name, "minors": {}}
                 # Minor Head: Code is 3 digits
-                elif (200 <= x0 <= 290) and re.match(r'^\d{3}\s', text):
+                elif (200 <= x0 <= 290) and re.match(r'^\d{3}(\s|$)', text):
                     code = text[:3]
-                    name = text[4:].strip()
+                    name = text[4:].strip() if len(text) > 3 else ""
                     name = re.sub(r'\s*\(\d+\).*$', '', name)
                     if current_major:
                         if current_submajor:
