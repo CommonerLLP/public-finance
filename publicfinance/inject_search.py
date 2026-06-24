@@ -50,6 +50,11 @@ def inject_search(html_path):
             color: #005A9C;
         }
 
+        /* Hide the PyLODE watermark universally */
+        #pylode {
+            display: none !important; 
+        }
+
         /* Responsive overrides for PyLODE */
         @media screen and (max-width: 800px) {
             body {
@@ -71,9 +76,6 @@ def inject_search(html_path):
                 right: 10px !important;
                 top: 10px !important;
                 width: calc(100% - 20px) !important;
-            }
-            #pylode {
-                display: none !important; /* Hide the watermark on mobile */
             }
             table {
                 display: block !important;
