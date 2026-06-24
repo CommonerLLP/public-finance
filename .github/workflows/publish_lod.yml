@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install rdflib pylode
+          pip install rdflib pylode==3.5.1
 
       - name: Generate Semantic Web Files (TTL & JSON-LD)
         run: |
