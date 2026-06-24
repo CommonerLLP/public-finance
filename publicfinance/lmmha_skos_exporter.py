@@ -1,7 +1,7 @@
 import json
 import os
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import SKOS, RDF, DCTERMS
+from rdflib.namespace import SKOS, RDF, DCTERMS, SDO
 
 def export_to_skos(json_path, output_dir):
     # Initialize Graph
@@ -17,7 +17,10 @@ def export_to_skos(json_path, output_dir):
     scheme_uri = LMMHA["scheme"]
     g.add((scheme_uri, RDF.type, SKOS.ConceptScheme))
     g.add((scheme_uri, DCTERMS.title, Literal("List of Major and Minor Heads of Account (LMMHA)", lang="en")))
-    g.add((scheme_uri, DCTERMS.publisher, Literal("Controller General of Accounts, India", lang="en")))
+    cga_uri = URIRef("https://cga.nic.in/")
+    g.add((scheme_uri, DCTERMS.publisher, cga_uri))
+    g.add((cga_uri, RDF.type, SDO.Organization))
+    g.add((cga_uri, SDO.name, Literal("Controller General of Accounts, India", lang="en")))
 
     with open(json_path, 'r') as f:
         data = json.load(f)

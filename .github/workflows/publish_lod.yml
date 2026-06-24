@@ -45,7 +45,7 @@ jobs:
 
       - name: Generate HTML Documentation using PyLODE
         run: |
-          pylode references/lmmha/lod/lmmha.ttl -o references/lmmha/lod/index.html -p ontpub
+          pylode references/lmmha/lod/lmmha.ttl -o references/lmmha/lod/index.html -p vocpub
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
