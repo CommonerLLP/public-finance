@@ -3,8 +3,7 @@ import json
 import re
 
 def get_lines(page):
-    words = page.extract_words()
-    # Sort words by top purely
+    words = page.extract_words(extra_attrs=['fontname'])
     words.sort(key=lambda w: w['top'])
     
     lines = []
@@ -30,84 +29,91 @@ def get_lines(page):
 
 def parse_lmmha(pdf_path):
     major_heads = {}
-    
     current_major = None
     current_submajor = None
     
-    # Text classification based on x0
-    # Major/Submajor Code: ~100
-    # Major/Submajor Name: ~136 to ~250
-    # Minor Code: ~208 or ~280
-    # Minor Name: ~244 or ~317
-    
     with pdfplumber.open(pdf_path) as pdf:
-        # Start at page 28, end at 498
         for i in range(28, min(499, len(pdf.pages))):
             page = pdf.pages[i]
             lines = get_lines(page)
             
             for line in lines:
                 if not line: continue
-                text = " ".join([w['text'] for w in line])
-                x0 = line[0]['x0']
                 
-                # Ignore headers/footers
-                if text.startswith("MAJOR / SUB-MAJOR") or "MINOR HEADS" in text:
-                    continue
-                if text.startswith("Note:") or re.match(r'^\(\d+\)', text):
-                    continue
+                # Split line into columns based on x0
+                major_code_words = []
+                major_name_words = []
+                minor_code_words = []
+                minor_name_words = []
                 
-                # Major Head: Code is 4 digits
-                if 95 <= x0 <= 105 and re.match(r'^\d{4}(\s|$)', text):
-                    code = text[:4]
-                    name = text[5:].strip() if len(text) > 4 else ""
-                    # Remove footnotes like (1), (2)
-                    name = re.sub(r'\s*\(\d+\).*$', '', name)
-                    current_major = code
-                    current_submajor = None
-                    major_heads[code] = {
-                        "name": name,
-                        "submajors": {},
-                        "minors": {}
-                    }
-                # Sub-Major Head: Code is 2 digits
-                elif (95 <= x0 <= 140) and re.match(r'^\d{2}(\s|$)', text):
-                    code = text[:2]
-                    name = text[3:].strip() if len(text) > 2 else ""
-                    name = re.sub(r'\s*\(\d+\).*$', '', name)
-                    current_submajor = code
-                    if current_major:
-                        major_heads[current_major]["submajors"][code] = {"name": name, "minors": {}}
-                # Minor Head: Code is 3 digits
-                elif (200 <= x0 <= 290) and re.match(r'^\d{3}(\s|$)', text):
-                    code = text[:3]
-                    name = text[4:].strip() if len(text) > 3 else ""
-                    name = re.sub(r'\s*\(\d+\).*$', '', name)
-                    if current_major:
-                        if current_submajor:
-                            major_heads[current_major]["submajors"][current_submajor]["minors"][code] = name
-                        else:
-                            major_heads[current_major]["minors"][code] = name
-                # Continuation of name
-                elif (120 <= x0 <= 200) and not re.match(r'^\d', text):
-                    name = re.sub(r'\s*\(\d+\).*$', '', text)
-                    if current_submajor and current_major:
-                        major_heads[current_major]["submajors"][current_submajor]["name"] += " " + name
-                    elif current_major:
-                        major_heads[current_major]["name"] += " " + name
-                # Continuation of minor name
-                elif (230 <= x0 <= 330) and not re.match(r'^\d', text):
-                    name = re.sub(r'\s*\(\d+\).*$', '', text)
-                    if current_major:
-                        if current_submajor:
-                            # Append to last minor
-                            if major_heads[current_major]["submajors"][current_submajor]["minors"]:
-                                last_minor = list(major_heads[current_major]["submajors"][current_submajor]["minors"].keys())[-1]
-                                major_heads[current_major]["submajors"][current_submajor]["minors"][last_minor] += " " + name
-                        else:
-                            if major_heads[current_major]["minors"]:
-                                last_minor = list(major_heads[current_major]["minors"].keys())[-1]
-                                major_heads[current_major]["minors"][last_minor] += " " + name
+                for w in line:
+                    x0 = w['x0']
+                    if x0 < 120:
+                        major_code_words.append(w)
+                    elif 120 <= x0 < 250:
+                        major_name_words.append(w)
+                    elif 250 <= x0 < 310:
+                        minor_code_words.append(w)
+                    else:
+                        minor_name_words.append(w)
+                        
+                major_code_str = " ".join([w['text'] for w in major_code_words])
+                major_name_str = " ".join([w['text'] for w in major_name_words])
+                minor_code_str = " ".join([w['text'] for w in minor_code_words])
+                minor_name_str = " ".join([w['text'] for w in minor_name_words])
+                
+                # Check for major/submajor headers which shouldn't be processed as codes
+                if major_code_str.startswith("MAJOR") or "MINOR" in minor_code_str or "HEADS" in minor_name_str:
+                    continue
+                if major_code_str.startswith("Note:") or major_name_str.startswith("Note:"):
+                    continue
+
+                # Process Major Code/Name
+                if major_code_str:
+                    if re.match(r'^\d{4}$', major_code_str) and 'Bold' in major_code_words[0]['fontname']:
+                        current_major = major_code_str
+                        current_submajor = None
+                        name = re.sub(r'\s*\(\d+\).*$', '', major_name_str)
+                        major_heads[current_major] = {"name": name, "submajors": {}, "minors": {}}
+                    elif re.match(r'^\d{2}$', major_code_str) and 'Bold' in major_code_words[0]['fontname']:
+                        current_submajor = major_code_str
+                        name = re.sub(r'\s*\(\d+\).*$', '', major_name_str)
+                        if current_major:
+                            major_heads[current_major]["submajors"][current_submajor] = {"name": name, "minors": {}}
+                elif major_name_str:
+                    # Continuation of Major/Submajor Name
+                    if 'Bold' in major_name_words[0]['fontname']:
+                        name = re.sub(r'\s*\(\d+\).*$', '', major_name_str)
+                        if current_submajor and current_major:
+                            major_heads[current_major]["submajors"][current_submajor]["name"] += " " + name
+                        elif current_major:
+                            major_heads[current_major]["name"] += " " + name
+                            
+                # Process Minor Code/Name
+                if minor_code_str:
+                    if re.match(r'^\d{3}$', minor_code_str):
+                        code = minor_code_str
+                        name = re.sub(r'\s*\(\d+\).*$', '', minor_name_str)
+                        if current_major:
+                            if current_submajor:
+                                major_heads[current_major]["submajors"][current_submajor]["minors"][code] = name
+                            else:
+                                major_heads[current_major]["minors"][code] = name
+                elif minor_name_str:
+                    # Continuation of Minor Name
+                    if not 'Bold' in minor_name_words[0]['fontname']:
+                        name = re.sub(r'\s*\(\d+\).*$', '', minor_name_str)
+                        # Avoid notes
+                        if "will be accounted" not in name and "below this minor" not in name and "Sub-Heads:" not in name:
+                            if current_major:
+                                if current_submajor:
+                                    if major_heads[current_major]["submajors"][current_submajor]["minors"]:
+                                        last_minor = list(major_heads[current_major]["submajors"][current_submajor]["minors"].keys())[-1]
+                                        major_heads[current_major]["submajors"][current_submajor]["minors"][last_minor] += " " + name
+                                else:
+                                    if major_heads[current_major]["minors"]:
+                                        last_minor = list(major_heads[current_major]["minors"].keys())[-1]
+                                        major_heads[current_major]["minors"][last_minor] += " " + name
 
     return major_heads
 
