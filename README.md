@@ -22,6 +22,16 @@ The analytical frame is accountability, not audit. The question every scraper is
 
 ---
 
+## Semantic Web (Linked Open Data)
+
+This repository proudly hosts the **List of Major and Minor Heads of Account (LMMHA)** as a 5-Star Semantic Web Ontology. 
+Instead of relying on isolated PDF releases from the Controller General of Accounts, we provide the canonical, machine-readable SKOS/RDF graph mapping every tax and expenditure head in the Indian budget.
+
+- **GitHub Pages Endpoint:** The raw semantic vocabulary and human-readable documentation are automatically built and published via GitHub Actions.
+- **Interoperability:** Our semantic URIs are designed to be explicitly embedded by downstream open-data platforms (like Open Budgets India) to instantly cross-reference state and union budget flat files with global standards like Wikidata.
+
+---
+
 ## What works
 
 | Source | Script | Coverage | Output |
@@ -29,13 +39,13 @@ The analytical frame is accountability, not audit. The question every scraper is
 | RBI State Finances | `rbi_budgets_scraper.py` | 5 years (2021–2025 publications), all appendices, all-India | PDF + XLS in `data/rbi/` |
 | Union Budget SBE | `union_budget_scraper.py` | 7 years (2020-21 to 2026-27), Demand No. 101 (MWCD) | XLS in `data/union_budget/` |
 | Rajasthan | `state_budget_scrapers.py` | 2025-26, full document set | PDF in `data/state_budgets/Rajasthan/` |
+| Gujarat | `finance_gujarat_scraper.py` | 531 PDFs pulled across multiple grant departments | PDF in `data/state_budgets/Gujarat/` |
 
 ## What is partially working
 
 | Source | Script | Issue |
 |---|---|---|
 | Uttar Pradesh | `state_budget_scrapers.py` | 3 of 6 document sections only; current year only — `khand4` (Detailed Demand for Grants), `SND`, `khand6` not yet scraped; no history pull |
-| Gujarat | `gujarat_scraper.py` | Wrong source — CMO press PDFs, not Finance Dept grant data; `finance.gujarat.gov.in` untouched |
 | Kerala | `state_budget_scrapers.py` | Dynamic portal; `--known-sample` mode works for 4 documents |
 | Assam | `state_budget_scrapers.py` | Written for 2017-18 only; not run |
 
