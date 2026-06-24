@@ -50,6 +50,12 @@ def export_to_skos(json_path, output_dir):
                 g.add((minor_uri, SKOS.prefLabel, Literal(minor_name, lang="en")))
                 g.add((minor_uri, SKOS.notation, Literal(minor_code)))
                 g.add((minor_uri, SKOS.inScheme, scheme_uri))
+                
+                # Map specific concepts to global Linked Data (e.g., Public Libraries to Wikidata)
+                if major_code == "2205" and minor_code == "105":
+                    wikidata_public_library = URIRef("http://www.wikidata.org/entity/Q2855589")
+                    g.add((minor_uri, SKOS.exactMatch, wikidata_public_library))
+
                 g.add((minor_uri, SKOS.broader, sub_uri))
                 g.add((sub_uri, SKOS.narrower, minor_uri))
 
@@ -60,6 +66,12 @@ def export_to_skos(json_path, output_dir):
             g.add((minor_uri, SKOS.prefLabel, Literal(minor_name, lang="en")))
             g.add((minor_uri, SKOS.notation, Literal(minor_code)))
             g.add((minor_uri, SKOS.inScheme, scheme_uri))
+            
+            # Map specific concepts to global Linked Data (e.g., Public Libraries to Wikidata)
+            if major_code == "2205" and minor_code == "105":
+                wikidata_public_library = URIRef("http://www.wikidata.org/entity/Q2855589")
+                g.add((minor_uri, SKOS.exactMatch, wikidata_public_library))
+
             g.add((minor_uri, SKOS.broader, major_uri))
             g.add((major_uri, SKOS.narrower, minor_uri))
 
