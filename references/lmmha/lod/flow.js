@@ -35,10 +35,13 @@ async function render() {
   document.getElementById("legend").innerHTML = (m.legend || []).map((s) =>
     `<span><i class="swatch" style="background:${s.color}"></i> ${s.label}</span>`).join("");
 
-  const width = Math.min(1120, document.querySelector(".flow-wrap").clientWidth);
+  // keep the diagram legible: never lay out below ~680px — the .sankey-scroll
+  // container scrolls horizontally instead of letting the Sankey collapse
+  const avail = document.querySelector(".flow-wrap").clientWidth;
+  const width = Math.max(680, Math.min(1120, avail));
   const leafCount = data.links.length;
   const height = Math.max(480, leafCount * 30 + 60);
-  const M = 200;  // side margins for source/sink labels
+  const M = Math.min(200, width * 0.27);  // side margins for source/sink labels, scaled to width
 
   const svg = d3.select("#sankey").attr("viewBox", `0 0 ${width} ${height}`)
     .attr("width", "100%").attr("height", height);
