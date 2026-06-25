@@ -34,6 +34,7 @@ body {
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;            /* no sideways scroll on small screens */
 }
 
 a { color: var(--accent); }
@@ -42,14 +43,14 @@ a { color: var(--accent); }
 .masthead {
   border-bottom: 1px solid var(--line);
   background: var(--panel);
-  padding: 22px 32px 18px;
+  padding: clamp(16px, 4vw, 22px) clamp(16px, 4vw, 32px) 18px;
 }
-.masthead h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.masthead h1 { margin: 0; font-size: clamp(18px, 5vw, 22px); font-weight: 700; letter-spacing: -0.01em; }
 .masthead .sub { margin: 4px 0 0; color: var(--ink-soft); font-size: 14px; max-width: 760px; }
 .masthead .meta-line { margin-top: 8px; color: var(--ink-faint); font-size: 12.5px; }
 .masthead .meta-line strong { color: var(--ink-soft); font-weight: 600; }
 
-.tabs { display: flex; gap: 4px; margin-top: 16px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 16px; }
 .tab {
   border: 1px solid var(--line); border-bottom: none;
   background: var(--paper); color: var(--ink-soft);
@@ -59,7 +60,7 @@ a { color: var(--accent); }
 .tab.active { background: var(--panel); color: var(--ink); box-shadow: 0 -2px 0 var(--accent) inset; }
 
 /* ---------- search ---------- */
-.searchbar { padding: 14px 32px; border-bottom: 1px solid var(--line); background: var(--panel); }
+.searchbar { padding: 14px clamp(16px, 4vw, 32px); border-bottom: 1px solid var(--line); background: var(--panel); }
 .searchbar input {
   width: 100%; max-width: 520px; padding: 9px 13px;
   border: 1px solid var(--line); border-radius: 7px; font-size: 14px; font-family: var(--sans);
@@ -69,8 +70,12 @@ a { color: var(--accent); }
 
 /* ---------- layout ---------- */
 .layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: calc(100vh - 230px); }
+/* grid/flex children default to min-width:auto and refuse to shrink below their
+   content — this is the usual source of mobile horizontal overflow. */
+.nav-pane, .detail-pane { min-width: 0; }
+.row .code, .d-code, .note, .ccode { overflow-wrap: anywhere; }
 .nav-pane { border-right: 1px solid var(--line); overflow-y: auto; max-height: calc(100vh - 230px); }
-.detail-pane { overflow-y: auto; max-height: calc(100vh - 230px); padding: 28px 32px 80px; }
+.detail-pane { overflow-y: auto; max-height: calc(100vh - 230px); padding: 24px clamp(16px, 4vw, 32px) 80px; }
 
 /* ---------- account-class cards ---------- */
 .class-grid { padding: 20px 24px; display: grid; gap: 12px; }
@@ -163,7 +168,7 @@ a { color: var(--accent); }
 .ob-fy { font-size: 11px; color: var(--ink-faint); font-family: var(--mono); margin-top: 5px; }
 
 /* ---------- timeline tab ---------- */
-.timeline-wrap { padding: 24px 32px 80px; max-width: 1100px; margin: 0 auto; }
+.timeline-wrap { padding: 24px clamp(16px, 4vw, 32px) 80px; max-width: 1100px; margin: 0 auto; }
 .tl-intro { color: var(--ink-soft); font-size: 14px; max-width: 760px; margin-bottom: 8px; }
 .tl-coverage { font-size: 12.5px; color: var(--ink-faint); font-style: italic; margin-bottom: 22px; }
 .year-bars { display: flex; align-items: flex-end; gap: 6px; height: 120px; margin: 18px 0 30px; border-bottom: 1px solid var(--line); padding-bottom: 0; }
@@ -175,7 +180,7 @@ a { color: var(--accent); }
 .year-bar .n { font-size: 10px; color: var(--ink-faint); }
 
 /* ---------- about / methodology ---------- */
-.about-wrap { max-width: 760px; margin: 0 auto; padding: 30px 32px 80px; }
+.about-wrap { max-width: 760px; margin: 0 auto; padding: 30px clamp(16px, 4vw, 32px) 80px; }
 .about-wrap h2 { font-size: 22px; margin: 0 0 14px; }
 .about-wrap h3 { font-size: 15px; margin: 26px 0 6px; color: var(--accent); }
 .about-wrap p { font-size: 15px; line-height: 1.65; color: #2b2b2b; margin: 0 0 12px; }
@@ -187,7 +192,7 @@ a { color: var(--accent); }
 .aside-wry p:last-child { margin-bottom: 0; }
 
 /* ---------- footer ---------- */
-.colophon { border-top: 1px solid var(--line); padding: 20px 32px 36px; color: var(--ink-faint); font-size: 12.5px; background: var(--panel); }
+.colophon { border-top: 1px solid var(--line); padding: 20px clamp(16px, 4vw, 32px) 36px; color: var(--ink-faint); font-size: 12.5px; background: var(--panel); }
 .colophon a { margin-right: 16px; }
 .colophon .downloads { margin-top: 8px; }
 
