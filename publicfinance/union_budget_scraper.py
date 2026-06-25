@@ -1,33 +1,24 @@
 """
-Scraper for Union Budget Statement of Budget Estimates (SBE) XLS files.
-Downloads Demand for Grants XLS files and indexes them in the metadata DB.
+Union Budget Statement of Budget Estimates (SBE) — analysis layer.
+
+Acquisition (downloading the SBE spreadsheets, with provenance) is delegated to
+commoner-probe's ``BudgetProbe`` via :mod:`probe_runner`. What stays here is the
+XLS -> scheme-row analysis (``parse_demand_xls``), which ``extract_scheme_data``
+consumes.
 """
 
 import argparse
 import os
 import sys
-import time
 from pathlib import Path
 
 import pandas as pd
-import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from metadata import DEFAULT_DB_PATH, index_budget_doc, make_doc_id
+from metadata import DEFAULT_DB_PATH
+from probe_runner import run_union_budget
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-
-_USER_AGENT = "Mozilla/5.0 (compatible; public-finance; github.com/CommonerLLP/public-finance)"
-
-_ARCHIVE_YEARS = [
-    ("2026-27", "https://www.indiabudget.gov.in/doc/eb/sbe{demand}.xlsx"),
-    ("2025-26", "https://www.indiabudget.gov.in/budget2025-26/doc/eb/sbe{demand}.xlsx"),
-    ("2024-25", "https://www.indiabudget.gov.in/budget2024-25/doc/eb/sbe{demand}.xlsx"),
-    ("2023-24", "https://www.indiabudget.gov.in/budget2023-24/doc/eb/sbe{demand}.xls"),
-    ("2022-23", "https://www.indiabudget.gov.in/budget2022-23/doc/eb/sbe{demand}.xls"),
-    ("2021-22", "https://www.indiabudget.gov.in/budget2021-22/doc/eb/sbe{demand}.xls"),
-    ("2020-21", "https://www.indiabudget.gov.in/budget2020-21/doc/eb/sbe{demand}.xlsx"),
-]
 
 _COL_SCHEME_NAME = 5
 _COL_ACTUALS_REV = 12
@@ -147,59 +138,30 @@ def parse_demand_xls(path, budget_year: str, demand_no: str) -> list[dict]:
     return rows
 
 
-def download_year(url: str, dest: Path, dry_run: bool = False) -> Path | None:
-    """Download a single XLS file. Skip if already present. Returns path or None."""
-    if dest.exists():
-        print(f"  [skip] {dest.name} already exists")
-        return dest
-    if dry_run:
-        print(f"  [dry-run] would fetch {url}")
-        return None
-    print(f"  [fetch] {url}")
-    resp = requests.get(url, headers={"User-Agent": _USER_AGENT}, timeout=60)
-    if resp.status_code != 200:
-        print(f"  [warn] HTTP {resp.status_code} for {url}")
-        return None
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_bytes(resp.content)
-    print(f"  [saved] {dest} ({len(resp.content):,} bytes)")
-    time.sleep(2)
-    return dest
-
-
 def run(
     demand_no: str,
     out_dir: Path,
     db_path: Path = DEFAULT_DB_PATH,
     dry_run: bool = False,
 ) -> None:
-    """Download all archive years for a demand number and index them."""
-    out_dir = Path(out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    """Acquire all archive years for a demand via commoner-probe and index them.
 
-    for budget_year, url_template in _ARCHIVE_YEARS:
-        url = url_template.format(demand=demand_no)
-        ext = url.rsplit(".", 1)[-1]
-        filename = f"sbe{demand_no}_{budget_year}.{ext}"
-        dest = out_dir / filename
-
-        print(f"\n[{budget_year}] {url}")
-        local = download_year(url, dest, dry_run=dry_run)
-
-        if local is not None:
-            doc_id = make_doc_id("central", demand_no, budget_year)
-            index_budget_doc(
-                doc_id=doc_id,
-                state="central",
-                fiscal_year=budget_year,
-                document_type="demand_for_grants",
-                source_url=url,
-                local_path=str(dest),
-                file_extension="xlsx",
-                ministry="MWCD",
-                db_path=db_path,
-            )
-            print(f"  [indexed] doc_id={doc_id}")
+    Acquisition + SHA-256 provenance is delegated to ``BudgetProbe`` (see
+    :mod:`probe_runner`); this wrapper just reports per-file status.
+    """
+    records, indexed = run_union_budget(demand_no, out_dir, db_path=db_path, dry_run=dry_run)
+    for rec in records:
+        status = rec.get("status")
+        if status == "dry_run":
+            print(f"[dry-run] {rec['fiscal_year']} would fetch {rec['url']}")
+        elif status in ("downloaded", "skipped_exists"):
+            print(f"[{status}] {rec['fiscal_year']} -> {rec['dest']}")
+        elif status == "not_found":
+            print(f"[not-found] {rec['fiscal_year']} {rec['url']}")
+        else:
+            print(f"[{status}] {rec['fiscal_year']} {rec.get('error', '')}".rstrip())
+    if not dry_run:
+        print(f"\nIndexed {indexed} file(s) for demand {demand_no}.")
 
 
 def main() -> None:
