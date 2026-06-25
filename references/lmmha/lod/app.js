@@ -392,10 +392,10 @@ function showYearEvents(year, events) {
 
 /* ---------------- in-page jump nav + back-to-top ---------------- */
 function bindAnchorNav() {
+  // jump nav writes a shareable hash (#about/<section>); routeFromHash does the scroll
   document.querySelectorAll(".toc button[data-target]").forEach((b) =>
     b.addEventListener("click", () => {
-      const el = document.getElementById(b.dataset.target);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      location.hash = "about/" + b.dataset.target.replace(/^a-/, "");
     }));
   const top = $("#to-top");
   if (top) {
@@ -427,5 +427,11 @@ function routeFromHash() {
   if (h.startsWith("subject/")) { showSubject(h.slice(8)); return true; }
   if (h === "timeline") { setTab("timeline"); return true; }
   if (h === "about") { setTab("about"); return true; }
+  if (h.startsWith("about/")) {           // shareable deep-link to a methodology subsection
+    setTab("about");
+    const el = document.getElementById("a-" + h.slice(6));
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    return true;
+  }
   return false;
 }

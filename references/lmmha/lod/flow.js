@@ -13,15 +13,24 @@ const VIEWS = {
 
 let current = "balance";
 
-function bindToggle() {
-  document.querySelectorAll(".flow-toggle button").forEach((b) =>
-    b.addEventListener("click", () => {
-      current = b.dataset.view;
-      document.querySelectorAll(".flow-toggle button").forEach((x) =>
-        x.classList.toggle("active", x.dataset.view === current));
-      render();
-    }));
+function setView(v) {
+  current = v;
+  document.querySelectorAll(".flow-toggle button").forEach((x) =>
+    x.classList.toggle("active", x.dataset.view === v));
+  return render();
 }
+function bindToggle() {
+  // toggle writes a shareable hash (#balance / #detailed)
+  document.querySelectorAll(".flow-toggle button").forEach((b) =>
+    b.addEventListener("click", () => { location.hash = b.dataset.view; }));
+}
+const SECTIONS = ["flow-diagram", "flow-dual"];
+async function applyHash() {
+  const h = location.hash.slice(1);
+  if (h === "balance" || h === "detailed") { if (h !== current) await setView(h); }
+  else if (SECTIONS.includes(h)) document.getElementById(h).scrollIntoView({ behavior: "smooth", block: "start" });
+}
+window.addEventListener("hashchange", applyHash);
 
 async function render() {
   const data = await (await fetch(VIEWS[current].file)).json();
@@ -100,13 +109,14 @@ document.getElementById("methlink").addEventListener("click", (e) => {
 
 // in-page jump nav + back-to-top
 document.querySelectorAll(".toc button[data-target]").forEach((b) =>
-  b.addEventListener("click", () => {
-    const el = document.getElementById(b.dataset.target);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }));
+  b.addEventListener("click", () => { location.hash = b.dataset.target; }));
 const toTop = document.getElementById("to-top");
 toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 window.addEventListener("scroll", () => toTop.classList.toggle("show", window.scrollY > 500));
 
 bindToggle();
-render();
+(async () => {
+  const h0 = location.hash.slice(1);
+  await setView(h0 === "detailed" || h0 === "balance" ? h0 : "balance");
+  if (SECTIONS.includes(h0)) document.getElementById(h0).scrollIntoView({ behavior: "smooth", block: "start" });
+})();
