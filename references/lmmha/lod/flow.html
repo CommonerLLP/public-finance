@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where Assam's money goes — LMMHA money-flow</title>
+  <meta name="description" content="A Sankey diagram of Assam's budgeted expenditure, derived from the LMMHA chart of accounts.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .flow-wrap { max-width: 1180px; margin: 0 auto; padding: 24px 28px 80px; }
+    .flow-head { margin-bottom: 6px; }
+    .flow-head h1 { font-size: 22px; margin: 0 0 4px; }
+    .flow-sub { color: var(--ink-soft); font-size: 14px; max-width: 820px; }
+    .flow-total { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); margin: 10px 0 0; }
+    .flow-toggle { display: flex; gap: 6px; margin: 14px 0 6px; }
+    .flow-toggle button { border: 1px solid var(--line); background: var(--panel); color: var(--ink-soft);
+      padding: 6px 14px; border-radius: 7px; cursor: pointer; font-size: 13px; font-weight: 600; font-family: var(--sans); }
+    .flow-toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .flow-legend { display: flex; gap: 18px; margin: 8px 0 4px; font-size: 12.5px; color: var(--ink-soft); flex-wrap: wrap; }
+    .flow-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+    #sankey { width: 100%; }
+    .node rect { stroke: none; cursor: default; }
+    .node text { font-size: 12.5px; fill: var(--ink); }
+    .node text.amt { fill: var(--ink-faint); font-family: var(--mono); font-size: 11px; }
+    .link { fill: none; stroke-opacity: 0.32; }
+    .link:hover { stroke-opacity: 0.55; }
+    .flow-caveat { font-size: 12.5px; color: var(--ink-faint); font-style: italic; margin-top: 22px; max-width: 820px; }
+    .dual { margin-top: 38px; max-width: 820px; border-top: 1px solid var(--line); padding-top: 24px; }
+    .dual h2 { font-size: 19px; margin: 0 0 10px; }
+    .dual-lede { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+    .dual-bars { margin: 20px 0 16px; }
+    .dual-row { display: grid; grid-template-columns: 230px 1fr auto; align-items: center; gap: 12px; margin: 7px 0; }
+    .dual-lab { font-size: 13px; color: var(--ink); text-align: right; }
+    .dual-bar { height: 18px; border-radius: 3px; display: block; }
+    .dual-val { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); }
+    .dual-punch { font-size: 14.5px; line-height: 1.6; color: #2b2b2b; background: #fbf6f2;
+      border-left: 3px solid #b03a3a; padding: 12px 16px; border-radius: 0 8px 8px 0; }
+    .backlink { font-size: 13px; margin-bottom: 14px; display: inline-block; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <h1>LMMHA · Money flow</h1>
+    <p class="sub">How a state's budget, classified by the LMMHA chart of accounts, flows from the
+      account classes down to individual sectors. The structure is derived entirely from the head-of-account
+      codes — account class (first digit) → major head (sector).</p>
+  </header>
+
+  <main>
+    <div class="flow-wrap">
+      <a class="backlink" href="./">← back to the chart-of-accounts browser</a>
+      <div class="flow-head">
+        <h1 id="title">Where Assam's money goes</h1>
+        <p class="flow-sub" id="subtitle"></p>
+        <p class="flow-total" id="total"></p>
+      </div>
+      <div class="flow-toggle">
+        <button data-view="balance" class="active">Sources → Uses (RBI, balanced)</button>
+        <button data-view="detailed">Where it goes — by sector (detailed)</button>
+      </div>
+      <div class="flow-legend" id="legend"></div>
+      <svg id="sankey"></svg>
+      <p class="flow-caveat" id="caveat"></p>
+
+      <section class="dual">
+        <h2>Reading it through the dual mandate</h2>
+        <p class="dual-lede">Melinda Cooper's <em>Counterrevolution</em> argues that the neoliberal fiscal
+          order runs a double standard: <strong>austerity</strong> for the social wage,
+          <strong>extravagance</strong> for asset holders and creditors. A state budget will not split
+          cleanly into the two — because the real extravagance (tax breaks, capital-gains preferences,
+          asset-price support) is exercised <em>upstream</em> by the Union and the RBI, the same
+          authorities that take 63% of Assam's revenue and cap what it may borrow. Assam's budget is the
+          austerity terminal of that system. What it <em>does</em> show is the one place the extravagance
+          pole reaches in: the creditor's claim, paid first and in full.</p>
+
+        <div class="dual-bars">
+          <div class="dual-row">
+            <span class="dual-lab">Interest paid to creditors</span>
+            <span class="dual-bar" style="width:100%;background:#b03a3a"></span>
+            <span class="dual-val">₹8,534 cr</span>
+          </div>
+          <div class="dual-row">
+            <span class="dual-lab">+ Public-debt repayment</span>
+            <span class="dual-bar" style="width:32%;background:#9a5b8f"></span>
+            <span class="dual-val">₹2,723 cr</span>
+          </div>
+          <div class="dual-row">
+            <span class="dual-lab">Public health (for ~3.5 cr people)</span>
+            <span class="dual-bar" style="width:88%;background:#2e7d5b"></span>
+            <span class="dual-val">₹7,516 cr</span>
+          </div>
+          <div class="dual-row">
+            <span class="dual-lab">Water supply &amp; sanitation</span>
+            <span class="dual-bar" style="width:18%;background:#2e7d5b"></span>
+            <span class="dual-val">₹1,568 cr</span>
+          </div>
+        </div>
+        <p class="dual-punch">Assam pays <strong>more in interest to bondholders (₹8,534 cr)</strong> than it
+          spends running its <strong>entire public-health system (₹7,516 cr)</strong>. Counting repayment,
+          debt service to creditors (₹11,257 cr) is the protected claim; the social wage is the disciplined
+          one. The borrowing that generates that interest is itself <em>capped</em> by statute, while the
+          interest on it is not — discipline for the borrower, an assured return for the rentier.</p>
+        <p class="flow-caveat">A reading, not an accounting category. Sector figures: CivicDataLab /
+          openbudgetsindia, Assam BE 2022-23. The larger extravagance (Union tax expenditures, asset
+          supports) is not in any state budget.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="colophon">
+    <div>Outflow (expenditure) side only — the receipts half (tax, non-tax, grants, borrowing) is not yet
+      wired and needs a receipts source (RBI State Finances / the state Annual Financial Statement).
+      <a href="#" id="methlink">Methodology</a>.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"
+    integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"
+    integrity="sha384-SM54CE5h+qdDI046d2Y5ym7wq1kq4uxcQ1cqGq5/+5jrE5tPLeDJSq711Q8sIska"
+    crossorigin="anonymous"></script>
+  <script src="flow.js"></script>
+</body>
+</html>
