@@ -182,7 +182,17 @@ a { color: var(--accent); }
 /* ---------- about / methodology ---------- */
 .about-wrap { max-width: 760px; margin: 0 auto; padding: 30px clamp(16px, 4vw, 32px) 80px; }
 .about-wrap h2 { font-size: 22px; margin: 0 0 14px; }
-.about-wrap h3 { font-size: 15px; margin: 26px 0 6px; color: var(--accent); }
+.about-wrap h3 { font-size: 15px; margin: 26px 0 6px; color: var(--accent); scroll-margin-top: 16px; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 22px; }
+.toc span { color: var(--ink-faint); font-size: 12.5px; }
+.toc button { border: 1px solid var(--line); background: var(--paper); color: var(--accent);
+  padding: 4px 11px; border-radius: 6px; cursor: pointer; font-size: 12.5px; font-family: var(--sans); }
+.toc button:hover { background: var(--accent-soft); }
+.to-top { position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 40px; height: 40px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink-soft); border-radius: 50%;
+  cursor: pointer; font-size: 17px; box-shadow: 0 2px 10px rgba(0,0,0,.14);
+  opacity: 0; pointer-events: none; transition: opacity .15s; }
+.to-top.show { opacity: 1; pointer-events: auto; }
 .about-wrap p { font-size: 15px; line-height: 1.65; color: #2b2b2b; margin: 0 0 12px; }
 .aside-wry {
   margin-top: 30px; padding: 18px 20px; border-left: 3px solid var(--c2);

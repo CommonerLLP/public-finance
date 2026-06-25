@@ -56,6 +56,7 @@ async function init() {
   renderClassGrid();
   bindSearch();
   bindTabs();
+  bindAnchorNav();
 
   if (!routeFromHash()) {
     showDetailEmpty();
@@ -387,6 +388,20 @@ function showYearEvents(year, events) {
         <div class="ev-head"><span class="ev-slip">${esc(ev.slip)}</span><span class="ev-date">${esc(ev.date)}</span></div>
         <div class="ev-changes">${ev.changes.map((ch) => chgHTML(ch, {})).join("")}</div>
       </div>`).join("");
+}
+
+/* ---------------- in-page jump nav + back-to-top ---------------- */
+function bindAnchorNav() {
+  document.querySelectorAll(".toc button[data-target]").forEach((b) =>
+    b.addEventListener("click", () => {
+      const el = document.getElementById(b.dataset.target);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }));
+  const top = $("#to-top");
+  if (top) {
+    top.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    window.addEventListener("scroll", () => top.classList.toggle("show", window.scrollY > 500));
+  }
 }
 
 /* ---------------- tabs + routing ---------------- */

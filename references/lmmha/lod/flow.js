@@ -97,5 +97,16 @@ async function render() {
 document.getElementById("methlink").addEventListener("click", (e) => {
   e.preventDefault(); location.href = "./#about";
 });
+
+// in-page jump nav + back-to-top
+document.querySelectorAll(".toc button[data-target]").forEach((b) =>
+  b.addEventListener("click", () => {
+    const el = document.getElementById(b.dataset.target);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
+const toTop = document.getElementById("to-top");
+toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+window.addEventListener("scroll", () => toTop.classList.toggle("show", window.scrollY > 500));
+
 bindToggle();
 render();
