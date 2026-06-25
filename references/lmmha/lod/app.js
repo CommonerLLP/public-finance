@@ -56,6 +56,7 @@ async function init() {
   renderClassGrid();
   bindSearch();
   bindTabs();
+  bindAnchorNav();
 
   if (!routeFromHash()) {
     showDetailEmpty();
@@ -389,6 +390,20 @@ function showYearEvents(year, events) {
       </div>`).join("");
 }
 
+/* ---------------- in-page jump nav + back-to-top ---------------- */
+function bindAnchorNav() {
+  // jump nav writes a shareable hash (#about/<section>); routeFromHash does the scroll
+  document.querySelectorAll(".toc button[data-target]").forEach((b) =>
+    b.addEventListener("click", () => {
+      location.hash = "about/" + b.dataset.target.replace(/^a-/, "");
+    }));
+  const top = $("#to-top");
+  if (top) {
+    top.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    window.addEventListener("scroll", () => top.classList.toggle("show", window.scrollY > 500));
+  }
+}
+
 /* ---------------- tabs + routing ---------------- */
 function bindTabs() {
   // both the header tab buttons and any [data-tab] link (e.g. footer "methodology")
@@ -412,5 +427,11 @@ function routeFromHash() {
   if (h.startsWith("subject/")) { showSubject(h.slice(8)); return true; }
   if (h === "timeline") { setTab("timeline"); return true; }
   if (h === "about") { setTab("about"); return true; }
+  if (h.startsWith("about/")) {           // shareable deep-link to a methodology subsection
+    setTab("about");
+    const el = document.getElementById("a-" + h.slice(6));
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    return true;
+  }
   return false;
 }

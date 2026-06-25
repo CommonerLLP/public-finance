@@ -43,6 +43,14 @@
     <div id="about-view" class="hidden">
       <div class="about-wrap">
         <h2>About this dataset — provenance &amp; method</h2>
+        <nav class="toc" aria-label="On this page">
+          <span>On this page:</span>
+          <button data-target="a-lineage">Lineage</button>
+          <button data-target="a-method">What we did</button>
+          <button data-target="a-coverage">Coverage &amp; limits</button>
+          <button data-target="a-observed">Observed reporting</button>
+          <button data-target="a-status">Status</button>
+        </nav>
         <p>The <strong>List of Major and Minor Heads of Account (LMMHA)</strong> is the master
           classification the <strong>Controller General of Accounts (CGA)</strong>, Department of
           Expenditure, Ministry of Finance, maintains for the Union and the States. It is the
@@ -50,14 +58,14 @@
           recorded. The live, authoritative version is the one CGA publishes on its website, current
           to 2026.</p>
 
-        <h3>Lineage</h3>
+        <h3 id="a-lineage">Lineage</h3>
         <p>The LMMHA was first issued in <strong>1987</strong> (first edition). That original survives
           only as a historical copy held in the <strong>Parliament Library</strong>. Successive
           editions consolidated the accumulated correction slips. The <strong>third edition (2001)</strong>
           is the base we use here, because it is the earliest consolidated list we could obtain in a
           form we could parse completely.</p>
 
-        <h3>What we did</h3>
+        <h3 id="a-method">What we did</h3>
         <p>We parsed the 2001 third-edition base into a structured, code-keyed dataset of
           <strong>5,768 heads</strong> — preserving the full Major → Sub-Major → Minor hierarchy and
           the scope notes attached to each head. We then layered the CGA's
@@ -65,7 +73,7 @@
           — on top of that base to track how the classification changes over time. The aim is a single,
           auditable trail from the 2001 base forward to the live 2026 list.</p>
 
-        <h3>Coverage and limits — please read</h3>
+        <h3 id="a-coverage">Coverage and limits — please read</h3>
         <p>The correction-slip trail we have reconstructed so far runs <strong>2012 to 2026</strong>.
           The periods <strong>1987–2001</strong> and <strong>2001–2012</strong> are
           <strong>not yet reconstructed</strong>: the 1987 first edition and the intermediate
@@ -75,7 +83,7 @@
         <p>Correction-slip numbers shown here are the <strong>government's own slip numbers</strong>;
           internal CGA file or PDF identifiers are deliberately not presented as slip numbers.</p>
 
-        <h3>The "observed reporting" layer</h3>
+        <h3 id="a-observed">The "observed reporting" layer</h3>
         <p>Where you see actual budgeted amounts under a head (for example, Assam's spending on public
           libraries), that is a <strong>separate evidence layer</strong>: how one government actually
           used a code, distinct from the normative list. Those figures are currently
@@ -83,7 +91,7 @@
           yet cross-checked against RBI <em>State Finances</em> or the state budget volumes. Treat them
           as indicative, not citable, until verified.</p>
 
-        <h3>Status</h3>
+        <h3 id="a-status">Status</h3>
         <p>This is public-interest fiscal-transparency infrastructure, <strong>in progress</strong>.
           Always verify against the CGA's published LMMHA before citing a head or a figure.</p>
 
@@ -120,6 +128,7 @@
     </div>
   </footer>
 
+  <button id="to-top" title="Back to top" aria-label="Back to top">↑</button>
   <script src="app.js"></script>
 </body>
 </html>

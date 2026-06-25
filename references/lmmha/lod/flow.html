@@ -69,11 +69,16 @@
         <button data-view="detailed">Where it goes — by sector (detailed)</button>
       </div>
       <div class="flow-legend" id="legend"></div>
-      <div class="sankey-scroll"><svg id="sankey"></svg></div>
+      <nav class="toc" aria-label="On this page">
+        <span>On this page:</span>
+        <button data-target="flow-diagram">The flow</button>
+        <button data-target="flow-dual">Dual-mandate reading</button>
+      </nav>
+      <div class="sankey-scroll" id="flow-diagram"><svg id="sankey"></svg></div>
       <p class="flow-hint">Wide diagram — swipe sideways to see all of it on a small screen.</p>
       <p class="flow-caveat" id="caveat"></p>
 
-      <section class="dual">
+      <section class="dual" id="flow-dual">
         <h2>Reading it through the dual mandate</h2>
         <p class="dual-lede">Melinda Cooper's <em>Counterrevolution</em> argues that the neoliberal fiscal
           order runs a double standard: <strong>austerity</strong> for the social wage,
@@ -124,6 +129,7 @@
       <a href="#" id="methlink">Methodology</a>.</div>
   </footer>
 
+  <button id="to-top" title="Back to top" aria-label="Back to top">↑</button>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"
     integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"
     crossorigin="anonymous"></script>
