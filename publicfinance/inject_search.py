@@ -176,6 +176,13 @@ def inject_search(html_path):
     else:
         # Fallback just append
         html += search_code
+
+    # Patch PyLODE vocpub profile bugs
+    # Remove broken #legend link
+    html = html.replace('<li><a href="#legend">Legend</a></li>', '')
+    
+    # Center the PyLODE footer
+    html = html.replace('<p style="text-align: right;">', '<p style="text-align: center;">')
         
     with open(html_path, 'w', encoding='utf-8') as f:
         f.write(html)
