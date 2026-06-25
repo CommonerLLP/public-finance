@@ -47,7 +47,10 @@ def render_reader_guide():
     <section id="how-to-read-lmmha" class="lmmha-public-section">
       <h2>How to read LMMHA</h2>
       <p>
-        LMMHA is the Government of India's standard chart of accounts for classifying
+        <strong>LMMHA = List of Major and Minor Heads of Account.</strong>
+      </p>
+      <p>
+        The List is the Government of India's standard chart of accounts for classifying
         receipts, expenditure, loans, capital outlay, contingency fund entries, and
         public account transactions. It is a reporting rulebook, not only a glossary.
       </p>
@@ -99,6 +102,10 @@ def change_label(change):
     return f'<span class="lmmha-change-action">{escape(action)}</span> <code>{code}</code>: {label}'
 
 
+def event_title(event):
+    return escape(event.get("slip_label") or event.get("source_label") or event.get("message"))
+
+
 def render_change_history(events, coverage_note=""):
     coverage = f"<p>{escape(coverage_note)}</p>" if coverage_note else ""
     if not events:
@@ -112,7 +119,7 @@ def render_change_history(events, coverage_note=""):
             entries.append(
                 "<li>"
                 "<details>"
-                f"<summary><time>{escape(event.get('date'))}</time> {escape(event.get('message'))}</summary>"
+                f"<summary><time>{escape(event.get('date'))}</time> {event_title(event)}</summary>"
                 f"<ul>{changes}</ul>"
                 "</details>"
                 "</li>"

@@ -170,6 +170,48 @@ class LMMHAPipelineTests(unittest.TestCase):
         self.assertEqual(lmmha_history.change_from_diff_row(added)["action"], "INSERT")
         self.assertEqual(lmmha_history.change_from_diff_row(removed)["action"], "DELETE")
 
+    def test_history_extracts_government_correction_slip_numbers(self):
+        self.assertEqual(
+            lmmha_history.extract_slip_numbers(
+                "Correction Slip: Correction Slip Number 1106 dated 09 06 2026 to the LMMHA 1963"
+            ),
+            ["1106"],
+        )
+        self.assertEqual(
+            lmmha_history.extract_slip_numbers(
+                "Correction Slip: Correction Slip Numbers from 1102 to 1105 dated 22 May 2026 1962"
+            ),
+            ["1102", "1103", "1104", "1105"],
+        )
+        self.assertEqual(
+            lmmha_history.extract_slip_numbers("Correction Slip: Correction Slips No 655 662 389"),
+            ["655", "656", "657", "658", "659", "660", "661", "662"],
+        )
+        self.assertEqual(
+            lmmha_history.slip_label("Correction Slip: Correction Slips No 655 662 389"),
+            "Correction Slip Nos. 655-662",
+        )
+        self.assertEqual(
+            lmmha_history.slip_label("Correction Slip: Corrigendum to Correction Slip No 1027 Dated 7th February 2024 1882"),
+            "Corrigendum to Correction Slip No. 1027",
+        )
+        self.assertEqual(
+            lmmha_history.extract_slip_numbers("Correction Slip: Regarding CS 730   734 420"),
+            ["730", "734"],
+        )
+        self.assertEqual(
+            lmmha_history.slip_label("Correction Slip: Regarding CS 730   734 420"),
+            "Correction Slip Nos. 730, 734",
+        )
+        self.assertEqual(
+            lmmha_history.source_entry_label("Correction Slip: Transactory and Parking Heads 381"),
+            "Transactory and Parking Heads",
+        )
+        self.assertEqual(
+            lmmha_history.public_event_message("Correction Slip: Correction Slips No 655 662 389"),
+            "Correction Slip Nos. 655-662",
+        )
+
     def test_skos_graph_includes_timeline_metadata(self):
         graph = lmmha_skos_exporter.build_graph(
             active_rows=[
@@ -323,6 +365,39 @@ class LMMHAPipelineTests(unittest.TestCase):
         self.assertIn("Corporation Tax", output)
         self.assertIn("Corporate Tax", output)
 
+    def test_inject_search_uses_official_correction_slip_label(self):
+        html = "<html><body><ul id=\"toc\"></ul><h1>LMMHA</h1></body></html>"
+        timeline = {
+            "generated_by": "publicfinance/lmmha_history.py",
+            "events": [
+                {
+                    "date": "2026-05-22",
+                    "message": "Correction Slip: Correction Slip Numbers from 1102 to 1105 dated 22 May 2026 to the LMMHA for change in nomenclature of MH 0020 Corporation Tax to 0020 Corporate Tax 1962",
+                    "slip_numbers": ["1102", "1103", "1104", "1105"],
+                    "slip_label": "Correction Slip Nos. 1102-1105",
+                    "changes": [
+                        {
+                            "action": "RENAME",
+                            "code": "0020",
+                            "label": "Corporate Tax",
+                            "old_label": "Corporation Tax",
+                        }
+                    ],
+                }
+            ],
+        }
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            html_path = Path(tmpdir) / "index.html"
+            timeline_path = Path(tmpdir) / "lmmha_timeline.json"
+            html_path.write_text(html, encoding="utf-8")
+            timeline_path.write_text(json.dumps(timeline), encoding="utf-8")
+
+            inject_search.inject_search(html_path, timeline_path=timeline_path)
+            output = html_path.read_text(encoding="utf-8")
+
+        self.assertIn("Correction Slip Nos. 1102-1105", output)
+
     def test_inject_search_adds_reader_guide_and_scope_notes(self):
         html = "<html><body><ul id=\"toc\"></ul><h1>LMMHA</h1></body></html>"
         notes_payload = {
@@ -347,6 +422,7 @@ class LMMHAPipelineTests(unittest.TestCase):
             output = html_path.read_text(encoding="utf-8")
 
         self.assertIn('id="how-to-read-lmmha"', output)
+        self.assertIn("LMMHA = List of Major and Minor Heads of Account", output)
         self.assertIn("first digit", output)
         self.assertIn("sub-head", output)
         self.assertIn("Formal correction-slip approval", output)

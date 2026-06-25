@@ -137,7 +137,7 @@ def build_graph(active_rows, timeline=None, scope_notes=None, base_uri=BASE_URI)
 
     for event in timeline:
         date_str = event["date"]
-        message = event.get("message") or "correction slip"
+        message = event.get("slip_label") or event.get("source_label") or event.get("message") or "correction slip"
 
         for change in event.get("changes", []):
             code = change["code"]

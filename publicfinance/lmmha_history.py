@@ -2,12 +2,20 @@ import argparse
 import csv
 import io
 import json
+import re
 import subprocess
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DOLT_DIR = REPO_ROOT / "db" / "lmmha"
 TIMELINE_JSON = REPO_ROOT / "references" / "lmmha" / "lmmha_timeline.json"
+CORRIGENDUM_TO_SLIP_RE = re.compile(r"\bcorrigendum\s+to\s+correction\s+slip\s+no\.?\s+(\d{3,4})\b", re.IGNORECASE)
+CORRIGENDUM_RE = re.compile(r"\bcorrigendum\s+no\.?\s+(\d{1,4})\b", re.IGNORECASE)
+CS_SEGMENT_RE = re.compile(r"\bcs\.?\s+((?:\d{3,4}\s*){1,8})", re.IGNORECASE)
+SLIP_SEGMENT_RE = re.compile(
+    r"\bcorrection\s+slips?\s*(?:nos?|numbers?|number)?(?:\s+from)?\s+((?:\d{3,4}\s*(?:(?:to|and|&|-)\s*)?){1,8})",
+    re.IGNORECASE,
+)
 
 
 def empty_to_none(value):
@@ -63,6 +71,82 @@ def change_from_diff_row(row):
     return None
 
 
+def slip_number_range(start, end):
+    if end <= start or end - start > 50:
+        return [str(start), str(end)]
+    return [str(number) for number in range(start, end + 1)]
+
+
+def clean_trailing_file_id(numbers):
+    while len(numbers) > 1 and numbers[-1] < numbers[-2]:
+        numbers.pop()
+    return numbers
+
+
+def extract_slip_numbers(message):
+    message = str(message or "")
+    corrigendum = CORRIGENDUM_TO_SLIP_RE.search(message)
+    if corrigendum:
+        return [corrigendum.group(1)]
+
+    match = SLIP_SEGMENT_RE.search(message)
+    if not match:
+        cs_match = CS_SEGMENT_RE.search(message)
+        if not cs_match:
+            return []
+        numbers = clean_trailing_file_id([int(value) for value in re.findall(r"\d{3,4}", cs_match.group(1))])
+        return [str(number) for number in numbers]
+
+    segment = match.group(1)
+    numbers = clean_trailing_file_id([int(value) for value in re.findall(r"\d{3,4}", segment)])
+
+    if len(numbers) == 2:
+        explicit_list = bool(re.search(r"\b(?:and|&)\b", segment, re.IGNORECASE))
+        if not explicit_list:
+            return slip_number_range(numbers[0], numbers[1])
+
+    return [str(number) for number in numbers]
+
+
+def compress_slip_numbers(numbers):
+    if not numbers:
+        return ""
+    values = [int(number) for number in numbers]
+    if len(values) == 1:
+        return str(values[0])
+    if values == list(range(values[0], values[-1] + 1)):
+        return f"{values[0]}-{values[-1]}"
+    return ", ".join(str(value) for value in values)
+
+
+def slip_label(message):
+    message = str(message or "")
+    numbers = extract_slip_numbers(message)
+    if numbers:
+        suffix = compress_slip_numbers(numbers)
+        if CORRIGENDUM_TO_SLIP_RE.search(message):
+            return f"Corrigendum to Correction Slip No. {suffix}"
+        if len(numbers) == 1:
+            return f"Correction Slip No. {suffix}"
+        return f"Correction Slip Nos. {suffix}"
+
+    corrigendum = CORRIGENDUM_RE.search(message)
+    if corrigendum:
+        return f"Corrigendum No. {corrigendum.group(1)}"
+
+    return ""
+
+
+def source_entry_label(message):
+    label = re.sub(r"^\s*Correction Slip:\s*", "", str(message or ""), flags=re.IGNORECASE).strip()
+    label = re.sub(r"\s+\d{3,4}\s*$", "", label).strip()
+    return label
+
+
+def public_event_message(message):
+    return slip_label(message) or source_entry_label(message)
+
+
 def sql_literal(value):
     return "'" + str(value).replace("'", "''") + "'"
 
@@ -114,13 +198,24 @@ def event_from_commit(commit, dolt_dir=DOLT_DIR):
         if change and change.get("code"):
             changes.append(change)
 
-    return {
+    label = slip_label(commit["message"])
+    public_message = label or source_entry_label(commit["message"])
+    event = {
         "date": str(commit["date"])[:10],
         "commit_hash": commit["commit_hash"],
         "parent_hash": parent_hash,
-        "message": commit["message"],
+        "message": public_message,
         "changes": changes,
     }
+    numbers = extract_slip_numbers(commit["message"])
+    if numbers:
+        event["slip_numbers"] = numbers
+    if label:
+        event["slip_label"] = label
+    else:
+        event["source_label"] = public_message
+
+    return event
 
 
 def build_timeline(dolt_dir=DOLT_DIR):

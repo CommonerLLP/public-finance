@@ -7,7 +7,7 @@
       "date": "2012-06-13",
       "commit_hash": "qdjh02hbkf4nbs565q5t05ifmhc040sq",
       "parent_hash": "7f6g4voboc49ggi88u34dqt4s866al7r",
-      "message": "Correction Slip: Correction Slips No 655 662 389",
+      "message": "Correction Slip Nos. 655-662",
       "changes": [
         {
           "action": "INSERT",
@@ -101,13 +101,24 @@
           "type": "Minor Head",
           "label": "Amount meant for Capital investment in revivable or profitable PSES"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "655",
+        "656",
+        "657",
+        "658",
+        "659",
+        "660",
+        "661",
+        "662"
+      ],
+      "slip_label": "Correction Slip Nos. 655-662"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "i9aa84p9op4ojetjd455sorbnr2ious3",
       "parent_hash": "qdjh02hbkf4nbs565q5t05ifmhc040sq",
-      "message": "Correction Slip: Correction Slips No 663 668 388",
+      "message": "Correction Slip Nos. 663-668",
       "changes": [
         {
           "action": "INSERT",
@@ -123,13 +134,22 @@
           "type": "Minor Head",
           "label": "Farmers' Debt Relief Fund (FDRF)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "663",
+        "664",
+        "665",
+        "666",
+        "667",
+        "668"
+      ],
+      "slip_label": "Correction Slip Nos. 663-668"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "pf8rkapgr61h3tim0nodm2uieqv6898b",
       "parent_hash": "i9aa84p9op4ojetjd455sorbnr2ious3",
-      "message": "Correction Slip: Correction Slips No 670 673 386",
+      "message": "Correction Slip Nos. 670-673",
       "changes": [
         {
           "action": "INSERT",
@@ -138,13 +158,20 @@
           "type": "Minor Head",
           "label": "Gross Collection"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "670",
+        "671",
+        "672",
+        "673"
+      ],
+      "slip_label": "Correction Slip Nos. 670-673"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "654lb8l92gelkaglqjk3uuuutk2nbo0i",
       "parent_hash": "pf8rkapgr61h3tim0nodm2uieqv6898b",
-      "message": "Correction Slip: Correction Slips No 676 680 383",
+      "message": "Correction Slip Nos. 676-680",
       "changes": [
         {
           "action": "INSERT",
@@ -181,13 +208,21 @@
           "type": "Minor Head",
           "label": "Unique Identification Scheme."
         }
-      ]
+      ],
+      "slip_numbers": [
+        "676",
+        "677",
+        "678",
+        "679",
+        "680"
+      ],
+      "slip_label": "Correction Slip Nos. 676-680"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "suujjchif80pslp2dvb524hk7k8gtc60",
       "parent_hash": "654lb8l92gelkaglqjk3uuuutk2nbo0i",
-      "message": "Correction Slip: Correction Slips No 681 692 382",
+      "message": "Correction Slip Nos. 681-692",
       "changes": [
         {
           "action": "INSERT",
@@ -281,13 +316,28 @@
           "type": "Minor Head",
           "label": "Warehousing Development and Regulatory Authority Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "681",
+        "682",
+        "683",
+        "684",
+        "685",
+        "686",
+        "687",
+        "688",
+        "689",
+        "690",
+        "691",
+        "692"
+      ],
+      "slip_label": "Correction Slip Nos. 681-692"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "8717anv88rjsnkcb5e2qua9t2a8gfi48",
       "parent_hash": "suujjchif80pslp2dvb524hk7k8gtc60",
-      "message": "Correction Slip: Correction Slips No 694 696 379",
+      "message": "Correction Slip Nos. 694-696",
       "changes": [
         {
           "action": "INSERT",
@@ -310,13 +360,19 @@
           "type": "Minor Head",
           "label": "National Clean Energy Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "694",
+        "695",
+        "696"
+      ],
+      "slip_label": "Correction Slip Nos. 694-696"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "ei2t4kttefvrmossc06gk5qki8m1abk7",
       "parent_hash": "8717anv88rjsnkcb5e2qua9t2a8gfi48",
-      "message": "Correction Slip: Correction Slips No 697 698 378",
+      "message": "Correction Slip Nos. 697-698",
       "changes": [
         {
           "action": "INSERT",
@@ -332,13 +388,18 @@
           "type": "Minor Head",
           "label": "Cash Management Bills"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "697",
+        "698"
+      ],
+      "slip_label": "Correction Slip Nos. 697-698"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "4mgiiteihnf8bie7jdlla6gdontvdv1d",
       "parent_hash": "ei2t4kttefvrmossc06gk5qki8m1abk7",
-      "message": "Correction Slip: Correction Slips No 699 703 377",
+      "message": "Correction Slip Nos. 699-703",
       "changes": [
         {
           "action": "RENAME",
@@ -388,13 +449,21 @@
           "label": "State Disaster Response Fund – Investment Accounts",
           "old_label": "Calamity Relief Fund - Investment Account."
         }
-      ]
+      ],
+      "slip_numbers": [
+        "699",
+        "700",
+        "701",
+        "702",
+        "703"
+      ],
+      "slip_label": "Correction Slip Nos. 699-703"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "hqakug19geqor2qsmui4s685adal2n1n",
       "parent_hash": "4mgiiteihnf8bie7jdlla6gdontvdv1d",
-      "message": "Correction Slip: Correction Slips No 704 708 376",
+      "message": "Correction Slip Nos. 704-708",
       "changes": [
         {
           "action": "INSERT",
@@ -431,13 +500,21 @@
           "type": "Minor Head",
           "label": "Collection on Sale of Railway Tickets"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "704",
+        "705",
+        "706",
+        "707",
+        "708"
+      ],
+      "slip_label": "Correction Slip Nos. 704-708"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "ir4uvojocjfcgeujj4q5pfk0h60do5id",
       "parent_hash": "hqakug19geqor2qsmui4s685adal2n1n",
-      "message": "Correction Slip: Correction Slips No 709 712 375",
+      "message": "Correction Slip Nos. 709-712",
       "changes": [
         {
           "action": "INSERT",
@@ -461,13 +538,20 @@
           "type": "Minor Head",
           "label": "National Disaster Response Fund (NDRF)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "709",
+        "710",
+        "711",
+        "712"
+      ],
+      "slip_label": "Correction Slip Nos. 709-712"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "68lspkdcn0i2q2hso6qqmp427d0luccd",
       "parent_hash": "ir4uvojocjfcgeujj4q5pfk0h60do5id",
-      "message": "Correction Slip: Correction Slips No  714 717 373",
+      "message": "Correction Slip Nos. 714-717",
       "changes": [
         {
           "action": "RENAME",
@@ -514,13 +598,20 @@
           "type": "Minor Head",
           "label": "Other Postal Deposits"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "714",
+        "715",
+        "716",
+        "717"
+      ],
+      "slip_label": "Correction Slip Nos. 714-717"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "90ieq074u7n73dgs66h3mjfg97thb9vc",
       "parent_hash": "68lspkdcn0i2q2hso6qqmp427d0luccd",
-      "message": "Correction Slip: Correction Slips No  720 721 370",
+      "message": "Correction Slip Nos. 720-721",
       "changes": [
         {
           "action": "INSERT",
@@ -544,13 +635,18 @@
           "type": "Minor Head",
           "label": "Traction Distribution Works"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "720",
+        "721"
+      ],
+      "slip_label": "Correction Slip Nos. 720-721"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "03na6icjievs7c2n0gpbn8l73pbu291e",
       "parent_hash": "90ieq074u7n73dgs66h3mjfg97thb9vc",
-      "message": "Correction Slip: Correction Slips No  722 724 369",
+      "message": "Correction Slip Nos. 722-724",
       "changes": [
         {
           "action": "INSERT",
@@ -574,13 +670,19 @@
           "type": "Sub-Major Head",
           "label": "Welfare of Minorities"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "722",
+        "723",
+        "724"
+      ],
+      "slip_label": "Correction Slip Nos. 722-724"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "vihmb43du9rtrnsl7dt0l5bqopc0la27",
       "parent_hash": "03na6icjievs7c2n0gpbn8l73pbu291e",
-      "message": "Correction Slip: Transactory and Parking Heads 381",
+      "message": "Transactory and Parking Heads",
       "changes": [
         {
           "action": "INSERT",
@@ -638,13 +740,14 @@
           "type": "Minor Head",
           "label": "Scheduled Tribe Sub Plans"
         }
-      ]
+      ],
+      "source_label": "Transactory and Parking Heads"
     },
     {
       "date": "2012-10-26",
       "commit_hash": "6oakh3sm3mhngbbe7lgefivckftu68qq",
       "parent_hash": "vihmb43du9rtrnsl7dt0l5bqopc0la27",
-      "message": "Correction Slip: Correction Slips No 725 737 402",
+      "message": "Correction Slip Nos. 725-737",
       "changes": [
         {
           "action": "INSERT",
@@ -968,13 +1071,29 @@
           "type": "Minor Head",
           "label": "Advance paid to UTI Asset Management Company Ltd. for investment of Rural Postal Life Insurance Funds"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "725",
+        "726",
+        "727",
+        "728",
+        "729",
+        "730",
+        "731",
+        "732",
+        "733",
+        "734",
+        "735",
+        "736",
+        "737"
+      ],
+      "slip_label": "Correction Slip Nos. 725-737"
     },
     {
       "date": "2012-11-09",
       "commit_hash": "o4cu0k5pvnp245mtjbo3eaa8oo1ccv50",
       "parent_hash": "6oakh3sm3mhngbbe7lgefivckftu68qq",
-      "message": "Correction Slip: Correction Slip No 738 404",
+      "message": "Correction Slip No. 738",
       "changes": [
         {
           "action": "INSERT",
@@ -983,13 +1102,17 @@
           "type": "Minor Head",
           "label": "Acquisition of Ready Built Accommodation"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "738"
+      ],
+      "slip_label": "Correction Slip No. 738"
     },
     {
       "date": "2012-12-18",
       "commit_hash": "db4lg5ug6dj9o9nq2puprq39cekbv41i",
       "parent_hash": "o4cu0k5pvnp245mtjbo3eaa8oo1ccv50",
-      "message": "Correction Slip: Correction Slip No 739 405",
+      "message": "Correction Slip No. 739",
       "changes": [
         {
           "action": "INSERT",
@@ -998,20 +1121,29 @@
           "type": "Minor Head",
           "label": "Computerization of District and Sub-ordinate Courts"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "739"
+      ],
+      "slip_label": "Correction Slip No. 739"
     },
     {
       "date": "2012-12-27",
       "commit_hash": "j0re9rn4bkaod7rljheotmjoeesduut0",
       "parent_hash": "db4lg5ug6dj9o9nq2puprq39cekbv41i",
-      "message": "Correction Slip: Correction Slip No  740   741 406",
-      "changes": []
+      "message": "Correction Slip Nos. 740-741",
+      "changes": [],
+      "slip_numbers": [
+        "740",
+        "741"
+      ],
+      "slip_label": "Correction Slip Nos. 740-741"
     },
     {
       "date": "2013-03-06",
       "commit_hash": "1gtb5irer2rlomemq6qtttl9i28kajmk",
       "parent_hash": "j0re9rn4bkaod7rljheotmjoeesduut0",
-      "message": "Correction Slip: Correction Slips No 742 407",
+      "message": "Correction Slip No. 742",
       "changes": [
         {
           "action": "INSERT",
@@ -1020,13 +1152,17 @@
           "type": "Minor Head",
           "label": "National Permit Account"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "742"
+      ],
+      "slip_label": "Correction Slip No. 742"
     },
     {
       "date": "2013-06-14",
       "commit_hash": "c3hddfkaapnaporampash9a147uchlsb",
       "parent_hash": "1gtb5irer2rlomemq6qtttl9i28kajmk",
-      "message": "Correction Slip: Correction Slips No 743 745 410",
+      "message": "Correction Slip Nos. 743-745",
       "changes": [
         {
           "action": "INSERT",
@@ -1042,13 +1178,19 @@
           "type": "Minor Head",
           "label": "Provision of Urban Amenities in Rural Areas"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "743",
+        "744",
+        "745"
+      ],
+      "slip_label": "Correction Slip Nos. 743-745"
     },
     {
       "date": "2013-07-16",
       "commit_hash": "vhhihl07g7ddl2j2gvsvfru0pe9p20ta",
       "parent_hash": "c3hddfkaapnaporampash9a147uchlsb",
-      "message": "Correction Slip: Correction Slip No 746 411",
+      "message": "Correction Slip No. 746",
       "changes": [
         {
           "action": "RENAME",
@@ -1058,13 +1200,17 @@
           "label": "Staff Selection Commission (1)",
           "old_label": "Staff Selection Commission"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "746"
+      ],
+      "slip_label": "Correction Slip No. 746"
     },
     {
       "date": "2013-10-17",
       "commit_hash": "rshtif9l0u0c7fsufb4og8lo4fu5n4ma",
       "parent_hash": "vhhihl07g7ddl2j2gvsvfru0pe9p20ta",
-      "message": "Correction Slip: Correction Slip No 748 413",
+      "message": "Correction Slip No. 748",
       "changes": [
         {
           "action": "INSERT",
@@ -1073,13 +1219,17 @@
           "type": "Minor Head",
           "label": "Disinvestment Proceeds of Government of India during the period 01-04-2009 to 31-03-2012."
         }
-      ]
+      ],
+      "slip_numbers": [
+        "748"
+      ],
+      "slip_label": "Correction Slip No. 748"
     },
     {
       "date": "2013-11-11",
       "commit_hash": "u79tljo07vtkjbmn6l6ce4p024rbv8nv",
       "parent_hash": "rshtif9l0u0c7fsufb4og8lo4fu5n4ma",
-      "message": "Correction Slip: Correction Slip No 749 414",
+      "message": "Correction Slip No. 749",
       "changes": [
         {
           "action": "INSERT",
@@ -1088,34 +1238,54 @@
           "type": "Sub-Major Head",
           "label": "Industrial Corridors"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "749"
+      ],
+      "slip_label": "Correction Slip No. 749"
     },
     {
       "date": "2013-11-22",
       "commit_hash": "relicg0usolphugp4osqknp9mc556158",
       "parent_hash": "u79tljo07vtkjbmn6l6ce4p024rbv8nv",
-      "message": "Correction Slip: Correction Slip No 750 415",
-      "changes": []
+      "message": "Correction Slip No. 750",
+      "changes": [],
+      "slip_numbers": [
+        "750"
+      ],
+      "slip_label": "Correction Slip No. 750"
     },
     {
       "date": "2013-11-25",
       "commit_hash": "5enkpht7v3r22d31j7629hfubtbu16l3",
       "parent_hash": "relicg0usolphugp4osqknp9mc556158",
-      "message": "Correction Slip: Correction Slips No 751 754 418",
-      "changes": []
+      "message": "Correction Slip Nos. 751-754",
+      "changes": [],
+      "slip_numbers": [
+        "751",
+        "752",
+        "753",
+        "754"
+      ],
+      "slip_label": "Correction Slip Nos. 751-754"
     },
     {
       "date": "2014-01-21",
       "commit_hash": "6od9tgr285n5uaj2upir388ni9fqtkbl",
       "parent_hash": "5enkpht7v3r22d31j7629hfubtbu16l3",
-      "message": "Correction Slip: Regarding CS 730   734 420",
-      "changes": []
+      "message": "Correction Slip Nos. 730, 734",
+      "changes": [],
+      "slip_numbers": [
+        "730",
+        "734"
+      ],
+      "slip_label": "Correction Slip Nos. 730, 734"
     },
     {
       "date": "2014-01-24",
       "commit_hash": "8i14ohmlu6d52q45v4812i4j6sq95l1r",
       "parent_hash": "6od9tgr285n5uaj2upir388ni9fqtkbl",
-      "message": "Correction Slip: Correction Slips No 755 759 438",
+      "message": "Correction Slip Nos. 755-759",
       "changes": [
         {
           "action": "DELETE",
@@ -1174,13 +1344,21 @@
           "type": "Minor Head",
           "label": "Central Vigilance Commission"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "755",
+        "756",
+        "757",
+        "758",
+        "759"
+      ],
+      "slip_label": "Correction Slip Nos. 755-759"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "5klhmgekner31meg66i7rkn1emh02m87",
       "parent_hash": "8i14ohmlu6d52q45v4812i4j6sq95l1r",
-      "message": "Correction Slip: Correction Slip No 669 387",
+      "message": "Correction Slip No. 669",
       "changes": [
         {
           "action": "INSERT",
@@ -1189,13 +1367,17 @@
           "type": "Minor Head",
           "label": "Central Electricity Regulatory Commission Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "669"
+      ],
+      "slip_label": "Correction Slip No. 669"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "urt6tskii21mk7cpprhhqg7epin1ne2e",
       "parent_hash": "5klhmgekner31meg66i7rkn1emh02m87",
-      "message": "Correction Slip: Correction Slip No 674 385",
+      "message": "Correction Slip No. 674",
       "changes": [
         {
           "action": "INSERT",
@@ -1204,13 +1386,17 @@
           "type": "Minor Head",
           "label": "Reimbursement of losses on operating Strategic Railway Lines."
         }
-      ]
+      ],
+      "slip_numbers": [
+        "674"
+      ],
+      "slip_label": "Correction Slip No. 674"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "22ctsvttgpd0s4lr0nqvgbp16c928q6h",
       "parent_hash": "urt6tskii21mk7cpprhhqg7epin1ne2e",
-      "message": "Correction Slip: Correction Slip No 675 384",
+      "message": "Correction Slip No. 675",
       "changes": [
         {
           "action": "INSERT",
@@ -1219,27 +1405,39 @@
           "type": "Minor Head",
           "label": "International Sugar Organisation"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "675"
+      ],
+      "slip_label": "Correction Slip No. 675"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "k061pr0kvrg8f509bdtcmeu930dr3l6s",
       "parent_hash": "22ctsvttgpd0s4lr0nqvgbp16c928q6h",
-      "message": "Correction Slip: Correction Slip No 693 380",
-      "changes": []
+      "message": "Correction Slip No. 693",
+      "changes": [],
+      "slip_numbers": [
+        "693"
+      ],
+      "slip_label": "Correction Slip No. 693"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "19i2v3bdk12etjcv0g6o2t5hqp3i0suv",
       "parent_hash": "k061pr0kvrg8f509bdtcmeu930dr3l6s",
-      "message": "Correction Slip: Correction Slip No  718 372",
-      "changes": []
+      "message": "Correction Slip No. 718",
+      "changes": [],
+      "slip_numbers": [
+        "718"
+      ],
+      "slip_label": "Correction Slip No. 718"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "ka052n7qgmu2mjbbk1bmv87qg81uvkp1",
       "parent_hash": "19i2v3bdk12etjcv0g6o2t5hqp3i0suv",
-      "message": "Correction Slip: Correction Slip No  719 371",
+      "message": "Correction Slip No. 719",
       "changes": [
         {
           "action": "INSERT",
@@ -1248,13 +1446,17 @@
           "type": "Minor Head",
           "label": "Collection Charges- Other Taxes"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "719"
+      ],
+      "slip_label": "Correction Slip No. 719"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "fdgook4kqjpkt64iqfl7itcf1s7lkf6b",
       "parent_hash": "ka052n7qgmu2mjbbk1bmv87qg81uvkp1",
-      "message": "Correction Slip: Correction Slips No 388 onwards 400",
+      "message": "Correction Slip No. 388",
       "changes": [
         {
           "action": "INSERT",
@@ -3348,13 +3550,17 @@
           "type": "Minor Head",
           "label": "106- Market Stabilization Scheme (2)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "388"
+      ],
+      "slip_label": "Correction Slip No. 388"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "8ah7uqtrs14c80kfkhu856jgbqe76hsu",
       "parent_hash": "fdgook4kqjpkt64iqfl7itcf1s7lkf6b",
-      "message": "Correction Slip: Correction Slips No 593 595 399",
+      "message": "Correction Slip Nos. 593-595",
       "changes": [
         {
           "action": "INSERT",
@@ -3384,13 +3590,19 @@
           "type": "Minor Head",
           "label": "National Rural Employment Guarantee Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "593",
+        "594",
+        "595"
+      ],
+      "slip_label": "Correction Slip Nos. 593-595"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "v2ltdgn2626d076h00jhur7s49ie3sek",
       "parent_hash": "8ah7uqtrs14c80kfkhu856jgbqe76hsu",
-      "message": "Correction Slip: Correction Slips No 596 600 398",
+      "message": "Correction Slip Nos. 596-600",
       "changes": [
         {
           "action": "INSERT",
@@ -3420,13 +3632,21 @@
           "type": "Minor Head",
           "label": "MUTP loan repayment reserve fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "596",
+        "597",
+        "598",
+        "599",
+        "600"
+      ],
+      "slip_label": "Correction Slip Nos. 596-600"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "ugnld3g9io75f28flufmts5iloqvd59v",
       "parent_hash": "v2ltdgn2626d076h00jhur7s49ie3sek",
-      "message": "Correction Slip: Correction Slips No 601 607 397",
+      "message": "Correction Slip Nos. 601-607",
       "changes": [
         {
           "action": "INSERT",
@@ -3540,13 +3760,23 @@
           "type": "Minor Head",
           "label": "Share of net proceeds assigned to States"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "601",
+        "602",
+        "603",
+        "604",
+        "605",
+        "606",
+        "607"
+      ],
+      "slip_label": "Correction Slip Nos. 601-607"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "flr7o9uv69mi34h8i6p8b5cga2ctpo72",
       "parent_hash": "ugnld3g9io75f28flufmts5iloqvd59v",
-      "message": "Correction Slip: Correction Slips No 608 613 396",
+      "message": "Correction Slip Nos. 608-613",
       "changes": [
         {
           "action": "INSERT",
@@ -3562,13 +3792,22 @@
           "type": "Minor Head",
           "label": "Special Securities issued to Oil Marketing Companies (8.13 per cent Oil Marketing Companies’ Government of India Special Bonds, 2021)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "608",
+        "609",
+        "610",
+        "611",
+        "612",
+        "613"
+      ],
+      "slip_label": "Correction Slip Nos. 608-613"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "jvblt414egq1e189snsm8into9lu1bfo",
       "parent_hash": "flr7o9uv69mi34h8i6p8b5cga2ctpo72",
-      "message": "Correction Slip: Correction Slips No 614 615 395",
+      "message": "Correction Slip Nos. 614-615",
       "changes": [
         {
           "action": "INSERT",
@@ -3584,13 +3823,18 @@
           "type": "Minor Head",
           "label": "Instant Money Orders (i MO)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "614",
+        "615"
+      ],
+      "slip_label": "Correction Slip Nos. 614-615"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "bk9rc8goegadq86pj2offkq095u61kcr",
       "parent_hash": "jvblt414egq1e189snsm8into9lu1bfo",
-      "message": "Correction Slip: Correction Slips No 616 617 394",
+      "message": "Correction Slip Nos. 616-617",
       "changes": [
         {
           "action": "INSERT",
@@ -3620,13 +3864,18 @@
           "type": "Minor Head",
           "label": "Assistance to Small & Medium Enterprises for Technology Development"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "616",
+        "617"
+      ],
+      "slip_label": "Correction Slip Nos. 616-617"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "gjrvouv5d6g8supmokpunc853nomgrmr",
       "parent_hash": "bk9rc8goegadq86pj2offkq095u61kcr",
-      "message": "Correction Slip: Correction Slips No 618 632 393",
+      "message": "Correction Slip Nos. 618-632",
       "changes": [
         {
           "action": "RENAME",
@@ -3774,13 +4023,31 @@
           "type": "Minor Head",
           "label": "Interest on Investments in other instruments"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "618",
+        "619",
+        "620",
+        "621",
+        "622",
+        "623",
+        "624",
+        "625",
+        "626",
+        "627",
+        "628",
+        "629",
+        "630",
+        "631",
+        "632"
+      ],
+      "slip_label": "Correction Slip Nos. 618-632"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "7m1i5spv8p3sevbec5il7a0mg2njuppv",
       "parent_hash": "gjrvouv5d6g8supmokpunc853nomgrmr",
-      "message": "Correction Slip: Correction Slips No 633 634 392",
+      "message": "Correction Slip Nos. 633-634",
       "changes": [
         {
           "action": "INSERT",
@@ -3796,13 +4063,18 @@
           "type": "Minor Head",
           "label": "Monitoring Services"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "633",
+        "634"
+      ],
+      "slip_label": "Correction Slip Nos. 633-634"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "vi9ls6tlrvhh5uf8bvmsvkigmek8n79l",
       "parent_hash": "7m1i5spv8p3sevbec5il7a0mg2njuppv",
-      "message": "Correction Slip: Correction Slips No 635 636 391",
+      "message": "Correction Slip Nos. 635-636",
       "changes": [
         {
           "action": "INSERT",
@@ -3811,13 +4083,18 @@
           "type": "Minor Head",
           "label": "Pay and Accounts Offices Electronic Advices"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "635",
+        "636"
+      ],
+      "slip_label": "Correction Slip Nos. 635-636"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "crouuj8f0jgcp7p4i5mcg2fs9svfsts7",
       "parent_hash": "vi9ls6tlrvhh5uf8bvmsvkigmek8n79l",
-      "message": "Correction Slip: Correction Slips No 637 654 390",
+      "message": "Correction Slip Nos. 637-654",
       "changes": [
         {
           "action": "INSERT",
@@ -3907,20 +4184,45 @@
           "type": "Minor Head",
           "label": "Union Territory Governments"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "637",
+        "638",
+        "639",
+        "640",
+        "641",
+        "642",
+        "643",
+        "644",
+        "645",
+        "646",
+        "647",
+        "648",
+        "649",
+        "650",
+        "651",
+        "652",
+        "653",
+        "654"
+      ],
+      "slip_label": "Correction Slip Nos. 637-654"
     },
     {
       "date": "2013-10-07",
       "commit_hash": "vonhcn8f2hddh0oeskglvgmhc0m55mdb",
       "parent_hash": "crouuj8f0jgcp7p4i5mcg2fs9svfsts7",
-      "message": "Correction Slip: Correction Slip No 747 412",
-      "changes": []
+      "message": "Correction Slip No. 747",
+      "changes": [],
+      "slip_numbers": [
+        "747"
+      ],
+      "slip_label": "Correction Slip No. 747"
     },
     {
       "date": "2014-02-05",
       "commit_hash": "i61u9q62q4l40hpfelggjhgcqku00h25",
       "parent_hash": "vonhcn8f2hddh0oeskglvgmhc0m55mdb",
-      "message": "Correction Slip: Correction Slip No 760 421",
+      "message": "Correction Slip No. 760",
       "changes": [
         {
           "action": "INSERT",
@@ -3929,13 +4231,17 @@
           "type": "Minor Head",
           "label": "Nirbhaya Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "760"
+      ],
+      "slip_label": "Correction Slip No. 760"
     },
     {
       "date": "2014-06-02",
       "commit_hash": "ndj0m26l0qcv73f2fbqoaq93sui1jtgo",
       "parent_hash": "i61u9q62q4l40hpfelggjhgcqku00h25",
-      "message": "Correction Slip: Correction Slips No 765 766 424",
+      "message": "Correction Slip Nos. 765-766",
       "changes": [
         {
           "action": "DELETE",
@@ -3944,13 +4250,18 @@
           "type": "Minor Head",
           "label": "Vigilance"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "765",
+        "766"
+      ],
+      "slip_label": "Correction Slip Nos. 765-766"
     },
     {
       "date": "2014-06-20",
       "commit_hash": "vmvq2inem75qvv1p26lvj784hsmukn76",
       "parent_hash": "ndj0m26l0qcv73f2fbqoaq93sui1jtgo",
-      "message": "Correction Slip: Correction Slips No 767 768 425",
+      "message": "Correction Slip Nos. 767-768",
       "changes": [
         {
           "action": "INSERT",
@@ -3966,13 +4277,18 @@
           "type": "Minor Head",
           "label": "Securities and Exchange Board of India General Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "767",
+        "768"
+      ],
+      "slip_label": "Correction Slip Nos. 767-768"
     },
     {
       "date": "2014-06-20",
       "commit_hash": "qdnni8t96optmhk27q1p9je7ki3eu158",
       "parent_hash": "vmvq2inem75qvv1p26lvj784hsmukn76",
-      "message": "Correction Slip: Correction Slips No 769 771 439",
+      "message": "Correction Slip Nos. 769-771",
       "changes": [
         {
           "action": "RENAME",
@@ -3982,20 +4298,30 @@
           "label": "Commodities Transaction Tax",
           "old_label": "Banking Cash Transaction Tax"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "769",
+        "770",
+        "771"
+      ],
+      "slip_label": "Correction Slip Nos. 769-771"
     },
     {
       "date": "2012-06-13",
       "commit_hash": "mqae55gpsia7dtbvulso5ug4j271og7r",
       "parent_hash": "qdnni8t96optmhk27q1p9je7ki3eu158",
-      "message": "Correction Slip: Correction Slip No 713 374",
-      "changes": []
+      "message": "Correction Slip No. 713",
+      "changes": [],
+      "slip_numbers": [
+        "713"
+      ],
+      "slip_label": "Correction Slip No. 713"
     },
     {
       "date": "2014-02-26",
       "commit_hash": "2pqrhdg7dfshpj6htqf2291hgm4rfq27",
       "parent_hash": "mqae55gpsia7dtbvulso5ug4j271og7r",
-      "message": "Correction Slip: Correction Slips No  761 762 422",
+      "message": "Correction Slip Nos. 761-762",
       "changes": [
         {
           "action": "INSERT",
@@ -4011,13 +4337,18 @@
           "type": "Minor Head",
           "label": "Tax on Distributed Income by Securitization Trusts under Section 115TA of Income Tax Act, 1961 (Tax on distributed income to investors)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "761",
+        "762"
+      ],
+      "slip_label": "Correction Slip Nos. 761-762"
     },
     {
       "date": "2014-05-05",
       "commit_hash": "33bp8ug9dogh62q5gg4rnhoantdnjhir",
       "parent_hash": "2pqrhdg7dfshpj6htqf2291hgm4rfq27",
-      "message": "Correction Slip: Correction slips No 763   MH 3002 and 764   MH 3003 Dated 05th May 2014 1585",
+      "message": "Correction Slip No. 763",
       "changes": [
         {
           "action": "RENAME",
@@ -4027,20 +4358,29 @@
           "label": "Rental, lease & spectrum charges for Signaling and Telecommunication circuits",
           "old_label": "Rental to P and T for signalling and Telecommunication circuits"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "763"
+      ],
+      "slip_label": "Correction Slip No. 763"
     },
     {
       "date": "2014-06-24",
       "commit_hash": "mpjfkrevr2244lgv457rdesskd9covvs",
       "parent_hash": "33bp8ug9dogh62q5gg4rnhoantdnjhir",
-      "message": "Correction Slip: Correction Slips No 772 773 426",
-      "changes": []
+      "message": "Correction Slip Nos. 772-773",
+      "changes": [],
+      "slip_numbers": [
+        "772",
+        "773"
+      ],
+      "slip_label": "Correction Slip Nos. 772-773"
     },
     {
       "date": "2014-06-24",
       "commit_hash": "78r6p8td740clu78rnhvob8tgq73n2nk",
       "parent_hash": "mpjfkrevr2244lgv457rdesskd9covvs",
-      "message": "Correction Slip: Correction slips No 772   MH 8121 and 773   MH 8235 Dated 24th June 2014 1586",
+      "message": "Correction Slip No. 772",
       "changes": [
         {
           "action": "INSERT",
@@ -4063,20 +4403,28 @@
           "type": "Minor Head",
           "label": "State Disaster Response Fund – Investment Accounts"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "772"
+      ],
+      "slip_label": "Correction Slip No. 772"
     },
     {
       "date": "2014-09-24",
       "commit_hash": "cji3di3mu9r5vmhohu3jk1eanbmnd9gm",
       "parent_hash": "78r6p8td740clu78rnhvob8tgq73n2nk",
-      "message": "Correction Slip: Correction slip No 774 Dated 24th September 2014 1584",
-      "changes": []
+      "message": "Correction Slip No. 774",
+      "changes": [],
+      "slip_numbers": [
+        "774"
+      ],
+      "slip_label": "Correction Slip No. 774"
     },
     {
       "date": "2014-10-27",
       "commit_hash": "0144cg9r443jg96ugib246tf99mf1r2q",
       "parent_hash": "cji3di3mu9r5vmhohu3jk1eanbmnd9gm",
-      "message": "Correction Slip: Correction Slip No  775 429",
+      "message": "Correction Slip No. 775",
       "changes": [
         {
           "action": "INSERT",
@@ -4085,20 +4433,28 @@
           "type": "Minor Head",
           "label": "Exploration and Detailed Drilling"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "775"
+      ],
+      "slip_label": "Correction Slip No. 775"
     },
     {
       "date": "2014-11-26",
       "commit_hash": "7e441ll9vmsoau75mhmuqknov2m9jbn3",
       "parent_hash": "0144cg9r443jg96ugib246tf99mf1r2q",
-      "message": "Correction Slip: Correction Slip No  776 441",
-      "changes": []
+      "message": "Correction Slip No. 776",
+      "changes": [],
+      "slip_numbers": [
+        "776"
+      ],
+      "slip_label": "Correction Slip No. 776"
     },
     {
       "date": "2015-01-09",
       "commit_hash": "2h1u9m0bc212tgkct4o5u70f47npfbsf",
       "parent_hash": "7e441ll9vmsoau75mhmuqknov2m9jbn3",
-      "message": "Correction Slip: Correction Slip No  777 431",
+      "message": "Correction Slip No. 777",
       "changes": [
         {
           "action": "INSERT",
@@ -4107,13 +4463,17 @@
           "type": "Minor Head",
           "label": "License Fee from DTH Operators"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "777"
+      ],
+      "slip_label": "Correction Slip No. 777"
     },
     {
       "date": "2015-02-23",
       "commit_hash": "2sls9l7gmouvbch1hj25riiin2nrk6su",
       "parent_hash": "2h1u9m0bc212tgkct4o5u70f47npfbsf",
-      "message": "Correction Slip: Correction Slips No 778 779 443",
+      "message": "Correction Slip Nos. 778-779",
       "changes": [
         {
           "action": "RENAME",
@@ -4130,20 +4490,29 @@
           "type": "Minor Head",
           "label": "Treasury Electronic Advices"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "778",
+        "779"
+      ],
+      "slip_label": "Correction Slip Nos. 778-779"
     },
     {
       "date": "2015-03-27",
       "commit_hash": "u9qnc8trdf8rqap9shvrqcf0u4kod0bk",
       "parent_hash": "2sls9l7gmouvbch1hj25riiin2nrk6su",
-      "message": "Correction Slip: Correction Slip No  780 434",
-      "changes": []
+      "message": "Correction Slip No. 780",
+      "changes": [],
+      "slip_numbers": [
+        "780"
+      ],
+      "slip_label": "Correction Slip No. 780"
     },
     {
       "date": "2015-04-13",
       "commit_hash": "p84n3gdag7o4g9272j5tro36q9o1q5kf",
       "parent_hash": "u9qnc8trdf8rqap9shvrqcf0u4kod0bk",
-      "message": "Correction Slip: Correction Slip No  781 435",
+      "message": "Correction Slip No. 781",
       "changes": [
         {
           "action": "INSERT",
@@ -4152,13 +4521,17 @@
           "type": "Minor Head",
           "label": "Subsidy for operation of Haj Charters"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "781"
+      ],
+      "slip_label": "Correction Slip No. 781"
     },
     {
       "date": "2015-05-07",
       "commit_hash": "82s0jkp93so23o5ujitug1ubna1uiuip",
       "parent_hash": "p84n3gdag7o4g9272j5tro36q9o1q5kf",
-      "message": "Correction Slip: Correction Slips No 782 785 444",
+      "message": "Correction Slip Nos. 782-785",
       "changes": [
         {
           "action": "RENAME",
@@ -4203,20 +4576,31 @@
           "type": "Minor Head",
           "label": "Surcharge"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "782",
+        "783",
+        "784",
+        "785"
+      ],
+      "slip_label": "Correction Slip Nos. 782-785"
     },
     {
       "date": "2015-06-10",
       "commit_hash": "18ugln0i58mk42uo82qpm7vlvl4gisbf",
       "parent_hash": "82s0jkp93so23o5ujitug1ubna1uiuip",
-      "message": "Correction Slip: Correction Slips No 786 445",
-      "changes": []
+      "message": "Correction Slip No. 786",
+      "changes": [],
+      "slip_numbers": [
+        "786"
+      ],
+      "slip_label": "Correction Slip No. 786"
     },
     {
       "date": "2015-06-12",
       "commit_hash": "rfg4gp48foptrcdkvinhalnksg84r2an",
       "parent_hash": "18ugln0i58mk42uo82qpm7vlvl4gisbf",
-      "message": "Correction Slip: Correction Slips No 787 789 446",
+      "message": "Correction Slip Nos. 787-789",
       "changes": [
         {
           "action": "INSERT",
@@ -4232,13 +4616,19 @@
           "type": "Minor Head",
           "label": "Welfare schemes for Fishermen"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "787",
+        "788",
+        "789"
+      ],
+      "slip_label": "Correction Slip Nos. 787-789"
     },
     {
       "date": "2015-07-17",
       "commit_hash": "82em2frb7e5p43e7caq8nmg11u7jo3ef",
       "parent_hash": "rfg4gp48foptrcdkvinhalnksg84r2an",
-      "message": "Correction Slip: Correction Slips No  790 791 447",
+      "message": "Correction Slip Nos. 790-791",
       "changes": [
         {
           "action": "INSERT",
@@ -4254,13 +4644,18 @@
           "type": "Minor Head",
           "label": "Tax under the Black Money (Undisclosed Foreign Income and Assets) and Imposition of Tax Act, 2015"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "790",
+        "791"
+      ],
+      "slip_label": "Correction Slip Nos. 790-791"
     },
     {
       "date": "2015-10-14",
       "commit_hash": "co9hmcva1d1cpv6lchsuiufl2jrojvmu",
       "parent_hash": "82em2frb7e5p43e7caq8nmg11u7jo3ef",
-      "message": "Correction Slip: Correction Slip No  792 448",
+      "message": "Correction Slip No. 792",
       "changes": [
         {
           "action": "INSERT",
@@ -4269,13 +4664,17 @@
           "type": "Minor Head",
           "label": "Insurance Regulatory and Development Authority Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "792"
+      ],
+      "slip_label": "Correction Slip No. 792"
     },
     {
       "date": "2016-02-16",
       "commit_hash": "fkhiu91jle02tksh8o67ps2c9l5cc9ec",
       "parent_hash": "co9hmcva1d1cpv6lchsuiufl2jrojvmu",
-      "message": "Correction Slip: Correction Slip No  793  MH 2071 and Minor Heads 118   119  449",
+      "message": "Correction Slip No. 793",
       "changes": [
         {
           "action": "INSERT",
@@ -4284,13 +4683,17 @@
           "type": "Minor Head",
           "label": "Payment of Service Charges to National Securities Depository Limited under New Pension Scheme"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "793"
+      ],
+      "slip_label": "Correction Slip No. 793"
     },
     {
       "date": "2016-03-07",
       "commit_hash": "b9q4s04ordsdfmpbiva118bp1411otri",
       "parent_hash": "fkhiu91jle02tksh8o67ps2c9l5cc9ec",
-      "message": "Correction Slip: Correction Slip No  794  MH 4802 New Sub Major Head 03 and New Minor Head 101  450",
+      "message": "Correction Slip No. 794",
       "changes": [
         {
           "action": "INSERT",
@@ -4306,13 +4709,17 @@
           "type": "Minor Head",
           "label": "Creation of Sovereign Strategic Crude Oil Reserve"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "794"
+      ],
+      "slip_label": "Correction Slip No. 794"
     },
     {
       "date": "2016-03-09",
       "commit_hash": "cjlqqf4b9uh2bmkafbeav73ikcmvi11j",
       "parent_hash": "b9q4s04ordsdfmpbiva118bp1411otri",
-      "message": "Correction Slip: Correction Slip No  795  MH 8001 Minor Head 112  New Minor Head 113  451",
+      "message": "Correction Slip No. 795",
       "changes": [
         {
           "action": "INSERT",
@@ -4321,13 +4728,17 @@
           "type": "Minor Head",
           "label": "Sukanya Samriddhi Account"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "795"
+      ],
+      "slip_label": "Correction Slip No. 795"
     },
     {
       "date": "2016-03-28",
       "commit_hash": "0rlvgem68gsmnipg82jmnmc9f8v918ud",
       "parent_hash": "cjlqqf4b9uh2bmkafbeav73ikcmvi11j",
-      "message": "Correction Slip: Correction Slip No  796  MH 0038 Sub Major Head 03  New Minor Head 506  452",
+      "message": "Correction Slip No. 796",
       "changes": [
         {
           "action": "INSERT",
@@ -4336,13 +4747,17 @@
           "type": "Minor Head",
           "label": "Infrastructure Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "796"
+      ],
+      "slip_label": "Correction Slip No. 796"
     },
     {
       "date": "2016-03-31",
       "commit_hash": "l13udbsbu01njnh05efshdvllv1n1v8n",
       "parent_hash": "0rlvgem68gsmnipg82jmnmc9f8v918ud",
-      "message": "Correction Slip: Correction Slips No  797  MH 3475  Minor Head 114  New Minor Head 115  and 798  MH 5475  Minor Head 112  New Minor Head  115  453",
+      "message": "Correction Slip No. 797",
       "changes": [
         {
           "action": "INSERT",
@@ -4358,13 +4773,17 @@
           "type": "Minor Head",
           "label": "Financial Support for Infrastructure Development"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "797"
+      ],
+      "slip_label": "Correction Slip No. 797"
     },
     {
       "date": "2016-05-06",
       "commit_hash": "g5uf7r3ag7neq1lkil3j7vj057okmi0p",
       "parent_hash": "l13udbsbu01njnh05efshdvllv1n1v8n",
-      "message": "Correction Slip: Correction Slips No  799  MH 8235  Minor Head 133  New Minor Head 135  and 800  MH 7810  Minor Head 124  New Minor Head  125  454",
+      "message": "Correction Slip No. 799",
       "changes": [
         {
           "action": "INSERT",
@@ -4380,13 +4799,17 @@
           "type": "Minor Head",
           "label": "Rashtriya Swachhata Kosh"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "799"
+      ],
+      "slip_label": "Correction Slip No. 799"
     },
     {
       "date": "2016-05-25",
       "commit_hash": "u1mjhuk3g9567ocjs8im0o6i922tcpm1",
       "parent_hash": "g5uf7r3ag7neq1lkil3j7vj057okmi0p",
-      "message": "Correction Slip: Correction Slips No  801  MH 3475  Minor Head 506  New Minor Head 507  455",
+      "message": "Correction Slip No. 801",
       "changes": [
         {
           "action": "INSERT",
@@ -4395,13 +4818,17 @@
           "type": "Minor Head",
           "label": "Krishi Kalyan Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "801"
+      ],
+      "slip_label": "Correction Slip No. 801"
     },
     {
       "date": "2016-06-20",
       "commit_hash": "j4js8qf78959e37qvc8ssgm382gvrqb3",
       "parent_hash": "u1mjhuk3g9567ocjs8im0o6i922tcpm1",
-      "message": "Correction Slip: Correction Slip No  802  MH 0028  Minor Head 110  New Minor Heads 111   507  456",
+      "message": "Correction Slip No. 802",
       "changes": [
         {
           "action": "INSERT",
@@ -4417,13 +4844,17 @@
           "type": "Minor Head",
           "label": "Krishi Kalyan Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "802"
+      ],
+      "slip_label": "Correction Slip No. 802"
     },
     {
       "date": "2016-07-22",
       "commit_hash": "33i7b7ocq6u0tg564pbn8lo943bmhcfl",
       "parent_hash": "j4js8qf78959e37qvc8ssgm382gvrqb3",
-      "message": "Correction Slip: Correction Slip No 804   MH 3252 and 805   MH 5252 1316",
+      "message": "Correction Slip No. 804",
       "changes": [
         {
           "action": "DELETE",
@@ -4439,13 +4870,17 @@
           "type": "Major Head",
           "label": "Capital Outlay on Satellite system"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "804"
+      ],
+      "slip_label": "Correction Slip No. 804"
     },
     {
       "date": "2016-07-22",
       "commit_hash": "4801kntqb29s6l6bagvuhmm4kov7s85i",
       "parent_hash": "33i7b7ocq6u0tg564pbn8lo943bmhcfl",
-      "message": "Correction Slip: Correction Slip No 806   MH 3402  and 807   MH5402 1318",
+      "message": "Correction Slip No. 806",
       "changes": [
         {
           "action": "INSERT",
@@ -4461,13 +4896,17 @@
           "type": "Minor Head",
           "label": "Indian National Satellite Systems (INSAT)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "806"
+      ],
+      "slip_label": "Correction Slip No. 806"
     },
     {
       "date": "2016-07-27",
       "commit_hash": "jv5f08tcubcjj6urg5ff96k0j5nc100i",
       "parent_hash": "4801kntqb29s6l6bagvuhmm4kov7s85i",
-      "message": "Correction Slip: Correction Slip No  803  MH 0045  Minor Head 118  New Minor Heads 119  457",
+      "message": "Correction Slip No. 803",
       "changes": [
         {
           "action": "INSERT",
@@ -4476,13 +4915,17 @@
           "type": "Minor Head",
           "label": "Equalisation Levy"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "803"
+      ],
+      "slip_label": "Correction Slip No. 803"
     },
     {
       "date": "2016-08-24",
       "commit_hash": "q8jfc242tdruq6jhtgjtafbr2lrpfgue",
       "parent_hash": "jv5f08tcubcjj6urg5ff96k0j5nc100i",
-      "message": "Correction Slip: Correction Slips No 808  MH 0801 No  809 MH 2801 and No 810 MH8235 1319",
+      "message": "Correction Slip No. 808",
       "changes": [
         {
           "action": "INSERT",
@@ -4505,13 +4948,17 @@
           "type": "Minor Head",
           "label": "Power System Development Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "808"
+      ],
+      "slip_label": "Correction Slip No. 808"
     },
     {
       "date": "2016-10-26",
       "commit_hash": "dg7kp8d1c60qj2503auprofrnm7bti72",
       "parent_hash": "q8jfc242tdruq6jhtgjtafbr2lrpfgue",
-      "message": "Correction Slip: Correction Slips No 811 MH 2049 No 812 MH6002 and No 813 MH8670 1320",
+      "message": "Correction Slip No. 811",
       "changes": [
         {
           "action": "INSERT",
@@ -4534,13 +4981,17 @@
           "type": "Minor Head",
           "label": "Departmental (CDDOs) Electronic Advices"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "811"
+      ],
+      "slip_label": "Correction Slip No. 811"
     },
     {
       "date": "2016-10-31",
       "commit_hash": "5mas6uf5d98f80pdg55hhhrn9lnuclq6",
       "parent_hash": "dg7kp8d1c60qj2503auprofrnm7bti72",
-      "message": "Correction Slip: Correction Slips No 814 MH 2014  and No 815 MH 2015 1321",
+      "message": "Correction Slip No. 814",
       "changes": [
         {
           "action": "INSERT",
@@ -4563,20 +5014,28 @@
           "type": "Minor Head",
           "label": "Electronic Voting Machines"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "814"
+      ],
+      "slip_label": "Correction Slip No. 814"
     },
     {
       "date": "2016-11-30",
       "commit_hash": "c6knhvtahf7olftfuqc1uskb6b7o4oh7",
       "parent_hash": "5mas6uf5d98f80pdg55hhhrn9lnuclq6",
-      "message": "Correction Slip: Correction Slips No 816 MH 0020 and No 817 MH 0021 1510",
-      "changes": []
+      "message": "Correction Slip No. 816",
+      "changes": [],
+      "slip_numbers": [
+        "816"
+      ],
+      "slip_label": "Correction Slip No. 816"
     },
     {
       "date": "2016-12-15",
       "commit_hash": "qj62p7ouhg6cb0gk05d47gk18jn5enpu",
       "parent_hash": "c6knhvtahf7olftfuqc1uskb6b7o4oh7",
-      "message": "Correction Slip: Correction Slips No 818  MH0028 Minor Head 111 No 819 MH8235 Minor Head 135 No 820 MH6001 Minor Head 128 No 821 MH2049 Minor Head 128 No 822 MH1475 Minor Head114 and No 823 MH3475 Minor Head 115 1511",
+      "message": "Correction Slip No. 818",
       "changes": [
         {
           "action": "INSERT",
@@ -4655,13 +5114,17 @@
           "type": "Minor Head",
           "label": "Gold Reserve Fund- Gold Monetisation Scheme, 2015"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "818"
+      ],
+      "slip_label": "Correction Slip No. 818"
     },
     {
       "date": "2017-01-06",
       "commit_hash": "3o5q9skl92k338o5d4pend0iqshcf9um",
       "parent_hash": "qj62p7ouhg6cb0gk05d47gk18jn5enpu",
-      "message": "Correction Slip: Correction Slips Nos 824 to 834   Modification in Major Heads 1601 3601 3602 0049 2049 6004 7601 and 7602 necessiated by merger of Plan and Non Plan classification in Budget and Accounts 1519",
+      "message": "Correction Slip Nos. 824-834",
       "changes": [
         {
           "action": "INSERT",
@@ -4840,13 +5303,27 @@
           "type": "Minor Head",
           "label": "Other Loans"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "824",
+        "825",
+        "826",
+        "827",
+        "828",
+        "829",
+        "830",
+        "831",
+        "832",
+        "833",
+        "834"
+      ],
+      "slip_label": "Correction Slip Nos. 824-834"
     },
     {
       "date": "2017-03-22",
       "commit_hash": "24pn72ouks8tc0g6v6249v209cor03ft",
       "parent_hash": "3o5q9skl92k338o5d4pend0iqshcf9um",
-      "message": "Correction Slip: Correction Slips Nos 835 and 836   Change of Nomenclature of Major Head 2230 from Labour and Employment to Labour Employment and Skill Development in the LMMHA 1539",
+      "message": "Correction Slip Nos. 835-836",
       "changes": [
         {
           "action": "RENAME",
@@ -4856,13 +5333,18 @@
           "label": "Labour, Employment and Skill Development",
           "old_label": "Labour and Employment"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "835",
+        "836"
+      ],
+      "slip_label": "Correction Slip Nos. 835-836"
     },
     {
       "date": "2017-03-28",
       "commit_hash": "9u395lkj94m8o73g7a8oeq2a0p0p3ban",
       "parent_hash": "24pn72ouks8tc0g6v6249v209cor03ft",
-      "message": "Correction Slip: Correction Slips No 837   MH 8235 1540",
+      "message": "Correction Slip No. 837",
       "changes": [
         {
           "action": "INSERT",
@@ -4871,13 +5353,17 @@
           "type": "Minor Head",
           "label": "Krishi Kalyan Kosh"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "837"
+      ],
+      "slip_label": "Correction Slip No. 837"
     },
     {
       "date": "2017-04-11",
       "commit_hash": "sjtu3d9pnmoehn5h4q0c69jja7fo5s4d",
       "parent_hash": "9u395lkj94m8o73g7a8oeq2a0p0p3ban",
-      "message": "Correction Slip: Correction Slips No 838   MH 0250 No 839  MH 2250  and No 840 MH 812 1546",
+      "message": "Correction Slip No. 838",
       "changes": [
         {
           "action": "INSERT",
@@ -4907,13 +5393,17 @@
           "type": "Minor Head",
           "label": "Senior Citizens' Welfare Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "838"
+      ],
+      "slip_label": "Correction Slip No. 838"
     },
     {
       "date": "2017-05-04",
       "commit_hash": "jkekvtud08epdq81dfa17eph5du19vcj",
       "parent_hash": "sjtu3d9pnmoehn5h4q0c69jja7fo5s4d",
-      "message": "Correction Slip: Correction Slips No 841  MH4070  Minor Head 003 Training 1549",
+      "message": "Correction Slip No. 841",
       "changes": [
         {
           "action": "INSERT",
@@ -4922,20 +5412,28 @@
           "type": "Minor Head",
           "label": "Election"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "841"
+      ],
+      "slip_label": "Correction Slip No. 841"
     },
     {
       "date": "2017-05-30",
       "commit_hash": "c97ka0vde9cno147cgf5n42kh19gdabr",
       "parent_hash": "jkekvtud08epdq81dfa17eph5du19vcj",
-      "message": "Correction Slip: Correction Slip No 842   MH3602   SubMajorHead 08  Minor Head 104 1552",
-      "changes": []
+      "message": "Correction Slip No. 842",
+      "changes": [],
+      "slip_numbers": [
+        "842"
+      ],
+      "slip_label": "Correction Slip No. 842"
     },
     {
       "date": "2017-06-07",
       "commit_hash": "4bag5bj0fsup8qul5gs4m51qblamp44s",
       "parent_hash": "c97ka0vde9cno147cgf5n42kh19gdabr",
-      "message": "Correction Slip: Correction Slip No 843 MH 2225 1558",
+      "message": "Correction Slip No. 843",
       "changes": [
         {
           "action": "DELETE",
@@ -4951,13 +5449,17 @@
           "type": "Minor Head",
           "label": "Subsidy for Special Operation"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "843"
+      ],
+      "slip_label": "Correction Slip No. 843"
     },
     {
       "date": "2017-06-12",
       "commit_hash": "j24sebbkb3ak7rfpgbmfpv2f25m1p339",
       "parent_hash": "4bag5bj0fsup8qul5gs4m51qblamp44s",
-      "message": "Correction Slip: Correction Slip No  844  MH 8235 Dated 12 06 2017 1559",
+      "message": "Correction Slip No. 844",
       "changes": [
         {
           "action": "INSERT",
@@ -4966,13 +5468,17 @@
           "type": "Minor Head",
           "label": "Bharat Infrastructure Kosh"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "844"
+      ],
+      "slip_label": "Correction Slip No. 844"
     },
     {
       "date": "2017-06-19",
       "commit_hash": "st7gbmq9a6v55tf0fd4sq395ivurv8pj",
       "parent_hash": "j24sebbkb3ak7rfpgbmfpv2f25m1p339",
-      "message": "Correction Slip: Correction Slips No 845 to 857 Dated 19th June 2017 1565",
+      "message": "Correction Slip Nos. 845-857",
       "changes": [
         {
           "action": "INSERT",
@@ -5520,13 +6026,29 @@
           "type": "Minor Head",
           "label": "Union Territory Goods and Services Tax (4)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "845",
+        "846",
+        "847",
+        "848",
+        "849",
+        "850",
+        "851",
+        "852",
+        "853",
+        "854",
+        "855",
+        "856",
+        "857"
+      ],
+      "slip_label": "Correction Slip Nos. 845-857"
     },
     {
       "date": "2017-06-19",
       "commit_hash": "c721gshrtp3pcplgrpufp4uc4j8phkge",
       "parent_hash": "st7gbmq9a6v55tf0fd4sq395ivurv8pj",
-      "message": "Correction Slip: Correction slip No 858 Dated 19th June 2017  MH  0047 1568",
+      "message": "Correction Slip No. 858",
       "changes": [
         {
           "action": "INSERT",
@@ -5535,13 +6057,17 @@
           "type": "Minor Head",
           "label": "Fines, Penalties & Forfeitures"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "858"
+      ],
+      "slip_label": "Correction Slip No. 858"
     },
     {
       "date": "2017-06-30",
       "commit_hash": "68e70urrbbaiql659c1ilrb80dn4c0mb",
       "parent_hash": "c721gshrtp3pcplgrpufp4uc4j8phkge",
-      "message": "Correction Slip: Correction slip No 859 to 862 Dated 30th June 2017 1566",
+      "message": "Correction Slip Nos. 859-862",
       "changes": [
         {
           "action": "INSERT",
@@ -5634,13 +6160,20 @@
           "type": "Minor Head",
           "label": "Goods and Services Tax Compensation Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "859",
+        "860",
+        "861",
+        "862"
+      ],
+      "slip_label": "Correction Slip Nos. 859-862"
     },
     {
       "date": "2017-07-03",
       "commit_hash": "r3ql8gjok978dt6p0mc3aentv1l6n299",
       "parent_hash": "68e70urrbbaiql659c1ilrb80dn4c0mb",
-      "message": "Correction Slip: Correction slip No 863 Dated 30th June 2017  MH  1475 1567",
+      "message": "Correction Slip No. 863",
       "changes": [
         {
           "action": "INSERT",
@@ -5649,20 +6182,28 @@
           "type": "Minor Head",
           "label": "Penalties levied by Insurance Regulatory and Development Authority"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "863"
+      ],
+      "slip_label": "Correction Slip No. 863"
     },
     {
       "date": "2017-07-03",
       "commit_hash": "akrefmbd4v0t9vb6i77kiq7r9evl64np",
       "parent_hash": "r3ql8gjok978dt6p0mc3aentv1l6n299",
-      "message": "Correction Slip: Correction slip No 864 Dated 03rd July 2017  MH  8782 1571",
-      "changes": []
+      "message": "Correction Slip No. 864",
+      "changes": [],
+      "slip_numbers": [
+        "864"
+      ],
+      "slip_label": "Correction Slip No. 864"
     },
     {
       "date": "2017-07-13",
       "commit_hash": "pf5cbqaqp5rodjf9b9uss42iqum87mpt",
       "parent_hash": "akrefmbd4v0t9vb6i77kiq7r9evl64np",
-      "message": "Correction Slip: Correction slips No 865  MH 0049  No 866  MH 1475 and No 867   MH 0047 Dated 13th July 2017 1573",
+      "message": "Correction Slip No. 865",
       "changes": [
         {
           "action": "INSERT",
@@ -5706,13 +6247,17 @@
           "type": "Minor Head",
           "label": "Unit Premium on Unit Trust of India (UTI)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "865"
+      ],
+      "slip_label": "Correction Slip No. 865"
     },
     {
       "date": "2017-08-25",
       "commit_hash": "hpmquejfo3svqnjbcgrk3bihgfp7gjj2",
       "parent_hash": "pf5cbqaqp5rodjf9b9uss42iqum87mpt",
-      "message": "Correction Slip: Correction slips No 868  MH 2049 and No 869   MH 6002 Dated 25th August 2017 1574",
+      "message": "Correction Slip No. 868",
       "changes": [
         {
           "action": "INSERT",
@@ -5728,20 +6273,28 @@
           "type": "Minor Head",
           "label": "Loans from New Development Bank (NDB)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "868"
+      ],
+      "slip_label": "Correction Slip No. 868"
     },
     {
       "date": "2017-09-12",
       "commit_hash": "ev6chup8gtv5g1ac4qng221haqcs50mu",
       "parent_hash": "hpmquejfo3svqnjbcgrk3bihgfp7gjj2",
-      "message": "Correction Slip: Correction slips No 870  MH 3053 and No 871   MH 5053 Dated 12th September 2017 1577",
-      "changes": []
+      "message": "Correction Slip No. 870",
+      "changes": [],
+      "slip_numbers": [
+        "870"
+      ],
+      "slip_label": "Correction Slip No. 870"
     },
     {
       "date": "2017-10-04",
       "commit_hash": "nol9fe6duf00in1vr58o8e2fk4158hdv",
       "parent_hash": "ev6chup8gtv5g1ac4qng221haqcs50mu",
-      "message": "Correction Slip: Correction slips No 872  MH 2405 and No 873   MH 2230 Dated 04th October 2017 1582",
+      "message": "Correction Slip No. 872",
       "changes": [
         {
           "action": "DELETE",
@@ -5757,20 +6310,28 @@
           "type": "Minor Head",
           "label": "Welfare schemes for Fishermen"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "872"
+      ],
+      "slip_label": "Correction Slip No. 872"
     },
     {
       "date": "2017-11-01",
       "commit_hash": "pdgseraku1rfma263dm6q8s8ntuf5vpl",
       "parent_hash": "nol9fe6duf00in1vr58o8e2fk4158hdv",
-      "message": "Correction Slip: Correction slip No 874  MH 8229 Dated 01st November 2017 1583",
-      "changes": []
+      "message": "Correction Slip No. 874",
+      "changes": [],
+      "slip_numbers": [
+        "874"
+      ],
+      "slip_label": "Correction Slip No. 874"
     },
     {
       "date": "2017-11-21",
       "commit_hash": "m729burbe0gsjtk55sd84dpre1utuof3",
       "parent_hash": "pdgseraku1rfma263dm6q8s8ntuf5vpl",
-      "message": "Correction Slip: Correction slips Nos 875   MH 2042 876  MH 2043 and 877  MH  2044 1588",
+      "message": "Correction Slip No. 875",
       "changes": [
         {
           "action": "INSERT",
@@ -5807,13 +6368,17 @@
           "type": "Minor Head",
           "label": "Interest paid on delayed Refunds of UTGST"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "875"
+      ],
+      "slip_label": "Correction Slip No. 875"
     },
     {
       "date": "2017-12-01",
       "commit_hash": "v353sat5eluvfnqa3enprdgu5ujiokce",
       "parent_hash": "m729burbe0gsjtk55sd84dpre1utuof3",
-      "message": "Correction Slip: Correction slip No 878  MH 8781 Dated 01st December 2017 1589",
+      "message": "Correction Slip No. 878",
       "changes": [
         {
           "action": "INSERT",
@@ -5822,13 +6387,17 @@
           "type": "Minor Head",
           "label": "International Electronic Money orders"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "878"
+      ],
+      "slip_label": "Correction Slip No. 878"
     },
     {
       "date": "2018-01-01",
       "commit_hash": "q2g48nca2iv0iph2knic2qrqioglj6t4",
       "parent_hash": "v353sat5eluvfnqa3enprdgu5ujiokce",
-      "message": "Correction Slip: Correction slips Nos 879   MH 1601  880  MH 3601 and 881  MH  3602 1607",
+      "message": "Correction Slip No. 879",
       "changes": [
         {
           "action": "INSERT",
@@ -5851,13 +6420,17 @@
           "type": "Minor Head",
           "label": "Compensation for loss of revenue arising out of implementation of GST"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "879"
+      ],
+      "slip_label": "Correction Slip No. 879"
     },
     {
       "date": "2018-02-07",
       "commit_hash": "7i0rhrmneqg9qiblvg34bcn2j69eugtg",
       "parent_hash": "q2g48nca2iv0iph2knic2qrqioglj6t4",
-      "message": "Correction Slip: Correction slips Nos 882   MH 2049 and  883  MH 6002 1605",
+      "message": "Correction Slip No. 882",
       "changes": [
         {
           "action": "INSERT",
@@ -5873,13 +6446,17 @@
           "type": "Minor Head",
           "label": "Loans from Asian Infrastructure Investment Bank(AIIB)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "882"
+      ],
+      "slip_label": "Correction Slip No. 882"
     },
     {
       "date": "2018-02-13",
       "commit_hash": "784b1lhu0m4e854qj61jhe89s3ogc9ls",
       "parent_hash": "7i0rhrmneqg9qiblvg34bcn2j69eugtg",
-      "message": "Correction Slip: Correction slips Nos 884  New MH 8455 No 885  MH 8455  Minor Head 101 and CCS 886   MH 1201 1606",
+      "message": "Correction Slip No. 884",
       "changes": [
         {
           "action": "INSERT",
@@ -5902,13 +6479,17 @@
           "type": "Minor Head",
           "label": "Transactions with IPPB"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "884"
+      ],
+      "slip_label": "Correction Slip No. 884"
     },
     {
       "date": "2018-03-16",
       "commit_hash": "2onrq2b99l9epmt7sqk5b3k6vnqm473o",
       "parent_hash": "784b1lhu0m4e854qj61jhe89s3ogc9ls",
-      "message": "Correction Slip: Correction slips Nos 887  MH 0853 No 888  MH 8235 and 889   MH 8449 1608",
+      "message": "Correction Slip No. 887",
       "changes": [
         {
           "action": "INSERT",
@@ -5931,13 +6512,17 @@
           "type": "Minor Head",
           "label": "National Mineral Exploration Trust Deposits"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "887"
+      ],
+      "slip_label": "Correction Slip No. 887"
     },
     {
       "date": "2018-03-19",
       "commit_hash": "b9lpafau0avqf9jmklbcvs626mpio53d",
       "parent_hash": "2onrq2b99l9epmt7sqk5b3k6vnqm473o",
-      "message": "Correction Slip: Correction slips Nos 890  MH 2071 and 891   MH 2235 1609",
+      "message": "Correction Slip No. 890",
       "changes": [
         {
           "action": "INSERT",
@@ -5946,20 +6531,28 @@
           "type": "Minor Head",
           "label": "Pensionary Charges in respect of retirees/deceased employees of Government of NCT Delhi"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "890"
+      ],
+      "slip_label": "Correction Slip No. 890"
     },
     {
       "date": "2018-03-27",
       "commit_hash": "psu8lhe98f9dohf4gbaverf55529c813",
       "parent_hash": "b9lpafau0avqf9jmklbcvs626mpio53d",
-      "message": "Correction Slip: Correction slips Nos 892  MH 7601 893 MH7602 and 894   MH 6004 1611",
-      "changes": []
+      "message": "Correction Slip No. 892",
+      "changes": [],
+      "slip_numbers": [
+        "892"
+      ],
+      "slip_label": "Correction Slip No. 892"
     },
     {
       "date": "2018-03-31",
       "commit_hash": "9c6uu4u4cc2d8tp26un1obt5vad02pi4",
       "parent_hash": "psu8lhe98f9dohf4gbaverf55529c813",
-      "message": "Correction Slip: Correction slips Nos 895  MH 0005  896 MH 0006 897   MH 0007 and 898 MH 0008 1612",
+      "message": "Correction Slip No. 895",
       "changes": [
         {
           "action": "INSERT",
@@ -6003,13 +6596,17 @@
           "type": "Minor Head",
           "label": "Advance apportionment of IGST to UTGST (10), (12)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "895"
+      ],
+      "slip_label": "Correction Slip No. 895"
     },
     {
       "date": "2018-04-13",
       "commit_hash": "gv50fqbrkkd8i09jj3uifqr41mfqm3je",
       "parent_hash": "9c6uu4u4cc2d8tp26un1obt5vad02pi4",
-      "message": "Correction Slip: Correction slips Nos 899 MH 0037 900 MH 0038 1623",
+      "message": "Correction Slip No. 899",
       "changes": [
         {
           "action": "INSERT",
@@ -6032,13 +6629,17 @@
           "type": "Minor Head",
           "label": "Road and Infrastructure Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "899"
+      ],
+      "slip_label": "Correction Slip No. 899"
     },
     {
       "date": "2018-04-16",
       "commit_hash": "dc6cq2o48hlfifoh0mh5rfvmp87gqqcb",
       "parent_hash": "gv50fqbrkkd8i09jj3uifqr41mfqm3je",
-      "message": "Correction Slip: Correction slips Nos 901 902 MH 7466 903 MH 7605 1624",
+      "message": "Correction Slip Nos. 901-902",
       "changes": [
         {
           "action": "INSERT",
@@ -6047,13 +6648,18 @@
           "type": "Major Head",
           "label": "Loans to International Financial Institutions (1)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "901",
+        "902"
+      ],
+      "slip_label": "Correction Slip Nos. 901-902"
     },
     {
       "date": "2018-05-02",
       "commit_hash": "01hv4a7lh5t4btv6i79aiegi0krhgro3",
       "parent_hash": "dc6cq2o48hlfifoh0mh5rfvmp87gqqcb",
-      "message": "Correction Slip: Correction slips Nos 904   MH 0020 and 905  MH 0021 1625",
+      "message": "Correction Slip No. 904",
       "changes": [
         {
           "action": "INSERT",
@@ -6069,13 +6675,17 @@
           "type": "Minor Head",
           "label": "Health and Education Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "904"
+      ],
+      "slip_label": "Correction Slip No. 904"
     },
     {
       "date": "2018-05-21",
       "commit_hash": "fa2plsmak41r8rhnbil0b1ovvc174hrf",
       "parent_hash": "01hv4a7lh5t4btv6i79aiegi0krhgro3",
-      "message": "Correction Slip: Correction slips Nos 906 MH 0007 907 MH 6001 Dated 21 05 2018 1629",
+      "message": "Correction Slip No. 906",
       "changes": [
         {
           "action": "INSERT",
@@ -6091,13 +6701,17 @@
           "type": "Minor Head",
           "label": "Special Securities issued to Public Sector Banks"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "906"
+      ],
+      "slip_label": "Correction Slip No. 906"
     },
     {
       "date": "2018-06-29",
       "commit_hash": "q5a84svf19vb4otrd0coi8n5pouuihu1",
       "parent_hash": "fa2plsmak41r8rhnbil0b1ovvc174hrf",
-      "message": "Correction Slip: Correction slips Nos 908 MH 1453 1635",
+      "message": "Correction Slip No. 908",
       "changes": [
         {
           "action": "INSERT",
@@ -6106,13 +6720,17 @@
           "type": "Minor Head",
           "label": "Penalty"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "908"
+      ],
+      "slip_label": "Correction Slip No. 908"
     },
     {
       "date": "2018-06-29",
       "commit_hash": "e9pi1l6a4gk4bshjiti0sv0r5snl8gu0",
       "parent_hash": "q5a84svf19vb4otrd0coi8n5pouuihu1",
-      "message": "Correction Slip: Correction slips Nos 909 MH 2049 910 MH 6003 1636",
+      "message": "Correction Slip No. 909",
       "changes": [
         {
           "action": "INSERT",
@@ -6128,13 +6746,17 @@
           "type": "Minor Head",
           "label": "Special Drawing Facility on 91 Days deposits"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "909"
+      ],
+      "slip_label": "Correction Slip No. 909"
     },
     {
       "date": "2018-07-03",
       "commit_hash": "83n08pom13ijiudfdhjhrdfirlva98ka",
       "parent_hash": "e9pi1l6a4gk4bshjiti0sv0r5snl8gu0",
-      "message": "Correction Slip: Correction slips Nos 911 MH 2406 912 MH 8121 913 MH 8336 1637",
+      "message": "Correction Slip No. 911",
       "changes": [
         {
           "action": "INSERT",
@@ -6171,13 +6793,17 @@
           "type": "Minor Head",
           "label": "State Compensatory Afforestation Deposits"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "911"
+      ],
+      "slip_label": "Correction Slip No. 911"
     },
     {
       "date": "2018-08-07",
       "commit_hash": "ivqg9cge1vsj0qc0hv0670dvin2rcbvr",
       "parent_hash": "83n08pom13ijiudfdhjhrdfirlva98ka",
-      "message": "Correction Slip: Correction slips Nos 914 915 MH 8454 1638",
+      "message": "Correction Slip Nos. 914-915",
       "changes": [
         {
           "action": "INSERT",
@@ -6186,13 +6812,18 @@
           "type": "Major Head",
           "label": "Funds for Autonomous Bodies under Treasury Single Account System"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "914",
+        "915"
+      ],
+      "slip_label": "Correction Slip Nos. 914-915"
     },
     {
       "date": "2018-08-28",
       "commit_hash": "4daetf9h6p3fqpl29h9r4ho4945uadv1",
       "parent_hash": "ivqg9cge1vsj0qc0hv0670dvin2rcbvr",
-      "message": "Correction Slip: Correction slips Nos 916 MH 4801 917 MH 4861 918 MH 5401 1639",
+      "message": "Correction Slip No. 916",
       "changes": [
         {
           "action": "DELETE",
@@ -6313,13 +6944,17 @@
           "type": "Minor Head",
           "label": "Research Projects of Atomic Energy"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "916"
+      ],
+      "slip_label": "Correction Slip No. 916"
     },
     {
       "date": "2018-09-20",
       "commit_hash": "oejnuvo6kka7tqkcgnl62rufe83tlj7l",
       "parent_hash": "4daetf9h6p3fqpl29h9r4ho4945uadv1",
-      "message": "Correction Slip: Correction slips Nos 919 MH 2049 1640",
+      "message": "Correction Slip No. 919",
       "changes": [
         {
           "action": "INSERT",
@@ -6328,13 +6963,17 @@
           "type": "Minor Head",
           "label": "Interest on Special Securities issued to Public Sector Banks"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "919"
+      ],
+      "slip_label": "Correction Slip No. 919"
     },
     {
       "date": "2018-10-29",
       "commit_hash": "dd67dcsktmeql2s09d4u3dp4mi27q21u",
       "parent_hash": "oejnuvo6kka7tqkcgnl62rufe83tlj7l",
-      "message": "Correction Slip: Correction slip No 920 MH 5002 and Correction slip No 921 MH 5003 1642",
+      "message": "Correction Slip No. 920",
       "changes": [
         {
           "action": "INSERT",
@@ -6350,27 +6989,39 @@
           "type": "Sub-Major Head",
           "label": "Capital Outlay"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "920"
+      ],
+      "slip_label": "Correction Slip No. 920"
     },
     {
       "date": "2018-11-27",
       "commit_hash": "m10u034g125c9e3fo9ckulfds7m4c5ho",
       "parent_hash": "dd67dcsktmeql2s09d4u3dp4mi27q21u",
-      "message": "Correction Slip: Correction slip No 922 MH 2235 1643",
-      "changes": []
+      "message": "Correction Slip No. 922",
+      "changes": [],
+      "slip_numbers": [
+        "922"
+      ],
+      "slip_label": "Correction Slip No. 922"
     },
     {
       "date": "2019-03-13",
       "commit_hash": "npkndc2u2jq57v44fjqrainoldcgush3",
       "parent_hash": "m10u034g125c9e3fo9ckulfds7m4c5ho",
-      "message": "Correction Slip: Correction slip No 923 MH 2202 1659",
-      "changes": []
+      "message": "Correction Slip No. 923",
+      "changes": [],
+      "slip_numbers": [
+        "923"
+      ],
+      "slip_label": "Correction Slip No. 923"
     },
     {
       "date": "2019-03-19",
       "commit_hash": "qo85jskjgp2m13g7vbhj7hqebip5bkco",
       "parent_hash": "npkndc2u2jq57v44fjqrainoldcgush3",
-      "message": "Correction Slip: Correction slip No 924 MH 7466 and Correction slip No 925 MH 0049 1657",
+      "message": "Correction Slip No. 924",
       "changes": [
         {
           "action": "INSERT",
@@ -6386,13 +7037,17 @@
           "type": "Minor Head",
           "label": "Loans to African Development Fund (AfDF)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "924"
+      ],
+      "slip_label": "Correction Slip No. 924"
     },
     {
       "date": "2019-03-19",
       "commit_hash": "uvppo0huvor2a71hjlmt4smauiipac98",
       "parent_hash": "qo85jskjgp2m13g7vbhj7hqebip5bkco",
-      "message": "Correction Slip: Correction slip No 926 MH 1225 Correction slip No 927 MH 1275 Correction slip No 928 MH 3225 Correction slip No 929 MH 3275 and Correction slip No 930 MH 5225 1660",
+      "message": "Correction Slip No. 926",
       "changes": [
         {
           "action": "INSERT",
@@ -6534,20 +7189,28 @@
           "type": "Minor Head",
           "label": "Tribal Area Sub-plan"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "926"
+      ],
+      "slip_label": "Correction Slip No. 926"
     },
     {
       "date": "2019-05-30",
       "commit_hash": "aftduab7jjiece3g004elgtr96ohbqk7",
       "parent_hash": "uvppo0huvor2a71hjlmt4smauiipac98",
-      "message": "Correction Slip: Correction slip No 931 Minor Head 801 1663",
-      "changes": []
+      "message": "Correction Slip No. 931",
+      "changes": [],
+      "slip_numbers": [
+        "931"
+      ],
+      "slip_label": "Correction Slip No. 931"
     },
     {
       "date": "2019-06-04",
       "commit_hash": "ohrapt1mr9un89o2vmco43o2e7bpo23v",
       "parent_hash": "aftduab7jjiece3g004elgtr96ohbqk7",
-      "message": "Correction Slip: Correction slip No 932 MH 8658 1665",
+      "message": "Correction Slip No. 932",
       "changes": [
         {
           "action": "INSERT",
@@ -6556,13 +7219,17 @@
           "type": "Minor Head",
           "label": "GST-Tax Deducted at Source Suspense"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "932"
+      ],
+      "slip_label": "Correction Slip No. 932"
     },
     {
       "date": "2019-07-01",
       "commit_hash": "to79fjr1edcslqik62m8bm2a5shq4dqg",
       "parent_hash": "ohrapt1mr9un89o2vmco43o2e7bpo23v",
-      "message": "Correction Slip: Correction slip No 933 MH 2061 1666",
+      "message": "Correction Slip No. 933",
       "changes": [
         {
           "action": "INSERT",
@@ -6571,20 +7238,28 @@
           "type": "Minor Head",
           "label": "Assistance to Autonomous Bodies and Other Institutions"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "933"
+      ],
+      "slip_label": "Correction Slip No. 933"
     },
     {
       "date": "2019-07-04",
       "commit_hash": "nb1oqoj1pufguj9v4rg7dukmeiajos3a",
       "parent_hash": "to79fjr1edcslqik62m8bm2a5shq4dqg",
-      "message": "Correction Slip: Correction Slip No 934 MH 2210 Dated 04th July 2019 1673",
-      "changes": []
+      "message": "Correction Slip No. 934",
+      "changes": [],
+      "slip_numbers": [
+        "934"
+      ],
+      "slip_label": "Correction Slip No. 934"
     },
     {
       "date": "2019-07-04",
       "commit_hash": "23iib5h0m532da4p2vfbo6sdainu2p8m",
       "parent_hash": "nb1oqoj1pufguj9v4rg7dukmeiajos3a",
-      "message": "Correction Slip: Correction Slip No 935 MH 2016 Audit Dated 04th July 2019 1674",
+      "message": "Correction Slip No. 935",
       "changes": [
         {
           "action": "RENAME",
@@ -6594,13 +7269,17 @@
           "label": "Posts and Telecommunications Audit Offices",
           "old_label": "Posts and Telegraphs Audit Officer"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "935"
+      ],
+      "slip_label": "Correction Slip No. 935"
     },
     {
       "date": "2019-07-05",
       "commit_hash": "iphg5517obn8482083d4j9qg8oehk8gu",
       "parent_hash": "23iib5h0m532da4p2vfbo6sdainu2p8m",
-      "message": "Correction Slip: Correction Slips Nos 936 937 MH 4000 Miscellaneous Capital Receipts and 8225 Roads and Bridges Fund Dated 05th July 2019 1675",
+      "message": "Correction Slip Nos. 936-937",
       "changes": [
         {
           "action": "INSERT",
@@ -6616,13 +7295,18 @@
           "type": "Sub-Major Head",
           "label": "Monetization of National Highways Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "936",
+        "937"
+      ],
+      "slip_label": "Correction Slip Nos. 936-937"
     },
     {
       "date": "2019-08-01",
       "commit_hash": "anm1lg13qae2l53n6chhqukpmg8f8kb9",
       "parent_hash": "iphg5517obn8482083d4j9qg8oehk8gu",
-      "message": "Correction Slip: Correction Slip No 938 MH 4000 Miscellaneous Capital Receipts Dated  01st August 2019 1676",
+      "message": "Correction Slip No. 938",
       "changes": [
         {
           "action": "INSERT",
@@ -6631,13 +7315,17 @@
           "type": "Sub-Major Head",
           "label": "Enemy Properties"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "938"
+      ],
+      "slip_label": "Correction Slip No. 938"
     },
     {
       "date": "2019-08-09",
       "commit_hash": "u7t87g3c8nj89b1c0bcepu03110areur",
       "parent_hash": "anm1lg13qae2l53n6chhqukpmg8f8kb9",
-      "message": "Correction Slip: Correction Slip No 939 MH 2852 Industries Dated 09th August 2019 1677",
+      "message": "Correction Slip No. 939",
       "changes": [
         {
           "action": "INSERT",
@@ -6646,13 +7334,17 @@
           "type": "Minor Head",
           "label": "Assistance to Autonomous and Other Bodies"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "939"
+      ],
+      "slip_label": "Correction Slip No. 939"
     },
     {
       "date": "2019-09-03",
       "commit_hash": "s9rdshifimibvcah5j5o3nnuq553heb0",
       "parent_hash": "u7t87g3c8nj89b1c0bcepu03110areur",
-      "message": "Correction Slip: Correction Slips Nos 940 941 MH 0216 Housing and 2216 Housing Dated 03th September 2019 1678",
+      "message": "Correction Slip Nos. 940-941",
       "changes": [
         {
           "action": "INSERT",
@@ -6661,13 +7353,18 @@
           "type": "Minor Head",
           "label": "Receipts under The Real Estate (Regulation and Development) Act, 2016"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "940",
+        "941"
+      ],
+      "slip_label": "Correction Slip Nos. 940-941"
     },
     {
       "date": "2019-12-20",
       "commit_hash": "fsgqr6ndel680gepdjnvo0t2natafa36",
       "parent_hash": "s9rdshifimibvcah5j5o3nnuq553heb0",
-      "message": "Correction Slip: Correction Slip No 942 MH 1053 Civil Aviation Dated 20th December 2019 1683",
+      "message": "Correction Slip No. 942",
       "changes": [
         {
           "action": "INSERT",
@@ -6676,13 +7373,17 @@
           "type": "Minor Head",
           "label": "Concession Fee"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "942"
+      ],
+      "slip_label": "Correction Slip No. 942"
     },
     {
       "date": "2020-02-18",
       "commit_hash": "p0ft1f6sq94upgjr5en45tmlt2lopcu8",
       "parent_hash": "fsgqr6ndel680gepdjnvo0t2natafa36",
-      "message": "Correction Slip: Correction Slip Nos 943 MH 0020 Corporation Tax and 944 MH 0021 Taxes on Income other than Corporation Tax Dated 18th February 2020 1691",
+      "message": "Correction Slip No. 943",
       "changes": [
         {
           "action": "INSERT",
@@ -6712,13 +7413,17 @@
           "type": "Minor Head",
           "label": "Accretion Tax under Section 115TD of Income Tax Act, 1961"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "943"
+      ],
+      "slip_label": "Correction Slip No. 943"
     },
     {
       "date": "2020-07-30",
       "commit_hash": "2lqdo9orapub743llgaeifkp5branrf6",
       "parent_hash": "p0ft1f6sq94upgjr5en45tmlt2lopcu8",
-      "message": "Correction Slip: Correction Slip Nos 945 MH 6001 Internal Debt of Central Government and 946 MH 2049 Interest Payments Dated 30th July 2020 1714",
+      "message": "Correction Slip No. 945",
       "changes": [
         {
           "action": "RENAME",
@@ -6750,13 +7455,17 @@
           "type": "Minor Head",
           "label": "132- Recapitalisation Bonds- Other Government Controlled Banking entities"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "945"
+      ],
+      "slip_label": "Correction Slip No. 945"
     },
     {
       "date": "2020-08-05",
       "commit_hash": "u2oj13clammnltp6i422ajnhnm84m4fr",
       "parent_hash": "2lqdo9orapub743llgaeifkp5branrf6",
-      "message": "Correction Slip: Correction Slip No 947 MH 0007 Union Territory Goods and Services Tax UTGST 1 Dated 05th August 2020 1711",
+      "message": "Correction Slip No. 947",
       "changes": [
         {
           "action": "INSERT",
@@ -6765,13 +7474,17 @@
           "type": "Sub-Major Head",
           "label": "Ladakh"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "947"
+      ],
+      "slip_label": "Correction Slip No. 947"
     },
     {
       "date": "2020-09-10",
       "commit_hash": "ehvemchj8okkjrgibd183f7tof7enhb1",
       "parent_hash": "u2oj13clammnltp6i422ajnhnm84m4fr",
-      "message": "Correction Slip: Correction Slips Nos 948 MH 0070 Other Administrative  Services Dated 11th September 2020 1697",
+      "message": "Correction Slip No. 948",
       "changes": [
         {
           "action": "INSERT",
@@ -6780,20 +7493,29 @@
           "type": "Minor Head",
           "label": "Inner Line Permit"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "948"
+      ],
+      "slip_label": "Correction Slip No. 948"
     },
     {
       "date": "2020-12-21",
       "commit_hash": "oi55ua70r2g9iufd85de9d9isitm58mf",
       "parent_hash": "ehvemchj8okkjrgibd183f7tof7enhb1",
-      "message": "Correction Slip: Correction Slips Nos 949 and 950 MH 188 Assistance to Autonomous Bodies and 188 Loans to Autonomous Bodies Dated 21st December 2020 1713",
-      "changes": []
+      "message": "Correction Slip Nos. 949-950",
+      "changes": [],
+      "slip_numbers": [
+        "949",
+        "950"
+      ],
+      "slip_label": "Correction Slip Nos. 949-950"
     },
     {
       "date": "2021-02-19",
       "commit_hash": "4q7dglr9vumgoc59q6v7nc4u3bma78tb",
       "parent_hash": "oi55ua70r2g9iufd85de9d9isitm58mf",
-      "message": "Correction Slip: Correction Slips No 951 MH 509 Health Cess under MH 0037 Customs Dated 19th February 2021 1709",
+      "message": "Correction Slip No. 951",
       "changes": [
         {
           "action": "INSERT",
@@ -6802,13 +7524,17 @@
           "type": "Minor Head",
           "label": "Health Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "951"
+      ],
+      "slip_label": "Correction Slip No. 951"
     },
     {
       "date": "2021-02-19",
       "commit_hash": "2v1q33oh2msalij8jm5050l3usbo7olk",
       "parent_hash": "4q7dglr9vumgoc59q6v7nc4u3bma78tb",
-      "message": "Correction Slip: Correction Slips No 952 MH 140 GST Refunds made by Centre on Behalf of States UTs under MH 8658 Suspense Accounts Dated 19th February 2021 1710",
+      "message": "Correction Slip No. 952",
       "changes": [
         {
           "action": "INSERT",
@@ -6817,13 +7543,17 @@
           "type": "Minor Head",
           "label": "GST Refunds made by Centre on Behalf of States/UTs"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "952"
+      ],
+      "slip_label": "Correction Slip No. 952"
     },
     {
       "date": "2021-03-17",
       "commit_hash": "ge901dj1vf7ohg2skenau71066fjn3f8",
       "parent_hash": "2v1q33oh2msalij8jm5050l3usbo7olk",
-      "message": "Correction Slip: Correction Slips No 953 MH 901 Share of Net Proceeds Assigned to States Below SUbmajor Head 01 and 02 uner MH 0008 IGST Dated 17th March 2021 1717",
+      "message": "Correction Slip No. 953",
       "changes": [
         {
           "action": "DELETE",
@@ -6832,20 +7562,28 @@
           "type": "Minor Head",
           "label": "Share of net proceeds assigned to States (9)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "953"
+      ],
+      "slip_label": "Correction Slip No. 953"
     },
     {
       "date": "2021-03-24",
       "commit_hash": "302ti2i5cs5j3ff1vnep4dsdmk18jqqv",
       "parent_hash": "ge901dj1vf7ohg2skenau71066fjn3f8",
-      "message": "Correction Slip: Correction Slips No 954  MH 104 Setting up of Natural Gas Pipeline  under Major Head  2802 Petroleum  Below Sub Major Head  02 Refining and Marketing of Oil and Gas   Dated 24th March 2021 1718",
-      "changes": []
+      "message": "Correction Slip No. 954",
+      "changes": [],
+      "slip_numbers": [
+        "954"
+      ],
+      "slip_label": "Correction Slip No. 954"
     },
     {
       "date": "2021-06-01",
       "commit_hash": "46maihk0biga7h32at72qr04lnkv8fk0",
       "parent_hash": "302ti2i5cs5j3ff1vnep4dsdmk18jqqv",
-      "message": "Correction Slip: Correction Slips 957 to 963 Dated 01st June 2021   Opening of new Sub Major Heads 07 Disaster Management  and 08 State Disaster Mitigation Fund and Minor Heads thereunder below Major Head 2245 Relief on Account of Natural Calamities 1732",
+      "message": "Correction Slip Nos. 957-963",
       "changes": [
         {
           "action": "INSERT",
@@ -6889,13 +7627,23 @@
           "type": "Minor Head",
           "label": "National Disaster Mitigation Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "957",
+        "958",
+        "959",
+        "960",
+        "961",
+        "962",
+        "963"
+      ],
+      "slip_label": "Correction Slip Nos. 957-963"
     },
     {
       "date": "2021-06-04",
       "commit_hash": "8v4a39dsea1mfg8jn8rlorgqf422k9c7",
       "parent_hash": "46maihk0biga7h32at72qr04lnkv8fk0",
-      "message": "Correction Slip: Corrigendum to Correction Slip No 958 Dated 01st JUne 2021 1733",
+      "message": "Corrigendum to Correction Slip No. 958",
       "changes": [
         {
           "action": "RENAME",
@@ -6905,20 +7653,28 @@
           "label": "Grant-in-aid for State Disaster Mitigation Fund",
           "old_label": "Grants to meet non-plan revenue deficit"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "958"
+      ],
+      "slip_label": "Corrigendum to Correction Slip No. 958"
     },
     {
       "date": "2021-07-13",
       "commit_hash": "0e033u6b6ga4o2qhl21181e8u7agks4d",
       "parent_hash": "8v4a39dsea1mfg8jn8rlorgqf422k9c7",
-      "message": "Correction Slip: Correction Slip No 964 Minor Head 104 Industrial Promotion  Under Sub Major Head 80 General  Under Major Head 2852 Industries  Dated 09th July 2021 1742",
-      "changes": []
+      "message": "Correction Slip No. 964",
+      "changes": [],
+      "slip_numbers": [
+        "964"
+      ],
+      "slip_label": "Correction Slip No. 964"
     },
     {
       "date": "2021-08-03",
       "commit_hash": "9pn9q0765isto2td5snpd5s3bdbgukta",
       "parent_hash": "0e033u6b6ga4o2qhl21181e8u7agks4d",
-      "message": "Correction Slip: Correction Slip No 966 TO 968  Dated 03rd August 2021     Passengers and Other Railway Users Amenities  Special Loan for Covid related resource Gap 1747",
+      "message": "Correction Slip Nos. 966-968",
       "changes": [
         {
           "action": "RENAME",
@@ -6950,13 +7706,19 @@
           "type": "Minor Head",
           "label": "Other Loans"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "966",
+        "967",
+        "968"
+      ],
+      "slip_label": "Correction Slip Nos. 966-968"
     },
     {
       "date": "2021-09-15",
       "commit_hash": "mp36i4a2q22m14rmn13l423o2og73mbt",
       "parent_hash": "9pn9q0765isto2td5snpd5s3bdbgukta",
-      "message": "Correction Slip: Correction Slip No 969 and 970 Dated 15th September  2021   Minor Head    510   Agriculture and Development Cess 1748",
+      "message": "Correction Slip Nos. 969-970",
       "changes": [
         {
           "action": "INSERT",
@@ -6972,13 +7734,18 @@
           "type": "Minor Head",
           "label": "Agriculture Infrastructure and Development Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "969",
+        "970"
+      ],
+      "slip_label": "Correction Slip Nos. 969-970"
     },
     {
       "date": "2021-10-13",
       "commit_hash": "kqmbqf6vh3tb4uu4v0s4hm2erfpo30f9",
       "parent_hash": "mp36i4a2q22m14rmn13l423o2og73mbt",
-      "message": "Correction Slip: Correction Slip No 971 972 and 973 Dated 13th October  2021 Minor Head  510  Special Service Bureau to Sashastra Seema Bal Under Major Head 0055  2055 and 4055 1751",
+      "message": "Correction Slip Nos. 971-973",
       "changes": [
         {
           "action": "RENAME",
@@ -7004,13 +7771,19 @@
           "label": "Sashastra Seema Bal",
           "old_label": "213-Special Service Bureau"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "971",
+        "972",
+        "973"
+      ],
+      "slip_label": "Correction Slip Nos. 971-973"
     },
     {
       "date": "2021-10-14",
       "commit_hash": "qtqfa1qjd7bj9c4i7f7g9n77pqpf4inf",
       "parent_hash": "kqmbqf6vh3tb4uu4v0s4hm2erfpo30f9",
-      "message": "Correction Slip: Correction Slip No 974 Dated 14th October 2021 National  Mineral Exploration  Trust Deposits  Under Major Head 8449  other Deposits 1752",
+      "message": "Correction Slip No. 974",
       "changes": [
         {
           "action": "INSERT",
@@ -7019,20 +7792,28 @@
           "type": "Minor Head",
           "label": "Electronic Cash Ledger of Customs"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "974"
+      ],
+      "slip_label": "Correction Slip No. 974"
     },
     {
       "date": "2021-11-30",
       "commit_hash": "jmpkjqu5km1i5pgerlmdg80l70q9fibu",
       "parent_hash": "qtqfa1qjd7bj9c4i7f7g9n77pqpf4inf",
-      "message": "Correction Slip: Correction Slip No 975 Dated 30th December 2021 Minor Head 118 Interest on Loans to Government Servants Sub Major Heads 04 Interest receipt of State UT Governments Legislatures Below Major Head 0049 Interest Receipt 1753",
-      "changes": []
+      "message": "Correction Slip No. 975",
+      "changes": [],
+      "slip_numbers": [
+        "975"
+      ],
+      "slip_label": "Correction Slip No. 975"
     },
     {
       "date": "2021-12-09",
       "commit_hash": "qoacb4obt78gloev7ff8oc7fqtofb6fb",
       "parent_hash": "jmpkjqu5km1i5pgerlmdg80l70q9fibu",
-      "message": "Correction Slip: Correction Slip No 976 Dated 09th December 2021 Opening of New  Sub Major Head 06 Defence and Minor Head 101 Monetization of Defence Lands there under below Major Head 4000 Miscellaneous Capital Receipts 1754",
+      "message": "Correction Slip No. 976",
       "changes": [
         {
           "action": "INSERT",
@@ -7041,13 +7822,17 @@
           "type": "Sub-Major Head",
           "label": "Defence"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "976"
+      ],
+      "slip_label": "Correction Slip No. 976"
     },
     {
       "date": "2022-01-13",
       "commit_hash": "lrichk7o7jqquilqdm61v028fsogg45r",
       "parent_hash": "qoacb4obt78gloev7ff8oc7fqtofb6fb",
-      "message": "Correction Slip: Correction Slip No 977 Dated 13th January 2022 Opening of New Standard  Minor Head187 Assistance to Industries Companies and Note in Para 3 1 General Directions to LMMHA 1757",
+      "message": "Correction Slip No. 977",
       "changes": [
         {
           "action": "INSERT",
@@ -7056,20 +7841,28 @@
           "type": "Minor Head",
           "label": "Assistance to Industries/Companies"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "977"
+      ],
+      "slip_label": "Correction Slip No. 977"
     },
     {
       "date": "2022-01-13",
       "commit_hash": "2vlnl9ksekt32oa9ksjrp7n0moe13f4k",
       "parent_hash": "lrichk7o7jqquilqdm61v028fsogg45r",
-      "message": "Correction Slip: Correction Slip No 978 Dated 13th January 2022 for renumbering the existing Sub  Major Head 04 Other Engineering Industries  Under Major Head 6858 Loans for Engineering Industries 1758",
-      "changes": []
+      "message": "Correction Slip No. 978",
+      "changes": [],
+      "slip_numbers": [
+        "978"
+      ],
+      "slip_label": "Correction Slip No. 978"
     },
     {
       "date": "2022-02-17",
       "commit_hash": "8mdkv4is4ka3lblchl5gjub1qlv1g9qm",
       "parent_hash": "2vlnl9ksekt32oa9ksjrp7n0moe13f4k",
-      "message": "Correction Slip: Correction Slip No 980 Consolidated Fund Revenue Receipt Heads Revenue Heads Dated 17th January 2022 1787",
+      "message": "Correction Slip No. 980",
       "changes": [
         {
           "action": "DELETE",
@@ -7099,13 +7892,17 @@
           "type": "Minor Head",
           "label": "Performance Award Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "980"
+      ],
+      "slip_label": "Correction Slip No. 980"
     },
     {
       "date": "2022-03-22",
       "commit_hash": "avnbjtil7kiab39safuodf504p5mccuu",
       "parent_hash": "8mdkv4is4ka3lblchl5gjub1qlv1g9qm",
-      "message": "Correction Slip: Correction Slip No 981 Opening of New Minor Head 114 PM CARES for Children Under Major Head 8001  National savings Deposits Dated 21st March 2022 1789",
+      "message": "Correction Slip No. 981",
       "changes": [
         {
           "action": "INSERT",
@@ -7114,13 +7911,17 @@
           "type": "Minor Head",
           "label": "PM CARES for Children"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "981"
+      ],
+      "slip_label": "Correction Slip No. 981"
     },
     {
       "date": "2022-04-26",
       "commit_hash": "47oopmvok7fsltir65it4mmfjrg0umi5",
       "parent_hash": "avnbjtil7kiab39safuodf504p5mccuu",
-      "message": "Correction Slip: Correction Slip No 982 to 984  Opening of New Minor Head 101 Works related to Irrigation Under Major Head 4700   Capital Outlay on Major Irrigation Dated 26th April 2022 1791",
+      "message": "Correction Slip Nos. 982-984",
       "changes": [
         {
           "action": "INSERT",
@@ -7143,13 +7944,19 @@
           "type": "Minor Head",
           "label": "Micro Irrigation"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "982",
+        "983",
+        "984"
+      ],
+      "slip_label": "Correction Slip Nos. 982-984"
     },
     {
       "date": "2022-05-23",
       "commit_hash": "n36aopf0n35f2lbio4losp2ls951jigt",
       "parent_hash": "47oopmvok7fsltir65it4mmfjrg0umi5",
-      "message": "Correction Slip: Correction Slip No 985  and  986 change of nomenclature of Major  Head 8454 as funds under Treasury Single Account  System   and Restructuring of Minor Sub and detailed head  there  under in LMMHA Dated 23rd May 2022 1792",
+      "message": "Correction Slip Nos. 985-986",
       "changes": [
         {
           "action": "RENAME",
@@ -7159,13 +7966,18 @@
           "label": "Funds under Treasury Single Account System",
           "old_label": "Funds for Autonomous Bodies under Treasury Single Account System"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "985",
+        "986"
+      ],
+      "slip_label": "Correction Slip Nos. 985-986"
     },
     {
       "date": "2022-05-31",
       "commit_hash": "hm6842os7uv65t5v6lts71oh9tq9uf5c",
       "parent_hash": "n36aopf0n35f2lbio4losp2ls951jigt",
-      "message": "Correction Slip: Correction Slip Number 987 Dated 31st May 2022 Opening of New Minor Head 104 Receipts from Port operation under Sub major Head 01 Major ports and 02 Minor Ports below Major Head 1051 Ports and Light Houses 1797",
+      "message": "Correction Slip No. 987",
       "changes": [
         {
           "action": "INSERT",
@@ -7174,13 +7986,17 @@
           "type": "Minor Head",
           "label": "Receipts from Port Operations"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "987"
+      ],
+      "slip_label": "Correction Slip No. 987"
     },
     {
       "date": "2022-06-20",
       "commit_hash": "o7u85246bb2pelhg4g5tq0m44m7mlsbr",
       "parent_hash": "hm6842os7uv65t5v6lts71oh9tq9uf5c",
-      "message": "Correction Slip: Correction Slip Number 988 Dated 20th June 2022 Opening of New Minor Head 109 Revenue Share under Major Head 0802 Petroleum 1798",
+      "message": "Correction Slip No. 988",
       "changes": [
         {
           "action": "INSERT",
@@ -7189,13 +8005,17 @@
           "type": "Minor Head",
           "label": "Revenue Share"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "988"
+      ],
+      "slip_label": "Correction Slip No. 988"
     },
     {
       "date": "2022-11-01",
       "commit_hash": "t66a6mc8o1khvpbeo9phpemj7uuho8be",
       "parent_hash": "o7u85246bb2pelhg4g5tq0m44m7mlsbr",
-      "message": "Correction Slip: Correction Slip Number 989 Dated 1st November 2022 Renaming of existing Minor Head 109 Special Additional Duty of Excise on Motor Spirit 1808",
+      "message": "Correction Slip No. 989",
       "changes": [
         {
           "action": "RENAME",
@@ -7205,20 +8025,28 @@
           "label": "Special Additional Excise Duties",
           "old_label": "109-Special Additional Duty of Excise on Motor Spirit"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "989"
+      ],
+      "slip_label": "Correction Slip No. 989"
     },
     {
       "date": "2022-12-05",
       "commit_hash": "o6kstv3vm0r3jt4869ppmgp6topjoufv",
       "parent_hash": "t66a6mc8o1khvpbeo9phpemj7uuho8be",
-      "message": "Correction Slip: Correction Slip Number 992 Dated 02nd December 2022 Opening of New Minor Heads 101 Fees Charges Deduction on Various Services Sub Major Head 04 Income of NSSF Major Head 8008 Income and Expenditure of National Small Savings  Fund 1810",
-      "changes": []
+      "message": "Correction Slip No. 992",
+      "changes": [],
+      "slip_numbers": [
+        "992"
+      ],
+      "slip_label": "Correction Slip No. 992"
     },
     {
       "date": "2022-12-05",
       "commit_hash": "4ec7ea1ecvjg8er6hrfdp29aa4de4gje",
       "parent_hash": "o6kstv3vm0r3jt4869ppmgp6topjoufv",
-      "message": "Correction Slip: Correction Slip Number 993 to 995 Dated 02nd December 2022 Opening of New Minor Heads 114 Agnipath Scheme under Major Head 2076 Defence Services Army  2077  Defence Service  Navy 2078 Defence Services Air Force 1812",
+      "message": "Correction Slip Nos. 993-995",
       "changes": [
         {
           "action": "INSERT",
@@ -7241,13 +8069,19 @@
           "type": "Minor Head",
           "label": "Agnipath Scheme"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "993",
+        "994",
+        "995"
+      ],
+      "slip_label": "Correction Slip Nos. 993-995"
     },
     {
       "date": "2022-12-19",
       "commit_hash": "1lclscp9af78ncu4cs0bsh7sdhg71o53",
       "parent_hash": "4ec7ea1ecvjg8er6hrfdp29aa4de4gje",
-      "message": "Correction Slip: Correction Slip No 996 to 1003 Change of Nomenclature of Central Road Fund  to Central Road and Infrastructure Fund  in the LMMHA Dated 19th December 2022 1814",
+      "message": "Correction Slip Nos. 996-1003",
       "changes": [
         {
           "action": "INSERT",
@@ -7311,13 +8145,24 @@
           "label": "103-Subventions from Central Road and Infrastructure Fund",
           "old_label": "Subventions from Central Road Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "996",
+        "997",
+        "998",
+        "999",
+        "1000",
+        "1001",
+        "1002",
+        "1003"
+      ],
+      "slip_label": "Correction Slip Nos. 996-1003"
     },
     {
       "date": "2022-12-30",
       "commit_hash": "ofs2fl5icg8ev82g0a4fsm6cdqp4bov4",
       "parent_hash": "1lclscp9af78ncu4cs0bsh7sdhg71o53",
-      "message": "Correction Slip: Correction Slip 1004 renaming of Nomenclature of Major Head 2202 Minor Head 112 Sub Minor Head 01 in the LMMHA Dated 29th December 2022 1815",
+      "message": "Correction Slip No. 1004",
       "changes": [
         {
           "action": "RENAME",
@@ -7327,13 +8172,17 @@
           "label": "Pradhan Mantri Poshan Shakti Nirman (PM-Poshan)",
           "old_label": "National Programme of Mid Day Meals in Schools"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1004"
+      ],
+      "slip_label": "Correction Slip No. 1004"
     },
     {
       "date": "2023-01-20",
       "commit_hash": "akkdt83k6khg64lc420s6hteb49j9jjs",
       "parent_hash": "ofs2fl5icg8ev82g0a4fsm6cdqp4bov4",
-      "message": "Correction Slip: Correction Slip No 1005 1007 Dated 20th January 2023 Opening of various new Minor Heads for accounting of Sovereign Green Bond 1817",
+      "message": "Correction Slip Nos. 1005-1007",
       "changes": [
         {
           "action": "INSERT",
@@ -7356,13 +8205,19 @@
           "type": "Minor Head",
           "label": "Sovereign Green Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1005",
+        "1006",
+        "1007"
+      ],
+      "slip_label": "Correction Slip Nos. 1005-1007"
     },
     {
       "date": "2023-02-20",
       "commit_hash": "b8kcv9ndr8vu4a9v7v19a8t76kqe0ohf",
       "parent_hash": "akkdt83k6khg64lc420s6hteb49j9jjs",
-      "message": "Correction Slip: Correction Slip No 1008 Dated 20th February 2023 Opening of new Minor Heads for 130 Pradhan Mantri Swasthya Suraksha Nidhi Under Major 8229 Development  and Welfare Funds 1823",
+      "message": "Correction Slip No. 1008",
       "changes": [
         {
           "action": "INSERT",
@@ -7371,13 +8226,17 @@
           "type": "Minor Head",
           "label": "Pradhan Mantri Swasthya Suraksha Nidhi (PMSSN)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1008"
+      ],
+      "slip_label": "Correction Slip No. 1008"
     },
     {
       "date": "2023-03-28",
       "commit_hash": "lon9f62nmnbbrsui6ukcvjss2v7ubcoq",
       "parent_hash": "b8kcv9ndr8vu4a9v7v19a8t76kqe0ohf",
-      "message": "Correction Slip: Correction Slip No 1010 Dated 27th March 2023 Opening of New Minor Head 129 Madhyamik and Uchatar Shiksha Kosh  Under Major Head 8229 Development and Welfare Funds 1825",
+      "message": "Correction Slip No. 1010",
       "changes": [
         {
           "action": "INSERT",
@@ -7386,13 +8245,17 @@
           "type": "Minor Head",
           "label": "Madhyamik and Uchchatar Shiksha Kosh (MUSK)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1010"
+      ],
+      "slip_label": "Correction Slip No. 1010"
     },
     {
       "date": "2023-03-31",
       "commit_hash": "4g6svfspftfscdp9f7ptm9hoj8vjpn1j",
       "parent_hash": "lon9f62nmnbbrsui6ukcvjss2v7ubcoq",
-      "message": "Correction Slip: Correction Slip No 1011 Dated 31st March 2023 Opening of new Minor Head 108 Mahila Samman Certificate under Major Head 8002 National Savings Certificate 1826",
+      "message": "Correction Slip No. 1011",
       "changes": [
         {
           "action": "INSERT",
@@ -7401,13 +8264,17 @@
           "type": "Minor Head",
           "label": "Mahila Samman Certificate"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1011"
+      ],
+      "slip_label": "Correction Slip No. 1011"
     },
     {
       "date": "2023-07-07",
       "commit_hash": "lo1cpn9sjnot63c2ud0vtot23fk20aco",
       "parent_hash": "4g6svfspftfscdp9f7ptm9hoj8vjpn1j",
-      "message": "Correction Slip: Correction Slip No from 1014 and 1016 Dated 6th July 2023 Revamping of Major Head 2016 Audit and opening of New Major Head 4016 Capital Outlay on Audit and Minor Heads There under 1839",
+      "message": "Correction Slip Nos. 1014, 1016",
       "changes": [
         {
           "action": "RENAME",
@@ -7438,13 +8305,18 @@
           "type": "Minor Head",
           "label": "Indian Audit and Accounts Department"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1014",
+        "1016"
+      ],
+      "slip_label": "Correction Slip Nos. 1014, 1016"
     },
     {
       "date": "2023-08-11",
       "commit_hash": "32kndid7r1egv0vmq8t7bvhtggk5rkra",
       "parent_hash": "lo1cpn9sjnot63c2ud0vtot23fk20aco",
-      "message": "Correction Slip: Correction Slip No 1017 Dated 10th August 2023 conveying the Ex post Facto approval of the CGA for regularizing Minor head 120 Swarna Jayanti Scholarship Reserve Fund under Major Head 8121 General and Other Reserve Funds 1840",
+      "message": "Correction Slip No. 1017",
       "changes": [
         {
           "action": "INSERT",
@@ -7453,13 +8325,17 @@
           "type": "Minor Head",
           "label": "SWARNA JAYANTI SCHOLARSHIP RESERVE FUND"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1017"
+      ],
+      "slip_label": "Correction Slip No. 1017"
     },
     {
       "date": "2023-10-06",
       "commit_hash": "ulki7g3f5nmburlu0a0dkq18ljtt83pu",
       "parent_hash": "32kndid7r1egv0vmq8t7bvhtggk5rkra",
-      "message": "Correction Slip: Correction Slip No 1018 dated 6th October 2023 regarding opening of new minor head 4401 109 Extension and Farmers Training Under Major Head  4401 Capital Outlay on Crop Husbandry 1843",
+      "message": "Correction Slip No. 1018",
       "changes": [
         {
           "action": "INSERT",
@@ -7468,13 +8344,17 @@
           "type": "Minor Head",
           "label": "Extension and Farmers' Training"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1018"
+      ],
+      "slip_label": "Correction Slip No. 1018"
     },
     {
       "date": "2023-11-02",
       "commit_hash": "5q1pcm7amehgt677bdr4s8p87itpm4kv",
       "parent_hash": "ulki7g3f5nmburlu0a0dkq18ljtt83pu",
-      "message": "Correction Slip: Correction Slip No 1020 dated 2nd November 2023 regarding opening of new minor head 111 Agriculture Economics and Statistics under Major Head 4401 Capital Outlay on Crop Husbandry 1846",
+      "message": "Correction Slip No. 1020",
       "changes": [
         {
           "action": "INSERT",
@@ -7483,13 +8363,17 @@
           "type": "Minor Head",
           "label": "Agriculture Economics and Statistics"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1020"
+      ],
+      "slip_label": "Correction Slip No. 1020"
     },
     {
       "date": "2024-02-07",
       "commit_hash": "iqinkhpgtobmniclmm6m97hlubkovkf0",
       "parent_hash": "5q1pcm7amehgt677bdr4s8p87itpm4kv",
-      "message": "Correction Slip: Correction Slip No 1021 to 2027 dated 7th February 2024 regarding amendment of new minor head 0079 2076 2079 and revamping of major head 4076 Capital Outlay on Defence Services in respect of Ministry of Defence 1852",
+      "message": "Correction Slip Nos. 1021, 2027",
       "changes": [
         {
           "action": "RENAME",
@@ -7612,13 +8496,18 @@
           "type": "Minor Head",
           "label": "Other Expenditure"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1021",
+        "2027"
+      ],
+      "slip_label": "Correction Slip Nos. 1021, 2027"
     },
     {
       "date": "2024-02-12",
       "commit_hash": "91j9910qc8qafuu16qh9s88p9f5ql7ka",
       "parent_hash": "iqinkhpgtobmniclmm6m97hlubkovkf0",
-      "message": "Correction Slip: Correction Slip No 1028 Dated 12th Feb 2024 Regarding Opening of New Minor Head 147 Agriculture Infrastructure and Development fund Under Major Head 8235 1851",
+      "message": "Correction Slip No. 1028",
       "changes": [
         {
           "action": "INSERT",
@@ -7627,20 +8516,28 @@
           "type": "Minor Head",
           "label": "Agriculture Infrastructure and Development Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1028"
+      ],
+      "slip_label": "Correction Slip No. 1028"
     },
     {
       "date": "2024-02-12",
       "commit_hash": "tf1o3j6r0eauc9p9bnm519cvs8adlc9k",
       "parent_hash": "91j9910qc8qafuu16qh9s88p9f5ql7ka",
-      "message": "Correction Slip: Correction Slip No 1029 dated 12th February 2024 to the LMMHA for opening of new minor head 101 Isotopes under the head 0852 Industries 09 Atomic Energy Industry 1850",
-      "changes": []
+      "message": "Correction Slip No. 1029",
+      "changes": [],
+      "slip_numbers": [
+        "1029"
+      ],
+      "slip_label": "Correction Slip No. 1029"
     },
     {
       "date": "2024-03-18",
       "commit_hash": "e491hgou4f1u7p1m329k44hjafnqiieg",
       "parent_hash": "tf1o3j6r0eauc9p9bnm519cvs8adlc9k",
-      "message": "Correction Slip: Correction Slip No 1030   1031 dated 18th March 2024 regarding opening of new minor head 255 Interest on Loans from Government of Korea below Sub Major Head 02 Interest on External Debt under Major Head 2049 Interest Payments 1856",
+      "message": "Correction Slip Nos. 1030-1031",
       "changes": [
         {
           "action": "INSERT",
@@ -7656,34 +8553,51 @@
           "type": "Minor Head",
           "label": "Loans from Government of Korea (GoKR)"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1030",
+        "1031"
+      ],
+      "slip_label": "Correction Slip Nos. 1030-1031"
     },
     {
       "date": "2024-04-29",
       "commit_hash": "a83n187vifjverorgopt4svf2o7oa573",
       "parent_hash": "e491hgou4f1u7p1m329k44hjafnqiieg",
-      "message": "Correction Slip: Correction Slip No 1033 Hindi dated 29th April 2024 regarding opening of new Minor Head 101 Fertilizers below Sub Major Head 03 Fertilizer Industries under Major Head 0852 Industries 1874",
-      "changes": []
+      "message": "Correction Slip No. 1033",
+      "changes": [],
+      "slip_numbers": [
+        "1033"
+      ],
+      "slip_label": "Correction Slip No. 1033"
     },
     {
       "date": "2024-05-01",
       "commit_hash": "ffddu3q679er5oad3v4s95g6s25m8n1c",
       "parent_hash": "a83n187vifjverorgopt4svf2o7oa573",
-      "message": "Correction Slip: Correction Slip No 1033 dated 29th April 2024 regarding opening of new Minor Head 101 Fertilizers below Sub Major Head 03 Fertilizer Industries under Major Head 0852 Industries 1871",
-      "changes": []
+      "message": "Correction Slip No. 1033",
+      "changes": [],
+      "slip_numbers": [
+        "1033"
+      ],
+      "slip_label": "Correction Slip No. 1033"
     },
     {
       "date": "2024-08-06",
       "commit_hash": "qg1avclveoj2ot45tqrufnintv07a7po",
       "parent_hash": "ffddu3q679er5oad3v4s95g6s25m8n1c",
-      "message": "Correction Slip: Corrigendum to Correction Slip No 1027 Dated 7th February 2024 1882",
-      "changes": []
+      "message": "Corrigendum to Correction Slip No. 1027",
+      "changes": [],
+      "slip_numbers": [
+        "1027"
+      ],
+      "slip_label": "Corrigendum to Correction Slip No. 1027"
     },
     {
       "date": "2024-11-05",
       "commit_hash": "bn4dnebfhhf2crvjeg72fc3afc2r60fg",
       "parent_hash": "qg1avclveoj2ot45tqrufnintv07a7po",
-      "message": "Correction Slip: Correction Slip Nos 1037 to 1040 dated 4th November 2024 regarding opening of new Minor Heads 105 Research and Operations under Major Heads 3403 and 5403 and for change of nomenclature of Major Heads 3403   5403 1889",
+      "message": "Correction Slip Nos. 1037-1040",
       "changes": [
         {
           "action": "RENAME",
@@ -7715,13 +8629,20 @@
           "type": "Minor Head",
           "label": "Research and Operations"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1037",
+        "1038",
+        "1039",
+        "1040"
+      ],
+      "slip_label": "Correction Slip Nos. 1037-1040"
     },
     {
       "date": "2024-11-13",
       "commit_hash": "sm0l964b21ob8b07e4a0gb0g3ljqarnn",
       "parent_hash": "bn4dnebfhhf2crvjeg72fc3afc2r60fg",
-      "message": "Correction Slip: Correction Slip No 1041 dated 13th November 2024 regarding opening of new Minor Heads 822 Cinchona and 830 Tobacco below Sub Major Head 60 Others under Major Head 4407 Capital Outlay on Plantations 1890",
+      "message": "Correction Slip No. 1041",
       "changes": [
         {
           "action": "INSERT",
@@ -7737,13 +8658,17 @@
           "type": "Minor Head",
           "label": "Tobacco"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1041"
+      ],
+      "slip_label": "Correction Slip No. 1041"
     },
     {
       "date": "2024-12-27",
       "commit_hash": "vn0mfsjuu5uqbu8gs5dnisa1iikt5qe5",
       "parent_hash": "sm0l964b21ob8b07e4a0gb0g3ljqarnn",
-      "message": "Correction Slip: Correction Slip No 1046 dated 27th December 2024 regarding Change of Nomenclature of the Minor Heads 1893",
+      "message": "Correction Slip No. 1046",
       "changes": [
         {
           "action": "RENAME",
@@ -7769,13 +8694,17 @@
           "label": "Central Statistics",
           "old_label": "Central Statistical Organisation"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1046"
+      ],
+      "slip_label": "Correction Slip No. 1046"
     },
     {
       "date": "2024-12-27",
       "commit_hash": "jq4gvgc0c73qnnkkjom7ku8r7olum55h",
       "parent_hash": "vn0mfsjuu5uqbu8gs5dnisa1iikt5qe5",
-      "message": "Correction Slip: Correction Slip Nos 1043 to 1045 dated 27th December 2024 regarding opening of new Minor Head 111 Goods and Services Tax Appellate Tribunal 1895",
+      "message": "Correction Slip Nos. 1043-1045",
       "changes": [
         {
           "action": "RENAME",
@@ -7799,27 +8728,41 @@
           "type": "Minor Head",
           "label": "Goods and Service Tax Appellate Tribunal"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1043",
+        "1044",
+        "1045"
+      ],
+      "slip_label": "Correction Slip Nos. 1043-1045"
     },
     {
       "date": "2025-01-13",
       "commit_hash": "807hobcv00mskuprh89e6j9oijfqj0v9",
       "parent_hash": "jq4gvgc0c73qnnkkjom7ku8r7olum55h",
-      "message": "Correction Slip: Correction Slip No 1047 dated 13th January 2025 regarding opening of new Minor Head 106 RPLI Gram Yojana below Sub Major Head 02 Rural Postal Life Insurance Schemes under Major Head 8014 Postal Life Insurance Schemes 1896",
-      "changes": []
+      "message": "Correction Slip No. 1047",
+      "changes": [],
+      "slip_numbers": [
+        "1047"
+      ],
+      "slip_label": "Correction Slip No. 1047"
     },
     {
       "date": "2025-03-05",
       "commit_hash": "dqg5quvhifnvb7j765r93kr7v7d3u65u",
       "parent_hash": "807hobcv00mskuprh89e6j9oijfqj0v9",
-      "message": "Correction Slip: Correction Slip Number 1048 Dated 05th March 2025 to the LMMHA for amendment in Para 3 4 4 4 and 4 5 of the General Directions to the LMMHA regarding transfer to Reserve Funds Deposits Accounts 1903",
-      "changes": []
+      "message": "Correction Slip No. 1048",
+      "changes": [],
+      "slip_numbers": [
+        "1048"
+      ],
+      "slip_label": "Correction Slip No. 1048"
     },
     {
       "date": "2025-03-13",
       "commit_hash": "cg2gfh22vsmrkssn1ddu4shk4j5jgiop",
       "parent_hash": "dqg5quvhifnvb7j765r93kr7v7d3u65u",
-      "message": "Correction Slip: Corrigendum No 130  for correction in the nomenclature of Minor Head 102 Antartic Research as Antarctic Research below Major Head 3403  Earth System Science of LMMHA  Dated 12th March 2025 1905",
+      "message": "Corrigendum No. 130",
       "changes": [
         {
           "action": "RENAME",
@@ -7829,13 +8772,14 @@
           "label": "Antarctic Research",
           "old_label": "Antartic Research"
         }
-      ]
+      ],
+      "slip_label": "Corrigendum No. 130"
     },
     {
       "date": "2025-03-18",
       "commit_hash": "bistco5eg6lclbksdhin1tq3ufgcs2qa",
       "parent_hash": "cg2gfh22vsmrkssn1ddu4shk4j5jgiop",
-      "message": "Correction Slip: Correction Slip No 1051 Dated 18th March 2025 to LMMHA  for Opening of new minor head 148 Oil Industry Development Fund under Major Head 8235 General and Other Reserve Funds relating to operation of Oil Industry Development Fund 1906",
+      "message": "Correction Slip No. 1051",
       "changes": [
         {
           "action": "INSERT",
@@ -7844,13 +8788,17 @@
           "type": "Minor Head",
           "label": "Oil Industry Development Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1051"
+      ],
+      "slip_label": "Correction Slip No. 1051"
     },
     {
       "date": "2025-03-19",
       "commit_hash": "mqdrv2erl459637jhoiel87mnav9g8br",
       "parent_hash": "bistco5eg6lclbksdhin1tq3ufgcs2qa",
-      "message": "Correction Slip: Correction Slip No 1052 and 1053 Dt 18th March 2025 Opening of new Minor Heads i 823500149 Unified Pension Scheme for Govt Employees  ii 207101121  and iii change of nomenclature of Minor Head 207101117 1907",
+      "message": "Correction Slip Nos. 1052-1053",
       "changes": [
         {
           "action": "RENAME",
@@ -7874,20 +8822,29 @@
           "type": "Minor Head",
           "label": "Unified Pension Scheme for Government Employees"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1052",
+        "1053"
+      ],
+      "slip_label": "Correction Slip Nos. 1052-1053"
     },
     {
       "date": "2025-03-20",
       "commit_hash": "28kicram1iatorutb36jku3tvrf0o73v",
       "parent_hash": "mqdrv2erl459637jhoiel87mnav9g8br",
-      "message": "Correction Slip: Correction slip No 1054 Dated 20th March 2025 regarding Opening of new standard minor head 802 Interest or other payments to Grantor on unspent balances 1910",
-      "changes": []
+      "message": "Correction Slip No. 1054",
+      "changes": [],
+      "slip_numbers": [
+        "1054"
+      ],
+      "slip_label": "Correction Slip No. 1054"
     },
     {
       "date": "2025-04-22",
       "commit_hash": "oqau22qhkk9heofj4iqf1g26f5i9vhbe",
       "parent_hash": "28kicram1iatorutb36jku3tvrf0o73v",
-      "message": "Correction Slip: List of Major and Minor Heads of Account of Union and States Correction Slip No 1057 Dated 22nd April 2025 1914",
+      "message": "Correction Slip No. 1057",
       "changes": [
         {
           "action": "INSERT",
@@ -7896,13 +8853,17 @@
           "type": "Minor Head",
           "label": "Monetisation of Land"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1057"
+      ],
+      "slip_label": "Correction Slip No. 1057"
     },
     {
       "date": "2025-06-18",
       "commit_hash": "04n36aee9ft4pj5d5uu4l280spd5ia2k",
       "parent_hash": "oqau22qhkk9heofj4iqf1g26f5i9vhbe",
-      "message": "Correction Slip: Correction Slip Number 1062 to the LMMHA for opening of new Minor Head 218 Modernisation of Police Force under Major Head 4055 Capital Outlay on Police Dated 18th June 2025 1920",
+      "message": "Correction Slip No. 1062",
       "changes": [
         {
           "action": "INSERT",
@@ -7911,13 +8872,17 @@
           "type": "Minor Head",
           "label": "Modernisation of Police Force"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1062"
+      ],
+      "slip_label": "Correction Slip No. 1062"
     },
     {
       "date": "2025-06-18",
       "commit_hash": "27tohks4f53aqikpf9ud91gahatl4r08",
       "parent_hash": "04n36aee9ft4pj5d5uu4l280spd5ia2k",
-      "message": "Correction Slip: Correction slips Number 1058 1059 and 1060  to the LMMHA for opening of following new Minor Heads under Major Head 0803 Coal and Lignite 0852 Industries and 0853  Non Ferrous Mining and Metallurgical Industries Dated 17th June 2025 1918",
+      "message": "Correction Slip Nos. 1058-1060",
       "changes": [
         {
           "action": "RENAME",
@@ -7963,13 +8928,19 @@
           "type": "Minor Head",
           "label": "109 Minor Mineral Royalties"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1058",
+        "1059",
+        "1060"
+      ],
+      "slip_label": "Correction Slip Nos. 1058-1060"
     },
     {
       "date": "2025-06-19",
       "commit_hash": "m7dfjb78je7nl6cl72b4nr92mses9asm",
       "parent_hash": "27tohks4f53aqikpf9ud91gahatl4r08",
-      "message": "Correction Slip: Correction Slip Number 1061 dated 17 06 2025 to the LMMHA for opening of new Minor Head 151 State Mineral Exploration Trust Fund under Major Head 8235 General and Other Reserve Funds 1921",
+      "message": "Correction Slip No. 1061",
       "changes": [
         {
           "action": "INSERT",
@@ -7978,34 +8949,50 @@
           "type": "Minor Head",
           "label": "State Mineral Exploration Trust Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1061"
+      ],
+      "slip_label": "Correction Slip No. 1061"
     },
     {
       "date": "2025-07-09",
       "commit_hash": "bfoaelv83dl13tpobogr8eocumlrlm25",
       "parent_hash": "m7dfjb78je7nl6cl72b4nr92mses9asm",
-      "message": "Correction Slip: Correction Slip Number 1066 dated 10 07 2025 to the LMMHA for opening of New Minor Heads 116  Premium on Market Loans and 117  Interest on Market Loans below Sub Major Head 04  Interest Receipts of State Union Territory Governments 1922",
-      "changes": []
+      "message": "Correction Slip No. 1066",
+      "changes": [],
+      "slip_numbers": [
+        "1066"
+      ],
+      "slip_label": "Correction Slip No. 1066"
     },
     {
       "date": "2025-07-09",
       "commit_hash": "nv3vlfav64m9hat6dh1lejui8di8qqcq",
       "parent_hash": "bfoaelv83dl13tpobogr8eocumlrlm25",
-      "message": "Correction Slip: Correction Slip Number 1067 dated 10 07 2025 to the LMMHA for correction in Note 1 below Major Head 2225  Welfare of Scheduled Castes Scheduled Tribes Other Backward Classes and Minorities 1923",
-      "changes": []
+      "message": "Correction Slip No. 1067",
+      "changes": [],
+      "slip_numbers": [
+        "1067"
+      ],
+      "slip_label": "Correction Slip No. 1067"
     },
     {
       "date": "2025-07-28",
       "commit_hash": "eno8r4c4p777qjn2k9nt5dg04ptpqnmk",
       "parent_hash": "nv3vlfav64m9hat6dh1lejui8di8qqcq",
-      "message": "Correction Slip: Correction Slip Number 1068 dated 26 07 2025 to the LMMHA for updation of the list of Standard Minor Heads and Para 31 of General Directions to the LMMHA 1930",
-      "changes": []
+      "message": "Correction Slip No. 1068",
+      "changes": [],
+      "slip_numbers": [
+        "1068"
+      ],
+      "slip_label": "Correction Slip No. 1068"
     },
     {
       "date": "2025-10-23",
       "commit_hash": "napa89h6tlpdkcckngu0fkkltfjtipg5",
       "parent_hash": "eno8r4c4p777qjn2k9nt5dg04ptpqnmk",
-      "message": "Correction Slip: Correction Slip Number 1069  of the LMMHA for the opening of a new Sub Major Head 80 General along with Minor Head 188 Assistance to Autonomous Bodies under Major Head 2215 Water Supply and Sanitation Dated 23rd October 2025 1937",
+      "message": "Correction Slip No. 1069",
       "changes": [
         {
           "action": "INSERT",
@@ -8021,13 +9008,17 @@
           "type": "Sub-Major Head",
           "label": "80-General"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1069"
+      ],
+      "slip_label": "Correction Slip No. 1069"
     },
     {
       "date": "2025-11-11",
       "commit_hash": "aevug3sp9fj0c1kfu8t1sp932atomdbg",
       "parent_hash": "napa89h6tlpdkcckngu0fkkltfjtipg5",
-      "message": "Correction Slip: Correction Slip Numbers from 1070 to 1071 dated 11th November 2025 to the LMMHA for change in nomenclature of MH 0021 Taxes on Income other than Corporation Tax to 0021  Non Corporate Tax 1939",
+      "message": "Correction Slip Nos. 1070-1071",
       "changes": [
         {
           "action": "RENAME",
@@ -8037,13 +9028,18 @@
           "label": "Non-Corporate Tax",
           "old_label": "Taxes on Income Other than Corporation Tax"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1070",
+        "1071"
+      ],
+      "slip_label": "Correction Slip Nos. 1070-1071"
     },
     {
       "date": "2026-01-28",
       "commit_hash": "tuf8rnmhbt6j2nio53348a61aacpbfn3",
       "parent_hash": "aevug3sp9fj0c1kfu8t1sp932atomdbg",
-      "message": "Correction Slip: Correction Slip Number 1081 dated 28 01 2026 to the LMMHA for Opening of new Minor Head 120  Health Security se National Security Cess under Major Head 0045 Other Taxes and Duties on Commodities and Services 1952",
+      "message": "Correction Slip No. 1081",
       "changes": [
         {
           "action": "INSERT",
@@ -8052,13 +9048,17 @@
           "type": "Minor Head",
           "label": "Health Security se National Security Cess"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1081"
+      ],
+      "slip_label": "Correction Slip No. 1081"
     },
     {
       "date": "2026-03-27",
       "commit_hash": "qo2jquapne8106a0nujkf7ic9ak8iq15",
       "parent_hash": "tuf8rnmhbt6j2nio53348a61aacpbfn3",
-      "message": "Correction Slip: Correction Slip Number 1095 Dated 27th March 2026 to the LMMHA for change of numeric code of Minor Head 191 to 101 Schemes for NE Region below Sub Major Head 01Air Services under Major Head 3053 Civil Aviation 1955",
+      "message": "Correction Slip No. 1095",
       "changes": [
         {
           "action": "RENAME",
@@ -8068,13 +9068,17 @@
           "label": "Schemes for NE Region",
           "old_label": "Communications"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1095"
+      ],
+      "slip_label": "Correction Slip No. 1095"
     },
     {
       "date": "2026-03-28",
       "commit_hash": "ub33a0vbmk1b5ltf8irmt8l5rpkn8oo7",
       "parent_hash": "qo2jquapne8106a0nujkf7ic9ak8iq15",
-      "message": "Correction Slip: Correction Slip number 1096 Dated 28th March 2026 to the LMMHA for opening of new Minor Heads 153 Technology in National Security Funds TNS and 154 Economic Stabilization Fund under major Head 8235 General and other Reserve Funds 1954",
+      "message": "Correction Slip No. 1096",
       "changes": [
         {
           "action": "INSERT",
@@ -8090,13 +9094,17 @@
           "type": "Minor Head",
           "label": "Economic Stabilization Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1096"
+      ],
+      "slip_label": "Correction Slip No. 1096"
     },
     {
       "date": "2026-03-30",
       "commit_hash": "2ccqre3vdjit6atv77ln0kh976mt1doq",
       "parent_hash": "ub33a0vbmk1b5ltf8irmt8l5rpkn8oo7",
-      "message": "Correction Slip: Correction Slip Number 1097 dated 30th March2026 to the LMMHA for opening of new Minor Head 155 Health Security se National Security Cess Fund under Major Head 8235 General and Other Reserve Funds 1956",
+      "message": "Correction Slip No. 1097",
       "changes": [
         {
           "action": "INSERT",
@@ -8105,13 +9113,17 @@
           "type": "Minor Head",
           "label": "Health Security se National Security Cess Fund"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1097"
+      ],
+      "slip_label": "Correction Slip No. 1097"
     },
     {
       "date": "2026-05-22",
       "commit_hash": "fv0ugrpl8k1k1q292r9kaaqhi0o3r00f",
       "parent_hash": "2ccqre3vdjit6atv77ln0kh976mt1doq",
-      "message": "Correction Slip: Correction Slip Numbers from 1102 to 1105 dated 22 May 2026 to the LMMHA for change in nomenclature of MH 0020 Corporation Tax to 0020 Corporate Tax 1962",
+      "message": "Correction Slip Nos. 1102-1105",
       "changes": [
         {
           "action": "RENAME",
@@ -8129,13 +9141,20 @@
           "label": "Collection Charges-Corporate Tax",
           "old_label": "Collection Charges-Corporation Tax"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1102",
+        "1103",
+        "1104",
+        "1105"
+      ],
+      "slip_label": "Correction Slip Nos. 1102-1105"
     },
     {
       "date": "2026-06-09",
       "commit_hash": "7tpv15kejq7vkr03dh4eq8c0litp1dpg",
       "parent_hash": "fv0ugrpl8k1k1q292r9kaaqhi0o3r00f",
-      "message": "Correction Slip: Correction Slip Number 1106 dated 09 06 2026 to the LMMHA for opening of new Minor Head 109  Penal Guarantee Fees under Major Head 0075  Miscellaneous General Services 1963",
+      "message": "Correction Slip No. 1106",
       "changes": [
         {
           "action": "INSERT",
@@ -8144,7 +9163,11 @@
           "type": "Minor Head",
           "label": "Penal Guarantee Fees"
         }
-      ]
+      ],
+      "slip_numbers": [
+        "1106"
+      ],
+      "slip_label": "Correction Slip No. 1106"
     }
   ]
 }
