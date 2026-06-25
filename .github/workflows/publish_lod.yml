@@ -17,6 +17,11 @@ on:
       - 'references/lmmha/lod/app.js'
       - 'references/lmmha/lod/style.css'
       - 'references/lmmha/lod/observed.json'
+      # money-flow Sankey page
+      - 'references/lmmha/lod/flow.html'
+      - 'references/lmmha/lod/flow.js'
+      - 'references/lmmha/lod/sankey_assam.json'
+      - 'references/lmmha/lod/sankey_assam_balance.json'
       - 'viz/build_browser_data.py'
       - '.github/workflows/publish_lod.yml'
   workflow_dispatch:
