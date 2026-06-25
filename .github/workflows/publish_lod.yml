@@ -5,7 +5,13 @@ on:
       - main
     paths:
       - 'references/lmmha/lmmha_base_2001.json'
+      - 'references/lmmha/lmmha_timeline.json'
+      - 'references/lmmha/lmmha_scope_notes_2001.json'
+      - 'publicfinance/inject_search.py'
+      - 'publicfinance/lmmha_history.py'
+      - 'publicfinance/lmmha_notes.py'
       - 'publicfinance/lmmha_skos_exporter.py'
+      - 'publicfinance/generate_lmmha_redirects.py'
       - '.github/workflows/publish_lod.yml'
   workflow_dispatch:
 

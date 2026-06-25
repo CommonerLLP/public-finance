@@ -7,6 +7,8 @@ from rdflib.namespace import DCTERMS, OWL, RDF, RDFS, SKOS, XSD
 REPO_ROOT = Path(__file__).resolve().parents[1]
 BASE_JSON = REPO_ROOT / "references" / "lmmha" / "lmmha_base_2001.json"
 LOD_DIR = REPO_ROOT / "references" / "lmmha" / "lod"
+TIMELINE_JSON = REPO_ROOT / "references" / "lmmha" / "lmmha_timeline.json"
+SCOPE_NOTES_JSON = REPO_ROOT / "references" / "lmmha" / "lmmha_scope_notes_2001.json"
 BASE_URI = "https://data.commonerllp.org/ontology/lmmha/"
 
 
@@ -52,15 +54,33 @@ def load_base_rows(path=BASE_JSON):
         return rows_from_base_json(json.load(f))
 
 
-def load_timeline(path):
+def load_json_payload(path):
     if not path:
         return []
-    with Path(path).open("r", encoding="utf-8") as f:
+    path = Path(path)
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def build_graph(active_rows, timeline=None, base_uri=BASE_URI):
-    timeline = timeline or []
+def payload_items(payload, key):
+    if isinstance(payload, dict):
+        return payload.get(key, [])
+    return payload or []
+
+
+def load_timeline(path=TIMELINE_JSON):
+    return payload_items(load_json_payload(path), "events")
+
+
+def load_scope_notes(path=SCOPE_NOTES_JSON):
+    return payload_items(load_json_payload(path), "notes")
+
+
+def build_graph(active_rows, timeline=None, scope_notes=None, base_uri=BASE_URI):
+    timeline = payload_items(timeline, "events")
+    scope_notes = payload_items(scope_notes, "notes")
     graph = Graph()
     prov = URIRef("http://www.w3.org/ns/prov#")
     prov_namespace = "http://www.w3.org/ns/prov#"
@@ -74,6 +94,14 @@ def build_graph(active_rows, timeline=None, base_uri=BASE_URI):
     scheme_uri = URIRef(base_uri + "scheme")
     graph.add((scheme_uri, RDF.type, SKOS.ConceptScheme))
     graph.add((scheme_uri, DCTERMS.title, Literal("List of Major and Minor Heads of Account (LMMHA) - India, 2001 Base Edition", lang="en")))
+    graph.add((
+        scheme_uri,
+        DCTERMS.description,
+        Literal(
+            "Machine-readable SKOS export of the Indian List of Major and Minor Heads of Account, with correction-slip history and source notes where available.",
+            lang="en",
+        ),
+    ))
 
     cga_uri = URIRef("https://cga.nic.in")
     graph.add((scheme_uri, DCTERMS.publisher, cga_uri))
@@ -135,14 +163,32 @@ def build_graph(active_rows, timeline=None, base_uri=BASE_URI):
                 graph.add((uri, DCTERMS.modified, Literal(date_str, datatype=XSD.date)))
                 graph.remove((uri, SKOS.prefLabel, None))
                 graph.add((uri, SKOS.prefLabel, Literal(change["label"], lang="en")))
+            elif change["action"] == "UPDATE":
+                graph.add((uri, DCTERMS.modified, Literal(date_str, datatype=XSD.date)))
+                graph.add((uri, SKOS.historyNote, Literal(f"Updated on {date_str} via {message}", lang="en")))
+
+    for note in scope_notes:
+        code = note.get("code")
+        note_text = note.get("note")
+        if not code or not note_text or code not in seen_codes:
+            continue
+
+        uri = concept_uri(code)
+        graph.add((uri, SKOS.scopeNote, Literal(note_text, lang="en")))
+        if note.get("source") or note.get("note_number"):
+            source = f"LMMHA note {note.get('note_number', '').strip()}".strip()
+            if note.get("source"):
+                source = f"{source}, {note['source']}"
+            graph.add((uri, DCTERMS.source, Literal(source, lang="en")))
 
     return graph
 
 
-def export_skos(input_path=BASE_JSON, output_dir=LOD_DIR, timeline_path=None):
+def export_skos(input_path=BASE_JSON, output_dir=LOD_DIR, timeline_path=TIMELINE_JSON, scope_notes_path=SCOPE_NOTES_JSON):
     active_rows = load_base_rows(input_path)
     timeline = load_timeline(timeline_path)
-    graph = build_graph(active_rows, timeline)
+    scope_notes = load_scope_notes(scope_notes_path)
+    graph = build_graph(active_rows, timeline, scope_notes)
 
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
