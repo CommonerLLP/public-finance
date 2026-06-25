@@ -12,6 +12,12 @@ on:
       - 'publicfinance/lmmha_notes.py'
       - 'publicfinance/lmmha_skos_exporter.py'
       - 'publicfinance/generate_lmmha_redirects.py'
+      # human browser (served at the site root)
+      - 'references/lmmha/lod/index.html'
+      - 'references/lmmha/lod/app.js'
+      - 'references/lmmha/lod/style.css'
+      - 'references/lmmha/lod/observed.json'
+      - 'viz/build_browser_data.py'
       - '.github/workflows/publish_lod.yml'
   workflow_dispatch:
 
@@ -49,11 +55,17 @@ jobs:
         run: |
           python publicfinance/lmmha_skos_exporter.py
 
-      - name: Generate HTML Documentation using PyLODE
+      - name: Generate formal SKOS vocabulary page (PyLODE -> vocab.html)
         run: |
-          pylode references/lmmha/lod/lmmha.ttl -o references/lmmha/lod/index.html -p vocpub
-          python publicfinance/inject_search.py references/lmmha/lod/index.html
+          pylode references/lmmha/lod/lmmha.ttl -o references/lmmha/lod/vocab.html -p vocpub
+          python publicfinance/inject_search.py references/lmmha/lod/vocab.html
           python publicfinance/generate_lmmha_redirects.py
+
+      - name: Build human browser payload (from tracked source JSON; stdlib only)
+        run: |
+          python viz/build_browser_data.py
+          # index.html / app.js / style.css / observed.json are committed and served as-is.
+          # observed.json is built locally from gitignored data/ and is NOT regenerated here.
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
