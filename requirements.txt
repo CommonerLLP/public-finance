@@ -1,7 +1,11 @@
 beautifulsoup4==4.14.3
+google-genai==2.10.0
 lxml==6.1.0
 openpyxl==3.1.5
 pandas==3.0.2
 pdfplumber==0.11.9
+pylode==3.5.1
+python-dotenv==1.2.2
 requests==2.33.1
+rdflib==7.6.0
 xlrd==2.0.2

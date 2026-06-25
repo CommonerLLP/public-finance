@@ -52,7 +52,7 @@ def inject_search(html_path):
 
         /* Hide the PyLODE watermark universally */
         #pylode {
-            display: none !important; 
+            display: none !important;
         }
 
         /* Responsive overrides for PyLODE */
@@ -87,7 +87,7 @@ def inject_search(html_path):
             }
         }
     </style>
-    
+
     <div id="lmmha-search-container">
         <input type="text" id="lmmha-search-input" placeholder="Search concepts (e.g. Public Libraries)..." />
         <div id="lmmha-search-results"></div>
@@ -97,7 +97,7 @@ def inject_search(html_path):
         document.addEventListener('DOMContentLoaded', function() {
             const input = document.getElementById('lmmha-search-input');
             const resultsContainer = document.getElementById('lmmha-search-results');
-            
+
             // Build index from all h3 elements with ids
             const h3Elements = Array.from(document.querySelectorAll('h3[id]'));
             const index = h3Elements.map(h3 => {
@@ -129,9 +129,9 @@ def inject_search(html_path):
                 }
 
                 const matches = index.filter(item => item.searchText.includes(query)).slice(0, 50);
-                
+
                 if (matches.length > 0) {
-                    resultsContainer.innerHTML = matches.map(match => 
+                    resultsContainer.innerHTML = matches.map(match =>
                         `<div class="lmmha-search-item" data-id="${match.id}">
                             <strong>${match.code}</strong> - ${match.text}
                         </div>`
@@ -183,7 +183,9 @@ def inject_search(html_path):
     
     # Center the PyLODE footer
     html = html.replace('<p style="text-align: right;">', '<p style="text-align: center;">')
-        
+
+    html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
+
     with open(html_path, 'w', encoding='utf-8') as f:
         f.write(html)
         

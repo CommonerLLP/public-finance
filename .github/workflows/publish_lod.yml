@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'references/lmmha/lmmha_clean.json'
+      - 'references/lmmha/lmmha_base_2001.json'
       - 'publicfinance/lmmha_skos_exporter.py'
       - '.github/workflows/publish_lod.yml'
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install rdflib pylode
+          pip install rdflib==7.6.0 pylode==3.5.1
 
       - name: Generate Semantic Web Files (TTL & JSON-LD)
         run: |
@@ -47,6 +47,7 @@ jobs:
         run: |
           pylode references/lmmha/lod/lmmha.ttl -o references/lmmha/lod/index.html -p vocpub
           python publicfinance/inject_search.py references/lmmha/lod/index.html
+          python publicfinance/generate_lmmha_redirects.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
