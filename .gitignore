@@ -64,3 +64,43 @@ GEMINI.md
 WORKING.md
 memory/
 notes/
+
+# --- staging-risk cleanup 2026-06-25: local scratch / raw source / generated data ---
+# (the published site uses ONLY committed JSON/HTML in references/lmmha/lod/)
+/db/
+/scratch/
+/docs/STATUS.md
+
+# raw reference dumps + source binaries (derived artifacts live in references/lmmha/lod/)
+/references/gfr/
+/references/lmmha/base_html/
+/references/lmmha/correction_slips/
+/references/lmmha/*.pdf
+/references/lmmha/*.csv
+/references/lmmha/lod/*.png
+/references/lmmha/lod/test_ontpub.html
+
+# viz leftovers (only viz/*.py builders are tracked)
+/viz/*.json
+/viz/*.ttl
+/viz/*.jsonld
+/viz/*.html
+/viz/*.css
+/viz/app.js
+
+# root one-off investigation / parse scripts
+/analyze.py
+/analyze_ap.py
+/parse_test.py
+/parse_test2.py
+/test_parse.py
+/test_gemini.py
+/test_clean.json
+
+# publicfinance dolt/scrape one-offs (not part of the package)
+/publicfinance/dolt_import.py
+/publicfinance/generate_cga_crawler.py
+/publicfinance/lmmha_to_csv.py
+/publicfinance/scrape_base_lmmha.py
+/publicfinance/setup_dolt.sh
+/publicfinance/test_regex_parser.py
