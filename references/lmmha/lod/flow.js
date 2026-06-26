@@ -6,6 +6,8 @@
 const fmt = (v) => "₹" + d3.format(",.0f")(v) + " cr";
 const trunc = (s) => (s.length > 42 ? s.slice(0, 41) + "…" : s);
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 const qs = new URLSearchParams(location.search);
 let STATE = (qs.get("state") || "assam").toLowerCase();
@@ -31,12 +33,12 @@ function yearsFor(view) {
 function buildPicker() {
   const selState = document.getElementById("sel-state");
   selState.innerHTML = MANIFEST.states
-    .map((s) => `<option value="${s.state}" ${s.state === STATE ? "selected" : ""}>${s.label}</option>`).join("");
+    .map((s) => `<option value="${esc(s.state)}" ${s.state === STATE ? "selected" : ""}>${esc(s.label)}</option>`).join("");
   selState.onchange = () => go({ state: selState.value, fy: "" });
 
   const selFy = document.getElementById("sel-fy");
   const years = yearsFor(VIEW);
-  selFy.innerHTML = years.map((y) => `<option value="${y}" ${y === FY ? "selected" : ""}>${y}</option>`).join("");
+  selFy.innerHTML = years.map((y) => `<option value="${esc(y)}" ${y === FY ? "selected" : ""}>${esc(y)}</option>`).join("");
   selFy.onchange = () => go({ fy: selFy.value });
 }
 function bindToggle() {
@@ -60,7 +62,7 @@ async function render() {
     `Total ${fmt(m.total_cr)} (${m.unit}). Source: ${m.source}.`;
   document.getElementById("caveat").textContent = m.caveat;
   document.getElementById("legend").innerHTML = (m.legend || []).map((s) =>
-    `<span><i class="swatch" style="background:${s.color}"></i> ${s.label}</span>`).join("");
+    `<span><i class="swatch" style="background:${esc(s.color)}"></i> ${esc(s.label)}</span>`).join("");
   document.querySelectorAll(".flow-toggle button").forEach((x) =>
     x.classList.toggle("active", x.dataset.view === VIEW));
 
@@ -114,7 +116,7 @@ async function renderDual() {
   const sec = await (await fetch(fileFor("detailed", dfy))).json();
   const d = sec.meta.dual;
   if (!d) { document.getElementById("flow-dual").style.display = "none"; return; }
-  const st = sec.meta.state;
+  const st = esc(sec.meta.state);
   const debt = d.interest + d.repayment;
   const maxv = Math.max(d.interest, d.repayment, d.health, d.water, 1);
   const bar = (label, val, color) =>
