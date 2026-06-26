@@ -1,0 +1,17 @@
+{
+  "state": "Assam",
+  "fy": "2023-24 (Accounts)",
+  "source": "RBI, State Finances: A Study of Budgets 2024-25, Appendices I-IV (Assam, 2023-24 Accounts)",
+  "unit": "INR crore",
+  "own_tax": 28178,
+  "own_nontax": 5903,
+  "devolution": 35331,
+  "grants": 22123,
+  "recovery": 3282,
+  "rev_exp": 94163,
+  "rev_dev_social": 43509,
+  "rev_dev_econ": 12200,
+  "cap_outlay": 21444,
+  "cap_social": 4611,
+  "cap_econ": 13783
+}
