@@ -17,6 +17,10 @@
     .flow-head h1 { font-size: 22px; margin: 0 0 4px; }
     .flow-sub { color: var(--ink-soft); font-size: 14px; max-width: 820px; }
     .flow-total { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); margin: 10px 0 0; }
+    .flow-picker { display: flex; gap: 16px; margin: 4px 0 2px; flex-wrap: wrap; }
+    .flow-picker label { font-size: 12.5px; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 6px; }
+    .flow-picker select { font-family: var(--sans); font-size: 13px; padding: 5px 8px; border-radius: 7px;
+      border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
     .flow-toggle { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; }
     .flow-toggle button { border: 1px solid var(--line); background: var(--panel); color: var(--ink-soft);
       padding: 6px 14px; border-radius: 7px; cursor: pointer; font-size: 13px; font-weight: 600; font-family: var(--sans); }
@@ -59,13 +63,17 @@
   <main>
     <div class="flow-wrap">
       <a class="backlink" href="./">← back to the chart-of-accounts browser</a>
+      <div class="flow-picker" id="picker">
+        <label>State <select id="sel-state"></select></label>
+        <label>Year <select id="sel-fy"></select></label>
+      </div>
       <div class="flow-head">
         <h1 id="title">Where Assam's money goes</h1>
         <p class="flow-sub" id="subtitle"></p>
         <p class="flow-total" id="total"></p>
       </div>
       <div class="flow-toggle">
-        <button data-view="balance" class="active">Sources → Uses (RBI, balanced)</button>
+        <button data-view="balance" class="active">Sources → Uses (balanced)</button>
         <button data-view="detailed">Where it goes — by sector (detailed)</button>
       </div>
       <div class="flow-legend" id="legend"></div>
@@ -80,45 +88,10 @@
 
       <section class="dual" id="flow-dual">
         <h2>Reading it through the dual mandate</h2>
-        <p class="dual-lede">Melinda Cooper's <em>Counterrevolution</em> argues that the neoliberal fiscal
-          order runs a double standard: <strong>austerity</strong> for the social wage,
-          <strong>extravagance</strong> for asset holders and creditors. A state budget will not split
-          cleanly into the two — because the real extravagance (tax breaks, capital-gains preferences,
-          asset-price support) is exercised <em>upstream</em> by the Union and the RBI, the same
-          authorities that take 63% of Assam's revenue and cap what it may borrow. Assam's budget is the
-          austerity terminal of that system. What it <em>does</em> show is the one place the extravagance
-          pole reaches in: the creditor's claim, paid first and in full.</p>
-
-        <div class="dual-bars">
-          <div class="dual-row">
-            <span class="dual-lab">Interest paid to creditors</span>
-            <span class="dual-bar" style="width:100%;background:#b03a3a"></span>
-            <span class="dual-val">₹8,534 cr</span>
-          </div>
-          <div class="dual-row">
-            <span class="dual-lab">+ Public-debt repayment</span>
-            <span class="dual-bar" style="width:32%;background:#9a5b8f"></span>
-            <span class="dual-val">₹2,723 cr</span>
-          </div>
-          <div class="dual-row">
-            <span class="dual-lab">Public health (for ~3.5 cr people)</span>
-            <span class="dual-bar" style="width:88%;background:#2e7d5b"></span>
-            <span class="dual-val">₹7,516 cr</span>
-          </div>
-          <div class="dual-row">
-            <span class="dual-lab">Water supply &amp; sanitation</span>
-            <span class="dual-bar" style="width:18%;background:#2e7d5b"></span>
-            <span class="dual-val">₹1,568 cr</span>
-          </div>
-        </div>
-        <p class="dual-punch">Assam pays <strong>more in interest to bondholders (₹8,534 cr)</strong> than it
-          spends running its <strong>entire public-health system (₹7,516 cr)</strong>. Counting repayment,
-          debt service to creditors (₹11,257 cr) is the protected claim; the social wage is the disciplined
-          one. The borrowing that generates that interest is itself <em>capped</em> by statute, while the
-          interest on it is not — discipline for the borrower, an assured return for the rentier.</p>
-        <p class="flow-caveat">A reading, not an accounting category. Sector figures: CivicDataLab /
-          openbudgetsindia, Assam BE 2022-23. The larger extravagance (Union tax expenditures, asset
-          supports) is not in any state budget.</p>
+        <p class="dual-lede" id="dual-lede"></p>
+        <div class="dual-bars" id="dual-bars"></div>
+        <p class="dual-punch" id="dual-punch"></p>
+        <p class="flow-caveat" id="dual-caveat"></p>
       </section>
     </div>
   </main>
