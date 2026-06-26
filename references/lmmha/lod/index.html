@@ -46,7 +46,9 @@
         <nav class="toc" aria-label="On this page">
           <span>On this page:</span>
           <button data-target="a-lineage">Lineage</button>
+          <button data-target="a-1987-archive">1987 archive</button>
           <button data-target="a-method">What we did</button>
+          <button data-target="a-constitutional-finance">Constitutional finance</button>
           <button data-target="a-coverage">Coverage &amp; limits</button>
           <button data-target="a-observed">Observed reporting</button>
           <button data-target="a-status">Status</button>
@@ -57,13 +59,54 @@
           framework under which every receipt and every item of expenditure in government accounts is
           recorded. The live, authoritative version is the one CGA publishes on its website, current
           to 2026.</p>
+        <p>We publish this as a small public-interest layer in a larger transparency effort: so readers
+          can see how official account codes change over time, and can ask whether States are reporting
+          comparable subjects under consistent heads. This site is meant to make the classification
+          layer easier to inspect and reuse; it does not replace the CGA list, state budget volumes,
+          RBI <em>State Finances</em>, CAG reports, or the broader fiscal-transparency work already
+          being done by public-data groups, journalists, researchers and civic technologists.</p>
 
         <h3 id="a-lineage">Lineage</h3>
         <p>The LMMHA was first issued in <strong>1987</strong> (first edition). That original survives
-          only as a historical copy held in the <strong>Parliament Library</strong>. Successive
-          editions consolidated the accumulated correction slips. The <strong>third edition (2001)</strong>
-          is the base we use here, because it is the earliest consolidated list we could obtain in a
-          form we could parse completely.</p>
+          as a historical copy held in the <strong>Sansad Library</strong>.
+          Successive editions consolidated the accumulated correction slips. The
+          <strong>third edition (2001)</strong> is the base we use here, because it is the earliest
+          consolidated list we could obtain in a form we could parse completely.</p>
+
+        <h3 id="a-1987-archive">1987 archival find — what changed, and why it matters</h3>
+        <p>The first LMMHA edition is preserved in the <strong>Sansad Library</strong> as
+          <em>List of Major and Minor Heads of Account of Union and States 1987</em>. It was issued by
+          the Ministry of Finance, Department of Expenditure, through the Controller General of Accounts.
+          The public catalogue record is available here:
+          <a class="external-link" href="https://elibrary.sansad.in/handle/123456789/53283" target="_blank" rel="noopener noreferrer">Sansad Library record for the 1987 LMMHA</a>.</p>
+        <p>The 1987 edition explains why the accounting code had to change. Since
+          <strong>1 April 1974</strong>, government accounts had been organised on a
+          function-cum-programme basis, so spending could be read by function, programme and scheme.
+          Over time, the official Plan programmes and the account heads had drifted apart. The result
+          was a basic transparency problem: budgets could name programmes, but the accounts did not
+          always make those programmes easy to trace consistently.</p>
+        <p>A committee with the Controller General of Accounts, Budget Division, Planning Commission
+          and Comptroller and Auditor General reviewed the old heads and rationalised them. The new
+          classification took effect from <strong>1 April 1987</strong>. Major Head codes moved from
+          <strong>three digits to four digits</strong>, new sub-sectors were introduced, and heads up to
+          Minor Head level were given numeric codes for computer-based financial reporting.</p>
+        <p>The constitutional basis is <strong>Article 150</strong>: Union and State accounts must be
+          kept in the form prescribed on the advice of the Comptroller and Auditor General. That is why
+          the LMMHA matters. Legislatures can vote grants, approve appropriations and examine audit only
+          when public money is sorted into stable, public categories.</p>
+        <ol class="citation-list">
+          <li>Archival source: Sansad Library,
+            <a class="external-link" href="https://elibrary.sansad.in/handle/123456789/53283" target="_blank" rel="noopener noreferrer"><em>List of Major and Minor
+            Heads of Account of Union and States 1987</em></a>, item UUID
+            <code>65ffdef0-8e5a-4f58-b811-39f0d74f8e6e</code>; original PDF bitstream UUID
+            <code>7e058dde-7c78-442c-b132-5c853de638a1</code>.</li>
+          <li>Local copy check: the saved PDF is <code>88,944,846</code> bytes and matches the
+            Parliament Library file's MD5 <code>21b6ed7bf7712b6f4b78bb3f2cbcb4a0</code>; local PDF
+            tools report <code>480</code> pages.</li>
+          <li>Primary text checked: 1987 LMMHA preface, especially the 1974 functional-classification
+            background, 1 April 1987 effective date, four-digit Major Head change, and Article 150
+            issuance note.</li>
+        </ol>
 
         <h3 id="a-method">What we did</h3>
         <p>We parsed the 2001 third-edition base into a structured, code-keyed dataset of
@@ -72,6 +115,42 @@
           <strong>correction slips</strong> — the official instruments that add, rename or delete heads
           — on top of that base to track how the classification changes over time. The aim is a single,
           auditable trail from the 2001 base forward to the live 2026 list.</p>
+
+        <h3 id="a-constitutional-finance">Constitutional finance — why the chart matters</h3>
+        <p>The LMMHA is not just a technical glossary. It is the chart-of-accounts layer underneath the
+          Constitution's public-finance machinery. <strong>Articles 112</strong> and
+          <strong>113</strong> require the Union's annual financial statement and demands for grants to
+          be placed before Parliament; <strong>Article 114</strong> requires appropriation before money
+          is drawn from the <strong>Consolidated Fund of India</strong>; <strong>Articles 266</strong>
+          and <strong>267</strong> distinguish the Consolidated Fund, the Public Account and the
+          Contingency Fund; <strong>Articles 148–151</strong> put audit in the Comptroller and Auditor
+          General; and <strong>Articles 268–281</strong>, including <strong>Article 280</strong> on the
+          <strong>Finance Commission</strong>, govern the distribution of revenues between the Union and
+          the States.</p>
+        <p>In Ambedkar's own public-finance writing, constitutional government depends on matching
+          administrative responsibility with finance. In <em>The Evolution of Provincial Finance in
+          British India</em>, he wrote that the Government of India had to give, and the Provinces had
+          to receive, so that provincial self-government could live (<strong>BAWS Vol. 6, p. 254</strong>).
+          As chair of the Drafting Committee, he helped place revenue distribution and the Finance
+          Commission inside the constitutional design rather than leaving them to executive grace
+          (<strong>BAWS Vol. 13</strong>, Draft Constitution material; see also the Constituent Assembly
+          debates of 4 November 1948).</p>
+        <p>That is why this site treats classification as constitutional infrastructure. The Constitution
+          says where public money may sit, how it may move, who must vote it, who audits it, and how
+          Union-State revenue disputes are periodically reviewed. The LMMHA supplies the public vocabulary
+          through which those movements become searchable, comparable and contestable. Ambedkar's warning
+          about <strong>constitutional morality</strong> applies here: formal rules are not enough if the
+          administrative categories through which money is booked are opaque, stale, or impossible for
+          citizens to trace.</p>
+        <ol class="citation-list">
+          <li>Current constitutional text: Legislative Department, Government of India,
+            <a class="external-link" href="https://www.legislative.gov.in/constitution-of-india" target="_blank" rel="noopener noreferrer">Constitution of India</a>,
+            especially Parts V and XII.</li>
+          <li>Ambedkar on fiscal federalism: B. R. Ambedkar, <em>The Evolution of Provincial Finance in
+            British India</em>, BAWS Vol. 6, p. 254.</li>
+          <li>Ambedkar and constitutional morality / Draft Constitution framing: Constituent Assembly
+            Debates, 4 November 1948; BAWS Vol. 13.</li>
+        </ol>
 
         <h3 id="a-coverage">Coverage and limits — please read</h3>
         <p>The correction-slip trail we have reconstructed so far runs <strong>2012 to 2026</strong>.

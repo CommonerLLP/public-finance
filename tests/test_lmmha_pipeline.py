@@ -430,6 +430,50 @@ class LMMHAPipelineTests(unittest.TestCase):
         self.assertIn("2205-00-105", output)
         self.assertIn("public libraries", output)
 
+    def test_public_lmmha_about_page_cites_constitutional_finance_frame(self):
+        html_path = Path("references/lmmha/lod/index.html")
+        output = html_path.read_text(encoding="utf-8")
+
+        self.assertIn('id="a-constitutional-finance"', output)
+        self.assertIn("Consolidated Fund of India", output)
+        self.assertIn("Articles 112", output)
+        self.assertIn("Articles 266", output)
+        self.assertIn("Article 280", output)
+        self.assertIn("Finance Commission", output)
+        self.assertIn("constitutional morality", output)
+        self.assertIn("small public-interest layer", output)
+        self.assertIn("whether States are reporting", output)
+        self.assertIn('id="a-1987-archive"', output)
+        self.assertIn("https://elibrary.sansad.in/handle/123456789/53283", output)
+        self.assertIn("Sansad Library", output)
+        self.assertNotIn("eLibrary Sansad", output)
+        self.assertNotIn(">eLibrary", output)
+        self.assertIn('class="external-link"', output)
+        self.assertIn('target="_blank"', output)
+        self.assertIn('rel="noopener noreferrer"', output)
+        self.assertIn("The first LMMHA edition is preserved", output)
+        self.assertIn("basic transparency problem", output)
+        self.assertIn("1 April 1974", output)
+        self.assertIn("1 April 1987", output)
+        self.assertIn("three digits to four digits", output)
+        self.assertIn("Article 150", output)
+        self.assertIn("88,944,846", output)
+        self.assertIn("21b6ed7bf7712b6f4b78bb3f2cbcb4a0", output)
+        self.assertIn("BAWS Vol. 6", output)
+        self.assertIn("BAWS Vol. 13", output)
+        self.assertIn('class="external-link" href="https://www.legislative.gov.in/constitution-of-india" target="_blank" rel="noopener noreferrer"', output)
+
+    def test_public_timeline_tab_has_correction_action_filters(self):
+        script = Path("references/lmmha/lod/app.js").read_text(encoding="utf-8")
+
+        self.assertIn("timelineAction", script)
+        self.assertIn('timelineFilterButton("Insertions", "INSERT"', script)
+        self.assertIn('timelineFilterButton("Renames", "RENAME"', script)
+        self.assertIn('timelineFilterButton("Deletions", "DELETE"', script)
+        self.assertIn("showYearEvents(year, events, actionFilter", script)
+        self.assertIn('data-action="${esc(ch.action)}"', script)
+        self.assertIn("const latestYear = years[years.length - 1]", script)
+
 
 if __name__ == "__main__":
     unittest.main()
