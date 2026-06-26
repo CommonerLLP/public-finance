@@ -14,6 +14,7 @@ const state = {
   observed: {},              // code -> { state, unit, series:[{fy,be}] }
   observedMeta: null,
   tab: "browse",
+  timelineAction: "ALL",
 };
 
 const $ = (sel, el = document) => el.querySelector(sel);
@@ -259,7 +260,7 @@ function chgHTML(ch, n) {
   const act = (ch.action || "").toLowerCase();
   const isMatch = n.mn && ch.code === `${n.mh}-${n.mn}`;
   const old = ch.action === "RENAME" && ch.old_label ? `<span class="old">${esc(ch.old_label)}</span> → ` : "";
-  return `<div class="chg ${isMatch ? "match" : ""}">
+  return `<div class="chg ${isMatch ? "match" : ""}" data-action="${esc(ch.action)}">
       <span class="act ${act}">${esc(ch.action)}</span>
       <span class="ccode">${esc(ch.code)}</span>
       <span>${old}${esc(ch.label)}</span>
@@ -377,17 +378,53 @@ function renderTimeline() {
     el.addEventListener("click", () => {
       $("#timeline-view").querySelectorAll(".year-bar").forEach((b) => b.classList.remove("active"));
       el.classList.add("active");
-      showYearEvents(el.dataset.year, byYear[el.dataset.year]);
+      showYearEvents(el.dataset.year, byYear[el.dataset.year], state.timelineAction);
     }));
+  const latestYear = years[years.length - 1];
+  const latestBar = $(`.year-bar[data-year="${latestYear}"]`, $("#timeline-view"));
+  if (latestBar) latestBar.classList.add("active");
+  if (latestYear) showYearEvents(latestYear, byYear[latestYear], "ALL");
 }
 
-function showYearEvents(year, events) {
-  $("#year-events").innerHTML = `<h3 style="margin:6px 0 12px">${year} — ${events.length} correction slip${events.length > 1 ? "s" : ""}</h3>` +
-    events.map((ev) => `
+function actionCount(events, action) {
+  return events.reduce((sum, ev) =>
+    sum + ev.changes.filter((ch) => !action || ch.action === action).length, 0);
+}
+
+function filterEventsByAction(events, actionFilter) {
+  if (!actionFilter || actionFilter === "ALL") return events;
+  return events
+    .map((ev) => ({ ...ev, changes: ev.changes.filter((ch) => ch.action === actionFilter) }))
+    .filter((ev) => ev.changes.length);
+}
+
+function timelineFilterButton(label, action, events, activeAction) {
+  const count = action === "ALL" ? actionCount(events) : actionCount(events, action);
+  const active = activeAction === action ? "active" : "";
+  return `<button class="tl-filter ${active}" data-action-filter="${action}">${label} <span>${count}</span></button>`;
+}
+
+function showYearEvents(year, events, actionFilter = "ALL") {
+  state.timelineAction = actionFilter;
+  const filteredEvents = filterEventsByAction(events, actionFilter);
+  const filters = [
+    timelineFilterButton("All", "ALL", events, actionFilter),
+    timelineFilterButton("Insertions", "INSERT", events, actionFilter),
+    timelineFilterButton("Renames", "RENAME", events, actionFilter),
+    timelineFilterButton("Deletions", "DELETE", events, actionFilter),
+  ].join("");
+  const body = filteredEvents.length
+    ? filteredEvents.map((ev) => `
       <div class="event">
         <div class="ev-head"><span class="ev-slip">${esc(ev.slip)}</span><span class="ev-date">${esc(ev.date)}</span></div>
         <div class="ev-changes">${ev.changes.map((ch) => chgHTML(ch, {})).join("")}</div>
-      </div>`).join("");
+      </div>`).join("")
+    : `<p class="tl-empty">No ${actionFilter.toLowerCase()} changes recorded for ${esc(year)}.</p>`;
+  $("#year-events").innerHTML = `<h3 style="margin:6px 0 12px">${year} — ${events.length} correction slip${events.length > 1 ? "s" : ""}</h3>
+    <div class="tl-filters" aria-label="Filter correction-slip changes">${filters}</div>
+    ${body}`;
+  $("#year-events").querySelectorAll("[data-action-filter]").forEach((el) =>
+    el.addEventListener("click", () => showYearEvents(year, events, el.dataset.actionFilter)));
 }
 
 /* ---------------- in-page jump nav + back-to-top ---------------- */
