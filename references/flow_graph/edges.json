@@ -4,7 +4,11 @@
   "edges": [
     {"edge_id": "own.union", "from": "economy", "to": "union", "mechanism": "own_revenue", "authority": "List I (income/corporation tax, customs, union GST)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.tax", "lands_under": "lmmha:0020", "notes": "Union own tax (e.g. corporation tax 0020) feeds the divisible pool + cesses."},
 
-    {"edge_id": "own.state", "from": "economy", "to": "state", "mechanism": "own_revenue", "authority": "List II (SGST, excise, stamp duty, vehicle tax)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.tax", "lands_under": null, "notes": "State own revenue."},
+    {"edge_id": "own.state", "from": "economy", "to": "state", "mechanism": "own_revenue", "authority": "List II (SGST, excise, stamp duty, vehicle tax)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.tax", "lands_under": null, "notes": "State own TAX revenue."},
+
+    {"edge_id": "own.state_nontax", "from": "economy", "to": "state", "mechanism": "own_revenue", "authority": "List II (fees, interest, dividends, royalties)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.nontax", "lands_under": null, "notes": "State own NON-tax revenue."},
+
+    {"edge_id": "borrow.market_state", "from": "economy", "to": "state", "mechanism": "borrowing", "authority": "Art. 293 (market borrowing, SDLs); FRBM cap", "conditionality": "debt", "control_rail": "direct", "route_via": [], "concept_id": "fin.borrowing_net", "lands_under": null, "notes": "Net borrowing = the gross fiscal deficit residual (total spending minus all non-debt receipts), funded from the market. Not an inter-tier transfer; the financing inflow that closes the balance."},
 
     {"edge_id": "own.ulb", "from": "economy", "to": "ulb", "mechanism": "own_revenue", "authority": "state municipal act (property tax, user charges, non-tax)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.nontax", "lands_under": "gmam:23306", "notes": "City own revenue incl. the 23xxx non-tax series (23306 contractor penalty)."},
 
