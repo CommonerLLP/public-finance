@@ -59,3 +59,41 @@ class BalanceModel:
     caveat: str
     legend: list[dict] = field(default_factory=list)
     headline: str = ""
+
+
+@dataclass(frozen=True)
+class Beneficiary:
+    """One entity whose debt the government guarantees (a contingent liability)."""
+
+    label: str
+    amount_cr: float
+    kind: str   # psu_power | psu_other | ulb | spv | board | coop | other
+    color: str
+
+
+@dataclass
+class OffBudgetModel:
+    """Off-budget / contingent-liability input for any jurisdiction-year.
+
+    This is NOT part of the on-budget total — guarantees become a charge on the
+    Consolidated Fund only if invoked; off-budget borrowings sit outside the
+    budget by design. Jurisdiction-agnostic: a state, UT or the Union populates
+    the same shape. Amounts in INR crore.
+    """
+
+    jurisdiction: str          # display label, e.g. "Gujarat", "Union of India"
+    jtype: str                 # state | ut | union
+    fy: str
+    ceiling_cr: float | None   # statutory guarantee ceiling, if any
+    outstanding_cr: float      # the headline off-books stock (see `measure`)
+    beneficiaries: list[Beneficiary]   # named exposures; builder adds "Other"
+    series_cr: dict            # {fy: outstanding_cr} multi-year, for context
+    source: str
+    caveat: str
+    # which off-books stock this jurisdiction leads with — guarantees (Gujarat) or
+    # off-budget SPV borrowing (Kerala/KIIFB). Drives the root node + headline.
+    measure: str = "outstanding guarantees"
+    pct_label: str = "revenue receipts"   # what pct_of is a share of
+    pct_of: float | None = None
+    off_budget_note: str = ""
+    statute: str = ""

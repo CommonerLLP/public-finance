@@ -1,0 +1,65 @@
+{
+  "schema": "offbudget-jurisdiction-v1",
+  "jurisdiction": {"code": "gujarat", "type": "state", "label": "Gujarat"},
+  "unit": "INR crore",
+  "guarantee_ceiling_cr": 20000,
+  "guarantee_statute": "Gujarat State Guarantees Act, 1963",
+
+  "outstanding_series_cr": {
+    "2018-19": 4699, "2019-20": 4462, "2020-21": 3656, "2021-22": 3089,
+    "2022-23": 1473, "2023-24": 1463, "2024-25": 1421
+  },
+
+  "years": {
+    "2022-23": {
+      "outstanding_cr": 1473, "max_guaranteed_cr": 9951,
+      "pct_of_revenue_receipts": 0.74, "revenue_receipts_cr": 199408,
+      "vacated_during_year_cr": 1616, "guarantee_fees_received": "INR 0.29 lakh (BE INR 1.00 cr)",
+      "invocations": "none", "grf_cr": 73.66,
+      "beneficiaries": [
+        {"label": "Gujarat Urja Vikas Nigam Ltd (power)", "amount_cr": 345, "kind": "psu_power"},
+        {"label": "Vadodara Municipal Corporation", "amount_cr": 273, "kind": "ulb"},
+        {"label": "Gujarat Water Supply & Sewerage Board", "amount_cr": 222, "kind": "board"}
+      ],
+      "off_budget_note": "Finance Dept stated no off-budget borrowings during 2018-23 (narrow self-report). GST back-to-back loans excluded from state debt by GoI fiat: ₹9,222 cr (2020-21), ₹13,040 cr (2021-22), nil (2022-23).",
+      "source": "CAG State Finances Audit Report, year ended 31 Mar 2023, Govt of Gujarat (Report No. 1 of 2024)"
+    },
+    "2023-24": {
+      "outstanding_cr": 1463, "max_guaranteed_cr": 9541,
+      "pct_of_revenue_receipts": 0.66, "revenue_receipts_cr": 222763,
+      "vacated_during_year_cr": 10, "invocations": "none", "grf_cr": 73.16,
+      "beneficiaries": [
+        {"label": "Gujarat Urja Vikas Nigam Ltd (power)", "amount_cr": 345, "kind": "psu_power"},
+        {"label": "Vadodara Municipal Corporation", "amount_cr": 273, "kind": "ulb"},
+        {"label": "Gujarat Water Supply & Sewerage Board", "amount_cr": 222, "kind": "board"}
+      ],
+      "off_budget_note": "Finance Dept stated no off-budget borrowings during 2019-24.",
+      "source": "CAG State Finances Audit Report, year ended 31 Mar 2024, Govt of Gujarat (Report No. 1 of 2025)"
+    },
+    "2024-25": {
+      "outstanding_cr": 1421, "max_guaranteed_cr": 9534,
+      "pct_of_revenue_receipts": 0.65, "revenue_receipts_cr": 218555,
+      "vacated_during_year_cr": 42, "guarantee_fees_received": "INR 0.15 cr (no BE)",
+      "invocations": "none", "grf_cr": 71.05,
+      "beneficiaries": [
+        {"label": "Gujarat Urja Vikas Nigam Ltd (power)", "amount_cr": 345, "kind": "psu_power"},
+        {"label": "Vadodara Municipal Corporation", "amount_cr": 273, "kind": "ulb"},
+        {"label": "Gujarat Water Supply & Sewerage Board", "amount_cr": 222, "kind": "board"}
+      ],
+      "off_budget_note": "SFAR 2024-25 §3.1 names the mechanism: borrowing routed through SPSUs to bypass the XV-FC 3%-of-GSDP Net Borrowing Ceiling; GoI now reduces a state's ceiling by the extent of off-budget borrowing. §3.2: undischarged liabilities (₹70.76 cr unpaid deposit interest, cess/NPS short-transfers). State represented to MoF it has no off-budget liabilities.",
+      "source": "CAG State Finances Audit Report, year 2024-25, Govt of Gujarat (Report No. 2 of 2026)"
+    }
+  },
+
+  "caveat": "Contingent liabilities, not budget spending — a charge on the Consolidated Fund only if a guarantee is invoked. NOT part of the on-budget total. Source: CAG SFAR (ex Finance Accounts Statement 20). RBI 'State Finances' guarantees statement = pending cross-check.",
+
+  "provenance": {
+    "sources": {
+      "2022-23": {"url": "https://cag.gov.in/uploads/download_audit_report/2024/SFAR-English_2024-066cd743800e444.16332897.pdf", "sha256": "f80bc30f2926b249b1bb40c334edb839c2827928da8c8066506f8356886d7cb0", "pages": 266, "text": "scanned->ocr"},
+      "2023-24": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2025/Report-No.-1-of-2025-English-SFAR-2023-24-068c11ca17d08b3.79273636.pdf", "sha256": "f55cbd1b2cb01f626eeb58741723c2af8dfe2aff141060ed72227d65eeb1b73a", "pages": 200, "text": "born-digital"},
+      "2024-25": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2026/English-SFAR-2024-25-069c50935ce13c9.55626515.pdf", "sha256": "fe643892479b2dd4578d1b5ad9aa28952854c11931dc00f96a35a9757f8a23cd", "pages": 230, "text": "born-digital"}
+    },
+    "raw_pdfs": "references/cag_gujarat/source/ (gitignored)",
+    "verified": "2026-06-28; figures cross-checked (GRF=5% of outstanding; pct vs revenue receipts) against report prose"
+  }
+}

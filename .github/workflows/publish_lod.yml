@@ -20,8 +20,8 @@ on:
       # money-flow Sankey page
       - 'references/lmmha/lod/flow.html'
       - 'references/lmmha/lod/flow.js'
-      - 'references/lmmha/lod/sankey_assam.json'
-      - 'references/lmmha/lod/sankey_assam_balance.json'
+      - 'references/lmmha/lod/sankey_manifest.json'
+      - 'references/lmmha/lod/sankey_*.json'
       - 'viz/build_browser_data.py'
       - '.github/workflows/publish_lod.yml'
   workflow_dispatch:
