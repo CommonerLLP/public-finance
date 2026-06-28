@@ -79,6 +79,9 @@ notes/
 /references/lmmha/*.csv
 /references/lmmha/lod/*.png
 /references/lmmha/lod/test_ontpub.html
+/references/nmam/source/
+/references/gmam/source/
+/references/masp/source/
 
 # viz leftovers (only viz/*.py builders are tracked)
 /viz/*.json
