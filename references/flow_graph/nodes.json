@@ -1,0 +1,13 @@
+{
+  "schema": "fiscal-flow-nodes-v1",
+  "nodes": [
+    {"node_id": "economy", "type": "economy", "label": "Economy (tax base / market)", "chart": null, "basis": null, "notes": "Ultimate source of all own-source revenue at every tier."},
+    {"node_id": "union", "type": "union", "label": "Union (Consolidated Fund of India)", "chart": "lmmha", "basis": "cash", "notes": "Holds the divisible pool + cesses; disburses devolution, grants, schemes, loans."},
+    {"node_id": "state", "type": "state", "label": "State (State Consolidated Fund)", "chart": "lmmha", "basis": "cash", "notes": "Receives from Union; funds itself + transfers down to local bodies."},
+    {"node_id": "ulb", "type": "ulb", "label": "Urban local body (municipal corporation/council)", "chart": "nmam|gmam", "basis": "accrual", "notes": "The outlier chart (accrual). e.g. AMC on the Gujarat 5-digit code."},
+    {"node_id": "pri", "type": "pri", "label": "Rural local body (Zilla/Block/Gram Panchayat)", "chart": "masp", "basis": "cash", "notes": "Transfer-dependent; own-source revenue is thin."},
+    {"node_id": "rail_rbi", "type": "rail", "label": "RBI e-Kuber", "chart": null, "basis": null, "notes": "Under SNA-SPARSH, scheme funds route directly from RBI, bypassing state treasuries."},
+    {"node_id": "rail_sna", "type": "rail", "label": "PFMS / Single Nodal Agency account", "chart": null, "basis": null, "notes": "One SNA bank account per CSS per state; just-in-time release, UC-gated, float held in CFI."},
+    {"node_id": "rail_cna", "type": "rail", "label": "Central Nodal Agency", "chart": null, "basis": null, "notes": "Holds/disburses 100% Union-funded Central Sector schemes via assignment accounts."}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "fiscal-flow-edges-v1",
+  "note": "Typology only — no rupee amounts. concept_id -> references/crosswalk/concepts.json; lands_under -> a verified head in references/crosswalk/mappings.json (or null/TODO). Authorities/article numbers cited in notes/fund_flow_map.md (flagged for pinning).",
+  "edges": [
+    {"edge_id": "own.union", "from": "economy", "to": "union", "mechanism": "own_revenue", "authority": "List I (income/corporation tax, customs, union GST)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.tax", "lands_under": "lmmha:0020", "notes": "Union own tax (e.g. corporation tax 0020) feeds the divisible pool + cesses."},
+
+    {"edge_id": "own.state", "from": "economy", "to": "state", "mechanism": "own_revenue", "authority": "List II (SGST, excise, stamp duty, vehicle tax)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.tax", "lands_under": null, "notes": "State own revenue."},
+
+    {"edge_id": "own.ulb", "from": "economy", "to": "ulb", "mechanism": "own_revenue", "authority": "state municipal act (property tax, user charges, non-tax)", "conditionality": "own_source", "control_rail": "direct", "route_via": [], "concept_id": "rev.nontax", "lands_under": "gmam:23306", "notes": "City own revenue incl. the 23xxx non-tax series (23306 contractor penalty)."},
+
+    {"edge_id": "devolution.union_state", "from": "union", "to": "state", "mechanism": "tax_devolution", "authority": "Art. 270, 280", "conditionality": "unconditional_formula", "control_rail": "direct", "route_via": [], "concept_id": "rev.transfer.from_above.tax_devolution", "lands_under": "lmmha:901(TODO)", "notes": "States' 41% share of the divisible pool. Unconditional — the constitutional floor. Cesses are EXCLUDED from this pool."},
+
+    {"edge_id": "fcgrant.union_state", "from": "union", "to": "state", "mechanism": "fc_grant", "authority": "Art. 275", "conditionality": "semi_tied", "control_rail": "direct", "route_via": [], "concept_id": "rev.transfer.from_above.fc_grant", "lands_under": "lmmha:1601", "notes": "Finance Commission grants (revenue-deficit, sector, disaster). Disbursed from the Union side as 3601."},
+
+    {"edge_id": "css.union_state", "from": "union", "to": "state", "mechanism": "css", "authority": "Art. 282", "conditionality": "tied_uc_gated", "control_rail": "sna_sparsh", "route_via": ["rail_rbi", "rail_sna"], "concept_id": "rev.transfer.from_above.css", "lands_under": null, "notes": "Centrally Sponsored Schemes. THE throttled channel: just-in-time, UC-gated, float held in CFI, routed RBI->SNA bypassing the state treasury (fund_flow_map §2)."},
+
+    {"edge_id": "cs.union_agency", "from": "union", "to": "ulb", "mechanism": "cs_scheme", "authority": "Art. 282 (100% Union)", "conditionality": "tied_uc_gated", "control_rail": "cna", "route_via": ["rail_cna"], "concept_id": "rev.transfer.from_above.css", "lands_under": null, "notes": "Central Sector schemes via a Central Nodal Agency. Endpoint may be a ULB/PRI/agency; modelled to ulb here as a common case."},
+
+    {"edge_id": "loan.union_state", "from": "union", "to": "state", "mechanism": "loan", "authority": "Art. 293", "conditionality": "debt", "control_rail": "direct", "route_via": [], "concept_id": "fin.loans_to_below", "lands_under": "lmmha:7601", "notes": "Union loans/back-to-back (e.g. GST-comp 2020-21). 7601 from the Union side; state receives under 6004."},
+
+    {"edge_id": "cfcgrant.union_lb", "from": "union", "to": "ulb", "mechanism": "fc_grant", "authority": "Art. 280(3)(bb)/(c)", "conditionality": "semi_tied", "control_rail": "direct", "route_via": [], "concept_id": "rev.transfer.from_above.fc_grant", "lands_under": null, "notes": "Central Finance Commission local-body grants (tied + untied), now conditioned on audited accounts / property-tax floors. Applies to pri too."},
+
+    {"edge_id": "sfc.state_ulb", "from": "state", "to": "ulb", "mechanism": "sfc_transfer", "authority": "Art. 243-Y", "conditionality": "semi_tied", "control_rail": "treasury", "route_via": [], "concept_id": "exp.transfer.to_below", "lands_under": "lmmha:3601", "notes": "State Finance Commission transfers to ULBs. 3601 from the state's expenditure side."},
+
+    {"edge_id": "sfc.state_pri", "from": "state", "to": "pri", "mechanism": "sfc_transfer", "authority": "Art. 243-I", "conditionality": "semi_tied", "control_rail": "treasury", "route_via": [], "concept_id": "exp.transfer.to_below", "lands_under": "lmmha:3601", "notes": "State Finance Commission transfers to PRIs."},
+
+    {"edge_id": "octroi.state_ulb", "from": "state", "to": "ulb", "mechanism": "octroi_comp", "authority": "state statute (octroi abolition compensation)", "conditionality": "semi_tied", "control_rail": "treasury", "route_via": [], "concept_id": "rev.transfer.from_above.octroi_comp", "lands_under": "gmam:18133", "notes": "State->city compensation for abolished octroi. AMC's largest 'from above' line. The three-tier worked example."}
+  ]
+}
