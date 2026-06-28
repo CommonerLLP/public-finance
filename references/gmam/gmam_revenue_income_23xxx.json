@@ -1,0 +1,81 @@
+{
+  "schema": "gmam-coa-slice-v1",
+  "tier": "urban_local_body",
+  "jurisdiction": "Gujarat (municipal corporation budget classification)",
+  "specimen_body": "Ahmedabad Municipal Corporation (AMC)",
+  "chart_family": "Gujarat municipal 5-digit budget/account code (BPMC/GPMC Act regime; NMAM-influenced)",
+  "distinct_from": [
+    "LMMHA (Union/State govt chart — see references/lmmha/)",
+    "NMAM national 3-level accrual chart (see references/nmam/)"
+  ],
+  "income_or_expense": "income",
+  "basis": "accrual (municipal), reported in budget books in rupees lakh",
+  "source": {
+    "primary": "Ahmedabad Municipal Corporation Budget for Year 2023-24 (English edition)",
+    "local_path": "twenty27/data/raw/budget/Budget_2023_24_English.pdf",
+    "method": "pdftotext -layout + raw extraction, this turn (2026-06-27)",
+    "corroboration": "same code slots recur identically across AMC books 2005-06 → 2026-27 (verified by sevent4; sevent4/memory/verified_facts.md, head 23306)"
+  },
+  "authority_manual_status": "NOT YET ACQUIRED. The de-jure authority is the Gujarat Municipal Finance Board (GMFB) — the nodal agency the Govt of Gujarat appointed to move all municipalities to accrual double-entry accounting; the formal Gujarat municipal accounts manual sits with GMFB / Urban Development Dept (not cleanly web-downloadable as of 2026-06-27; portal/ahara follow-on). Here the AMC published budget book is the de-facto code list in use. Confirm parent-head names against the GMFB manual when acquired (REQ-0001).",
+  "major_group": {
+    "code_prefix": "23",
+    "name": "Non-tax revenue income",
+    "rolls_up_to_abstract_head": "Non-tax revenue income",
+    "source_note": "AMC's own revenue-income abstract (Budget 2023-24, final page) groups these under 'Non-tax revenue income', beside tax heads, octroi-grant (18133), and 'Revenue grant subsidy/contribution'."
+  },
+  "minor_groups": [
+    {
+      "code_prefix": "231",
+      "name": "Interest income",
+      "heads": [
+        {"code": "23103", "name": "Interest on Bank Deposits", "verified": true},
+        {"code": "23106", "name": "Interest on House Building [Advance]", "verified": true, "name_completion_inferred": true},
+        {"code": "23107", "name": "Interest on Vehicle Loan to [Staff]", "verified": true, "name_completion_inferred": true},
+        {"code": "23109", "name": "Pre-Repayment Charges", "verified": true},
+        {"code": "23117", "name": "Interest on P.F.", "verified": true},
+        {"code": "23199", "name": "Interest on Loans and Advances", "verified": true}
+      ]
+    },
+    {
+      "code_prefix": "232",
+      "name": "Sale of forms / scrap / publications",
+      "heads": [
+        {"code": "23201", "name": "Sale of Scrap", "verified": true},
+        {"code": "23202", "name": "Sale of Publications", "verified": true},
+        {"code": "23209", "name": "Sale of Tender Forms", "verified": true},
+        {"code": "23210", "name": "Sale of Other Forms", "verified": true},
+        {"code": "23211", "name": "Sale of Muni. Diaries", "verified": true}
+      ]
+    },
+    {
+      "code_prefix": "233",
+      "name": "Penalties, fines and miscellaneous receipts",
+      "heads": [
+        {"code": "23305", "name": "Penalty Recovered from Suppliers", "verified": true, "note": "TWIN of 23306; easy to conflate when summing."},
+        {"code": "23306", "name": "Penalty Recovered from Contractors", "verified": true, "note": "REQ-0001 target. Generic, city-wide; booked under many departments (Audit, Finance, Record Office, Central Stores, Workshop, Census, ...). Published actuals run in the crores/year, not near-zero."},
+        {"code": "23308", "name": "Deposits Forfeited", "verified": true},
+        {"code": "23320", "name": "Fine to Employee", "verified": true},
+        {"code": "23322", "name": "Membership Fee Welfare [Fund]", "verified": true, "name_completion_inferred": true},
+        {"code": "23323", "name": "Risk Fund Welfare Fund", "verified": true},
+        {"code": "23324", "name": "Cheque Return [Charges]", "verified": true, "name_completion_inferred": true},
+        {"code": "23325", "name": "Income under Notice Pay", "verified": true},
+        {"code": "23326", "name": "Recruitment / Application Form Fee", "verified": true},
+        {"code": "23327", "name": "SRFDCL", "verified": true, "note": "Sabarmati Riverfront Development Corporation Ltd-related receipt (expand on manual)."},
+        {"code": "23399", "name": "Other Miscellaneous Income", "verified": true}
+      ]
+    }
+  ],
+  "related_head_outside_group": {
+    "code": "18133",
+    "name": "Govt. Grant in lieu of Octroi",
+    "group_prefix": "181",
+    "note": "State->city compensation transfer; NOT non-tax. AMC's largest 'from above' line (~Rs 1,194 cr BE 2023-24). The vertical fund-flow worked example. See notes/fund_flow_map.md."
+  },
+  "consolidation_rule": {
+    "structure": "The AMC budget book is a department x budget-head matrix. The department code (e.g. 102 Audit, 104 Muni. Commissioner's Office) is the revenue centre; the 5-digit account code (e.g. 23306) is the nature of the receipt.",
+    "city_total_for_a_head": "Sum of that head's line across ALL departments. There is NO single published city-total line for an individual code like 23306; AMC publishes only the rolled-up 'Non-tax revenue income' aggregate in its abstract.",
+    "caveat": "A precise per-code city series must be summed from per-department lines; naive pdftotext summing under-captures department rows (sevent4 saw 1315 vs 2630 lakh for 2016-17 from two extractions). Use the abstract aggregate as the upper sanity bound."
+  },
+  "column_layout_clean_english_books": "7 numeric columns, rupees lakh: actual(Y-3), actual(Y-2), BE(Y-1), RE(Y-1), proposed(Y), standing-committee(Y), board(Y). Confirmed by cross-book chaining (col2 of book Y = col1 of book Y+1).",
+  "consumer": "sevent4 (The Unelected City) — looks up AMC budget-line codes against this reference to label heads and apply the department->city-head roll-up. REQ-0001 in _org/requests/LEDGER.md."
+}
