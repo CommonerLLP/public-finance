@@ -17,9 +17,14 @@ let VIEW = qs.get("view") || "balance";
 let MANIFEST = null;
 let stateEntry = null;
 
-const fileFor = (view, fy) => `sankey_${STATE}_${view === "balance" ? "balance" : "sector"}_${fy}.json`;
+const VIEW_FILE = { balance: "balance", flow: "flow", offbudget: "offbudget", detailed: "sector" };
+const fileFor = (view, fy) => `sankey_${STATE}_${VIEW_FILE[view] || "sector"}_${fy}.json`;
 const titleFor = (view) => view === "balance"
   ? `Where ${cap(STATE)}'s money comes from, and goes`
+  : view === "flow"
+  ? `How money reaches ${cap(STATE)} — Centre → State`
+  : view === "offbudget"
+  ? `Beyond the budget — ${cap(STATE)}'s guarantees & off-budget exposure`
   : `Where ${cap(STATE)}'s money goes — by sector`;
 
 // ----- selectors -----
@@ -174,6 +179,10 @@ window.addEventListener("scroll", () => toTop.classList.toggle("show", window.sc
   // hide the balance toggle if this state has no balance view
   const balBtn = document.querySelector('.flow-toggle button[data-view="balance"]');
   if (balBtn) balBtn.style.display = stateEntry.views.balance ? "" : "none";
+  const flowBtn = document.querySelector('.flow-toggle button[data-view="flow"]');
+  if (flowBtn) flowBtn.style.display = stateEntry.views.flow ? "" : "none";
+  const obBtn = document.querySelector('.flow-toggle button[data-view="offbudget"]');
+  if (obBtn) obBtn.style.display = stateEntry.views.offbudget ? "" : "none";
 
   buildPicker();
   bindToggle();
