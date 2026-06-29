@@ -11,9 +11,39 @@
   },
 
   "years": {
+    "2018-19": {
+      "outstanding_cr": 4699, "pct_of": 3.46, "revenue_receipts_cr": 136002,
+      "extended_during_year_cr": 40.12,
+      "beneficiaries": [
+        {"label": "Sardar Sarovar Narmada Nigam Ltd (dam SPV)", "amount_cr": 1409, "kind": "spv"},
+        {"label": "Gujarat Water Infrastructure Ltd", "amount_cr": 650, "kind": "spv"}
+      ],
+      "off_budget_note": "Outstanding guarantees ₹4,699 cr = 3.46% of revenue receipts. Top exposure: Sardar Sarovar Narmada Nigam Ltd (the dam SPV) at 30%.",
+      "source": "CAG State Finances Audit Report, year ended 31 Mar 2019, Govt of Gujarat (Report No. 2 of 2020)"
+    },
+    "2020-21": {
+      "outstanding_cr": 3656, "pct_of": 2.85, "revenue_receipts_cr": 128156,
+      "extended_during_year_cr": 60, "guarantee_fees_received": "INR 0.25 cr (BE INR 1.62 cr)",
+      "beneficiaries": [
+        {"label": "Sardar Sarovar Narmada Nigam Ltd (dam SPV)", "amount_cr": 1262, "kind": "spv"},
+        {"label": "Gujarat State Financial Corporation", "amount_cr": 433, "kind": "psu_other"}
+      ],
+      "off_budget_note": "Outstanding guarantees ₹3,656 cr = 2.85% of revenue receipts. Sardar Sarovar Narmada Nigam Ltd still the largest exposure (35%).",
+      "source": "CAG State Finances Audit Report, year ended 31 Mar 2021, Govt of Gujarat (Report No. 1 of 2022)"
+    },
+    "2021-22": {
+      "outstanding_cr": 3044, "outstanding_proforma_corrected_cr": 3089,
+      "pct_of": 1.82, "revenue_receipts_cr": 166830, "extended_during_year_cr": 305,
+      "beneficiaries": [
+        {"label": "Sardar Sarovar Narmada Nigam Ltd (dam SPV)", "amount_cr": 1216, "kind": "spv"},
+        {"label": "Gujarat Urja Vikas Nigam Ltd (power)", "amount_cr": 222, "kind": "psu_power"}
+      ],
+      "off_budget_note": "Outstanding guarantees ₹3,044 cr (later proforma-corrected to ₹3,089 cr in the 2022-23/2024-25 reports) = 1.82% of revenue receipts. Finance Dept stated there were no off-budget borrowings (the off-budget table shows nil). Sardar Sarovar Narmada Nigam Ltd 40%.",
+      "source": "CAG State Finances Audit Report, year ended 31 Mar 2022, Govt of Gujarat (Report No. 1 of 2023)"
+    },
     "2022-23": {
       "outstanding_cr": 1473, "max_guaranteed_cr": 9951,
-      "pct_of_revenue_receipts": 0.74, "revenue_receipts_cr": 199408,
+      "pct_of": 0.74, "revenue_receipts_cr": 199408,
       "vacated_during_year_cr": 1616, "guarantee_fees_received": "INR 0.29 lakh (BE INR 1.00 cr)",
       "invocations": "none", "grf_cr": 73.66,
       "beneficiaries": [
@@ -26,7 +56,7 @@
     },
     "2023-24": {
       "outstanding_cr": 1463, "max_guaranteed_cr": 9541,
-      "pct_of_revenue_receipts": 0.66, "revenue_receipts_cr": 222763,
+      "pct_of": 0.66, "revenue_receipts_cr": 222763,
       "vacated_during_year_cr": 10, "invocations": "none", "grf_cr": 73.16,
       "beneficiaries": [
         {"label": "Gujarat Urja Vikas Nigam Ltd (power)", "amount_cr": 345, "kind": "psu_power"},
@@ -38,7 +68,7 @@
     },
     "2024-25": {
       "outstanding_cr": 1421, "max_guaranteed_cr": 9534,
-      "pct_of_revenue_receipts": 0.65, "revenue_receipts_cr": 218555,
+      "pct_of": 0.65, "revenue_receipts_cr": 218555,
       "vacated_during_year_cr": 42, "guarantee_fees_received": "INR 0.15 cr (no BE)",
       "invocations": "none", "grf_cr": 71.05,
       "beneficiaries": [
@@ -55,6 +85,9 @@
 
   "provenance": {
     "sources": {
+      "2018-19": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2020/Report No 2 of 2020 - State Finances Audit Report Gujarat-05f8d77c715aff2.30296245.pdf", "sha256": "b1919aa6ea9f44a624eef5b6a2956752c34223dbf6da6ff41bf2cc545a6badc4", "pages": 164, "text": "born-digital"},
+      "2020-21": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2021/State Finances Audit Report 31 March 2021-0624856c5470463.99903126.pdf", "sha256": "08835e0780b37f444dffb07c8542873fac9dd927f4a9afda12144c0ecd7a8096", "pages": 217, "text": "born-digital"},
+      "2021-22": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2022/English-SFAR-2021-22-pdf_compressed-064240cf6c4ca31.03706085.pdf", "sha256": "71f927c2432b63191913775bd6e1cc4d7e2531e7fbdf9a785bed9e71276a5f1b", "pages": 258, "text": "born-digital"},
       "2022-23": {"url": "https://cag.gov.in/uploads/download_audit_report/2024/SFAR-English_2024-066cd743800e444.16332897.pdf", "sha256": "f80bc30f2926b249b1bb40c334edb839c2827928da8c8066506f8356886d7cb0", "pages": 266, "text": "scanned->ocr"},
       "2023-24": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2025/Report-No.-1-of-2025-English-SFAR-2023-24-068c11ca17d08b3.79273636.pdf", "sha256": "f55cbd1b2cb01f626eeb58741723c2af8dfe2aff141060ed72227d65eeb1b73a", "pages": 200, "text": "born-digital"},
       "2024-25": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2026/English-SFAR-2024-25-069c50935ce13c9.55626515.pdf", "sha256": "fe643892479b2dd4578d1b5ad9aa28952854c11931dc00f96a35a9757f8a23cd", "pages": 230, "text": "born-digital"}

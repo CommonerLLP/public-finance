@@ -74,7 +74,7 @@ rule). Raw PDFs live per-source under `references/cag_<juris>/source/` (gitignor
 
 | Jurisdiction | Measure (leads with) | Years | Source |
 |---|---|---|---|
-| Gujarat | outstanding guarantees (₹1,421 cr, 2024-25) | 2022-23 … 2024-25 | CAG SFAR (Reports 1/2024, 1/2025, 2/2026) |
+| Gujarat | outstanding guarantees (₹4,699 cr 2018-19 → ₹1,421 cr 2024-25) | 2018-19, 2020-21 … 2024-25 (2019-20 not published) | CAG SFAR (Reports 1/2024, 1/2025, 2/2026) |
 | Kerala | off-budget SPV borrowing (₹32,942 cr via KIIFB + KSSPL) | 2023-24 | CAG SFAR 2023-24 |
 
 The two leading measures differ on purpose — the view shows each jurisdiction's
