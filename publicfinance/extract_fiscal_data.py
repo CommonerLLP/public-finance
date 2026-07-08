@@ -46,11 +46,16 @@ def detect_document_unit(text):
     no explicit declaration is found.
     """
     head = text.lower()
-    if re.search(r"in\s+thousand|हजार\s*(में|रुपये|रुपए)", head):
+    # "Thousand" must catch the plural English caption ("in thousands of rupees")
+    # and the Rajasthan detailed-demand caption ("हजार रुपयों में"), because a
+    # thousand-unit document silently read as Crore is a 100000x error. This was
+    # the load-bearing miss on UP's pre-2011 volumes: the thousand->lakh unit
+    # switch was in a caption the old regex did not match.
+    if re.search(r"in\s+thousands?\s*(of\s*rupees)?|\(\s*₹?\s*in\s+thousands?|हजार\s*(रुपयो|रुपये|रुपए|में)", head):
         return "Thousand"
-    if re.search(r"\blakh\b|\(\s*lakh|लाख\s*(में|रुपये|रुपए)|\(\s*लाख", head):
+    if re.search(r"\blakhs?\b|\(\s*₹?\s*in\s+lakhs?|\(\s*lakh|लाख\s*(रुपयो|में|रुपये|रुपए)|\(\s*लाख", head):
         return "Lakh"
-    if re.search(r"\bcrore\b|\(\s*crore|करोड़\s*(में|रुपये|रुपए)|\(\s*करोड़", head):
+    if re.search(r"\bcrores?\b|\(\s*₹?\s*in\s+crores?|\(\s*crore|करोड़\s*(में|रुपये|रुपए)|\(\s*करोड़", head):
         return "Crore"
     return None
 

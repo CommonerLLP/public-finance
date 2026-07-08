@@ -34,9 +34,34 @@ PDFs. (REQ-0001 in `_org/requests/LEDGER.md`.)
 - Verified figures/definitions are logged in `memory/verified_facts.md`
   (`GMAM-23306`).
 
+## Gujarat manual — acquisition attempt (2026-07-08)
+
+The formal, de-jure Gujarat Municipal Accounts Manual / GMFR code list **could not be
+located online** on 2026-07-08. Checked:
+
+- **Gujarat Municipal Finance Board** (https://gmfb.in/) — the nodal agency for the
+  accrual double-entry rollout. Its site carries **no downloadable manual / chart of
+  accounts** (only an RTI PDF). GMFB tenders confirm the accrual system covers 159
+  Gujarat municipalities but do not publish the code list.
+- Web/search for a Gujarat manual PDF returned only **peer-state NMAM-derived manuals**
+  (Karnataka `KMAM-Vol-1`, Chhattisgarh, Odisha, Tamil Nadu, Maharashtra Municipal
+  Account Code 2010) — useful structural analogues, not the Gujarat text.
+- Gujarat-specific primary-source **leads for the follow-on** (not yet mined):
+  - C&AG *Manual of Instructions for Audit of Local Bodies, Gujarat 2023-24*
+    (`cag.gov.in/uploads/office_mannual/LB-Manual-064c8fa62129925-23318514.pdf`).
+  - Gujarat Provincial Municipal Corporations (GPMC) Act 1949
+    (`indiacode.nic.in/bitstream/123456789/4653/1/gpmcact.pdf`) — the statutory budget-head basis.
+
+**Status of `23306`:** its name ("Penalty Recovered from Contractors") is confirmed
+**de-facto** from AMC budget books (20-year slot stability); it is **not yet confirmed
+against a de-jure manual**, because NMAM does not contain it and the Gujarat manual is
+not online. See `../nmam/README.md` for the NMAM crosswalk (nearest concept: NMAM
+`140-20` Penalties and Fines). This gap is the honest open item, not a resolved fact.
+
 ## Next
 
-- Acquire the formal Gujarat Municipal Accounts Manual / GMFR to confirm parent
-  heads, accrual basis, and the full code list beyond `23xxx`.
+- Acquire the formal Gujarat Municipal Accounts Manual / GMFR (try GMFB directly / RTI,
+  or the CAG LB-audit and GPMC-Act leads above) to confirm parent heads, accrual basis,
+  and the full code list beyond `23xxx`.
 - Extend to expense codes and other revenue groups (taxes `11xxx`–`17xxx`, octroi
   grant `181xx`, revenue grants).
