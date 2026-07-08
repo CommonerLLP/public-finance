@@ -1,0 +1,248 @@
+{
+  "_generated_by": "scratchpad write_deflator_json.py (REQ-0011, 2026-07-08); do not hand-edit values -- every index_value is tied to the cited source",
+  "series_name": "All-India consumer price deflator, FY annual averages (CPI-Combined base 2012=100; CPI-IW-spliced before 2011-12)",
+  "base": "CPI-Combined (Rural+Urban) General index, calendar year 2012 = 100",
+  "fiscal_year_convention": "April-March, written YYYY-YY",
+  "coverage": {
+    "first_fy": "2005-06",
+    "last_confirmed_fy": "2024-25"
+  },
+  "splice": {
+    "boundary": "FY2010-11 / FY2011-12",
+    "method": "Ratio splice at the FY2011-12 overlap: pre-2012 index = CPI-IW General (base 2001=100) annual average x (CPI-Combined 2011-12 annual average / CPI-IW 2011-12 annual average) = value x (93.3/195). Both overlap values from RBI HBS 2023-24 Table 37.",
+    "splice_factor": 0.478462
+  },
+  "gaps": [
+    {
+      "fy": "2025-26",
+      "reason": "Fiscal year incomplete at retrieval (base-2012 monthly indices published only through December 2025; CPI was re-based to 2024=100 from January 2026). Not included rather than estimated."
+    }
+  ],
+  "cross_checks": [
+    "Government of India, Economic Survey 2016-17 Volume 2, Statistical Appendix Table 5.3: All India Consumer Price Index Numbers, pp. A76-A77 (https://www.indiabudget.gov.in/budget2017-2018/es2016-17/estatvol2.pdf): CPI-IW 2006-07..2012-13 identical; 2005-06 = 542 on base 1982, 542/4.63 = 117.06 vs published 117",
+    "Government of India, Economic Survey 2025-26, Statistical Appendix Table 4.3: All India Consumer Price Index Numbers, pp. 88-89 (https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab4.3.pdf): CPI-Combined FY averages 2013-14..2024-25 match after rounding; CPI-IW 2011-12 = 195 confirmed",
+    "MoSPI (NSO) CPI data API, base 2012=100, All India, Combined sector, General index, monthly (https://esankhyiki.mospi.gov.in (MoSPI data API, dataset CPI, base_year=2012)): FY averages recomputed from official monthly indices match RBI HBS published values to one decimal for 2011-12..2023-24"
+  ],
+  "years": [
+    {
+      "fy": "2005-06",
+      "index_value": 55.98,
+      "base_year": "CPI-Combined, calendar year 2012 = 100 (spliced)",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: Labour Bureau)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "CPI-Combined does not exist before January 2011. Value = published CPI-IW General annual average (base 2001=100) of 117 ratio-spliced onto the CPI-Combined base-2012 series at the FY2011-12 overlap: 117 x (93.3 / 195) = 117 x 0.478462. Cross-checked against Economic Survey 2016-17 Statistical Appendix Table 5.3 (identical CPI-IW values). The 2005-06 CPI-IW value of 117 is itself a linked value: the base-2001 CPI-IW series starts January 2006, and RBI/Labour Bureau publish 2005-06 by dividing the base-1982 annual average (542) by the official linking factor 4.63 (HBS Table 37 Note 2).",
+      "cpi_iw_general_base2001": 117
+    },
+    {
+      "fy": "2006-07",
+      "index_value": 59.81,
+      "base_year": "CPI-Combined, calendar year 2012 = 100 (spliced)",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: Labour Bureau)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "CPI-Combined does not exist before January 2011. Value = published CPI-IW General annual average (base 2001=100) of 125 ratio-spliced onto the CPI-Combined base-2012 series at the FY2011-12 overlap: 125 x (93.3 / 195) = 125 x 0.478462. Cross-checked against Economic Survey 2016-17 Statistical Appendix Table 5.3 (identical CPI-IW values).",
+      "cpi_iw_general_base2001": 125
+    },
+    {
+      "fy": "2007-08",
+      "index_value": 63.64,
+      "base_year": "CPI-Combined, calendar year 2012 = 100 (spliced)",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: Labour Bureau)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "CPI-Combined does not exist before January 2011. Value = published CPI-IW General annual average (base 2001=100) of 133 ratio-spliced onto the CPI-Combined base-2012 series at the FY2011-12 overlap: 133 x (93.3 / 195) = 133 x 0.478462. Cross-checked against Economic Survey 2016-17 Statistical Appendix Table 5.3 (identical CPI-IW values).",
+      "cpi_iw_general_base2001": 133
+    },
+    {
+      "fy": "2008-09",
+      "index_value": 69.38,
+      "base_year": "CPI-Combined, calendar year 2012 = 100 (spliced)",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: Labour Bureau)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "CPI-Combined does not exist before January 2011. Value = published CPI-IW General annual average (base 2001=100) of 145 ratio-spliced onto the CPI-Combined base-2012 series at the FY2011-12 overlap: 145 x (93.3 / 195) = 145 x 0.478462. Cross-checked against Economic Survey 2016-17 Statistical Appendix Table 5.3 (identical CPI-IW values).",
+      "cpi_iw_general_base2001": 145
+    },
+    {
+      "fy": "2009-10",
+      "index_value": 77.99,
+      "base_year": "CPI-Combined, calendar year 2012 = 100 (spliced)",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: Labour Bureau)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "CPI-Combined does not exist before January 2011. Value = published CPI-IW General annual average (base 2001=100) of 163 ratio-spliced onto the CPI-Combined base-2012 series at the FY2011-12 overlap: 163 x (93.3 / 195) = 163 x 0.478462. Cross-checked against Economic Survey 2016-17 Statistical Appendix Table 5.3 (identical CPI-IW values).",
+      "cpi_iw_general_base2001": 163
+    },
+    {
+      "fy": "2010-11",
+      "index_value": 86.12,
+      "base_year": "CPI-Combined, calendar year 2012 = 100 (spliced)",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: Labour Bureau)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "CPI-Combined does not exist before January 2011. Value = published CPI-IW General annual average (base 2001=100) of 180 ratio-spliced onto the CPI-Combined base-2012 series at the FY2011-12 overlap: 180 x (93.3 / 195) = 180 x 0.478462. Cross-checked against Economic Survey 2016-17 Statistical Appendix Table 5.3 (identical CPI-IW values).",
+      "cpi_iw_general_base2001": 180
+    },
+    {
+      "fy": "2011-12",
+      "index_value": 93.3,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2012-13",
+      "index_value": 102.5,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2013-14",
+      "index_value": 112.2,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2014-15",
+      "index_value": 118.9,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2015-16",
+      "index_value": 124.7,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2016-17",
+      "index_value": 130.3,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2017-18",
+      "index_value": 135.0,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2018-19",
+      "index_value": 139.6,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2019-20",
+      "index_value": 146.3,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2020-21",
+      "index_value": 155.3,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2021-22",
+      "index_value": 163.8,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2022-23",
+      "index_value": 174.7,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2023-24",
+      "index_value": 184.1,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "RBI, Handbook of Statistics on Indian Economy 2023-24 (original source: NSO, MoSPI)",
+      "source_table": "Table 37: Consumer Price Index - Annual Average, p. 71",
+      "source_url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Published annual average (average of months) of the all-India CPI-Combined General index, base 2012=100. 2011-12 and 2012-13 are the official back-cast/linked series (CPI Rural/Urban/Combined was introduced from January 2011 on base 2010, re-based/linked to 2012 by NSO). Cross-checked against FY averages computed from the 12 official monthly indices in the MoSPI CPI data API (base_year=2012, series Back/Current): match to the published decimal for all years."
+    },
+    {
+      "fy": "2024-25",
+      "index_value": 192.6,
+      "base_year": "CPI-Combined, calendar year 2012 = 100",
+      "source": "MoSPI (NSO) CPI data API, base 2012=100, All India, Combined sector, General index, monthly",
+      "source_table": "MoSPI CPI API: dataset CPI, base_year=2012, series=Current, state=All India, sector=Combined, group=General",
+      "source_url": "https://esankhyiki.mospi.gov.in (MoSPI data API, dataset CPI, base_year=2012)",
+      "retrieval_date": "2026-07-08",
+      "method_note": "Annual average of the 12 official monthly all-India CPI-Combined General indices, April 2024 - March 2025 (average of months, same construction as RBI HBS Table 37, whose 2024-25 row was not yet in the 2023-24 edition). Cross-checked against Economic Survey 2025-26 Statistical Appendix Table 4.3, which publishes the same annual average rounded to 193 (https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab4.3.pdf).",
+      "monthly_indices_apr_to_mar": [
+        186.7,
+        187.7,
+        190.2,
+        193.0,
+        193.0,
+        194.2,
+        196.8,
+        196.5,
+        195.4,
+        193.4,
+        192.5,
+        192.0
+      ]
+    }
+  ]
+}

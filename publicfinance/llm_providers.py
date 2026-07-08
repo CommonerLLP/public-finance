@@ -21,11 +21,39 @@ KRUTIDEV_MAP = {
     "izfr'kr": "प्रतिशत",
 }
 
+# AksharUnicode is the legacy font UP used on its pre-2011 budget volumes. Unlike
+# KrutiDev (an 8-bit legacy encoding), AksharUnicode maps to real Unicode code
+# points but with non-standard glyph choices, so pdftotext output is garbled in a
+# different way. The exact glyph table must be derived against an actual UP
+# pre-2011 volume; this scaffold holds the confirmed unit markers only. Do NOT
+# invent glyph mappings here without a source PDF to verify against.
+AKSHARUNICODE_MAP = {
+    # unit-caption markers are what matter for the crore/lakh/thousand trap
+    "हजार": "हजार",
+    "लाख": "लाख",
+}
+
+
 def krutidev_to_unicode(text):
     """Simple mapping for core fiscal terms in legacy fonts."""
     for k, v in KRUTIDEV_MAP.items():
         text = text.replace(k, v)
     return text
+
+
+def legacy_font_to_unicode(text, font="krutidev"):
+    """Dispatch legacy-font transliteration by font family.
+
+    'krutidev' (default) covers most Hindi budget PDFs. 'aksharunicode' is a
+    scaffold for UP's pre-2011 volumes; its glyph table is intentionally
+    incomplete until validated against a real source PDF (see AKSHARUNICODE_MAP).
+    """
+    font = (font or "krutidev").lower()
+    if font == "aksharunicode":
+        for k, v in AKSHARUNICODE_MAP.items():
+            text = text.replace(k, v)
+        return text
+    return krutidev_to_unicode(text)
 
 class BaseProvider:
     def analyze_signals(self, text):

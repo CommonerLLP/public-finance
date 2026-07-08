@@ -1,0 +1,2 @@
+state,fy,estimate_basis,libraries_rev_cr,libraries_cap_cr,msme_cr,capital_cr,h2852_cr,h2853_cr,h2875_cr,source_volumes,source_pages,source_unit,retrieval_date,notes
+Rajasthan,2026-27,BE,16.8,2.4,981.19,378.7,183.12,195.58,0.0001,"Vol 2c (Social Services rev), Vol 2d (Economic Services rev), Vol 3a (Capital)","2205-00-105: Vol2c pp[80, 125]; 2851 p257; 2852 p271; 2853 p281; 2875 p289 (Vol2d printed pages)",thousand_rupees,2026-07-08,Library heads via committed Surya OCR (label font-garbled in pdftotext); industry majors code-anchored live from PDF.
