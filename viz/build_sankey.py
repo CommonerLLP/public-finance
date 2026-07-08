@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 
 from viz.sankey import core
-from viz.sankey.adapters import gujarat_demands, gujarat_receipts, observed_json, rbi_balance
+from viz.sankey.adapters import gujarat_demands, gujarat_receipts, observed_json, offbudget, rbi_balance
 
 REPO = Path(__file__).resolve().parents[1]
 LOD = REPO / "references" / "lmmha" / "lod"
@@ -41,14 +41,17 @@ def build(state: str, fy: str, view: str) -> dict:
     if view == "balance":
         adapter = BALANCE_ADAPTERS.get(key, rbi_balance.load)  # default: RBI State Finances
         return core.build_balance(adapter(state.title(), fy))
-    raise SystemExit(f"unknown view {view!r} (sector|balance)")
+    if view == "offbudget":
+        # file-driven: any jurisdiction with references/offbudget/<key>.json, no per-state code
+        return core.build_offbudget(offbudget.load(key, fy))
+    raise SystemExit(f"unknown view {view!r} (sector|balance|offbudget)")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Build a state money-flow Sankey payload")
     ap.add_argument("--state", required=True)
     ap.add_argument("--fy", required=True, help="e.g. 2022-23")
-    ap.add_argument("--view", choices=("sector", "balance"), default="sector")
+    ap.add_argument("--view", choices=("sector", "balance", "offbudget"), default="sector")
     args = ap.parse_args()
 
     payload = build(args.state, args.fy, args.view)

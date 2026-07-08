@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from viz.sankey.model import BalanceModel, SectorModel
+from viz.sankey.model import BalanceModel, OffBudgetModel, SectorModel
 
 # macro-sector -> display colour (one family per sector; sub-sectors share it)
 SECTOR_COLOR = {
@@ -147,6 +147,77 @@ def build_sector(model: SectorModel) -> dict:
         },
         "nodes": nodes,
         "links": links,
+    }
+
+
+# off-budget beneficiary kind -> colour (one family; reused across jurisdictions)
+OFFBUDGET_COLOR = {
+    "psu_power": "#c8843a",   # amber — power utilities
+    "psu_other": "#b06a3a",   # burnt amber — other PSUs
+    "ulb": "#3b6fb0",         # blue — urban local bodies
+    "spv": "#9a5b8f",         # mauve — special purpose vehicles
+    "board": "#2f8f8f",       # teal — statutory boards
+    "coop": "#6c6f7d",        # slate — cooperatives
+    "other": "#9aa0ab",       # grey — residual / unnamed
+}
+
+
+def build_offbudget(model: OffBudgetModel) -> dict:
+    """OffBudgetModel -> Sankey payload: outstanding guarantees fan to beneficiaries.
+
+    Source node = the jurisdiction's outstanding guarantees (a contingent stock,
+    NOT budget spending). Targets = named beneficiaries + an 'Other' residual.
+    Ceiling/headroom and the multi-year series ride in meta for context.
+    """
+    root = f"{model.jurisdiction} — {model.measure}"
+    nodes, idx, links = [], {}, []
+    node = _node_factory(nodes, idx)
+    node(root, "pool", "#444")
+
+    named = sorted(model.beneficiaries, key=lambda b: -b.amount_cr)
+    for b in named:
+        node(b.label, b.kind, b.color or OFFBUDGET_COLOR.get(b.kind, "#9aa0ab"))
+        links.append({"source": idx[root], "target": idx[b.label],
+                      "value": round(b.amount_cr, 1)})
+    other = round(model.outstanding_cr - sum(b.amount_cr for b in named), 1)
+    if other > 0.5:
+        node("Other guaranteed bodies", "other", OFFBUDGET_COLOR["other"])
+        links.append({"source": idx[root], "target": idx["Other guaranteed bodies"],
+                      "value": other})
+
+    ceiling = model.ceiling_cr
+    headroom = round(ceiling - model.outstanding_cr, 1) if ceiling else None
+    kinds = {b.kind for b in named}
+    legend = [{"label": k.replace("_", " ").title(), "color": OFFBUDGET_COLOR[k]}
+              for k in OFFBUDGET_COLOR if k in kinds]
+    if other > 0.5:
+        legend.append({"label": "Other", "color": OFFBUDGET_COLOR["other"]})
+
+    pct = model.pct_of
+    headline = (f"{model.jurisdiction}'s {model.measure}: "
+                f"₹{model.outstanding_cr:,.0f} cr"
+                + (f" — {pct}% of {model.pct_label}" if pct else "")
+                + (f"; ₹{headroom:,.0f} cr headroom under the ₹{ceiling:,.0f} cr ceiling"
+                   if headroom is not None else "")
+                + ". Outside the on-budget total — the part of the books the budget "
+                  "does not show.")
+
+    return {
+        "meta": {
+            "state": model.jurisdiction, "fy": model.fy, "unit": "INR crore",
+            "jtype": model.jtype,
+            "total_cr": round(model.outstanding_cr, 1),
+            "side": "contingent liabilities (off-budget) — NOT part of the budget total",
+            "headline": headline,
+            "ceiling_cr": ceiling, "headroom_cr": headroom,
+            "series_cr": model.series_cr,
+            "off_budget_note": model.off_budget_note,
+            "statute": model.statute,
+            "source": model.source,
+            "caveat": model.caveat,
+            "legend": legend,
+        },
+        "nodes": nodes, "links": links,
     }
 
 

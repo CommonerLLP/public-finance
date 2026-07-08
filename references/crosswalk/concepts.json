@@ -1,0 +1,42 @@
+{
+  "schema": "fiscal-crosswalk-concepts-v1",
+  "pivot_standards": "GFSM 2014 (economic) + COFOG (functional). Codes APPROXIMATE until pinned.",
+  "hierarchy": "dotted concept_id; parent = id with last segment removed.",
+  "concepts": [
+    {"concept_id": "rev", "label": "Revenue", "facet": "economic", "kind": "revenue", "gfs": "1", "cofog": null, "tier_role": null, "notes": "Root: all non-debt receipts."},
+
+    {"concept_id": "rev.tax", "label": "Own tax revenue", "facet": "economic", "kind": "revenue", "gfs": "11", "cofog": null, "tier_role": "own_source", "notes": "Taxes levied by the tier itself (state SGST/excise; municipal property/octroi)."},
+
+    {"concept_id": "rev.nontax", "label": "Non-tax revenue", "facet": "economic", "kind": "revenue", "gfs": "14", "cofog": null, "tier_role": "own_source", "notes": "GFS 14 Other revenue. Maps to GMAM major group 23 'Non-tax revenue income'."},
+    {"concept_id": "rev.nontax.interest", "label": "Interest income", "facet": "economic", "kind": "revenue", "gfs": "1411", "cofog": null, "tier_role": "own_source", "notes": "GMAM group 231; NMAM 171."},
+    {"concept_id": "rev.nontax.sales", "label": "Sale of goods / forms / scrap", "facet": "economic", "kind": "revenue", "gfs": "142", "cofog": null, "tier_role": "own_source", "notes": "GMAM group 232; NMAM 150 Sale & Hire."},
+    {"concept_id": "rev.nontax.fines", "label": "Fines, penalties and forfeits", "facet": "economic", "kind": "revenue", "gfs": "143", "cofog": null, "tier_role": "own_source", "notes": "GMAM group 233; NMAM 140-20 Penalties & Fines."},
+    {"concept_id": "rev.nontax.fines.contractor_penalty", "label": "Penalty recovered from contractors", "facet": "economic", "kind": "revenue", "gfs": "143", "cofog": null, "tier_role": "own_source", "notes": "GMAM 23306. Contractor-side; twin of supplier_penalty."},
+    {"concept_id": "rev.nontax.fines.supplier_penalty", "label": "Penalty recovered from suppliers", "facet": "economic", "kind": "revenue", "gfs": "143", "cofog": null, "tier_role": "own_source", "notes": "GMAM 23305."},
+    {"concept_id": "rev.nontax.fines.deposit_forfeit", "label": "Deposits / EMD forfeited", "facet": "economic", "kind": "revenue", "gfs": "143", "cofog": null, "tier_role": "own_source", "notes": "GMAM 23308."},
+    {"concept_id": "rev.nontax.fines.employee_fine", "label": "Fine / recovery from employee", "facet": "economic", "kind": "revenue", "gfs": "143", "cofog": null, "tier_role": "own_source", "notes": "GMAM 23320."},
+    {"concept_id": "rev.nontax.misc", "label": "Miscellaneous receipts", "facet": "economic", "kind": "revenue", "gfs": "145", "cofog": null, "tier_role": "own_source", "notes": "GMAM 23399 and other 233xx welfare/fee receipts."},
+
+    {"concept_id": "rev.transfer", "label": "Intergovernmental transfers received", "facet": "economic", "kind": "revenue", "gfs": "13", "cofog": null, "tier_role": "transfer_from_above", "notes": "Parent of from_above; revenue side of the transfer system."},
+    {"concept_id": "rev.transfer.from_above", "label": "Transfers received from a higher tier", "facet": "economic", "kind": "revenue", "gfs": "13", "cofog": null, "tier_role": "transfer_from_above", "notes": "GFS 13 Grants. Vertical-connect parent: walk its narrower concepts to get every 'money from above' line at every tier."},
+    {"concept_id": "rev.transfer.from_above.tax_devolution", "label": "Share in central taxes (Finance Commission devolution)", "facet": "economic", "kind": "revenue", "gfs": "133", "cofog": null, "tier_role": "transfer_from_above", "notes": "State tier. Constitutionally an unconditional SHARE (Art. 270/280), GFS-economically a transfer. Pin the distinction."},
+    {"concept_id": "rev.transfer.from_above.fc_grant", "label": "Finance Commission / statutory grants", "facet": "economic", "kind": "revenue", "gfs": "133", "cofog": null, "tier_role": "transfer_from_above", "notes": "Art. 275; CFC local-body grants (Art. 280(3))."},
+    {"concept_id": "rev.transfer.from_above.css", "label": "Centrally Sponsored / Central Sector scheme transfer", "facet": "economic", "kind": "revenue", "gfs": "133", "cofog": null, "tier_role": "transfer_from_above", "notes": "Art. 282; tied, UC-gated, SNA/CNA-controlled (fund_flow_map §2)."},
+    {"concept_id": "rev.transfer.from_above.octroi_comp", "label": "Grant in lieu of octroi (state to city compensation)", "facet": "economic", "kind": "revenue", "gfs": "133", "cofog": null, "tier_role": "transfer_from_above", "notes": "City tier. GMAM 18133. The three-tier worked example."},
+
+    {"concept_id": "exp", "label": "Expense", "facet": "economic", "kind": "expense", "gfs": "2", "cofog": null, "tier_role": "application", "notes": "Root: all spending."},
+    {"concept_id": "exp.interest", "label": "Interest payments (debt service)", "facet": "economic", "kind": "expense", "gfs": "24", "cofog": "01.7", "tier_role": "application", "notes": "Cooper dual-mandate: the creditor's protected claim."},
+    {"concept_id": "exp.compensation", "label": "Compensation of employees (salaries/wages)", "facet": "economic", "kind": "expense", "gfs": "21", "cofog": null, "tier_role": "application", "notes": "Committed expenditure — the Ambedkar 1930s Bombay squeeze."},
+    {"concept_id": "exp.transfer", "label": "Intergovernmental transfers paid", "facet": "economic", "kind": "expense", "gfs": "26", "cofog": null, "tier_role": "transfer_to_below", "notes": "Parent of to_below; expense side of the transfer system."},
+    {"concept_id": "exp.transfer.to_below", "label": "Grants/transfers to a lower tier", "facet": "economic", "kind": "expense", "gfs": "26", "cofog": null, "tier_role": "transfer_to_below", "notes": "State->LB (SFC); Union->LB. The downward leg."},
+
+    {"concept_id": "exp.function", "label": "Functional classification of spending (COFOG)", "facet": "functional", "kind": "expense", "gfs": null, "cofog": null, "tier_role": "application", "notes": "Parent of the COFOG function concepts."},
+    {"concept_id": "exp.function.health", "label": "Health (functional)", "facet": "functional", "kind": "expense", "gfs": null, "cofog": "07", "tier_role": "application", "notes": "Cooper dual-mandate: the disciplined social wage."},
+    {"concept_id": "exp.function.water", "label": "Water supply & sanitation (functional)", "facet": "functional", "kind": "expense", "gfs": null, "cofog": "06.3", "tier_role": "application", "notes": "Mahad-to-JJM frame (BAWS synthesis §11)."},
+    {"concept_id": "exp.function.general_admin", "label": "General public services (functional)", "facet": "functional", "kind": "expense", "gfs": null, "cofog": "01", "tier_role": "application", "notes": null},
+
+    {"concept_id": "fin", "label": "Financing", "facet": "economic", "kind": "financing", "gfs": "3", "cofog": null, "tier_role": "financing", "notes": "Below-the-line: how the deficit is funded."},
+    {"concept_id": "fin.borrowing_net", "label": "Net borrowing (gross fiscal deficit residual)", "facet": "economic", "kind": "financing", "gfs": "32", "cofog": null, "tier_role": "financing", "notes": "Total spending minus all non-debt receipts; the GFD. NOT gross debt receipts (the Sankey discipline)."},
+    {"concept_id": "fin.loans_to_below", "label": "Loans/advances to a lower tier", "facet": "economic", "kind": "financing", "gfs": "32", "cofog": null, "tier_role": "transfer_to_below", "notes": "Union->state (LMMHA 7601); city->undertaking (e.g. AMC 'Loan to AMTS')."}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "fiscal-crosswalk-mappings-v1",
+  "relation_vocab": "SKOS: exactMatch | broadMatch | narrowMatch | relatedMatch (head is the SUBJECT, concept the OBJECT — broadMatch means the concept is broader than the head).",
+  "rule": "Only verified heads are mapped (source_ref -> memory/verified_facts.md). Unverified heads are omitted, not guessed.",
+  "mappings": [
+    {"chart": "gmam", "head_code": "23306", "head_name": "Penalty Recovered from Contractors", "concept_id": "rev.nontax.fines.contractor_penalty", "relation": "exactMatch", "source_ref": "GMAM-23306"},
+    {"chart": "gmam", "head_code": "23305", "head_name": "Penalty Recovered from Suppliers", "concept_id": "rev.nontax.fines.supplier_penalty", "relation": "exactMatch", "source_ref": "GMAM-23306"},
+    {"chart": "gmam", "head_code": "23308", "head_name": "Deposits Forfeited", "concept_id": "rev.nontax.fines.deposit_forfeit", "relation": "exactMatch", "source_ref": "GMAM-23306"},
+    {"chart": "gmam", "head_code": "23320", "head_name": "Fine to Employee", "concept_id": "rev.nontax.fines.employee_fine", "relation": "exactMatch", "source_ref": "GMAM-23306"},
+    {"chart": "gmam", "head_code": "23399", "head_name": "Other Miscellaneous Income", "concept_id": "rev.nontax.misc", "relation": "exactMatch", "source_ref": "GMAM-23306"},
+    {"chart": "gmam", "head_code": "23103", "head_name": "Interest on Bank Deposits", "concept_id": "rev.nontax.interest", "relation": "narrowMatch", "source_ref": "GMAM-23306"},
+    {"chart": "gmam", "head_code": "23209", "head_name": "Sale of Tender Forms", "concept_id": "rev.nontax.sales", "relation": "narrowMatch", "source_ref": "GMAM-23306"},
+    {"chart": "gmam", "head_code": "18133", "head_name": "Govt. Grant in lieu of Octroi", "concept_id": "rev.transfer.from_above.octroi_comp", "relation": "exactMatch", "source_ref": "GMAM-23306"},
+
+    {"chart": "nmam", "head_code": "110", "head_name": "Tax Revenue", "concept_id": "rev.tax", "relation": "exactMatch", "source_ref": "NMAM-ACQ-001"},
+    {"chart": "nmam", "head_code": "140-20", "head_name": "Penalties & Fines", "concept_id": "rev.nontax.fines", "relation": "broadMatch", "source_ref": "NMAM-ACQ-001"},
+    {"chart": "nmam", "head_code": "150", "head_name": "Sale & Hire Charges", "concept_id": "rev.nontax.sales", "relation": "broadMatch", "source_ref": "NMAM-ACQ-001"},
+    {"chart": "nmam", "head_code": "160", "head_name": "Revenue Grants, Contributions & Subsidies", "concept_id": "rev.transfer.from_above", "relation": "broadMatch", "source_ref": "NMAM-ACQ-001"},
+    {"chart": "nmam", "head_code": "171", "head_name": "Interest Earned", "concept_id": "rev.nontax.interest", "relation": "exactMatch", "source_ref": "NMAM-ACQ-001"},
+
+    {"chart": "lmmha", "head_code": "0020", "head_name": "Corporation Tax", "concept_id": "rev.tax", "relation": "narrowMatch", "source_ref": "LMMHA-XWALK-001"},
+    {"chart": "lmmha", "head_code": "1601", "head_name": "Grants-in-aid from Central Government", "concept_id": "rev.transfer.from_above.fc_grant", "relation": "exactMatch", "source_ref": "LMMHA-XWALK-001"},
+    {"chart": "lmmha", "head_code": "2049", "head_name": "Interest Payments", "concept_id": "exp.interest", "relation": "exactMatch", "source_ref": "LMMHA-XWALK-001"},
+    {"chart": "lmmha", "head_code": "2210", "head_name": "Medical and Public Health", "concept_id": "exp.function.health", "relation": "exactMatch", "source_ref": "LMMHA-XWALK-001"},
+    {"chart": "lmmha", "head_code": "2215", "head_name": "Water Supply and Sanitation", "concept_id": "exp.function.water", "relation": "exactMatch", "source_ref": "LMMHA-XWALK-001"},
+    {"chart": "lmmha", "head_code": "3601", "head_name": "Grants-in-aid to State Governments", "concept_id": "exp.transfer.to_below", "relation": "exactMatch", "source_ref": "LMMHA-XWALK-001"},
+    {"chart": "lmmha", "head_code": "7601", "head_name": "Loans and Advances to Governments", "concept_id": "fin.loans_to_below", "relation": "exactMatch", "source_ref": "LMMHA-XWALK-001"}
+  ],
+  "todo_charts": {
+    "lmmha": "tax_devolution still pending — share-in-central-taxes is minor head 901 (Share of net proceeds), not present in the major-head reference; confirm before mapping. Grants/interest/health/water/loans now mapped.",
+    "masp": "Rural Function/Programme/Activity + Object heads — map after acquiring the MoPR 'List of Codes'."
+  }
+}

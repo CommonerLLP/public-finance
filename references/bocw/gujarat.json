@@ -1,0 +1,217 @@
+{
+  "schema": "bocw-board-v1",
+  "board": {
+    "code": "gujarat",
+    "type": "state",
+    "label": "Gujarat Building and Other Construction Workers Welfare Board",
+    "short_label": "Gujarat BOCW Welfare Board",
+    "constituted": "2004 (Board); cess levied January 2006",
+    "statute": [
+      "Building and Other Construction Workers (Regulation of Employment and Conditions of Service) Act, 1996",
+      "Building and Other Construction Workers Welfare Cess Act, 1996 (cess 1% of construction cost)",
+      "Gujarat BOCW (RE&CS) Rules, 2003"
+    ]
+  },
+  "unit": "INR crore",
+  "coverage": "2006-07 to 2022-23 (CAG Performance Audit, period ended March 2022, updated to 2022-23)",
+
+  "structural_note": "Gujarat did NOT constitute a statutory BOC Workers' Welfare Fund (BOCW Act s.24). Because there is no Fund, cess collected by Cess Collectors is deposited into the general Government Account, not transferred to the Board. The State Government then releases PARTIAL grants to the Board out of that pool. So there are TWO unspent layers: (1) cess lying UNRELEASED with the State Government, and (2) grant released to the Board but UNSPENT by the Board. Total unspent balance = layer 1 + layer 2. Interest earned on the Government-Account pool accrues to the State, not the Board, and is not disclosed as board income in the audited tables (hence other_income_cr is null). CAG flagged the non-constitution of the Fund and the non-transfer of cess as statutory violations.",
+
+  "headline_as_of_march_2023": {
+    "total_cess_collected_cr": 4787.60,
+    "total_cess_collected_period": "2006-07 to 2022-23",
+    "grant_released_to_board_cr": 2544.81,
+    "grant_released_pct": 53,
+    "cess_lying_with_state_govt_unreleased_cr": 2242.79,
+    "cess_lying_with_state_govt_pct": 47,
+    "board_expenditure_total_cr": 808.49,
+    "board_expenditure_pct_of_grant_released": 32,
+    "board_expenditure_welfare_cr": 782.03,
+    "board_expenditure_admin_cr": 26.46,
+    "grant_unspent_with_board_cr": 1736.32,
+    "total_unspent_balance_cr": 3979.11,
+    "total_unspent_pct_of_collected": 83.1,
+    "note": "Of every 100 rupees of cess collected in workers' name since 2006, ~17 was actually spent on workers (welfare + admin). 47% never left the State treasury; a further 36% sat unspent with the Board. total_unspent_pct computed = 3979.11/4787.60."
+  },
+
+  "years": {
+    "2006-07_to_2016-17": {
+      "fy_bucket": true,
+      "cess_collected_cr": 1611.96,
+      "grant_released_to_board_cr": 863.04,
+      "closing_balance_with_state_govt_cr": 748.92,
+      "board_opening_balance_cr": 0,
+      "board_welfare_expenditure_cr": 65.87,
+      "board_admin_expenditure_cr": 5.40,
+      "expenditure_cr": 71.27,
+      "board_closing_balance_cr": 791.77,
+      "total_unspent_balance_cr": 1540.69,
+      "other_income_cr": null,
+      "registered_workers": null,
+      "active_registrations": null,
+      "beneficiaries": null,
+      "notes": "Eleven-year aggregate row as reported in CAG Table 4.2 / Table 6.1; not broken out by individual year in the report."
+    },
+    "2017-18": {
+      "cess_collected_cr": 375.98,
+      "grant_released_to_board_cr": 748.93,
+      "closing_balance_with_state_govt_cr": 375.97,
+      "board_opening_balance_cr": 791.77,
+      "board_welfare_expenditure_cr": 93.08,
+      "board_admin_expenditure_cr": 1.58,
+      "expenditure_cr": 94.66,
+      "board_closing_balance_cr": 1446.04,
+      "total_unspent_balance_cr": 1822.01,
+      "other_income_cr": null,
+      "active_registrations": 467682,
+      "beneficiaries": null,
+      "notes": "active_registrations = active registered BOC workers at year-end (March 2018), CAG Table 3.4 / Chart 3.2. Grant released this year (748.93) unusually high; drew down the state-govt balance."
+    },
+    "2018-19": {
+      "cess_collected_cr": 518.19,
+      "grant_released_to_board_cr": 236.60,
+      "closing_balance_with_state_govt_cr": 657.56,
+      "board_opening_balance_cr": 1446.04,
+      "board_welfare_expenditure_cr": 62.85,
+      "board_admin_expenditure_cr": 3.98,
+      "expenditure_cr": 66.83,
+      "board_closing_balance_cr": 1615.81,
+      "total_unspent_balance_cr": 2273.37,
+      "other_income_cr": null,
+      "active_registrations": 446467,
+      "beneficiaries": null,
+      "notes": "active_registrations at year-end March 2019."
+    },
+    "2019-20": {
+      "cess_collected_cr": 507.82,
+      "grant_released_to_board_cr": 165.28,
+      "closing_balance_with_state_govt_cr": 1000.10,
+      "board_opening_balance_cr": 1615.81,
+      "board_welfare_expenditure_cr": 61.44,
+      "board_admin_expenditure_cr": 3.26,
+      "expenditure_cr": 64.70,
+      "board_closing_balance_cr": 1716.39,
+      "total_unspent_balance_cr": 2716.49,
+      "other_income_cr": null,
+      "active_registrations": 331132,
+      "beneficiaries": null,
+      "notes": "active_registrations at year-end March 2020. Cess collection dipped (per CAG narrative, 2019-20 and 2020-21 were the only two non-increasing years)."
+    },
+    "2020-21": {
+      "cess_collected_cr": 452.92,
+      "grant_released_to_board_cr": 115.84,
+      "closing_balance_with_state_govt_cr": 1337.18,
+      "board_opening_balance_cr": 1716.39,
+      "board_welfare_expenditure_cr": 333.97,
+      "board_admin_expenditure_cr": 3.53,
+      "expenditure_cr": 337.50,
+      "board_closing_balance_cr": 1494.73,
+      "total_unspent_balance_cr": 2831.91,
+      "other_income_cr": null,
+      "active_registrations": 169956,
+      "beneficiaries": null,
+      "notes": "active_registrations at year-end March 2021. Welfare expenditure spiked to 333.97 cr (COVID-year cash relief to workers); the only year the Board's closing balance fell."
+    },
+    "2021-22": {
+      "cess_collected_cr": 572.55,
+      "grant_released_to_board_cr": 209.55,
+      "closing_balance_with_state_govt_cr": 1700.18,
+      "board_opening_balance_cr": 1494.73,
+      "board_welfare_expenditure_cr": 64.62,
+      "board_admin_expenditure_cr": 3.60,
+      "expenditure_cr": 68.22,
+      "board_closing_balance_cr": 1636.06,
+      "total_unspent_balance_cr": 3336.24,
+      "other_income_cr": null,
+      "active_registrations": 156955,
+      "beneficiaries": null,
+      "notes": "active_registrations at year-end March 2022. Active registrations slumped from 4,67,682 (Mar 2018) to 1,56,955 (Mar 2022) as renewals collapsed."
+    },
+    "2022-23": {
+      "cess_collected_cr": 748.18,
+      "grant_released_to_board_cr": 205.57,
+      "closing_balance_with_state_govt_cr": 2242.79,
+      "board_opening_balance_cr": 1636.06,
+      "board_welfare_expenditure_cr": 100.20,
+      "board_admin_expenditure_cr": 5.11,
+      "expenditure_cr": 105.31,
+      "board_closing_balance_cr": 1736.32,
+      "total_unspent_balance_cr": 3979.11,
+      "other_income_cr": null,
+      "active_registrations": null,
+      "beneficiaries": null,
+      "notes": "Latest CAG-audited year. Cess collection peaked at 748.18 cr. Total unspent balance reached 3,979.11 cr (83% of all cess ever collected). active_registrations for FY23 not stated in the report (chart runs to 2021-22)."
+    }
+  },
+
+  "registrations_and_governance": {
+    "registered_establishments_2017": 668,
+    "registered_establishments_2022": 4087,
+    "cumulative_registered_establishments": 14295,
+    "establishments_never_inspected": 2146,
+    "establishments_never_inspected_pct": 15,
+    "active_registered_workers_series": {
+      "2017-18": 467682, "2018-19": 446467, "2019-20": 331132,
+      "2020-21": 169956, "2021-22": 156955
+    },
+    "active_registered_workers_note": "Active registered BOC workers at each year-end (CAG Table 3.4 and Chart 3.2, which agree). Renewal collapse: only 3-16% of workers whose registration was due for renewal got it renewed in 2017-22.",
+    "welfare_schemes_operated_2017_22": 31,
+    "welfare_schemes_closed_or_on_hold": 13,
+    "welfare_schemes_closed_or_on_hold_pct": 42,
+    "old_age_pension_scheme": "kept on hold since May 2019",
+    "staffing_as_of_march_2022": {
+      "board_regular_posts_sanctioned": 18,
+      "board_regular_posts_filled": 5,
+      "board_regular_posts_vacant": 13,
+      "board_regular_posts_vacant_pct": 72,
+      "board_temporary_posts_sanctioned": 40,
+      "board_temporary_posts_filled": 25,
+      "board_temporary_posts_vacant": 15,
+      "board_temporary_posts_vacant_pct": 38,
+      "dish_inspectors_sanctioned": 24,
+      "dish_inspectors_filled": 14,
+      "dish_inspectors_vacant": 10,
+      "dish_inspectors_vacant_pct": 42,
+      "senior_inspector_sanctioned": 4,
+      "senior_inspector_filled": 0,
+      "senior_inspector_vacant_pct": 100,
+      "member_secretary": "held by a Class-I state officer as additional charge since October 2021 (i.e. no dedicated head)",
+      "state_advisory_committee": "not constituted since 2011"
+    }
+  },
+
+  "verification": {
+    "primary_source": "single-primary (CAG Report No. 02 of 2025); year-wise breakdown is single-sourced but internally arithmetic-reconciled across CAG Tables 4.2, 6.1, 3.4 and Charts 4.2, 3.2 (all cross-foot to the same totals - verified in-turn 2026-07-08).",
+    "cross_check": "Headline aggregates (4,787.60 cr collected; 2,242.79 cr / 47% with State Govt; 808.49 cr utilised) INDEPENDENTLY corroborated by two press reports of the tabled CAG report: The Wire (4,787.6 cr collected, 2,243 cr / 47% unspent, 72% posts vacant) and DevDiscourse (~4,700 cr collected, 808 cr utilised). Aggregates therefore meet the two-source rule; per-year splits rest on the CAG report alone (primary, authoritative).",
+    "unverified_fields": "other_income_cr (interest) not disclosed in audited tables; beneficiaries-by-scheme not extracted to per-year rows (scheme detail exists in CAG Chapter VI but is not tabulated here); FY2022-23 active_registrations not published.",
+    "arithmetic": "collected 4,787.60 - spent 808.49 = 3,979.11 unspent = 2,242.79 (with State) + 1,736.32 (with Board). All year rows foot to these totals."
+  },
+
+  "provenance": {
+    "sources": {
+      "cag_report_02_2025": {
+        "title": "Report of the Comptroller and Auditor General of India on Welfare of Building and Other Construction Workers, Government of Gujarat, Report No. 02 of 2025 (Performance Audit - Civil), for the period ended March 2022",
+        "url": "https://cag.gov.in/uploads/download_audit_report/2025/337-Ch-AG-Report-Eng-for-Mail-068c951ab53dca2.52715740.pdf",
+        "sha256": "340c89ca259849be08f40427064629d28621d48365bbb8b321fbb9eb8c7098ee",
+        "pages": 102,
+        "text": "born-digital",
+        "retrieval_date": "2026-07-08",
+        "key_tables": "Table 4.2 (cess deposited / grant released, p.28), Table 6.1 (utilisation of cess, p.43), Table 2.1 & 2.2 (staffing, pp.9-10), Table 3.4 & Chart 3.2 (worker registration, pp.18-19)"
+      },
+      "corroboration_the_wire": {
+        "title": "CAG Finds Gujarat's Worker Welfare Board 'Defunct' Since 2017, 72% of Posts Vacant",
+        "url": "https://m.thewire.in/article/government/cag-finds-gujarats-worker-welfare-board-defunct-since-2017-72-of-posts-vacant",
+        "role": "secondary corroboration of headline aggregates",
+        "retrieval_date": "2026-07-08"
+      },
+      "corroboration_devdiscourse": {
+        "title": "Unspent Billions: Gujarat's Construction Workers Welfare Cess Dilemma",
+        "url": "https://www.devdiscourse.com/article/law-order/3622972-unspent-billions-gujarats-construction-workers-welfare-cess-dilemma",
+        "role": "secondary corroboration (4,700 cr collected, 808 cr utilised)",
+        "retrieval_date": "2026-07-08"
+      }
+    },
+    "raw_pdfs": "references/bocw/source/ (gitignored)",
+    "verified": "2026-07-08; all year rows arithmetic-reconciled against CAG report totals; aggregates two-source confirmed"
+  }
+}

@@ -28,6 +28,10 @@ from viz.sankey.model import BalanceModel, Flow
 REPO = Path(__file__).resolve().parents[3]
 BUDGET = REPO / "data" / "gujarat" / "finance_dept"
 _NUM = re.compile(r"\d[\d,]*\.\d+")
+# the book declares its unit on data pages, e.g. "(`. In Crore)" / "(`. In Lakhs)".
+# Editions differ: 2024-25 is in crore, 2022-23 is in lakh. Normalise everything to crore.
+_UNIT = re.compile(r"In\s+(Crore|Lakh|Thousand)", re.IGNORECASE)
+_TO_CRORE = {"crore": 1.0, "lakh": 0.01, "thousand": 0.00001}
 # central taxes: the State receives only its 901 devolution share, no own component
 _CENTRAL = {"0005", "0008", "0020", "0021", "0028", "0037", "0038", "0044", "0045"}
 
@@ -50,10 +54,14 @@ def _parse_sources(fy: str) -> dict:
     dedupe to one value per (account, sector, major head) before summing.
     """
     seen: dict[tuple, float] = {}
-    account = sector = None
+    account = sector = unit = None
     with pdfplumber.open(_receipts_pdf(fy)) as pdf:
         for page in pdf.pages:
             for ln in (page.extract_text() or "").split("\n"):
+                if unit is None:
+                    u = _UNIT.search(ln)
+                    if u:
+                        unit = u.group(1).lower()
                 if "Revenue Account" in ln:
                     account = "rev"
                 elif "Capital Account" in ln:
@@ -69,6 +77,12 @@ def _parse_sources(fy: str) -> dict:
                     continue
                 key = (account, sector, m.group(1))
                 seen[key] = max(seen.get(key, 0.0), float(nums[-1].replace(",", "")))
+
+    if unit is None:
+        raise SystemExit(f"could not detect the unit (Crore/Lakh/Thousand) in the {fy} "
+                         f"receipts book — refusing to guess the magnitude")
+    scale = _TO_CRORE[unit]
+    seen = {k: v * scale for k, v in seen.items()}
 
     rev_tax = {mh: v for (acc, sec, mh), v in seen.items() if acc == "rev" and sec == "A"}
     rev_nontax = {mh: v for (acc, sec, mh), v in seen.items() if acc == "rev" and sec == "B"}

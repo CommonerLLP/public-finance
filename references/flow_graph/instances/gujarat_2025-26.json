@@ -1,0 +1,72 @@
+{
+  "generated_by": "viz/build_flow_overlay.py",
+  "state": "Gujarat",
+  "fy": "2025-26 (Budget Estimates)",
+  "unit": "INR crore",
+  "total_cr": 276853.0,
+  "from_centre_cr": 70449.9,
+  "from_centre_pct": 25.4,
+  "sources": [
+    {
+      "edge_id": "own.state",
+      "label": "Own tax",
+      "amount_cr": 168196.5,
+      "from": "economy",
+      "concept_id": "rev.tax",
+      "lands_under": null,
+      "union_origin": false
+    },
+    {
+      "edge_id": "own.state_nontax",
+      "label": "Own non-tax",
+      "amount_cr": 23760.1,
+      "from": "economy",
+      "concept_id": "rev.nontax",
+      "lands_under": null,
+      "union_origin": false
+    },
+    {
+      "edge_id": "devolution.union_state",
+      "label": "Tax devolution",
+      "amount_cr": 50439.1,
+      "from": "union",
+      "concept_id": "rev.transfer.from_above.tax_devolution",
+      "lands_under": "lmmha:901(TODO)",
+      "union_origin": true
+    },
+    {
+      "edge_id": "fcgrant.union_state",
+      "label": "Grants from Centre",
+      "amount_cr": 20010.8,
+      "from": "union",
+      "concept_id": "rev.transfer.from_above.fc_grant",
+      "lands_under": "lmmha:1601",
+      "union_origin": true
+    },
+    {
+      "edge_id": "borrow.market_state",
+      "label": "Net borrowing",
+      "amount_cr": 14446.5,
+      "from": "economy",
+      "concept_id": "fin.borrowing_net",
+      "lands_under": null,
+      "union_origin": false
+    }
+  ],
+  "uses": [
+    {
+      "label": "Social Services",
+      "amount_cr": 105558.3
+    },
+    {
+      "label": "Economic Services",
+      "amount_cr": 86289.4
+    },
+    {
+      "label": "General Services",
+      "amount_cr": 85005.3
+    }
+  ],
+  "source_doc": "Gujarat Finance Dept — Receipts (Consolidated Fund) + Demands for Grants",
+  "caveat": "Built entirely from Gujarat's own budget books. Net borrowing = total spending minus all non-debt receipts (the gross fiscal deficit), not gross debt receipts. Indicative; not yet line-verified. Overlay maps balance sources onto references/flow_graph/ edges."
+}

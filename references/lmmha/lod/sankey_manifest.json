@@ -1,21 +1,31 @@
 {
+  "_generated_by": "viz/build_sankey_manifest.py",
   "states": [
     {
       "state": "assam",
       "label": "Assam",
+      "type": "state",
       "views": {
-        "detailed": [
-          "2022-23"
-        ],
         "balance": [
           "2023-24"
+        ],
+        "detailed": [
+          "2022-23"
         ]
       }
     },
     {
       "state": "gujarat",
       "label": "Gujarat",
+      "type": "state",
       "views": {
+        "balance": [
+          "2022-23",
+          "2023-24",
+          "2024-25",
+          "2025-26",
+          "2026-27"
+        ],
         "detailed": [
           "2018-19",
           "2019-20",
@@ -27,8 +37,30 @@
           "2025-26",
           "2026-27"
         ],
-        "balance": [
+        "flow": [
+          "2022-23",
+          "2023-24",
+          "2024-25",
+          "2025-26",
+          "2026-27"
+        ],
+        "offbudget": [
+          "2018-19",
+          "2020-21",
+          "2021-22",
+          "2022-23",
+          "2023-24",
           "2024-25"
+        ]
+      }
+    },
+    {
+      "state": "kerala",
+      "label": "Kerala",
+      "type": "state",
+      "views": {
+        "offbudget": [
+          "2023-24"
         ]
       }
     }
