@@ -10,8 +10,10 @@ def safe_anchor(code):
     return f"lmmha_{code}"
 
 
-def redirect_html(code, title):
-    target = f"/index.html#{safe_anchor(code)}"
+def redirect_html(code, title, depth):
+    # Relative ascent to the site root so the stubs work at any mount
+    # point (e.g. /public-finance/data/), not just a domain root.
+    target = "../" * depth + f"index.html#{safe_anchor(code)}"
     escaped_title = title.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     return f"""<!doctype html>
 <html lang="en">
@@ -31,7 +33,8 @@ def redirect_html(code, title):
 def write_redirect(root, parts, code, title):
     path = root.joinpath(*parts)
     path.mkdir(parents=True, exist_ok=True)
-    (path / "index.html").write_text(redirect_html(code, title), encoding="utf-8")
+    depth = 2 + len(parts)  # ontology/lmmha/ + parts
+    (path / "index.html").write_text(redirect_html(code, title, depth), encoding="utf-8")
 
 
 def alias_kind(type_value):

@@ -72,14 +72,32 @@ jobs:
           # index.html / app.js / style.css / observed.json are committed and served as-is.
           # observed.json is built locally from gitignored data/ and is NOT regenerated here.
 
+      - name: Stage site under /data (served at commonerllp.github.io/public-finance/data/)
+        run: |
+          mkdir -p _site/data
+          cp -R references/lmmha/lod/. _site/data/
+          touch _site/.nojekyll
+          cat > _site/index.html <<'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <title>public-finance data</title>
+            <link rel="canonical" href="./data/">
+            <meta http-equiv="refresh" content="0; url=./data/">
+          </head>
+          <body><p><a href="./data/">public-finance data</a></p></body>
+          </html>
+          EOF
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          # Upload entire lod directory
-          path: 'references/lmmha/lod'
+          # Entire lod directory, nested under /data
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment
