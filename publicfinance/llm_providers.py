@@ -85,7 +85,7 @@ class RegexProvider(BaseProvider):
     def _count(self, text, markers):
         count = 0
         # Transliterate legacy font (KrutiDev) to Unicode for analysis
-        clean_text = krutidev_to_unicode(text.lower())
+        clean_text = krutidev_to_unicode(text).lower()
         for marker in markers:
             count += len(re.findall(marker, clean_text))
         return count

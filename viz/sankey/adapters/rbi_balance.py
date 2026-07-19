@@ -55,7 +55,7 @@ def load(state: str, fy: str) -> BalanceModel:
     ]
     transfers = d["devolution"] + d["grants"]
     own = d["own_tax"] + d["own_nontax"]
-    return BalanceModel(
+    bm = BalanceModel(
         state=state, fy=d.get("fy", fy), sources=sources, uses=uses,
         source=d["source"],
         caveat="Net borrowing is the gross fiscal deficit (total spending minus all non-debt "
@@ -69,3 +69,7 @@ def load(state: str, fy: str) -> BalanceModel:
             {"label": "General Services", "color": GEN},
         ],
     )
+    bm.headline = (f"{transfers / uses_total * 100:.0f}% of {state}'s budget comes from the Centre "
+                   f"(₹{transfers:,.0f} cr); own revenue {own / uses_total * 100:.0f}% (₹{own:,.0f} cr); "
+                   f"net borrowing {net_borrowing / uses_total * 100:.0f}% (₹{net_borrowing:,.0f} cr).")
+    return bm

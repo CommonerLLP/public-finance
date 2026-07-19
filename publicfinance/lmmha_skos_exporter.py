@@ -9,7 +9,7 @@ BASE_JSON = REPO_ROOT / "references" / "lmmha" / "lmmha_base_2001.json"
 LOD_DIR = REPO_ROOT / "references" / "lmmha" / "lod"
 TIMELINE_JSON = REPO_ROOT / "references" / "lmmha" / "lmmha_timeline.json"
 SCOPE_NOTES_JSON = REPO_ROOT / "references" / "lmmha" / "lmmha_scope_notes_2001.json"
-BASE_URI = "https://data.commonerllp.org/ontology/lmmha/"
+BASE_URI = "https://commonerllp.github.io/public-finance/data/ontology/lmmha/"
 
 
 def rows_from_base_json(heads):
