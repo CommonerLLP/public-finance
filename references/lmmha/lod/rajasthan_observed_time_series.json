@@ -1,0 +1,944 @@
+{
+  "state": "Rajasthan",
+  "fiscal_years": [
+    "2013-14",
+    "2014-15",
+    "2015-16",
+    "2016-17",
+    "2017-18",
+    "2018-19",
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26",
+    "2026-27"
+  ],
+  "targets": [
+    "2202-00-105",
+    "2205-00-105",
+    "4202-04-105"
+  ],
+  "years": {
+    "2013-14": {
+      "state": "Rajasthan",
+      "fy": "2013-14",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 79923.0,
+          "amount_candidates_thousand_rupees": [
+            61988.0,
+            645.0,
+            60.0,
+            70404.0,
+            800.0,
+            1.0,
+            70279.0,
+            800.0,
+            1108.0,
+            79140.0,
+            782.0,
+            1.0,
+            79923.0
+          ],
+          "raw_line": "6,19,88\t6,45\t60\t7,04,04\t8,00\t1\t7,02,79\t8,00\t11,08\tसार्वजनिक पुस्तकालय\t7,91,40\t7,82\t1\t7,99,23",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2013-14/vol2c_ocr/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 140000.0,
+          "amount_candidates_thousand_rupees": [
+            140000.0,
+            140000.0
+          ],
+          "raw_line": "..\t..\t..\t..\t..\t..\t..\t..\t..\tलघु शीर्ष - 105 योग\t..\t14,00,00\t..\t14,00,00",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2013-14/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2013-14/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2013-14/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 247062
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2013-14/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2013-14/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 23859
+        }
+      ]
+    },
+    "2014-15": {
+      "state": "Rajasthan",
+      "fy": "2014-15",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 98209.0,
+          "amount_candidates_thousand_rupees": [
+            68136.0,
+            476.0,
+            1108.0,
+            79140.0,
+            782.0,
+            1.0,
+            91056.0,
+            850.0,
+            1.0,
+            93345.0,
+            4864.0,
+            98209.0,
+            1.0
+          ],
+          "raw_line": "6,81,36\t4,76\t11,08\t7,91,40\t7,82\t1\t9,10,56\t8,50\t1\tसार्वजनिक पुस्तकालय\t9,33,45\t48,64\t9,82,09\t1",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2014-15/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 10020.0,
+          "amount_candidates_thousand_rupees": [
+            140000.0,
+            47391.0,
+            10020.0,
+            10020.0
+          ],
+          "raw_line": "..\t..\t..\t..\t14,00,00\t..\t..\t4,73,91\t..\tलघु शीर्ष - 105 योग\t..\t1,00,20\t..\t1,00,20",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2014-15/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2014-15/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2014-15/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 268837
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2014-15/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2014-15/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 25043
+        }
+      ]
+    },
+    "2015-16": {
+      "state": "Rajasthan",
+      "fy": "2015-16",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 97592.0,
+          "amount_candidates_thousand_rupees": [
+            81412.0,
+            690.0,
+            93345.0,
+            4864.0,
+            1.0,
+            94430.0,
+            1322.0,
+            1.0,
+            93930.0,
+            3662.0,
+            97592.0,
+            1.0
+          ],
+          "raw_line": "8,14,12\t6,90\t..\t9,33,45\t48,64\t1\t9,44,30\t13,22\t1\tसार्वजनिक पुस्तकालय\t9,39,30\t36,62\t9,75,92\t1",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2015-16/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "not_found"
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2015-16/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2015-16/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 270099
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2015-16/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2015-16/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 33831
+        }
+      ]
+    },
+    "2016-17": {
+      "state": "Rajasthan",
+      "fy": "2016-17",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 100553.0,
+          "amount_candidates_thousand_rupees": [
+            91139.0,
+            821.0,
+            93930.0,
+            3662.0,
+            1.0,
+            94110.0,
+            1252.0,
+            1.0,
+            99031.0,
+            1522.0,
+            100553.0,
+            1.0
+          ],
+          "raw_line": "9,11,39\t8,21\t9,39,30\t36,62\t1\t9,41,10\t12,52\t1\tसार्वजनिक पुस्तकालय\t9,90,31\t15,22\t10,05,53\t1",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2016-17/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "not_found"
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2016-17/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2016-17/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 243620
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2016-17/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2016-17/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 28083
+        }
+      ]
+    },
+    "2017-18": {
+      "state": "Rajasthan",
+      "fy": "2017-18",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "not_found"
+        },
+        "4202-04-105": {
+          "status": "not_found"
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2017-18/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2017-18/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+          "text_length": 213900
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2017-18/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2017-18/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 26063
+        }
+      ]
+    },
+    "2018-19": {
+      "state": "Rajasthan",
+      "fy": "2018-19",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 126554.0,
+          "amount_candidates_thousand_rupees": [
+            92846.0,
+            152.0,
+            109353.0,
+            1.0,
+            102346.0,
+            1.0,
+            126553.0,
+            1.0,
+            126554.0
+          ],
+          "raw_line": "9,28,46\t1,52\t10,93,53\t1\t10,23,46\t1\tसार्वजनिक पुस्तकालय\tद\t12,65,53\t1\t12,65,54",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2018-19/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services Part I/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "not_found"
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2018-19/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2018-19/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+          "text_length": 190543
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2018-19/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2018-19/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 22680
+        }
+      ]
+    },
+    "2019-20": {
+      "state": "Rajasthan",
+      "fy": "2019-20",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 124160.0,
+          "amount_candidates_thousand_rupees": [
+            97717.0,
+            126553.0,
+            1.0,
+            114118.0,
+            1.0,
+            124159.0,
+            1.0,
+            124160.0
+          ],
+          "raw_line": "9,77,17\t..\t12,65,53\t1\t11,41,18\t1\tसार्वजनिक पुस्तकालय\tद\t12,41,59\t1\t12,41,60",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2019-20/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "not_found"
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2019-20/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2019-20/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 260620
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2019-20/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2019-20/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 18650
+        }
+      ]
+    },
+    "2020-21": {
+      "state": "Rajasthan",
+      "fy": "2020-21",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 136910.0,
+          "amount_candidates_thousand_rupees": [
+            113924.0,
+            124159.0,
+            1.0,
+            124590.0,
+            136910.0,
+            136910.0
+          ],
+          "raw_line": "11,39,24\t..\t12,41,59\t1\t12,45,90\t..\tसार्वजनिक पुस्तकालय\t13,69,10\t..\t13,69,10",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2020-21/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 1.0,
+          "amount_candidates_thousand_rupees": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "raw_line": "..\t..\t1\t..\t1\t..\tलघु शीर्ष - 105 योग\t1\t..\t1",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2020-21/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2020-21/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2020-21/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 300834
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2020-21/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2020-21/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 23657
+        }
+      ]
+    },
+    "2021-22": {
+      "state": "Rajasthan",
+      "fy": "2021-22",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 133997.0,
+          "amount_candidates_thousand_rupees": [
+            110829.0,
+            136910.0,
+            118944.0,
+            133997.0,
+            133997.0
+          ],
+          "raw_line": "11,08,29\t..\t13,69,10\t..\t11,89,44\t..\tसार्वजनिक पुस्तकालय\t13,39,97\t..\t13,39,97",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2021-22/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 1.0,
+          "amount_candidates_thousand_rupees": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "raw_line": "..\t..\t1\t..\t1\t..\tलघु शीर्ष - 105 योग\t1\t..\t1",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2021-22/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2021-22/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2021-22/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 307188
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2021-22/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2021-22/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 22717
+        }
+      ]
+    },
+    "2022-23": {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 124052.0,
+          "amount_candidates_thousand_rupees": [
+            109751.0,
+            133997.0,
+            112085.0,
+            124052.0,
+            124052.0
+          ],
+          "raw_line": "10,97,51\t..\t13,39,97\t..\t11,20,85\t..\tसार्वजनिक पुस्तकालय\t12,40,52\t..\t12,40,52",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2022-23/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 1.0,
+          "amount_candidates_thousand_rupees": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "raw_line": "..\t..\t1\t..\t1\t..\tलघु शीर्ष - 105 योग\t1\t..\t1",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2022-23/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 323459
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 23897
+        }
+      ]
+    },
+    "2023-24": {
+      "state": "Rajasthan",
+      "fy": "2023-24",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 188168.0,
+          "amount_candidates_thousand_rupees": [
+            108319.0,
+            124052.0,
+            164747.0,
+            188168.0,
+            188168.0
+          ],
+          "raw_line": "10,83,19\t..\t12,40,52\t..\t16,47,47\t..\tसार्वजनिक पुस्तकालय\t18,81,68\t..\t18,81,68",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2023-24/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 80000.0,
+          "amount_candidates_thousand_rupees": [
+            1.0,
+            20000.0,
+            80000.0,
+            80000.0
+          ],
+          "raw_line": "..\t..\t1\t..\t2,00,00\t..\tलघु शीर्ष - 105 योग\t8,00,00\t..\t8,00,00",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2023-24/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2023-24/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2023-24/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 310347
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2023-24/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2023-24/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 32720
+        }
+      ]
+    },
+    "2024-25": {
+      "state": "Rajasthan",
+      "fy": "2024-25",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 182822.0,
+          "amount_candidates_thousand_rupees": [
+            138012.0,
+            188168.0,
+            174324.0,
+            182822.0,
+            182822.0
+          ],
+          "raw_line": "13,80,12\t..\t18,81,68\t..\t17,43,24\t..\tसार्वजनिक पुस्तकालय\tद\t18,28,22\t..\t18,28,22",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2024-25/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 40570.0,
+          "amount_candidates_thousand_rupees": [
+            80000.0,
+            60000.0,
+            40570.0,
+            40570.0
+          ],
+          "raw_line": "..\t..\t8,00,00\t..\t6,00,00\t..\tलघु शीर्ष - 105 योग\t4,05,70\t..\t4,05,70",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2024-25/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2024-25/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2024-25/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 311151
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2024-25/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2024-25/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 32624
+        }
+      ]
+    },
+    "2025-26": {
+      "state": "Rajasthan",
+      "fy": "2025-26",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 181620.0,
+          "amount_candidates_thousand_rupees": [
+            146468.0,
+            182822.0,
+            167624.0,
+            181620.0,
+            181620.0
+          ],
+          "raw_line": "14,64,68\t..\t18,28,22\t..\t16,76,24\t..\tसार्वजनिक पुस्तकालय\tद\t18,16,20\t..\t18,16,20",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2025-26/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 24991.0,
+          "amount_candidates_thousand_rupees": [
+            24991.0,
+            24991.0
+          ],
+          "raw_line": "..\t..\t..\t..\t..\t..\tलघु शीर्ष - 105 योग\t2,49,91\t..\t2,49,91",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2025-26/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 302195
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2025-26/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 23421
+        }
+      ]
+    },
+    "2026-27": {
+      "state": "Rajasthan",
+      "fy": "2026-27",
+      "targets": {
+        "2202-00-105": {
+          "status": "not_found"
+        },
+        "2205-00-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "2205-00-105",
+          "selected_amount_thousand_rupees": 168010.0,
+          "amount_candidates_thousand_rupees": [
+            149843.0,
+            181620.0,
+            158389.0,
+            168010.0,
+            168010.0
+          ],
+          "raw_line": "14,98,43\t..\t18,16,20\t..\t15,83,89\t..\tसार्वजनिक पुस्तकालय\tद\t16,80,10\t..\t16,80,10",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2026-27/vol2c_ocr/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_revenue_social_services",
+          "window_pages": [
+            80,
+            125
+          ]
+        },
+        "4202-04-105": {
+          "status": "surya_ocr_summary",
+          "code_detected": "4202-04-105",
+          "selected_amount_thousand_rupees": 24000.0,
+          "amount_candidates_thousand_rupees": [
+            3000.0,
+            24991.0,
+            42068.0,
+            24000.0,
+            24000.0
+          ],
+          "raw_line": "30,00\t..\t2,49,91\t..\t4,20,68\t..\tलघु शीर्ष - 105 योग\t2,40,00\t..\t2,40,00",
+          "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2026-27/vol3a_ocr/Volume 3a _ Capital Expenditure/results.json",
+          "source_engine": "surya_ocr",
+          "document_type": "budget_statement_capital_expenditure",
+          "window_pages": [
+            27,
+            32
+          ]
+        }
+      },
+      "windows": [
+        {
+          "document_type": "budget_statement_revenue_social_services",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2026-27/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 80,
+          "page_end": 125,
+          "code_family": "2205",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2026-27/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "text_length": 302589
+        },
+        {
+          "document_type": "budget_statement_capital_expenditure",
+          "document_family": "budget_book",
+          "source_relpath": "data/state_budgets/Rajasthan/2026-27/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "code_family": "4202",
+          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2026-27/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "text_length": 22427
+        }
+      ]
+    }
+  }
+}

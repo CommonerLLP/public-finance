@@ -1,0 +1,162 @@
+{
+  "id" : "65ffdef0-8e5a-4f58-b811-39f0d74f8e6e",
+  "uuid" : "65ffdef0-8e5a-4f58-b811-39f0d74f8e6e",
+  "name" : "List of Major and Minor Heads of Account of Union and States 1987",
+  "handle" : "123456789/53283",
+  "metadata" : {
+    "dc.category" : [ {
+      "value" : "UN Report (RU)",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.collection" : [ {
+      "value" : "Reports",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.contributor.author" : [ {
+      "value" : "India. Ministry of Finance. Department of Expenditure",
+      "language" : null,
+      "authority" : null,
+      "confidence" : 0,
+      "place" : 0
+    } ],
+    "dc.date.accessioned" : [ {
+      "value" : "2024-11-05T11:40:21Z",
+      "language" : null,
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.date.available" : [ {
+      "value" : "2024-11-05T11:40:21Z",
+      "language" : null,
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.date.issued" : [ {
+      "value" : "1987",
+      "language" : "",
+      "authority" : null,
+      "confidence" : 0,
+      "place" : 0
+    } ],
+    "dc.description.frequency" : [ {
+      "value" : "Others",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.description.section" : [ {
+      "value" : "Circulation",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.format.printedpages" : [ {
+      "value" : "4p",
+      "language" : "",
+      "authority" : null,
+      "confidence" : 0,
+      "place" : 0
+    } ],
+    "dc.identifier.accessionnumber" : [ {
+      "value" : "RC74391(1)",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.identifier.callno" : [ {
+      "value" : "351.71R M7",
+      "language" : "",
+      "authority" : null,
+      "confidence" : 0,
+      "place" : 0
+    } ],
+    "dc.identifier.uri" : [ {
+      "value" : "https://elibrary.sansad.in/handle/123456789/53283",
+      "language" : null,
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.language.iso" : [ {
+      "value" : "English",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.received_from" : [ {
+      "value" : "Name of the Section",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.right" : [ {
+      "value" : "Public",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.title" : [ {
+      "value" : "List of Major and Minor Heads of Account of Union and States 1987",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.title.documentname" : [ {
+      "value" : "HEADS OF ACCOUNT OF UNION STATES-1987",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ]
+  },
+  "inArchive" : true,
+  "discoverable" : true,
+  "withdrawn" : false,
+  "lastModified" : "2025-08-13T05:54:20.650+00:00",
+  "entityType" : null,
+  "type" : "item",
+  "_links" : {
+    "accessStatus" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/accessStatus"
+    },
+    "bundles" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/bundles"
+    },
+    "mappedCollections" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/mappedCollections"
+    },
+    "owningCollection" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/owningCollection"
+    },
+    "relationships" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/relationships"
+    },
+    "version" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/version"
+    },
+    "templateItemOf" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/templateItemOf"
+    },
+    "thumbnail" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e/thumbnail"
+    },
+    "self" : {
+      "href" : "https://elibrary.sansad.in/server/api/core/items/65ffdef0-8e5a-4f58-b811-39f0d74f8e6e"
+    }
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "state": "Rajasthan",
+  "financial_years": [
+    "2022-23",
+    "2023-24",
+    "2025-26"
+  ],
+  "yearly_summary": {
+    "2022-23": {
+      "pdf_count": 35,
+      "document_count": 35,
+      "profile_document_count": 35,
+      "supports": {
+        "be_re": [
+          "agriculture_budget",
+          "budget_at_a_glance",
+          "budget_related_analytical_statement",
+          "budget_statement_capital_expenditure",
+          "budget_statement_public_debt_loans_public_account",
+          "budget_statement_revenue_social_services",
+          "budget_study",
+          "frbm_document",
+          "grant_loan_investment",
+          "green_budget",
+          "post_volume",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general",
+          "revenue_receipts_statement",
+          "summary_budget"
+        ],
+        "codes": [
+          "agriculture_budget",
+          "budget_related_analytical_statement",
+          "budget_statement_capital_expenditure",
+          "budget_statement_public_debt_loans_public_account",
+          "budget_statement_revenue_social_services",
+          "grant_loan_investment",
+          "post_volume",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general",
+          "revenue_receipts_statement",
+          "summary_budget"
+        ],
+        "scheme_info": [
+          "agriculture_budget",
+          "appropriation_reply",
+          "budget_related_analytical_statement",
+          "budget_speech",
+          "budget_statement_capital_expenditure",
+          "budget_statement_revenue_social_services",
+          "budget_study",
+          "economic_review_english",
+          "economic_review_hindi",
+          "grant_loan_investment",
+          "green_budget",
+          "post_volume",
+          "press_note_english",
+          "press_note_hindi",
+          "pwd_works_part_i_1",
+          "pwd_works_part_i_2",
+          "pwd_works_part_ii_1",
+          "pwd_works_part_ii_2",
+          "pwd_works_part_ii_3",
+          "pwd_works_part_ii_4",
+          "pwd_works_part_ii_5",
+          "pwd_works_part_ii_6",
+          "pwd_works_part_ii_7",
+          "pwd_works_part_ii_8",
+          "reply_general_debate",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general"
+        ]
+      },
+      "families": [
+        "analytical_note",
+        "budget_book",
+        "economic_review",
+        "fiscal_framework",
+        "legal",
+        "press_note",
+        "speech",
+        "thematic_budget",
+        "works_book"
+      ]
+    },
+    "2023-24": {
+      "pdf_count": 37,
+      "document_count": 37,
+      "profile_document_count": 35,
+      "supports": {
+        "be_re": [
+          "agriculture_budget",
+          "budget_at_a_glance",
+          "budget_related_analytical_statement",
+          "budget_statement_capital_expenditure",
+          "budget_statement_public_debt_loans_public_account",
+          "budget_statement_revenue_social_services",
+          "budget_study",
+          "frbm_document",
+          "grant_loan_investment",
+          "green_budget",
+          "post_volume",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general",
+          "revenue_receipts_statement",
+          "summary_budget"
+        ],
+        "codes": [
+          "agriculture_budget",
+          "budget_related_analytical_statement",
+          "budget_statement_capital_expenditure",
+          "budget_statement_public_debt_loans_public_account",
+          "budget_statement_revenue_social_services",
+          "grant_loan_investment",
+          "post_volume",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general",
+          "revenue_receipts_statement",
+          "summary_budget"
+        ],
+        "scheme_info": [
+          "agriculture_budget",
+          "appropriation_reply",
+          "budget_related_analytical_statement",
+          "budget_speech",
+          "budget_statement_capital_expenditure",
+          "budget_statement_revenue_social_services",
+          "budget_study",
+          "economic_review_english",
+          "economic_review_hindi",
+          "grant_loan_investment",
+          "green_budget",
+          "post_volume",
+          "press_note_english",
+          "press_note_hindi",
+          "pwd_works_part_i_1",
+          "pwd_works_part_i_2",
+          "pwd_works_part_ii_1",
+          "pwd_works_part_ii_2",
+          "pwd_works_part_ii_3",
+          "pwd_works_part_ii_4",
+          "pwd_works_part_ii_5",
+          "pwd_works_part_ii_6",
+          "pwd_works_part_ii_7",
+          "pwd_works_part_ii_8",
+          "reply_general_debate",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general"
+        ]
+      },
+      "families": [
+        "analytical_note",
+        "budget_book",
+        "economic_review",
+        "fiscal_framework",
+        "legal",
+        "press_note",
+        "speech",
+        "thematic_budget",
+        "works_book"
+      ]
+    },
+    "2025-26": {
+      "pdf_count": 37,
+      "document_count": 37,
+      "profile_document_count": 37,
+      "supports": {
+        "be_re": [
+          "agriculture_budget",
+          "budget_at_a_glance",
+          "budget_related_analytical_statement",
+          "budget_statement_capital_expenditure",
+          "budget_statement_public_debt_loans_public_account",
+          "budget_statement_revenue_social_services",
+          "budget_study",
+          "frbm_document",
+          "grant_loan_investment",
+          "green_budget",
+          "post_volume",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general",
+          "revenue_receipts_statement",
+          "summary_budget"
+        ],
+        "codes": [
+          "agriculture_budget",
+          "budget_related_analytical_statement",
+          "budget_statement_capital_expenditure",
+          "budget_statement_public_debt_loans_public_account",
+          "budget_statement_revenue_social_services",
+          "grant_loan_investment",
+          "post_volume",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general",
+          "revenue_receipts_statement",
+          "summary_budget"
+        ],
+        "scheme_info": [
+          "agriculture_budget",
+          "appropriation_reply",
+          "budget_related_analytical_statement",
+          "budget_speech",
+          "budget_statement_capital_expenditure",
+          "budget_statement_revenue_social_services",
+          "budget_study",
+          "economic_review_english",
+          "economic_review_hindi",
+          "grant_loan_investment",
+          "green_budget",
+          "output_outcome_budget",
+          "post_volume",
+          "press_note_english",
+          "press_note_hindi",
+          "pwd_works_part_i_1",
+          "pwd_works_part_i_2",
+          "pwd_works_part_ii_1",
+          "pwd_works_part_ii_2",
+          "pwd_works_part_ii_3",
+          "pwd_works_part_ii_4",
+          "pwd_works_part_ii_5",
+          "pwd_works_part_ii_6",
+          "pwd_works_part_ii_7",
+          "pwd_works_part_ii_8",
+          "reply_general_debate",
+          "revenue_expenditure_economic",
+          "revenue_expenditure_general"
+        ]
+      },
+      "families": [
+        "analytical_note",
+        "budget_book",
+        "economic_review",
+        "fiscal_framework",
+        "legal",
+        "press_note",
+        "scheme_outcomes",
+        "speech",
+        "thematic_budget",
+        "works_book"
+      ]
+    }
+  },
+  "transitions": [
+    {
+      "from": "2022-23",
+      "to": "2023-24",
+      "manifest_added": [
+        "Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf",
+        "Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf",
+        "Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf",
+        "Budget Speech 2023-2024 (10.02.2023).pdf",
+        "Budget Study 2023-2024.pdf",
+        "Budget at a Glance 2023-2024.pdf",
+        "Economic Review 2023-2024 - English.pdf",
+        "Economic Review 2023-2024 - Hindi.pdf",
+        "Finance Act, 2023.pdf",
+        "Volume 4c _ Details of PWD Works Part I-1.pdf",
+        "Volume 4c _ Details of PWD Works Part I-2.pdf",
+        "Volume 4c _ Details of PWD Works Part II-8.pdf"
+      ],
+      "manifest_removed": [
+        "Announcement made by Honourable Chief Minister on Appropriation Bill Reply (21.03.2022).pdf",
+        "Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2022-2023 (03.03.2022).pdf",
+        "Budget 2022-2023 Speeches of Chief Minister (English Version).pdf",
+        "Budget Speech 2022-2023 (23.02.2022).pdf",
+        "Budget Study 2022-2023.pdf",
+        "Budget at a Glance 2022-2023.pdf",
+        "Economic Review 2021-22 - English.pdf",
+        "Economic Review 2021-22 - Hindi.pdf",
+        "Finance Act, 2022.pdf",
+        "Volume 4c _ Details of PWD Works Part I.pdf"
+      ],
+      "support_added": {
+        "be_re": [],
+        "codes": [],
+        "scheme_info": []
+      },
+      "support_removed": {
+        "be_re": [],
+        "codes": [],
+        "scheme_info": []
+      },
+      "profile_type_changes": {
+        "added_types": [],
+        "removed_types": [],
+        "renamed_types": {
+          "reply_general_debate": {
+            "from": "Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2022-2023 (03.03.2022).pdf",
+            "to": "Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf"
+          },
+          "economic_review_english": {
+            "from": "Economic Review 2022-2023 - English.pdf",
+            "to": "Economic Review 2023-2024 - English.pdf"
+          },
+          "economic_review_hindi": {
+            "from": "Economic Review 2022-2023 - Hindi.pdf",
+            "to": "Economic Review 2023-2024 - Hindi.pdf"
+          },
+          "pwd_works_part_ii_8": {
+            "from": "Volume 4c _ Details of PWD Works Part II-1.pdf",
+            "to": "Volume 4c _ Details of PWD Works Part II-8.pdf"
+          },
+          "budget_speech": {
+            "from": "Budget 2022-2023 Speeches of Chief Minister (English Version).pdf",
+            "to": "Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf"
+          },
+          "budget_study": {
+            "from": "Budget Study 2022-2023.pdf",
+            "to": "Budget Study 2023-2024.pdf"
+          },
+          "appropriation_reply": {
+            "from": "Announcement made by Honourable Chief Minister on Appropriation Bill Reply (21.03.2022).pdf",
+            "to": "Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf"
+          },
+          "pwd_works_part_i_2": {
+            "from": "Volume 4c _ Details of PWD Works Part II-2.pdf",
+            "to": "Volume 4c _ Details of PWD Works Part I-2.pdf"
+          },
+          "pwd_works_part_i_1": {
+            "from": "Volume 4c _ Details of PWD Works Part II-1.pdf",
+            "to": "Volume 4c _ Details of PWD Works Part I-1.pdf"
+          },
+          "budget_at_a_glance": {
+            "from": "Budget at a Glance 2022-2023.pdf",
+            "to": "Budget at a Glance 2023-2024.pdf"
+          },
+          "finance_act": {
+            "from": "Finance Act, 2022.pdf",
+            "to": "Finance Act, 2023.pdf"
+          }
+        }
+      },
+      "manifest_only": {
+        "from": [
+          "Budget Speech 2022-2023 (23.02.2022).pdf",
+          "Economic Review 2021-22 - English.pdf",
+          "Economic Review 2021-22 - Hindi.pdf",
+          "Volume 4c _ Details of PWD Works Part I.pdf"
+        ],
+        "to": [
+          "Budget Speech 2023-2024 (10.02.2023).pdf",
+          "Economic Review 2022-2023 - English.pdf",
+          "Economic Review 2022-2023 - Hindi.pdf"
+        ]
+      }
+    },
+    {
+      "from": "2023-24",
+      "to": "2025-26",
+      "manifest_added": [
+        "Announcements made by Hon'ble Deputy Chief Minister (Finance) on reply to General Debate on Budget 2025-2026 (27.02.2025).pdf",
+        "Announcements made by Hon’ble Chief Minister on Appropriation Bill Reply (12.03.2025).pdf",
+        "Budget Speech 2025-2026 (19.02.2025).pdf",
+        "Budget Study 2025-2026.pdf",
+        "Budget at a Glance 2025-2026.pdf",
+        "Economic Review 2024-2025 - English.pdf",
+        "Economic Review 2024-2025 - Hindi.pdf",
+        "Finance Act, 2025.pdf",
+        "Output-Outcome Budget 2025-26.pdf",
+        "Rajasthan Value Added Tax Act, 2025.pdf",
+        "Volume 4e _ Green Budget.pdf"
+      ],
+      "manifest_removed": [
+        "Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf",
+        "Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf",
+        "Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf",
+        "Budget Speech 2023-2024 (10.02.2023).pdf",
+        "Budget Study 2023-2024.pdf",
+        "Budget at a Glance 2023-2024.pdf",
+        "Economic Review 2022-2023 - English.pdf",
+        "Economic Review 2022-2023 - Hindi.pdf",
+        "Economic Review 2023-2024 - English.pdf",
+        "Economic Review 2023-2024 - Hindi.pdf",
+        "Finance Act, 2023.pdf"
+      ],
+      "support_added": {
+        "be_re": [],
+        "codes": [],
+        "scheme_info": [
+          "output_outcome_budget"
+        ]
+      },
+      "support_removed": {
+        "be_re": [],
+        "codes": [],
+        "scheme_info": []
+      },
+      "profile_type_changes": {
+        "added_types": [
+          "output_outcome_budget",
+          "vat_act"
+        ],
+        "removed_types": [],
+        "renamed_types": {
+          "reply_general_debate": {
+            "from": "Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf",
+            "to": "Announcements made by Hon'ble Deputy Chief Minister (Finance) on reply to General Debate on Budget 2025-2026 (27.02.2025).pdf"
+          },
+          "economic_review_english": {
+            "from": "Economic Review 2023-2024 - English.pdf",
+            "to": "Economic Review 2024-2025 - English.pdf"
+          },
+          "economic_review_hindi": {
+            "from": "Economic Review 2023-2024 - Hindi.pdf",
+            "to": "Economic Review 2024-2025 - Hindi.pdf"
+          },
+          "budget_speech": {
+            "from": "Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf",
+            "to": "Budget Speech 2025-2026 (19.02.2025).pdf"
+          },
+          "budget_study": {
+            "from": "Budget Study 2023-2024.pdf",
+            "to": "Budget Study 2025-2026.pdf"
+          },
+          "appropriation_reply": {
+            "from": "Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf",
+            "to": "Announcements made by Hon’ble Chief Minister on Appropriation Bill Reply (12.03.2025).pdf"
+          },
+          "budget_at_a_glance": {
+            "from": "Budget at a Glance 2023-2024.pdf",
+            "to": "Budget at a Glance 2025-2026.pdf"
+          },
+          "green_budget": {
+            "from": "Volume 4d _ Agriculture Budget.pdf",
+            "to": "Volume 4e _ Green Budget.pdf"
+          },
+          "finance_act": {
+            "from": "Finance Act, 2023.pdf",
+            "to": "Finance Act, 2025.pdf"
+          }
+        }
+      },
+      "manifest_only": {
+        "from": [
+          "Budget Speech 2023-2024 (10.02.2023).pdf",
+          "Economic Review 2022-2023 - English.pdf",
+          "Economic Review 2022-2023 - Hindi.pdf"
+        ],
+        "to": []
+      }
+    }
+  ]
+}

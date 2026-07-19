@@ -1,0 +1,1353 @@
+{
+  "generated_by": "publicfinance/observed_state_profiles.py",
+  "do_not_hand_edit": true,
+  "profile": {
+    "state": "Rajasthan",
+    "fy": "2022-23",
+    "layout": "state budget split across service books; pdftotext -layout preserves numeric columns",
+    "currency_unit": "lakh",
+    "parsing_rules": [
+      "Prefer code hierarchy and page windows over Hindi label matching.",
+      "Treat detailed-book sub-major totals as valid anchors when the target code family is isolated under one sub-major.",
+      "Keep loan/debt series separate from revenue/capital service heads until minor-head mapping is verified."
+    ],
+    "notes": [
+      "Rajasthan budget PDFs are text-bearing; this profile caches extraction windows so future parser work does not have to rediscover them.",
+      "The public-finance parser layer should own these state profiles, not viz scripts."
+    ]
+  },
+  "documents": [
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "summary_budget",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 1 _ Summary Volume.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "summary_table",
+        "unit": "lakh",
+        "code_axis": "major-head",
+        "amount_columns": "actuals_re_budget_be",
+        "notes": [
+          "High-level fiscal and head-wise summaries."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": false,
+      "windows": [],
+      "notes": [
+        "High-level fiscal and head-wise summaries."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "revenue_receipts_statement",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2a _ Revenue Receipts Volume.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "receipt_code_window",
+        "unit": "lakh",
+        "code_axis": "major-submajor-minor",
+        "amount_columns": "actuals_re_budget_be",
+        "notes": [
+          "Revenue receipts and tax/non-tax code hierarchy."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": false,
+      "windows": [],
+      "notes": [
+        "Revenue receipts and tax/non-tax code hierarchy."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "revenue_expenditure_general",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2b _ Revenue Expenditure-General Services.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "lmmha_code_window",
+        "unit": "lakh",
+        "code_axis": "major-submajor-minor-object",
+        "amount_columns": "actuals_re_budget_be",
+        "notes": [
+          "Detailed general-services expenditure tables."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": [
+        "Detailed general-services expenditure tables."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_statement_revenue_social_services",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": [
+          "Text-bearing PDF; do not force OCR first.",
+          "Hindi labels are noisy; the font hints matter mainly for fallback normalization."
+        ]
+      },
+      "parser": {
+        "strategy": "lmmha_code_window",
+        "unit": "lakh",
+        "code_axis": "major-submajor-minor",
+        "amount_columns": "budget_estimate_2025_26",
+        "notes": [
+          "Anchor on code blocks and sub-major totals before considering label semantics.",
+          "Prefer fixed page windows over whole-document sweeps."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [
+        {
+          "code_family": "2205",
+          "target_codes": [
+            "2205-00-105"
+          ],
+          "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "page_start": 95,
+          "page_end": 96,
+          "unit": "lakh",
+          "parser_hint": "Detailed revenue-expenditure spread covering the 2205 target family and nearby sub-major totals.",
+          "notes": [
+            "The 2205 section starts at PDF page 89.",
+            "Current extraction places the target family near the end of the section."
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "revenue_expenditure_economic",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2d _ Revenue Expenditure-Economic Services.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "lmmha_code_window",
+        "unit": "lakh",
+        "code_axis": "major-submajor-minor-object",
+        "amount_columns": "actuals_re_budget_be",
+        "notes": [
+          "Detailed economic-services expenditure tables."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": [
+        "Detailed economic-services expenditure tables."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_statement_capital_expenditure",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "lmmha_code_window",
+        "unit": "lakh",
+        "code_axis": "major-submajor-minor",
+        "amount_columns": "budget_estimate_2025_26",
+        "notes": [
+          "4202 capital pages should be read functionally alongside their 2202 revenue twin.",
+          "Sub-major totals are the stable first-pass anchor in this book."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [
+        {
+          "code_family": "4202",
+          "target_codes": [
+            "4202-04-105"
+          ],
+          "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "page_start": 27,
+          "page_end": 32,
+          "unit": "lakh",
+          "parser_hint": "Early 4202 section with the stable sub-major 04 total anchor used for education capital outlay.",
+          "notes": [
+            "The 4202 section starts at PDF page 27.",
+            "Current extraction shows the sub-major 04 total in this window."
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_statement_public_debt_loans_public_account",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3b _ Public Debt, Loan, Public Account Volume.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "loan_ledger_window",
+        "unit": "lakh",
+        "code_axis": "major-head-first",
+        "amount_columns": "balance_and_budget_2025_26",
+        "notes": [
+          "This book is a loans ledger, not a standard revenue/capital service table.",
+          "Verify any down-mapping from 6202 major-head totals to minor heads before reuse."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": false,
+      "windows": [
+        {
+          "code_family": "6202",
+          "target_codes": [
+            "6202"
+          ],
+          "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3b _ Public Debt, Loan, Public Account Volume.pdf",
+          "page_start": 81,
+          "page_end": 84,
+          "unit": "lakh",
+          "parser_hint": "Loans-division summary and detailed 6202 pages; stable for major-head extraction.",
+          "notes": [
+            "The loans division summary points to detailed 6202 pages at 81-84.",
+            "Minor-head mapping is not yet verified."
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "post_volume",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4a _ Post Volume.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "departmental_detail",
+        "unit": "lakh",
+        "code_axis": "demand-post",
+        "amount_columns": "budget_be",
+        "notes": [
+          "Administrative post and staffing detail, not primary fiscal classification."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": [
+        "Administrative post and staffing detail, not primary fiscal classification."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "grant_loan_investment",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4b _ Grant_Loan_Investment.pdf",
+      "document_family": "budget_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "grant_loan_detail",
+        "unit": "lakh",
+        "code_axis": "demand-scheme",
+        "amount_columns": "budget_be",
+        "notes": [
+          "Grant, loan, and investment detail with scheme-like labels."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": [
+        "Grant, loan, and investment detail with scheme-like labels."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_i_1",
+      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": [
+          "PWD work-level project register."
+        ]
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": [
+        "PWD work-level project register."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_i_2",
+      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-2.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_1",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_2",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-2.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_3",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-3.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_4",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-4.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_5",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-5.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_6",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-6.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_7",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-7.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "pwd_works_part_ii_8",
+      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
+      "document_family": "works_book",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "works_register",
+        "unit": "lakh",
+        "code_axis": "work-item",
+        "amount_columns": "work_estimates",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "agriculture_budget",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4d _ Agriculture Budget.pdf",
+      "document_family": "thematic_budget",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "thematic_budget_book",
+        "unit": "lakh",
+        "code_axis": "department-scheme-head",
+        "amount_columns": "budget_be",
+        "notes": [
+          "Useful for scheme framing in the agriculture domain."
+        ]
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": [
+        "Useful for scheme framing in the agriculture domain."
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "green_budget",
+      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4d _ Agriculture Budget.pdf",
+      "document_family": "thematic_budget",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "theme_tagged_budget",
+        "unit": "lakh",
+        "code_axis": "theme-programme",
+        "amount_columns": "budget_be",
+        "notes": []
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_at_a_glance",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Budget at a Glance 2022-2023.pdf",
+      "document_family": "analytical_note",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "summary_note",
+        "unit": "crore",
+        "code_axis": "none",
+        "amount_columns": "headline_tables",
+        "notes": []
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": false,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_study",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Budget Study 2022-2023.pdf",
+      "document_family": "analytical_note",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "analytical_report",
+        "unit": "crore",
+        "code_axis": "theme",
+        "amount_columns": "headline_tables",
+        "notes": []
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_related_analytical_statement",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Budget related Analytical Statement.pdf",
+      "document_family": "analytical_note",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "analytical_statement",
+        "unit": "lakh",
+        "code_axis": "head-theme",
+        "amount_columns": "derived_tables",
+        "notes": []
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": true,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "economic_review_english",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Economic Review 2022-2023 - English.pdf",
+      "document_family": "economic_review",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "economic_review",
+        "unit": "mixed",
+        "code_axis": "theme",
+        "amount_columns": "derived_tables",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "economic_review_hindi",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Economic Review 2022-2023 - Hindi.pdf",
+      "document_family": "economic_review",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "economic_review",
+        "unit": "mixed",
+        "code_axis": "theme",
+        "amount_columns": "derived_tables",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "frbm_document",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/FRBM Document.pdf",
+      "document_family": "fiscal_framework",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "frbm_tables",
+        "unit": "crore",
+        "code_axis": "indicator",
+        "amount_columns": "macro_fiscal_projections",
+        "notes": []
+      },
+      "can_extract_be_re": true,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": false,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_speech",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Budget 2022-2023 Speeches of Chief Minister (English Version).pdf",
+      "document_family": "speech",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "speech_text",
+        "unit": "mixed",
+        "code_axis": "none",
+        "amount_columns": "quoted_announcements",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "press_note_english",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Press Note - English.pdf",
+      "document_family": "press_note",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "press_note",
+        "unit": "mixed",
+        "code_axis": "none",
+        "amount_columns": "quoted_announcements",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "press_note_hindi",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Press Note - Hindi.pdf",
+      "document_family": "press_note",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "press_note",
+        "unit": "mixed",
+        "code_axis": "none",
+        "amount_columns": "quoted_announcements",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "finance_bill",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Finance Bill.pdf",
+      "document_family": "legal",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "legal_text",
+        "unit": "none",
+        "code_axis": "none",
+        "amount_columns": "none",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": false,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "finance_act",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Finance Act, 2022.pdf",
+      "document_family": "legal",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "legal_text",
+        "unit": "none",
+        "code_axis": "none",
+        "amount_columns": "none",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": false,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "budget_notification",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Budget Notification.pdf",
+      "document_family": "legal",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "notification_text",
+        "unit": "none",
+        "code_axis": "none",
+        "amount_columns": "none",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": false,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "reply_general_debate",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2022-2023 (03.03.2022).pdf",
+      "document_family": "speech",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "speech_text",
+        "unit": "mixed",
+        "code_axis": "none",
+        "amount_columns": "quoted_announcements",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    },
+    {
+      "state": "Rajasthan",
+      "fy": "2022-23",
+      "document_type": "appropriation_reply",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Announcement made by Honourable Chief Minister on Appropriation Bill Reply (21.03.2022).pdf",
+      "document_family": "speech",
+      "ocr": {
+        "source_type": "pdf_text",
+        "extraction_mode": "pdftotext-layout",
+        "languages": [
+          "Hindi",
+          "English"
+        ],
+        "legacy_font_maps": [
+          "devlys-010",
+          "krutidev"
+        ],
+        "dpi": 300,
+        "expect_tables": true,
+        "notes": []
+      },
+      "parser": {
+        "strategy": "speech_text",
+        "unit": "mixed",
+        "code_axis": "none",
+        "amount_columns": "quoted_announcements",
+        "notes": []
+      },
+      "can_extract_be_re": false,
+      "can_extract_codes": false,
+      "can_extract_scheme_info": true,
+      "windows": [],
+      "notes": []
+    }
+  ],
+  "windows": [
+    {
+      "code_family": "2205",
+      "target_codes": [
+        "2205-00-105"
+      ],
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "page_start": 95,
+      "page_end": 96,
+      "unit": "lakh",
+      "parser_hint": "Detailed revenue-expenditure spread covering the 2205 target family and nearby sub-major totals.",
+      "notes": [
+        "The 2205 section starts at PDF page 89.",
+        "Current extraction places the target family near the end of the section."
+      ],
+      "text": "                                                                                                               तृत     ेख\n                                                                                                                                  े सह\n\n\n                 गस       - 24             गस         -    गस          -                  ोग\n                                            30              51\n            द    त          िृत            द     त         द     त         द     त              िृत\n\nश            1,16,38,32                1       4,02,02         12,57,94      1,32,98,28                    1\n\n\n     सू           ''              ''             ''               ''              ''                  ''\n\n\nसक           1,16,38,32                1       4,02,02         12,57,94      1,32,98,28                    1\n\n\n\n\n          क क ट ण :-\nइस श ष के अ तगत क                औ स कृ त के उ थ                       स ि                     ेख कत क         ज त है\n ष 2021-2022 के आ -  कअ       15394.19  ख      ेक त    सशो ित अ          12549.69 ख  ेक    ि     त त क\nग है जो क 2844.50 ख     े क है ह क       त : स ेत सह त थ अ द   गै स ेत अ       णए   त े ट े स सह त थ\nअ द स ेत     ूज गत  स त ो के सृज हेत सह त थ अ द आ द द      ज े     े 10.00 ख अ िक क क    ई है   क के क ण\n      त हो ह है\nइस  क   ष 2021-2022 के सशो ित अ  12549.69    ख    ेक त आग             ष 2022-2023 13298.29 ख                                               ेक\n  ि    त त क ग है जो क 748.60 ख         े अ िक है ह ृ  त : स ेत क          सह त थ अ द   गै स ेत                                          स द\n   क ूट इजेश ए त स ि सच         सह त थ अ द स ेत आ द द     ज े     े 10.00 ख अ िक क ृ       ई है                                           ृ के\nक ण       त हो ह है\nके        सह त के अतगत                     ित             शि तस क               से             सकेत            आि    त है\n2\n\n\n\n\n      http://ifms.raj.nic.in                                                                                         (91)   श ष : 2205   स\n https://finance.rajasthan.gov.in\n\f                                                                   2210- च स तथ लो व\n                                                                     ( ेड ल ड      ल है थ)\n                                                                            स र ंश\n                                                                                                                                                                                (     े सह          )\n\n         लेखे                       -                           संशो ित                                             लेख श ष                                        -\n      2020-2021                     2021-2022                      2021-2022                                                                                       2022-2023\nर           ि      े          र           ि      े          र           ि      े                                                                 र          ि        े               ोग\n                  सह त                          सह त                          सह त                                                                                  सह त\n                                                                                          01-शहर             व            सेव ं- लो ैथ\n      49,84,74           ..         57,82,10           ..         56,73,02           ..        देश          र शस                             द         67,43,92            ..         67,43,92\n\n          3,28           ..            10,00           ..            30,00           ..                                                                   20,00            ..             20,00\n\n     1,71,97,84          ..        1,94,97,70          ..        1,89,57,00          ..        चर र                                ोज        द        2,01,84,47           ..        2,01,84,47\n\n             ..          ..                1           ..               24           ..                                                                       1            ..                  1\n\n    19,81,57,68          ..       23,12,15,87          ..       22,89,63,09          ..            त ल तथ             षि ल                   द       24,01,69,61           ..       24,01,69,61\n\n             ..          ..                1           ..                1           ..                                                                       1            ..                  1\n\n      87,36,52           ..        1,09,34,65          ..         99,51,63           ..   जल रषद / जल                              तर                 1,08,40,19           ..        1,08,40,19\n\n                                                                                          ंच त ो सह त\n     1,42,66,11          ..        1,79,52,50          ..        1,63,58,56          ..   ल   ंच त /  वत                                तर            1,79,62,28           ..        1,79,62,28\n\n                                                                                          ंच त ो सह त\n        9,81,33          ..         16,32,60           ..         16,74,91           ..      सू चत ज त                        े ल       वश             18,83,32            ..         18,83,32\n\n                                                                                          संघट    ोज\n     1,37,56,40          ..        1,84,56,43          ..        1,67,02,22          .. ज      जत               े             ोज                      1,88,34,86           ..        1,88,34,86\n\n         -27,92          ..                ..          ..                ..          ..   घट                 ि        द            ग                          ..           ..                  ..\n\n                                                                                          वसू ल ं\n    25,80,52,70          ..       30,54,71,85          ..       29,82,80,43          ..                                   - श ष -01 - ोग द           31,66,18,65           ..       31,66,18,65\n\n          3,28           ..            10,02           ..            30,25           ..                                                                   20,02            ..             20,02\n\n                                                                                          02-शहर             व            सेव ं-\n                                                                                           च स                      त ं\n     2,02,57,18          ..        2,64,57,64          4         2,31,67,35          4          वद                                           द        2,57,14,67           4         2,57,14,71\n\n             ..          ..             1,10           ..            20,10           ..                                                                    1,10            ..                1,10\n\n      24,87,50           ..         28,60,24           ..         28,27,40           .. हो         ो ैथ                                      द         31,34,82            ..         31,34,82\n\n             ..          ..             1,00           ..             1,00           ..                                                                    1,00            ..                1,00\n\n      18,46,39           ..         22,43,56           ..         22,31,58           ..    ू                                                           25,18,93            ..         25,18,93\n\n        6,67,52          ..           7,82,24          ..           7,16,45          ..                     त ं                                          9,85,92           ..           9,85,92\n\n      15,30,12           ..         24,39,67           ..         18,61,74           ..      सू चत ज त                        े ल       वश             20,52,37            ..         20,52,37\n\n                                                                                          संघट    ोज\n      42,09,88           ..         55,78,25           ..         45,71,14           .. ज      जत               े             ोज                       50,93,67            ..         50,93,67\n\n          -6,73          ..                ..          ..                ..          .. घट             े    ि        द         ग                              ..           ..                  ..\n\n                                                                                          वसू ल ं\n     3,09,91,86          ..        4,03,61,60          4         3,53,75,66          4                                    - श ष -02 - ोग द            3,95,00,38           4         3,95,00,42\n\n             ..          ..             2,10           ..            21,10           ..                                                                    2,10            ..                2,10\n\n                                                                                          03-              ण व                सेव ं- लो ैथ\n      26,39,35           ..         29,28,50           ..         29,35,38           ..        थ            व             े                            30,18,01            ..         30,18,01\n\n     8,94,44,61          ..       11,27,82,00          ..       11,06,73,96          .. स          द            व              े                     12,24,17,32           ..       12,24,17,32\n\n    10,47,39,83          ..       13,46,57,37          ..       12,04,01,37          ..   लॉ  ंच त /  वत                                तर           13,32,25,41           ..       13,32,25,41\n\n                                                                                          ंच त ो सह त\n      59,40,09           ..         89,67,20           ..         93,71,37           ..      सू चत ज त                        े ल       वश            1,12,71,01           ..        1,12,71,01\n\n                                                                                          संघट    ोज\n        4,44,75          ..           3,50,00          ..           3,50,00          .. ज      जत               े             ोज                         1,50,00           ..           1,50,00\n\n    20,32,08,63          ..       25,96,85,07          ..       24,37,32,08          ..                                   - श ष -03 - ोग             27,00,81,75           ..       27,00,81,75\n\n                                                                                          04-  ण व    सेव ं-\n                                                                                           च स    त ं\n     5,70,09,46          ..        7,12,31,10          ..        6,41,95,30          ..         वद                                                    7,04,40,06           ..        7,04,40,06\n\n      11,76,59           ..         13,69,43           ..         13,19,63           .. हो         ो ैथ                                                14,49,55            ..         14,49,55\n\n        8,55,91          ..         10,73,97           ..         11,54,07           ..    ू                                                           12,93,44            ..         12,93,44\n\n\n     http://ifms.raj.nic.in                                                                                (92)                                                        श ष : 2210        (      श)\nhttps://finance.rajasthan.gov.in\n\f"
+    },
+    {
+      "code_family": "4202",
+      "target_codes": [
+        "4202-04-105"
+      ],
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "page_start": 27,
+      "page_end": 32,
+      "unit": "lakh",
+      "parser_hint": "Early 4202 section with the stable sub-major 04 total anchor used for education capital outlay.",
+      "notes": [
+        "The 4202 section starts at PDF page 27.",
+        "Current extraction shows the sub-major 04 total in this window."
+      ],
+      "text": "                                                                                       व तृत लेख\n                                                                                                                                       (   ये सह म)\n\n\n               म ग सं य - 19             म ग सं य - 30          म ग सं य - 51                      योग\n\n\n             द मत          भृत          द मत        भृत        द मत         भृत         द मत             भृत\n\nश      य      6,25,01,36         ''      55,36,13         ''    17,17,22          ''     6,97,54,71            ''\n\n\n वस लय ं           ''            ''         ''            ''       ''             ''          ''               ''\n\n\nसकल     य     6,25,01,36         ''      55,36,13         ''    17,17,22          ''     6,97,54,71            ''\n\n\n\n\n           क रक ट ण -\nइस म य श ष म श स क भव                     के लोक         म ण क य ( ज गत)संबंि            य क लेख ंक                 कय ज त है\nवष 2021-2022 के आय- यक     म    43171.47 ल ख  ये की तल म संशो ित म    म 57193.77 ल ख   ये क वि                                                 त वत कय\nगय है जो क 14022.30 ल ख    ये  िक है यह वृ म यत वृहद म ण क य,जो िये आ द मद ( ज मे ये 10.00 ल ख य                                              िक की वृ\n ई है ) म वृ के क रण रल त हो रह है\nइस क र वष 2021-2022 के संशो ित      म 57193.77 ल ख    ये की तल                                           म आग म व य वष 2022-2023 म 69754.71 ल ख ये क\n  वि     त वत कय गय है जो क 12560.94 ल ख      ये  िक है यह वृ                                            म यत लघ म ण क य,वृहद म ण क य आ द मद ( ज मे       ये\n10.00 ल ख य   िक की वृ   ई है ) म वृ के क रण रल त हो रह है\nके    य सह यत के ंतगत                 व ित र श भ रत सरक र से               संकेत       र आि रत है\n2\n\n\n\n\n        http://ifms.raj.nic.in                                                                        (23)                         म य श ष 4059   (सम )\n      https://finance.rajasthan.gov.in\n\f                                              4070-               स     से             ज गत\n                                               ै ट          ट े                ड        े ट स सेज\n                                                                      स\n                                                                                                                                              े सह\n\n     ेखे                    -                      स ो ित                                 ेख                             -\n 2020-2021                  2021-2022                2021-2022                                                           2022-2023\n      ि      े                     ि    े                  ि      े                                               ि        े                 ोग\n            सह त                       सह त                      सह त                                                     सह त\n  5,07,56           ..       6,00,00          ..       7,45,62            ..       ण                         21,22,87            ..           21,22,87\n\n       ..           ..             1          ..      11,56,00            ..                                3,60,00,00           ..          3,60,00,00\n\n  5,07,56           ..       6,00,01          ..      19,01,62            ..              -    -4070 - ोग   3,81,22,87           ..          3,81,22,87\n\n  5,07,56           ..       6,00,01          ..      19,01,62            ..                      ृह   ोग   3,81,22,87           ..          3,81,22,87\n\n\n\n\n  http://ifms.raj.nic.in                                                           (24)                                               4070\nhttps://finance.rajasthan.gov.in\n\f                                               4070-              स   से                 ज गत\n                                                ै ट        ट े             ड              े ट स सेज\n                                                                      तृत ेख\n                                                                                                                                                            े सह\n\n     ेखे                     -                      स ो ित                                       ेख                                         -\n 2020-2021                   2021-2022                2021-2022                                                                             2022-2023\n      ि      े                     ि     े                  ि      े                                                                 ि        े              ोग\n            सह त                        सह त                      सह त                                                                       सह त\n                                                                                  गस     - 19\n                                                                                003-      ण\n                                                                                 01 -ह                     ज              ो\n                                                                                   स स                ज\n                                                                                 90          ण\n\n  4,95,48           ..        5,30,97          ..       6,59,84            .. 17- ृह          ण                                 21,22,87            ..       21,22,87\n\n                                                                                 91           हेत त तत\n                                                                                 2059-80-001- 02 - 04\n    7,43            ..         42,48           ..        52,78             .. 97-जो ि े                                                ..           ..              ..\n\n                                                                                 92                   स    हेत          त तत\n                                                                                       2059\n    1,86            ..         10,62           ..        13,20             .. 97-जो ि े                                                ..           ..              ..\n\n                                                                                 93 सि           सेत हेत    त तत\n                                                                                 3054\n    2,79            ..         15,93           ..        19,80             .. 97-जो ि े                                                ..           ..              ..\n\n  5,07,56           ..        6,00,00          ..       7,45,62            ..                                   ोग 01           21,22,87            ..       21,22,87\n\n  5,07,56           ..        6,00,00          ..       7,45,62            ..                    घ         - 003         ोग     21,22,87            ..       21,22,87\n\n                                                                                  गस     - 5\n                                                                                800-\n                                                                                 01 - ग                             े\n\n                                                                                 01 हे       ोट /                   स     ि\n\n       ..           ..             1           ..      11,56,00            .. 59-        ग                  ख                  3,60,00,00           ..      3,60,00,00\n\n       ..           ..             1           ..      11,56,00            ..                    घ         - 800         ोग    3,60,00,00           ..      3,60,00,00\n\n  5,07,56           ..        6,00,01          ..      19,01,62            ..                    -        -4070 - ोग           3,81,22,87           ..      3,81,22,87\n\n  5,07,56           ..        6,00,01          ..      19,01,62            ..                                  ृह       ोग     3,81,22,87           ..      3,81,22,87\n\n\n\n\n  http://ifms.raj.nic.in                                                              (25)                                                           4070\nhttps://finance.rajasthan.gov.in\n\f                                                                                                                        तृत   ेख\n                                                                                                                                                                                         े सह\n\n\n                     गस      -5                           गस       - 19                          ोग\n\n\n                    त             ृत                      त               ृत            त             ृत\n\n                3,60,00,00             ''               21,22,87               ''   3,81,22,87             ''\n\n\n    स                ''                ''                  ''                  ''         ''               ''\n\n\nस               3,60,00,00             ''               21,22,87               ''   3,81,22,87             ''\n\n\n\n\n                          ट ण -\n स              ह                           ो               स स                       ग                             े         से स     ित          ेख     त      ज त है\n   2021-2022 े                   -                            600.01   ख     े त                                         स ो ित                  1901.62 ख           े       ि           त      त      ग\nहै जो   1301.61               ख                     े     ि है ह ृ        त ृह                                  ण                  ग                ख   जो ि े                   ज   े          े 10.00 ख\n      ि     ृ                 है                ृ         े  ण       त हो ह है\n स                  2021-2022 े स ो ित       1901.62     ख   े                                                          त        ग                       2022-2023       38122.87         ख          े\n        ि        त त       ग है जो    36221.25 ख       े   ि है                                                          ह ृ        त       ृह          ण        ग                   ख\nज           े   े 10.00 ख       ि      ृ    है    ृ  े     ण                                                              त हो ह है\n2\n\n\n\n\n          http://ifms.raj.nic.in                                                                                              (26)                                                   4070        स\n        https://finance.rajasthan.gov.in\n\f                                           4202- श , ख कद, क               तथ सं क त                         ंज गत\n                                           (क ट    उट ऑ ए                  कश , ोटस,                         टए डक च )\n                                                                          स ंश\n                                                                                                                                                            (      सह           )\n\n     ख                       -   क                     संशो ित                                           ख शष                               -   क\n 2020-2021                   2021-2022                    2021-2022                                                                         2022-2023\n       ि     क                     ि     क                    ि      क                                                               ि       क                   ोग\n             सह त                        सह त                        सह त                                                                    सह त\n                                                                                   01-स              श\n1,55,85,94    1,25,47,27    1,25,92,03    1,88,88,00      3,93,91       5,90,85                क श                              59,56,03        89,34,00         1,48,90,03\n\n4,51,22,86    1,53,83,50    4,72,63,83    2,52,00,01    3,55,80,04    2,60,00,01               क श                             5,81,46,53      2,52,00,01        8,33,46,54\n\n 52,24,88       4,85,75      67,72,82      21,34,20      95,83,63      17,75,40    व       व          तथ उ         श           3,60,09,56       11,38,80         3,71,48,36\n\n  1,48,93             ..       1,50,02            ..      3,00,02             ..       ष वक स                                     3,00,02              ..           3,00,02\n\n 98,85,91      81,57,38      98,57,83     1,12,24,21     62,37,36      68,91,51       स चत ज त               क     ए वश        1,11,65,46       85,72,21         1,97,37,67\n\n                                                                                   संघटक ोज\n 79,00,07      59,74,84      76,90,22      86,02,81      52,49,17      52,58,25 ज      जत                उ    ोज               1,23,66,65       65,63,21         1,89,29,86\n\n        ..            ..            ..            ..            1             ..                                                       1               ..                  1\n\n8,38,68,59    4,25,48,74    8,43,26,75    6,60,49,23    5,73,44,14    4,05,16,02                उ            - श ष -01 - ोग   12,39,44,26      5,04,08,23       17,43,52,49\n\n                                                                                   02-तक क श\n  7,46,00       2,66,52        1,48,80      1,35,63       9,94,76       1,39,78        श        (        टक क)                  13,81,46         8,48,73          22,30,19\n\n        ..            ..            2             ..      2,38,03             .. इंज           र ंग / तक क क ज तथ                 1,52,46              ..           1,52,46\n\n                                                                                   सं थ\n    91,46       1,09,42        2,79,03        26,26       2,20,02         26,26       स चत ज त               क     ए वश           5,50,02        1,64,28            7,14,30\n\n                                                                                   संघटक ोज\n        ..            ..        44,19         13,14         89,18         13,14 ज      जत                उ    ोज                  6,68,00          82,14            7,50,14\n\n  8,37,46       3,75,94        4,72,04      1,75,03      15,41,99       1,79,18                 उ            - श ष -02 - ोग     27,51,94        10,95,15          38,47,09\n\n                                                                                   03-ख कद तथ                व सव\n  1,40,77             ..     76,62,51             ..     30,75,00             .. ख     कद ट ड                                   59,27,63               ..         59,27,63\n\n        ..            ..     45,82,51             ..      7,99,70             ..      स चत ज त               क     ए वश           7,94,01              ..           7,94,01\n\n                                                                                   संघटक ोज\n    30,00             ..     30,55,01             ..      6,67,02             .. ज     जत                उ    ोज                  6,17,02              ..           6,17,02\n\n        ..            ..            ..            ..        87,81             ..                                                   50,00               ..             50,00\n\n  1,70,77             ..    1,53,00,03            ..     46,29,53             ..                उ            - श ष -03 - ोग     73,88,66               ..         73,88,66\n\n                                                                                   04-क        तथ सं क त\n        ..            ..            ..            1             ..            ..        तक           श                                 ..              ..                  ..\n\n        ..            ..       1,20,01            ..        87,30             ..           खग                                      67,01               ..             67,01\n\n        ..            ..            1             ..            1             .. स वज          क     तक                                1               ..                  1\n\n    44,92             ..       1,40,01            1       1,15,02             1 सं     ह                                          2,40,02              1            2,40,03\n\n        ..            ..            1             ..        70,01             ..      स चत ज त               क     ए वश             5,01               ..                5,01\n\n                                                                                   संघटक ोज\n        ..            ..            1             ..      1,20,01             .. ज     जत                उ    ोज                   50,01               ..             50,01\n\n  2,02,84             ..       1,97,80            ..     23,96,37             ..                                                22,34,51               ..         22,34,51\n\n  2,47,76             ..       4,57,85            2      27,88,72             1                 उ            - श ष -04 - ोग     25,96,57               1          25,96,58\n\n8,51,24,58    4,29,24,68   10,05,56,67    6,62,24,28    6,63,04,38    4,06,95,21                         - श ष-4202 - ोग      13,66,81,43      5,15,03,39       18,81,84,82\n\n8,51,24,58    4,29,24,68   10,05,56,67    6,62,24,28    6,63,04,38    4,06,95,21                                    वहद ोग    13,66,81,43      5,15,03,39       18,81,84,82\n\n\n\n\n  http://ifms.raj.nic.in                                                                       (27)                                               श ष : 4202         (      श)\nhttps://finance.rajasthan.gov.in\n\f                                           4202- श , ख कद, क तथ सं क त                          ंज गत\n                                           (क ट    उट ऑ ए कश , ोटस,                             टए डक च )\n                                                            व तत ख\n                                                                                                                                                       (   सह       )\n\n     ख                       -   क                      संशो ित                                 ख शष                                    -   क\n 2020-2021                   2021-2022                     2021-2022                                                                    2022-2023\n       ि     क                      ि     क                   ि     क                                                            ि       क                  ोग\n             सह त                         सह त                      सह त                                                                 सह त\n                                                                                   ग सं    - 19\n                                                                                 01-स        श\n                                                                                 201-          क श\n\n                                                                                  (01)- व\n\n                                                                                  [90]         णक\n\n        ..            ..             1             ..          1            .. 17-वहद           णक                                 1              ..               1\n\n                                                                                    ग सं       - 24\n                                                                                  (13)-स         श\n                                                                                  [01]         णक\n\n1,53,95,94    1,23,37,27   1,23,20,00      1,84,80,00     1,61,33      2,42,00 17-वहद           णक                           56,00,00       84,00,00       1,40,00,00\n\n                                                                                  [02]         णक\n\n  1,90,00       2,10,00       2,72,00        4,08,00           1            1 17-वहद            णक                             84,00         1,26,00         2,10,00\n\n                                                                                  [03] ट              ोज         ंज गत\n\n        ..            ..             ..            ..     2,32,56      3,48,84 17-वहद           णक                            2,72,00        4,08,00         6,80,00\n\n1,55,85,94    1,25,47,27   1,25,92,00      1,88,88,00     3,93,90      5,90,85                                 ोग (13)       59,56,00       89,34,00       1,48,90,00\n\n                                                                                  (14)- श ण सं थ           क    थ\n\n                                                                                  [01]          क एवं उ         थ क\n                                                                                   व                णक\n        ..            ..             1             ..          ..           .. 17-वहद           णक                                 1              ..               1\n\n        ..            ..             1             ..          ..           .. 18- श           औ सजस                /              1              ..               1\n                                                                                 औज       एवं सं ं\n        ..            ..             2             ..          ..           ..                                  ोग [01]            2              ..               2\n\n        ..            ..             2             ..          ..           ..                                 ोग (14)             2              ..               2\n\n1,55,85,94    1,25,47,27   1,25,92,03      1,88,88,00     3,93,91      5,90,85                   घ श ष - 201            ोग   59,56,03       89,34,00       1,48,90,03\n\n                                                                                   ग सं    - 19\n                                                                                 202-        क श\n                                                                                  (01)- व\n\n                                                                                  [90]         णक\n\n    34,81             ..      4,52,04              ..     2,65,49           .. 17-वहद           णक                           20,00,00             ..        20,00,00\n\n        ..            ..             ..            ..          ..           .. 18- श           औ सजस                /        68,21,50             ..        68,21,50\n                                                                                 औज       एवं सं ं\n    34,81             ..      4,52,04              ..     2,65,49           ..                                  ोग [90]      88,21,50             ..        88,21,50\n\n                                                                                  [91] थ        हत तशतत\n                                                                                  (2059-80-001-(02)-[05])\n     2,92             ..       36,16               ..      21,24            .. 97-जो ि                                             ..             ..               ..\n\n                                                                                  [92] औ    एवं सं ं हत             तशतत\n                                                                                      (2059)\n       73             ..           9,04            ..       5,31            .. 97-जो ि                                             ..             ..               ..\n\n                                                                                  [93] सिक व सत हत             तशतत\n                                                                                  (3054)\n     1,09             ..       13,56               ..       7,96            .. 97-जो ि                                             ..             ..               ..\n\n\n\n  http://ifms.raj.nic.in                                                                (28)                                                श ष : 4202       (    श)\nhttps://finance.rajasthan.gov.in\n\f"
+    },
+    {
+      "code_family": "6202",
+      "target_codes": [
+        "6202"
+      ],
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3b _ Public Debt, Loan, Public Account Volume.pdf",
+      "page_start": 81,
+      "page_end": 84,
+      "unit": "lakh",
+      "parser_hint": "Loans-division summary and detailed 6202 pages; stable for major-head extraction.",
+      "notes": [
+        "The loans division summary points to detailed 6202 pages at 81-84.",
+        "Minor-head mapping is not yet verified."
+      ],
+      "text": "                                                             6202- श , खे कू , क      स कृ के ए क\n                                                              ( ो स फॉ   ो स, ए ूकेश , आट ए ड क च )\n                   ेखे 2020-2021                                          आ -        क   ुम        -2021-2022              सशो ि         ुम    -2021-2022\n\n\n                                            व   ण                                                        व    ण                                   व   ण\n              भक                   ँ                ि                      भक                  ँ                  ि                ँ                      ि\n             कम                                                           कम\n\n\n\n\n                    ..                 ..       3,60,00            (डी)    3,60,00                 ..                 1                   ..          3,60,00\n\n\n\n\n   (डी)          95,36                 ..               ..         (डी)     95,36                  ..                 ..                  ..                  ..\n\n\n\n\n   (डी)        8,99,73       4,00,00                    ..         (डी)    4,99,73       4,00,00                      ..           4,00,00                    ..\n\n   (डी)        2,40,00         80,00                    ..         (डी)    1,60,00            80,00                   ..               80,00                  ..\n\n   (डी)       11,39,73       4,80,00                    ..         (डी)    6,59,73       4,80,00                      ..           4,80,00                    ..\n\n   (डी)       12,35,09       4,80,00                    ..         (डी)    7,55,09       4,80,00                      ..           4,80,00                    ..\n\n   (डी)       12,35,09       4,80,00            3,60,00            (डी)   11,15,09       4,80,00                      1            4,80,00            3,60,00\n\n\n\n\n http://ifms.raj.nic.in\nhttps://finance.rajasthan.gov.in                                                                         77\n\f                                                                                                                                                                    सह           म\n                                                                        6202- श , खे कू , क      स कृ के ए क\n                                                                         ( ो स फॉ   ो स, ए ूकेश , आट ए ड क च )\n                                                                                                         आ -   क   ुम   -\n                                                                                                           2022-2023\n                                                                                                                            व   ण\n                                                          ेखे के शीष                भक          ँ                           ि                                            सव ण कम\n                                                                                   कम                                                                                   31-03-2023\n                                   म ँग स      - 24\n\n                                   01-स म       श\n\n\n\n                                                                       (डी)         7,20,00         ..                      3,60,00                              (डी)        10,80,00\n\n\n\n\n                                                                       (डी)          95,36          ..                           ..                              (डी)          95,36\n\n\n\n\n                                                                       (डी)          99,73     99,73                             ..                                                ..\n\n                                                                       (डी)          80,00     80,00                             ..                                                ..\n\n                                    ोग -(02)                           (डी)         1,79,73   1,79,73                            ..                                                ..\n\n                                    घु शीष 203 - ोग                    (डी)         2,75,09   1,79,73                            ..                              (डी)          95,36\n\n                                   उ मु     शीष-01 - ोग                (डी)         9,95,09   1,79,73                       3,60,00                              (डी)        11,75,36\n\n\n\n\n                                                                                                                                      मु   शीष : 6202   ( मश )\n\n http://ifms.raj.nic.in\nhttps://finance.rajasthan.gov.in                                              78\n\f                                                             6202- श , खे कू , क      स कृ के ए क\n                                                              ( ो स फॉ   ो स, ए ूकेश , आट ए ड क च )\n                   ेखे 2020-2021                                          आ -        क   ुम       -2021-2022              सशो ि       ुम    -2021-2022\n\n\n                                            व   ण                                                       व    ण                                 व   ण\n              भक                   ँ                ि                      भक                 ँ                  ि                ँ                    ि\n             कम                                                           कम\n\n\n\n\n   (डी)           3,98                 ..               ..         (डी)      3,98                 ..                 ..                ..                  ..\n\n   (डी)       12,39,07       4,80,00            3,60,00            (डी)   11,19,07       4,80,00                     1            4,80,00          3,60,00\n\n\n\n\n http://ifms.raj.nic.in\nhttps://finance.rajasthan.gov.in                                                                        79\n\f                                                                                                                                                         सह           म\n                                                                         6202- श , खे कू , क      स कृ के ए क\n                                                                          ( ो स फॉ   ो स, ए ूकेश , आट ए ड क च )\n                                                                                                          आ -   क   ुम   -\n                                                                                                            2022-2023\n                                                                                                                             व   ण\n                                            ेखे के शीष                          भक               ँ                           ि                             सव ण कम\n                                                                               कम                                                                         31-03-2023\n\n\n                       02- क ीक श\n\n\n\n                                                                        (डी)      3,98               ..                           ..               (डी)               3,98\n\n                       मु   शीष-6202 - ोग                               (डी)    9,99,07        1,79,73                       3,60,00               (डी)          11,79,34\n\n\n\n                                              म ँग       सक\n                                              24              3,60,00\n                                                ोग            3,60,00\n\n\n\n\n                                                                                                                                       मु   शीष : 6202        (सम )\n\n http://ifms.raj.nic.in\nhttps://finance.rajasthan.gov.in                                                          80\n\f"
+    }
+  ]
+}

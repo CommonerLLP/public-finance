@@ -1,0 +1,101 @@
+# Rajasthan state budget manifest/profile diff
+
+- 2022-23: 35 PDFs, 35 profiles
+- 2023-24: 37 PDFs, 35 profiles
+- 2025-26: 37 PDFs, 37 profiles
+
+## 2022-23 -> 2023-24
+- Manifest docs added: 12
+- Manifest docs removed: 10
+  - + Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf
+  - + Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf
+  - + Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf
+  - + Budget Speech 2023-2024 (10.02.2023).pdf
+  - + Budget Study 2023-2024.pdf
+  - + Budget at a Glance 2023-2024.pdf
+  - + Economic Review 2023-2024 - English.pdf
+  - + Economic Review 2023-2024 - Hindi.pdf
+  - + Finance Act, 2023.pdf
+  - + Volume 4c _ Details of PWD Works Part I-1.pdf
+  - + Volume 4c _ Details of PWD Works Part I-2.pdf
+  - + Volume 4c _ Details of PWD Works Part II-8.pdf
+  - - Announcement made by Honourable Chief Minister on Appropriation Bill Reply (21.03.2022).pdf
+  - - Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2022-2023 (03.03.2022).pdf
+  - - Budget 2022-2023 Speeches of Chief Minister (English Version).pdf
+  - - Budget Speech 2022-2023 (23.02.2022).pdf
+  - - Budget Study 2022-2023.pdf
+  - - Budget at a Glance 2022-2023.pdf
+  - - Economic Review 2021-22 - English.pdf
+  - - Economic Review 2021-22 - Hindi.pdf
+  - - Finance Act, 2022.pdf
+  - - Volume 4c _ Details of PWD Works Part I.pdf
+- Profile type changes:
+  - ~reply_general_debate: Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2022-2023 (03.03.2022).pdf -> Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf
+  - ~economic_review_english: Economic Review 2022-2023 - English.pdf -> Economic Review 2023-2024 - English.pdf
+  - ~economic_review_hindi: Economic Review 2022-2023 - Hindi.pdf -> Economic Review 2023-2024 - Hindi.pdf
+  - ~pwd_works_part_ii_8: Volume 4c _ Details of PWD Works Part II-1.pdf -> Volume 4c _ Details of PWD Works Part II-8.pdf
+  - ~budget_speech: Budget 2022-2023 Speeches of Chief Minister (English Version).pdf -> Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf
+  - ~budget_study: Budget Study 2022-2023.pdf -> Budget Study 2023-2024.pdf
+  - ~appropriation_reply: Announcement made by Honourable Chief Minister on Appropriation Bill Reply (21.03.2022).pdf -> Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf
+  - ~pwd_works_part_i_2: Volume 4c _ Details of PWD Works Part II-2.pdf -> Volume 4c _ Details of PWD Works Part I-2.pdf
+  - ~pwd_works_part_i_1: Volume 4c _ Details of PWD Works Part II-1.pdf -> Volume 4c _ Details of PWD Works Part I-1.pdf
+  - ~budget_at_a_glance: Budget at a Glance 2022-2023.pdf -> Budget at a Glance 2023-2024.pdf
+  - ~finance_act: Finance Act, 2022.pdf -> Finance Act, 2023.pdf
+- Support diff be_re: +0, -0
+- Support diff codes: +0, -0
+- Support diff scheme_info: +0, -0
+- Manifest-only in 2022-23: 4
+  - 2022-23 only: Budget Speech 2022-2023 (23.02.2022).pdf
+  - 2022-23 only: Economic Review 2021-22 - English.pdf
+  - 2022-23 only: Economic Review 2021-22 - Hindi.pdf
+  - 2022-23 only: Volume 4c _ Details of PWD Works Part I.pdf
+- Manifest-only in 2023-24: 3
+  - 2023-24 only: Budget Speech 2023-2024 (10.02.2023).pdf
+  - 2023-24 only: Economic Review 2022-2023 - English.pdf
+  - 2023-24 only: Economic Review 2022-2023 - Hindi.pdf
+
+## 2023-24 -> 2025-26
+- Manifest docs added: 11
+- Manifest docs removed: 11
+  - + Announcements made by Hon'ble Deputy Chief Minister (Finance) on reply to General Debate on Budget 2025-2026 (27.02.2025).pdf
+  - + Announcements made by Hon’ble Chief Minister on Appropriation Bill Reply (12.03.2025).pdf
+  - + Budget Speech 2025-2026 (19.02.2025).pdf
+  - + Budget Study 2025-2026.pdf
+  - + Budget at a Glance 2025-2026.pdf
+  - + Economic Review 2024-2025 - English.pdf
+  - + Economic Review 2024-2025 - Hindi.pdf
+  - + Finance Act, 2025.pdf
+  - + Output-Outcome Budget 2025-26.pdf
+  - + Rajasthan Value Added Tax Act, 2025.pdf
+  - + Volume 4e _ Green Budget.pdf
+  - - Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf
+  - - Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf
+  - - Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf
+  - - Budget Speech 2023-2024 (10.02.2023).pdf
+  - - Budget Study 2023-2024.pdf
+  - - Budget at a Glance 2023-2024.pdf
+  - - Economic Review 2022-2023 - English.pdf
+  - - Economic Review 2022-2023 - Hindi.pdf
+  - - Economic Review 2023-2024 - English.pdf
+  - - Economic Review 2023-2024 - Hindi.pdf
+  - - Finance Act, 2023.pdf
+- Profile type changes:
+  - +type: output_outcome_budget
+  - +type: vat_act
+  - ~reply_general_debate: Announcements made by Honourable Chief Minister on reply to General Debate on Budget 2023-2024 (16.02.2023).pdf -> Announcements made by Hon'ble Deputy Chief Minister (Finance) on reply to General Debate on Budget 2025-2026 (27.02.2025).pdf
+  - ~economic_review_english: Economic Review 2023-2024 - English.pdf -> Economic Review 2024-2025 - English.pdf
+  - ~economic_review_hindi: Economic Review 2023-2024 - Hindi.pdf -> Economic Review 2024-2025 - Hindi.pdf
+  - ~budget_speech: Budget 2023-2024 Speech of Honourable Chief Minister (English Version).pdf -> Budget Speech 2025-2026 (19.02.2025).pdf
+  - ~budget_study: Budget Study 2023-2024.pdf -> Budget Study 2025-2026.pdf
+  - ~appropriation_reply: Announcement made by Honourable Chief Minister on Appropriation Bill Reply (17.03.2023).pdf -> Announcements made by Hon’ble Chief Minister on Appropriation Bill Reply (12.03.2025).pdf
+  - ~budget_at_a_glance: Budget at a Glance 2023-2024.pdf -> Budget at a Glance 2025-2026.pdf
+  - ~green_budget: Volume 4d _ Agriculture Budget.pdf -> Volume 4e _ Green Budget.pdf
+  - ~finance_act: Finance Act, 2023.pdf -> Finance Act, 2025.pdf
+- Support diff be_re: +0, -0
+- Support diff codes: +0, -0
+- Support diff scheme_info: +1, -0
+- Manifest-only in 2023-24: 3
+  - 2023-24 only: Budget Speech 2023-2024 (10.02.2023).pdf
+  - 2023-24 only: Economic Review 2022-2023 - English.pdf
+  - 2023-24 only: Economic Review 2022-2023 - Hindi.pdf
+- Manifest-only in 2025-26: 0

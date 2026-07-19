@@ -1,0 +1,71 @@
+{
+  "state": "Rajasthan",
+  "fy": "2020-21",
+  "targets": {
+    "2202-00-105": {
+      "status": "not_found"
+    },
+    "2205-00-105": {
+      "status": "surya_ocr_summary",
+      "code_detected": "2205-00-105",
+      "selected_amount_thousand_rupees": 136910.0,
+      "amount_candidates_thousand_rupees": [
+        113924.0,
+        124159.0,
+        1.0,
+        124590.0,
+        136910.0,
+        136910.0
+      ],
+      "raw_line": "11,39,24\t..\t12,41,59\t1\t12,45,90\t..\tसार्वजनिक पुस्तकालय\t13,69,10\t..\t13,69,10",
+      "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2020-21/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+      "source_engine": "surya_ocr",
+      "document_type": "budget_statement_revenue_social_services",
+      "window_pages": [
+        80,
+        125
+      ]
+    },
+    "4202-04-105": {
+      "status": "surya_ocr_summary",
+      "code_detected": "4202-04-105",
+      "selected_amount_thousand_rupees": 1.0,
+      "amount_candidates_thousand_rupees": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_line": "..\t..\t1\t..\t1\t..\tलघु शीर्ष - 105 योग\t1\t..\t1",
+      "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2020-21/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+      "source_engine": "surya_ocr",
+      "document_type": "budget_statement_capital_expenditure",
+      "window_pages": [
+        27,
+        32
+      ]
+    }
+  },
+  "windows": [
+    {
+      "document_type": "budget_statement_revenue_social_services",
+      "document_family": "budget_book",
+      "source_relpath": "data/state_budgets/Rajasthan/2020-21/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "page_start": 80,
+      "page_end": 125,
+      "code_family": "2205",
+      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2020-21/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "text_length": 300834
+    },
+    {
+      "document_type": "budget_statement_capital_expenditure",
+      "document_family": "budget_book",
+      "source_relpath": "data/state_budgets/Rajasthan/2020-21/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "page_start": 27,
+      "page_end": 32,
+      "code_family": "4202",
+      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2020-21/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "text_length": 23657
+    }
+  ]
+}

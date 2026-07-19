@@ -1,0 +1,58 @@
+{
+  "state": "Rajasthan",
+  "fy": "2018-19",
+  "targets": {
+    "2202-00-105": {
+      "status": "not_found"
+    },
+    "2205-00-105": {
+      "status": "surya_ocr_summary",
+      "code_detected": "2205-00-105",
+      "selected_amount_thousand_rupees": 126554.0,
+      "amount_candidates_thousand_rupees": [
+        92846.0,
+        152.0,
+        109353.0,
+        1.0,
+        102346.0,
+        1.0,
+        126553.0,
+        1.0,
+        126554.0
+      ],
+      "raw_line": "9,28,46\t1,52\t10,93,53\t1\t10,23,46\t1\tसार्वजनिक पुस्तकालय\tद\t12,65,53\t1\t12,65,54",
+      "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2018-19/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services Part I/results.json",
+      "source_engine": "surya_ocr",
+      "document_type": "budget_statement_revenue_social_services",
+      "window_pages": [
+        80,
+        125
+      ]
+    },
+    "4202-04-105": {
+      "status": "not_found"
+    }
+  },
+  "windows": [
+    {
+      "document_type": "budget_statement_revenue_social_services",
+      "document_family": "budget_book",
+      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2018-19/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+      "page_start": 80,
+      "page_end": 125,
+      "code_family": "2205",
+      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2018-19/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+      "text_length": 190543
+    },
+    {
+      "document_type": "budget_statement_capital_expenditure",
+      "document_family": "budget_book",
+      "source_relpath": "data/state_budgets/Rajasthan/2018-19/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "page_start": 27,
+      "page_end": 32,
+      "code_family": "4202",
+      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2018-19/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "text_length": 22680
+    }
+  ]
+}

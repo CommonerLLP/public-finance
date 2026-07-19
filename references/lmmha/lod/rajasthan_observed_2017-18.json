@@ -1,0 +1,37 @@
+{
+  "state": "Rajasthan",
+  "fy": "2017-18",
+  "targets": {
+    "2202-00-105": {
+      "status": "not_found"
+    },
+    "2205-00-105": {
+      "status": "not_found"
+    },
+    "4202-04-105": {
+      "status": "not_found"
+    }
+  },
+  "windows": [
+    {
+      "document_type": "budget_statement_revenue_social_services",
+      "document_family": "budget_book",
+      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2017-18/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+      "page_start": 80,
+      "page_end": 125,
+      "code_family": "2205",
+      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2017-18/State Budget/Volume 2c _ Revenue Expenditure-Social Services Part I.pdf",
+      "text_length": 213900
+    },
+    {
+      "document_type": "budget_statement_capital_expenditure",
+      "document_family": "budget_book",
+      "source_relpath": "data/state_budgets/Rajasthan/2017-18/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "page_start": 27,
+      "page_end": 32,
+      "code_family": "4202",
+      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2017-18/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "text_length": 26063
+    }
+  ]
+}
