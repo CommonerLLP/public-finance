@@ -18,6 +18,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import openpyxl
+from publicfinance.observed_state_profiles import materialize_parser_memory, profile_for
 
 REPO = Path(__file__).resolve().parents[1]
 SRC = REPO / "data" / "civicdatalab" / "assam"
@@ -35,6 +36,7 @@ FILES = {
     "2021-22": "assam_expenditure_21-22.xlsx",
     "2022-23": "assam_expenditure_22-23.xlsx",
 }
+PARSER_MEMORY_TARGETS = [("Rajasthan", "2025-26")]
 
 
 def code_of(mh, smh, mn):
@@ -45,6 +47,15 @@ def code_of(mh, smh, mn):
 
 
 def main():
+    parser_memory = []
+    for state, fy in PARSER_MEMORY_TARGETS:
+        try:
+            memory_path = materialize_parser_memory(profile_for(state, fy))
+        except Exception as exc:
+            print(f"  skip parser memory for {state} {fy} ({exc})")
+            continue
+        parser_memory.append(str(memory_path.relative_to(REPO)))
+
     # observed[code][fy] = summed BE
     observed = defaultdict(lambda: defaultdict(float))
     grand = defaultdict(float)
@@ -87,6 +98,7 @@ def main():
             "source": "CivicDataLab / openbudgetsindia — Assam state expenditure (BE), 2018-19 to 2022-23",
             "unit": "INR lakh, Budget Estimate (BE), aggregated to minor-head level",
             "states": ["Assam"],
+            "parser_memory": parser_memory,
             "caveat": "Single-source; illustrative only until cross-checked against RBI State Finances "
                       "or the Assam budget volumes and logged in memory/verified_facts.md.",
             "codes": len(out),

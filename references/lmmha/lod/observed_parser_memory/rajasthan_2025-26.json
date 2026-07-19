@@ -1,0 +1,271 @@
+{
+  "state": "Rajasthan",
+  "financial_year": "2025-26",
+  "document_directory": "data/state_budgets/Rajasthan/2025-26/State Budget",
+  "pdf_count": 37,
+  "documents": [
+    {
+      "name": "Announcements made by Hon'ble Deputy Chief Minister (Finance) on reply to General Debate on Budget 2025-2026 (27.02.2025).pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Announcements made by Hon'ble Deputy Chief Minister (Finance) on reply to General Debate on Budget 2025-2026 (27.02.2025).pdf",
+      "size_bytes": 723321
+    },
+    {
+      "name": "Announcements made by Hon\u2019ble Chief Minister on Appropriation Bill Reply (12.03.2025).pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Announcements made by Hon\u2019ble Chief Minister on Appropriation Bill Reply (12.03.2025).pdf",
+      "size_bytes": 966827
+    },
+    {
+      "name": "Budget Notification.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Budget Notification.pdf",
+      "size_bytes": 1235903
+    },
+    {
+      "name": "Budget Speech 2025-2026 (19.02.2025).pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Budget Speech 2025-2026 (19.02.2025).pdf",
+      "size_bytes": 2993363
+    },
+    {
+      "name": "Budget Study 2025-2026.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Budget Study 2025-2026.pdf",
+      "size_bytes": 4185553
+    },
+    {
+      "name": "Budget at a Glance 2025-2026.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Budget at a Glance 2025-2026.pdf",
+      "size_bytes": 9056998
+    },
+    {
+      "name": "Budget related Analytical Statement.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Budget related Analytical Statement.pdf",
+      "size_bytes": 4043735
+    },
+    {
+      "name": "Economic Review 2024-2025 - English.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Economic Review 2024-2025 - English.pdf",
+      "size_bytes": 13636987
+    },
+    {
+      "name": "Economic Review 2024-2025 - Hindi.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Economic Review 2024-2025 - Hindi.pdf",
+      "size_bytes": 35491069
+    },
+    {
+      "name": "FRBM Document.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/FRBM Document.pdf",
+      "size_bytes": 876566
+    },
+    {
+      "name": "Finance Act, 2025.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Finance Act, 2025.pdf",
+      "size_bytes": 2243336
+    },
+    {
+      "name": "Finance Bill.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Finance Bill.pdf",
+      "size_bytes": 2881261
+    },
+    {
+      "name": "Output-Outcome Budget 2025-26.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Output-Outcome Budget 2025-26.pdf",
+      "size_bytes": 3687896
+    },
+    {
+      "name": "Press Note - English.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Press Note - English.pdf",
+      "size_bytes": 821996
+    },
+    {
+      "name": "Press Note - Hindi.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Press Note - Hindi.pdf",
+      "size_bytes": 492755
+    },
+    {
+      "name": "Rajasthan Value Added Tax Act, 2025.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Rajasthan Value Added Tax Act, 2025.pdf",
+      "size_bytes": 1441148
+    },
+    {
+      "name": "Volume 1 _ Summary Volume.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 1 _ Summary Volume.pdf",
+      "size_bytes": 3113977
+    },
+    {
+      "name": "Volume 2a _ Revenue Receipts Volume.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2a _ Revenue Receipts Volume.pdf",
+      "size_bytes": 2613118
+    },
+    {
+      "name": "Volume 2b _ Revenue Expenditure-General Services.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2b _ Revenue Expenditure-General Services.pdf",
+      "size_bytes": 7139485
+    },
+    {
+      "name": "Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "size_bytes": 8002549
+    },
+    {
+      "name": "Volume 2d _ Revenue Expenditure-Economic Services.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2d _ Revenue Expenditure-Economic Services.pdf",
+      "size_bytes": 9783810
+    },
+    {
+      "name": "Volume 3a _ Capital Expenditure.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "size_bytes": 10368755
+    },
+    {
+      "name": "Volume 3b _ Public Debt, Loan, Public Account Volume.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 3b _ Public Debt, Loan, Public Account Volume.pdf",
+      "size_bytes": 4961475
+    },
+    {
+      "name": "Volume 4a _ Post Volume.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4a _ Post Volume.pdf",
+      "size_bytes": 6750144
+    },
+    {
+      "name": "Volume 4b _ Grant_Loan_Investment.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4b _ Grant_Loan_Investment.pdf",
+      "size_bytes": 11772714
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part I-1.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part I-1.pdf",
+      "size_bytes": 3975353
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part I-2.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part I-2.pdf",
+      "size_bytes": 5207691
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-1.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
+      "size_bytes": 4891831
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-2.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-2.pdf",
+      "size_bytes": 4589814
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-3.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-3.pdf",
+      "size_bytes": 4789563
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-4.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-4.pdf",
+      "size_bytes": 4678967
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-5.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-5.pdf",
+      "size_bytes": 4683600
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-6.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-6.pdf",
+      "size_bytes": 4738696
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-7.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-7.pdf",
+      "size_bytes": 4843117
+    },
+    {
+      "name": "Volume 4c _ Details of PWD Works Part II-8.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4c _ Details of PWD Works Part II-8.pdf",
+      "size_bytes": 3192809
+    },
+    {
+      "name": "Volume 4d _ Agriculture Budget.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4d _ Agriculture Budget.pdf",
+      "size_bytes": 3725390
+    },
+    {
+      "name": "Volume 4e _ Green Budget.pdf",
+      "path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 4e _ Green Budget.pdf",
+      "size_bytes": 2717636
+    }
+  ],
+  "profile_status": {
+    "state": "Rajasthan",
+    "fy": "2025-26",
+    "document_count": 37,
+    "has_profiles": true,
+    "supports_be_re": [
+      "agriculture_budget",
+      "budget_at_a_glance",
+      "budget_related_analytical_statement",
+      "budget_statement_capital_expenditure",
+      "budget_statement_public_debt_loans_public_account",
+      "budget_statement_revenue_social_services",
+      "budget_study",
+      "frbm_document",
+      "grant_loan_investment",
+      "green_budget",
+      "post_volume",
+      "revenue_expenditure_economic",
+      "revenue_expenditure_general",
+      "revenue_receipts_statement",
+      "summary_budget"
+    ],
+    "supports_codes": [
+      "agriculture_budget",
+      "budget_related_analytical_statement",
+      "budget_statement_capital_expenditure",
+      "budget_statement_public_debt_loans_public_account",
+      "budget_statement_revenue_social_services",
+      "grant_loan_investment",
+      "post_volume",
+      "revenue_expenditure_economic",
+      "revenue_expenditure_general",
+      "revenue_receipts_statement",
+      "summary_budget"
+    ],
+    "supports_scheme_info": [
+      "agriculture_budget",
+      "appropriation_reply",
+      "budget_related_analytical_statement",
+      "budget_speech",
+      "budget_statement_capital_expenditure",
+      "budget_statement_revenue_social_services",
+      "budget_study",
+      "economic_review_english",
+      "economic_review_hindi",
+      "grant_loan_investment",
+      "green_budget",
+      "output_outcome_budget",
+      "post_volume",
+      "press_note_english",
+      "press_note_hindi",
+      "pwd_works_part_i_1",
+      "pwd_works_part_i_2",
+      "pwd_works_part_ii_1",
+      "pwd_works_part_ii_2",
+      "pwd_works_part_ii_3",
+      "pwd_works_part_ii_4",
+      "pwd_works_part_ii_5",
+      "pwd_works_part_ii_6",
+      "pwd_works_part_ii_7",
+      "pwd_works_part_ii_8",
+      "reply_general_debate",
+      "revenue_expenditure_economic",
+      "revenue_expenditure_general"
+    ],
+    "families": [
+      "analytical_note",
+      "budget_book",
+      "economic_review",
+      "fiscal_framework",
+      "legal",
+      "press_note",
+      "scheme_outcomes",
+      "speech",
+      "thematic_budget",
+      "works_book"
+    ]
+  }
+}
