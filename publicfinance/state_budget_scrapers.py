@@ -826,7 +826,9 @@ if __name__ == "__main__":
                 if args.legacy:
                     print(f"Legacy scraper requested for FY {fy}. Using legacy-compatible crawl path.")
                     url = args.url or TAMIL_NADU_LEGACY_BASE_URL
-                discover = scraper.discover_documents(url=url, fiscal_year=fy)
+                    discover = scraper.discover_legacy_documents(url=url, fiscal_year=fy)
+                else:
+                    discover = scraper.discover_documents(url=url, fiscal_year=fy)
             elif args.state == "kerala":
                 url = args.url or KERALA_BUDGET_URL
                 discover = scraper.discover_documents(url=url, fiscal_year=fy)
