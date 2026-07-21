@@ -721,7 +721,7 @@ def _resolve_rajasthan_year_source(
     if fallback is not None:
         return str(fallback)
 
-    return None
+    return candidate_relpath
 
 
 def _normalize_filename(name: str) -> str:

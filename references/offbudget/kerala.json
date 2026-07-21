@@ -16,22 +16,24 @@
       "outstanding_cr": 32942.14,
       "pct_of": 2.87, "gsdp_cr": 1146108.67,
       "new_borrowing_during_year_cr": 10632.46,
+      "guarantees_outstanding_cr": 62868.15,
+      "guarantees_ceiling_cr": 114610.87,
       "beneficiaries": [
         {"label": "KIIFB (Kerala Infrastructure Investment Fund Board)", "amount_cr": 20041.52, "kind": "spv"},
         {"label": "KSSPL (Kerala Social Security Pension Ltd)", "amount_cr": 12900.62, "kind": "spv"}
       ],
-      "off_budget_note": "CAG SFAR 2023-24 §2.7.1: the State made NO disclosure of off-budget borrowing through KIIFB (₹20,041.52 cr) and KSSPL (₹12,900.62 cr) — ₹32,942.14 cr outstanding as on 31 Mar 2024. New off-budget borrowing in 2023-24 alone: ₹10,632.46 cr (KIIFB ₹5,803.86 + KSSPL ₹4,828.60). Counting it, liability/GSDP = 37.84% vs the 33.70% Kerala FRBM target. SEPARATELY, outstanding government guarantees were ₹62,868.15 cr (5.49% of GSDP; ceiling = lower of 100% revenue receipts or 10% GSDP). The State has challenged inclusion of KIIFB/KSSPL borrowing in its debt; matter pending before the Supreme Court (Dec 2024).",
+      "off_budget_note": "CAG SFAR 2023-24 §2.7.1: the State made NO disclosure of off-budget borrowing through KIIFB (₹20,041.52 cr) and KSSPL (₹12,900.62 cr) — ₹32,942.14 cr outstanding as on 31 Mar 2024. New off-budget borrowing in 2023-24 alone: ₹10,632.46 cr (KIIFB ₹5,803.86 + KSSPL ₹4,828.60). Counting it, liability/GSDP = 37.84% vs the 33.70% Kerala FRBM target. SEPARATELY, outstanding government guarantees were ₹62,868.15 cr (5.49% of GSDP; ceiling = lower of 100% preceding-year revenue receipts [₹1,32,724.65 cr] or 10% GSDP [₹1,14,610.87 cr]). The State has challenged inclusion of KIIFB/KSSPL borrowing in its debt; matter pending before the Supreme Court (Dec 2024).",
       "source": "CAG State Finances Audit Report, year 2023-24, Govt of Kerala (presented to Legislature; single-file report)"
     }
   },
 
-  "caveat": "Off-budget borrowing = real debt the State is liable to repay, kept off the budget by routing through SPVs (KIIFB, KSSPL) — NOT part of the on-budget total, and (per CAG) not disclosed by the State. Guarantees are a separate contingent layer. Source: CAG SFAR. Inclusion in State debt is sub judice.",
+  "caveat": "Off-budget borrowing = real debt the State is liable to repay, kept off the budget by routing through SPVs (KIIFB, KSSPL) — NOT part of the on-budget total, and (per CAG) not disclosed by the State. Guarantees are a separate contingent layer. Source: CAG SFAR. Guarantees outstanding (₹62,868.15 cr) and GSDP (₹11,46,108.67 cr) verified against RBI Statement 28 (₹62,868.10 cr). Inclusion of off-budget debt is sub judice.",
 
   "provenance": {
     "sources": {
       "2023-24": {"url": "https://cag.gov.in/webroot/uploads/download_audit_report/2025/Report-2023-24-Single-file-06902e4e81dd290.55444935.pdf", "sha256": "372ea2d992e4934488c1f1c771f445c5f07eb40525e8c74b6211630d3273de39", "pages": 204, "text": "born-digital"}
     },
     "raw_pdfs": "references/cag_kerala/source/ (gitignored)",
-    "verified": "2026-06-28; KIIFB+KSSPL = 20041.52+12900.62 = 32942.14 (matches report); title page = Government of Kerala"
+    "verified": "2026-07-20; KIIFB+KSSPL = 20041.52+12900.62 = 32942.14 (matches report); outstanding guarantees of ₹62,868.15 cr (5.49% of GSDP) and ceiling ₹1,14,610.87 cr (10% of GSDP) verified and cross-checked against RBI Statement 28 (₹62,868.10 cr); GSDP and preceding-year revenue receipts (₹1,32,724.65 cr) verified against Kerala SFAR Appendix 1.4."
   }
 }
