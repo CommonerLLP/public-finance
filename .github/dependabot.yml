@@ -1,0 +1,14 @@
+# In-org packages only. The third-party pins in requirements.txt are deliberate
+# and are bumped by hand, so they are NOT allow-listed here.
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    allow:
+      - dependency-name: "commoner-probe"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
