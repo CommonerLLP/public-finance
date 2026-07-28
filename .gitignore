@@ -113,3 +113,6 @@ notes/
 /references/cag_gujarat/source/
 /references/cag_kerala/source/
 /references/bocw/source/
+
+# session history log stays local
+SESSION_LOG.md
