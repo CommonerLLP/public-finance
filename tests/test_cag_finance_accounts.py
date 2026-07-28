@@ -164,6 +164,47 @@ class ColumnRuleTests(unittest.TestCase):
         self.assertEqual(v, 117.37)
         self.assertTrue(sv)
 
+    def test_lone_cumulative_figure_never_returned_as_capital(self):
+        # Haryana 2023-24 shape (page-verified): in-year columns are dots and
+        # the only decimal on the 105 line is the cumulative "upto" column.
+        # 2,267.11 must not come back as the in-year figure.
+        page = (
+            "4202 Capital Outlay on Education, Sports, Art and Culture-\n"
+            "  04  Art and Culture-\n"
+            "105 Public Libraries                            ..    ..    ..    2,267.11    ..\n"
+            "106 Museums                                     ..    ..    ..    1,124.46    ..\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertIsNone(heads.capital.value_lakh)
+        self.assertFalse(heads.capital.self_validated)
+
+    def test_minus_100_pct_is_a_validated_zero(self):
+        # Haryana 2022-23 shape (page-verified): in-year columns are dots and
+        # the row prints prior-year, cumulative, and (-)100.00 — which proves
+        # the current year is exactly zero.
+        v, sv = cfa._pick_current_year([1760.57, 2267.11, 100.00], pct_sign="-")
+        self.assertEqual(v, 0.0)
+        self.assertTrue(sv)
+
+    def test_total_105_with_wrapped_figures(self):
+        # Assam 2023-24 shape (page-verified): "Total 105" carries its figures
+        # on the next line; prior 498.29 -> current 52,536.15 is (+)10443.
+        page = (
+            "4202 Capital Outlay on Education, Sports,Art and Culture - Contd.\n"
+            "  04  Art and Culture- Contd.\n"
+            "105 Public Libraries                       ...   ...   ...   231.73   ...\n"
+            "District Library Auditorium Silchar     190.00  171.00  ...  171.00  371.71  (-)10\n"
+            "Total 105\n"
+            "     498.29   52,536.15   ...   52,536.15   54,266.18   (+)10443\n"
+            "106 Museums                                ...   ...   ...   289.55   ...\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertAlmostEqual(heads.capital.value_lakh, 52536.15, places=2)
+        # the printed per-cent is a bare integer ("(+)10443"), which the
+        # decimal-only amount rule ignores — so this read resolves via the
+        # repeated-value fallback and stays flagged for review.
+        self.assertFalse(heads.capital.self_validated)
+
     def test_wrapped_figure_line_vetoes_confident_nil(self):
         # the head's figure sits on a numeric-only wrapped line: must NOT be
         # recorded as a confident NIL — flag for review instead.
