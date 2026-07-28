@@ -64,7 +64,7 @@ _CAPITAL = ({"4202"}, "105")
 _LOANS = ({"6202"}, "105")
 _RECEIPTS = ({"0202", "0210"}, "102")
 
-_SPILL_SCAN_LINES = 10
+_SPILL_SCAN_LINES = 25  # Assam lists ~12 sub-head lines before its Total-105
 # Tolerance (percentage points) for matching a row's own increase/decrease col.
 _PCT_TOL = 0.6
 
@@ -103,6 +103,11 @@ def _pick_current_year(nums: list[float], pct_sign: str | None = None) -> tuple[
     NOT self-validated. If no matching triple exists at all (new head with nil
     previous year, or an unparseable row), fall back and flag likewise.
     """
+    # A printed "(-)100.00" is itself the figure: the current year is exactly
+    # zero (dots print in the in-year columns, so no zero token appears).
+    # Page-verified on Haryana 2022-23 Statement 16.
+    if pct_sign == "-" and nums and abs(nums[-1] - 100.0) <= 0.005:
+        return 0.0, True
     if len(nums) >= 3:
         q = nums[-1]
         body = nums[:-1]
@@ -213,6 +218,14 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
             continue
         if _MINOR_TOTAL_105_RE.match(s):        # the wanted minor-head total
             total_line = s
+            # Some volumes wrap the total's figures onto the next line(s)
+            # (Assam prints "Total 105" and the amounts a line below).
+            for w in range(k + 1, min(k + 3, len(lines))):
+                nxt = lines[w].strip()
+                if nxt and not nxt[:1].isalpha():
+                    total_line += " " + nxt
+                elif nxt:
+                    break
             break
         if _ANY_TOTAL_RE.match(s) or _NEW_HEAD_RE.match(s):  # sub-major/major total, or next head
             break
@@ -224,7 +237,7 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
         if amts:                                # a real sub-head detail line
             saw_any_amount = True
             v, sv = _pick_current_year(amts, _pct_sign(s))
-            if v is not None:
+            if v is not None and (sv or len(amts) > 1):  # lone unvalidated figure = cumulative-only
                 subheads.append((v, s, sv))
 
     def _cand(line: str | None) -> tuple[float, str, bool] | None:
@@ -234,6 +247,12 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
         if not amts:
             return None
         v, sv = _pick_current_year(amts, _pct_sign(line))
+        # A lone unvalidated figure on a capital line is indistinguishable from
+        # the "expenditure to end of the year" column (when the in-year columns
+        # are dots, the cumulative is the only decimal that prints) — page-
+        # verified on Haryana/Tripura/AP/Telangana 2023-24. Never return it.
+        if not sv and len(amts) == 1:
+            return None
         return (v, line, sv) if v is not None else None
 
     tl, hl = _cand(total_line), _cand(head)
