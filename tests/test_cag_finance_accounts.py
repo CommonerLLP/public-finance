@@ -130,6 +130,56 @@ class ColumnRuleTests(unittest.TestCase):
         v, sv = cfa._pick_current_year([12.34, 56.78])
         self.assertFalse(sv)
 
+    def test_small_change_previous_first_resolved_by_repetition(self):
+        # capital order (previous first) with a small change: the backward ratio
+        # also fits the tolerance, but only the current-year figure repeats
+        # (voted + total), so repetition must resolve it to 28.70, not 30.00.
+        v, sv = cfa._pick_current_year([30.00, 28.70, 28.70, 885.10, 4.33])
+        self.assertEqual(v, 28.70)
+        self.assertTrue(sv)
+
+    def test_small_change_resolved_by_printed_sign(self):
+        # same shape but nothing repeats; the printed (-) must pick the smaller.
+        v, sv = cfa._pick_current_year([30.00, 28.70, 885.10, 4.33], pct_sign="-")
+        self.assertEqual(v, 28.70)
+        self.assertTrue(sv)
+
+    def test_small_change_no_disambiguator_is_flagged(self):
+        v, sv = cfa._pick_current_year([30.00, 28.70, 885.10, 4.33])
+        self.assertFalse(sv)
+
+    def test_small_change_resolved_by_state_central_sum(self):
+        # Kerala 2023-24 revenue row (live): state, central, total, previous, pct.
+        # Unsigned small pct leaves {total, previous} ambiguous; the total is the
+        # one that equals state + central.
+        v, sv = cfa._pick_current_year([2344.90, 133.25, 2478.15, 2370.94, 4.52])
+        self.assertEqual(v, 2478.15)
+        self.assertTrue(sv)
+
+    def test_zero_is_not_a_candidate_for_near_100_pct(self):
+        # Jharkhand 2024-25 revenue row (live): a 0.00 charged column is exactly
+        # -100 against ANY previous figure, so a printed 100.09 must not
+        # validate 0.0 — the real current-year figure is 117.37.
+        v, sv = cfa._pick_current_year([117.37, 0.0, 0.0, 117.37, 58.66, 100.09])
+        self.assertEqual(v, 117.37)
+        self.assertTrue(sv)
+
+    def test_wrapped_figure_line_vetoes_confident_nil(self):
+        # the head's figure sits on a numeric-only wrapped line: must NOT be
+        # recorded as a confident NIL — flag for review instead.
+        page = (
+            "4202- Capital Outlay on Education Sports Art and Culture\n"
+            "   04 Art and Culture\n"
+            " 105- Public Libraries\n"
+            "      45.00   ..   45.00   40.00   (+)12.50\n"
+            " 800- Other Expenditure\n"
+            "      Some scheme   1.00   ..   1.00   2.00   (+)0.00\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertIsNone(heads.capital.value_lakh)
+        self.assertFalse(heads.capital.self_validated)
+        self.assertIn("manual review", heads.capital.note)
+
 
 if __name__ == "__main__":
     unittest.main()

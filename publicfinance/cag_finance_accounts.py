@@ -73,25 +73,68 @@ def _amounts(line: str) -> list[float]:
     return [float(t.replace(",", "")) for t in _AMOUNT_RE.findall(line)]
 
 
-def _pick_current_year(nums: list[float]) -> tuple[float | None, bool]:
+# Sign printed with the trailing increase/decrease per-cent, e.g. "(-)66.44".
+_PCT_SIGN_RE = re.compile(r"\(\s*([+-])\s*\)\s*(\d{1,3}(?:,\d{2,3})*\.\d+)\s*$")
+
+
+def _pct_sign(line: str) -> str | None:
+    m = _PCT_SIGN_RE.search(line)
+    return m.group(1) if m else None
+
+
+def _pick_current_year(nums: list[float], pct_sign: str | None = None) -> tuple[float | None, bool]:
     """Return (current-year value, self_validated).
 
     Self-validating: the last numeric on a CAG head row is the increase/decrease
     per-cent ``Q``; the current-year value ``V`` is the one for which some other
     value ``P`` in the row gives ``|(V - P)/P| x 100 == Q``. Order-independent, so
-    it works across the differing revenue/capital column layouts. If no such
-    triple exists (new head with nil previous year, or an unparseable row), fall
-    back to the first numeric and mark it NOT self-validated.
+    it works across the differing revenue/capital column layouts.
+
+    For small |Q| (under ~8 per-cent) the backward ratio ``|(P - V)/V|`` also lands
+    inside the tolerance, so the match alone cannot tell current from previous.
+    A zero V is a spurious candidate for any Q near 100 (0 against any previous
+    is exactly -100), so V = 0 validates only against an exact 100.00.
+    Disambiguators, in order: the printed sign of Q when the caller passes it
+    (``(+)`` means V > P); row structure — the current-year total equals the sum
+    of two other figures on the row (State + Central share, or voted + charged)
+    while the previous-year figure sums with nothing; and repetition — the
+    current-year figure prints at least twice (voted and total) while the
+    previous-year figure prints once. If none resolves a unique V, the row is
+    NOT self-validated. If no matching triple exists at all (new head with nil
+    previous year, or an unparseable row), fall back and flag likewise.
     """
     if len(nums) >= 3:
         q = nums[-1]
         body = nums[:-1]
+        cands: list[float] = []
         for vi, v in enumerate(body):
             for pj, p in enumerate(body):
                 if vi == pj or p == 0:
                     continue
-                if abs(abs((v - p) / p * 100.0) - q) <= _PCT_TOL:
-                    return v, True
+                change = (v - p) / p * 100.0
+                if pct_sign == "+" and change < 0:
+                    continue
+                if pct_sign == "-" and change > 0:
+                    continue
+                if v == 0 and abs(q - 100.0) > 0.005:
+                    continue
+                if abs(abs(change) - q) <= _PCT_TOL:
+                    cands.append(v)
+                    break
+        uniq = sorted({round(v, 2) for v in cands})
+        if len(uniq) == 1:
+            return cands[0], True
+        if len(uniq) > 1:
+            pair_sums = {round(body[j] + body[k], 2)
+                         for j in range(len(body)) for k in range(j + 1, len(body))
+                         if body[j] and body[k]}
+            summed = [v for v in uniq if v in pair_sums]
+            if len(summed) == 1:
+                return summed[0], True
+            counts = Counter(round(n, 2) for n in body)
+            repeated = [v for v in uniq if counts[v] >= 2]
+            if len(repeated) == 1:
+                return repeated[0], True
     # No self-validating per-cent (a first-year / no-previous-year head). The
     # current-year total still prints as voted AND total (charged nil), so it
     # appears at least twice; the (larger) expenditure-to-end column appears
@@ -173,12 +216,14 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
             break
         if _ANY_TOTAL_RE.match(s) or _NEW_HEAD_RE.match(s):  # sub-major/major total, or next head
             break
-        if not s[:1].isalpha():                 # bare numeric line = column-wrap fragment, skip
+        if not s[:1].isalpha():                 # bare numeric line = column-wrap fragment
+            if _amounts(s):                     # its figures still veto a "confident NIL"
+                saw_any_amount = True
             continue
         amts = _amounts(s)
         if amts:                                # a real sub-head detail line
             saw_any_amount = True
-            v, sv = _pick_current_year(amts)
+            v, sv = _pick_current_year(amts, _pct_sign(s))
             if v is not None:
                 subheads.append((v, s, sv))
 
@@ -188,7 +233,7 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
         amts = _amounts(line)
         if not amts:
             return None
-        v, sv = _pick_current_year(amts)
+        v, sv = _pick_current_year(amts, _pct_sign(line))
         return (v, line, sv) if v is not None else None
 
     tl, hl = _cand(total_line), _cand(head)
@@ -248,7 +293,7 @@ def parse_pages(pages, *, unit: str = "lakh", pdf: str = "") -> LibraryHeads:
             if label in ("capital", "loans"):
                 value_lakh, raw, sv, note = _capital_block(lines, i)
             else:  # revenue / receipts: figure is on the head line
-                value_lakh, sv = _pick_current_year(_amounts(stripped))
+                value_lakh, sv = _pick_current_year(_amounts(stripped), _pct_sign(stripped))
                 raw, note = stripped, ("self-validated" if sv else "NOT self-validated (fell back to first column)")
 
             setattr(result, slot[label], HeadFigure(
