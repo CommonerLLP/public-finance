@@ -92,9 +92,12 @@ def write_rtr_csv(row: dict) -> Path:
 
 
 def write_cag_four_head_csv(row: dict, lib_rev_t: float, lib_cap_t: float) -> Path:
-    """Write the extension four-head schema. Rajasthan carries BUDGET-BE library
-    heads (labelled); CAG-actuals rows are blocked pending cag.gov.in access."""
-    out = OUT_DIR / "cag_library_four_head.csv"
+    """Write Rajasthan's BUDGET-BE library heads in the four-head shape (labelled).
+
+    Writes to its own file: ``cag_library_four_head.csv`` is now the national
+    CAG-actuals panel owned by ``build_cag_library_national.py`` — this builder
+    must never overwrite it."""
+    out = OUT_DIR / "rtr_library_four_head_rajasthan_be.csv"
     fields = [
         "state", "fy", "lib_receipts_cr", "lib_rev_exp_cr", "lib_cap_exp_cr",
         "lib_loans_cr", "recovery_ratio", "source_statement", "source_page",

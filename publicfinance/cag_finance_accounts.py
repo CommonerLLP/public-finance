@@ -57,7 +57,7 @@ _LIBRARY_RE = re.compile(r"public\s+librar", re.IGNORECASE)
 # Bounds for a capital block scan.
 _MINOR_TOTAL_105_RE = re.compile(r"^Total\s*[-–—]?\s*105\b", re.IGNORECASE)  # the wanted minor total
 _ANY_TOTAL_RE = re.compile(r"^Total\b", re.IGNORECASE)                       # sub-major/major total -> stop
-_NEW_HEAD_RE = re.compile(r"^\(?\d{3,4}\b")                                  # a new minor/major head -> stop
+_NEW_HEAD_RE = re.compile(r"^\(?\d{3,4}\b(?!\.\d)")                          # a new minor/major head -> stop; (?!\.\d) keeps a wrapped bare amount ("117.37") from reading as a head
 
 _REVENUE = ({"2205"}, "105")
 _CAPITAL = ({"4202"}, "105")
@@ -219,13 +219,16 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
         if _MINOR_TOTAL_105_RE.match(s):        # the wanted minor-head total
             total_line = s
             # Some volumes wrap the total's figures onto the next line(s)
-            # (Assam prints "Total 105" and the amounts a line below).
+            # (Assam prints "Total 105" and the amounts a line below). A line
+            # opening a NEW head ("106 Museums") is never a continuation.
             for w in range(k + 1, min(k + 3, len(lines))):
                 nxt = lines[w].strip()
-                if nxt and not nxt[:1].isalpha():
+                if nxt and not nxt[:1].isalpha() and not _NEW_HEAD_RE.match(nxt):
                     total_line += " " + nxt
                 elif nxt:
                     break
+            if _amounts(total_line):            # total figures veto a "confident NIL"
+                saw_any_amount = True
             break
         if _ANY_TOTAL_RE.match(s) or _NEW_HEAD_RE.match(s):  # sub-major/major total, or next head
             break
@@ -261,11 +264,16 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
         if c and c[2]:
             return c[0], c[1], True, "self-validated"
     sv_subs = [x for x in subheads if x[2]]
-    if len(sv_subs) == 1:
+    # A sub-head sum is validated only when EVERY sub-head in the block
+    # validated — a partial sum understates while carrying a True flag.
+    if len(sv_subs) == len(subheads) and len(sv_subs) == 1:
         return sv_subs[0][0], sv_subs[0][1], True, "self-validated sub-head"
-    if sv_subs:
+    if sv_subs and len(sv_subs) == len(subheads):
         return (sum(v for v, _, _ in sv_subs), "; ".join(l for _, l, _ in sv_subs)[:90],
                 True, f"sum of {len(sv_subs)} self-validated sub-heads")
+    if sv_subs:
+        return (None, "; ".join(l for _, l, _ in subheads)[:90], False,
+                f"mixed block: {len(sv_subs)}/{len(subheads)} sub-heads validated — review")
     # 2) a value is present but not %-validated (first-year head, no comparator) — flag it.
     for c in (tl, hl):
         if c:
