@@ -205,6 +205,64 @@ class ColumnRuleTests(unittest.TestCase):
         # repeated-value fallback and stays flagged for review.
         self.assertFalse(heads.capital.self_validated)
 
+    def test_wrapped_total_does_not_absorb_next_numeric_head(self):
+        # "Total 105" followed directly by "106 Museums ..." (numeric-led): the
+        # museums figures must not be parsed as head-105 capital.
+        page = (
+            "4202 Capital Outlay on Education, Sports,Art and Culture\n"
+            "  04  Art and Culture\n"
+            "105 Public Libraries                       ...   ...   ...   231.73   ...\n"
+            "Total 105\n"
+            "106 Museums        564.35   174.48  ...  174.48   1,130.17   (-)69.08\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertNotEqual(heads.capital.value_lakh, 174.48)
+        self.assertFalse(heads.capital.self_validated)
+
+    def test_wrapped_bare_amount_is_not_a_head_boundary(self):
+        # A wrapped continuation starting "117.37" must not read as head 117 —
+        # its figure still vetoes the confident NIL.
+        page = (
+            "4202 Capital Outlay on Education, Sports,Art and Culture\n"
+            "  04  Art and Culture\n"
+            " 105- Public Libraries\n"
+            "117.37   ..   ..   2,267.11   ..\n"
+            " 800- Other Expenditure\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertIsNone(heads.capital.value_lakh)
+        self.assertFalse(heads.capital.self_validated)
+
+    def test_rejected_lone_total_still_vetoes_nil(self):
+        # Total-105 carrying only the cumulative figure: the lone-figure veto
+        # rejects it as a value, but it must NOT fall through to a proven NIL.
+        page = (
+            "4202 Capital Outlay on Education, Sports,Art and Culture\n"
+            "  04  Art and Culture\n"
+            " 105- Public Libraries\n"
+            "Total 105                                  2,267.11\n"
+            " 800- Other Expenditure\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertIsNone(heads.capital.value_lakh)
+        self.assertFalse(heads.capital.self_validated)
+
+    def test_mixed_subhead_block_is_not_a_validated_sum(self):
+        # One validated + one unvalidated multi-figure sub-head: a partial sum
+        # must not ship as self-validated capital.
+        page = (
+            "4202 Capital Outlay on Education, Sports,Art and Culture\n"
+            "  04  Art and Culture\n"
+            " 105- Public Libraries\n"
+            "      Scheme A   100.00   50.00   ..   50.00   500.00   (-)50.00\n"
+            "      Scheme B   77.10   88.20\n"
+            " 800- Other Expenditure\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertFalse(heads.capital.self_validated)
+        self.assertIsNone(heads.capital.value_lakh)
+        self.assertIn("mixed block", heads.capital.note)
+
     def test_wrapped_figure_line_vetoes_confident_nil(self):
         # the head's figure sits on a numeric-only wrapped line: must NOT be
         # recorded as a confident NIL — flag for review instead.
