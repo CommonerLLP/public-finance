@@ -263,6 +263,24 @@ class ColumnRuleTests(unittest.TestCase):
         self.assertIsNone(heads.capital.value_lakh)
         self.assertIn("mixed block", heads.capital.note)
 
+    def test_mixed_block_keeps_an_unvalidated_total(self):
+        # Same mixed sub-heads, but the block also carries a complete Total-105.
+        # The partial sub-head sum is still rejected; the total is the best
+        # available read and must survive, flagged NOT self-validated.
+        page = (
+            "4202 Capital Outlay on Education, Sports,Art and Culture\n"
+            "  04  Art and Culture\n"
+            " 105- Public Libraries\n"
+            "      Scheme A   100.00   50.00   ..   50.00   500.00   (-)50.00\n"
+            "      Scheme B   77.10   88.20\n"
+            " Total 105   210.00   ..   210.00   980.00\n"
+            " 800- Other Expenditure\n"
+        )
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertEqual(heads.capital.value_lakh, 210.00)
+        self.assertFalse(heads.capital.self_validated)
+        self.assertIn("mixed block", heads.capital.note)
+
     def test_wrapped_figure_line_vetoes_confident_nil(self):
         # the head's figure sits on a numeric-only wrapped line: must NOT be
         # recorded as a confident NIL — flag for review instead.
@@ -278,6 +296,108 @@ class ColumnRuleTests(unittest.TestCase):
         self.assertIsNone(heads.capital.value_lakh)
         self.assertFalse(heads.capital.self_validated)
         self.assertIn("manual review", heads.capital.note)
+
+
+class SchoolHeadTests(unittest.TestCase):
+    """REQ-0047: the same reader over 2202-01/02/80 and 4202-01-201/202.
+
+    Page text is a faithful trim of the live layouts read 2026-08-04: Gujarat
+    2023-24 for the wrapped sub-major total and the capital minors, Assam
+    2023-24 for the bare-integer per-cent that only the row's arithmetic proves.
+    """
+
+    GUJARAT_REVENUE = (
+        "2202-General Education - Contd.\n"
+        "  01 Elementary Education - Concld.\n"
+        "     107 Teachers Training      2,971.19   ..   2,971.19   2,818.05   (+)5.43\n"
+        "     113 Samagra Shiksha       48,227.19  72,340.77  1,20,567.96  1,60,894.60  (-)25.06\n"
+        "                     Total - 01   3,000.00   ..   ...   ...   ...\n"
+        "                              20,59,741.64   96,176.23  21,58,917.87  20,95,561.26  (+)3.02\n"
+        "  02 Secondary Education\n"
+        "                     Total - 02   7,59,039.97   13,140.99   7,72,180.96   6,82,573.97   (+)13.13\n"
+    )
+    ASSAM_REVENUE = (
+        "2202   General Education - Contd.\n"
+        "  01   Elementary Education - Concld.\n"
+        "       Total-01                          ...        ... (+)7\n"
+        "                    8,36,542.37   2,09,061.79   10,45,604.16   9,77,568.60\n"
+    )
+    GUJARAT_CAPITAL = (
+        "4202- Capital Outlay on Education Sports Art and Culture\n"
+        "   01 General Education\n"
+        " 201- Elementary Education\n"
+        "     Other works each costing 10 crores and less 2,86,086.35 2,67,965.33 9,572.33 2,77,537.66 11,50,811.13 (-)2.99\n"
+        "                     Total - 201 2,86,086.35 2,67,965.33 9,572.33 2,77,537.66 11,52,356.72 (-)2.99\n"
+        " 202- Secondary Education\n"
+        "     Other Works each Costing 10 crore and less 9,215.43 5,257.02 .. 5,257.02 1,33,161.91 (-)42.95\n"
+        "                     Total - 202  9,215.43   5,257.02   ..   5,257.02  1,33,161.91  (-)42.95\n"
+    )
+
+    def _heads(self, *pages):
+        return cfa.parse_specs([(i + 1, p) for i, p in enumerate(pages)], cfa.SCHOOL_SPECS, unit="lakh")
+
+    def test_submajor_total_read_from_wrapped_line(self):
+        heads = self._heads(self.GUJARAT_REVENUE)
+        self.assertEqual(heads["elementary_rev"].value_lakh, 2158917.87)
+        self.assertTrue(heads["elementary_rev"].self_validated)
+        self.assertEqual(heads["secondary_rev"].value_lakh, 772180.96)
+
+    def test_bare_integer_pct_resolved_by_state_plus_central_sum(self):
+        heads = self._heads(self.ASSAM_REVENUE)
+        self.assertEqual(heads["elementary_rev"].value_lakh, 1045604.16)
+        self.assertTrue(heads["elementary_rev"].self_validated)
+
+    def test_school_capital_minors_read_their_own_totals(self):
+        heads = self._heads(self.GUJARAT_CAPITAL)
+        self.assertEqual(heads["elementary_cap"].value_lakh, 277537.66)
+        self.assertEqual(heads["secondary_cap"].value_lakh, 5257.02)
+        self.assertTrue(heads["elementary_cap"].self_validated)
+        self.assertTrue(heads["secondary_cap"].self_validated)
+
+    def test_capital_minor_needs_the_school_submajor(self):
+        # 201 under 4202-04 (Art and Culture) is not school capital.
+        page = self.GUJARAT_CAPITAL.replace("   01 General Education", "   04 Art and Culture")
+        self.assertNotIn("elementary_cap", self._heads(page))
+
+    def test_block_survives_a_page_break_and_its_furniture(self):
+        # Assam restates major / sub-major / minor after every page break and
+        # prints the page number between them; the block must reach its Total.
+        first = (
+            "4202  Capital Outlay on Education, Sports,Art and Culture\n"
+            "01    General Education\n"
+            "201   Elementary Education\n"
+            "      Buildings                       ...   118.73   ...\n"
+        )
+        second = (
+            "270\n"
+            "STATEMENT 16 : DETAILED STATEMENT OF CAPITAL EXPENDITURE\n"
+            "2022-2023   Expenditure   Assistance\n"
+            "1     2     3     4     5     6\n"
+            "4202  Capital Outlay on Education, Sports,Art and Culture - Contd.\n"
+            "01    General Education- Contd.\n"
+            "201   Elementary Education - Concld.\n"
+            "      State Share                     ...   1,612.37   ...\n"
+            "      Total 201                       ...\n"
+            "        21,898.82   21,219.74   30,491.15   51,710.89   1,25,667.62   (+)136\n"
+        )
+        heads = self._heads(first, second)
+        self.assertEqual(heads["elementary_cap"].value_lakh, 51710.89)
+        self.assertTrue(heads["elementary_cap"].self_validated)
+
+    def test_unproved_submajor_total_is_empty_not_guessed(self):
+        page = (
+            "2202   General Education\n"
+            "  80   General\n"
+            "       Total-80    9,347.07   3,450.31   12,796.72\n"
+        )
+        heads = self._heads(page)
+        self.assertIsNone(heads["general_rev"].value_lakh)
+        self.assertFalse(heads["general_rev"].self_validated)
+
+    def test_sum_proof_never_returns_the_per_cent_column(self):
+        # Tamil Nadu 2022-23 loans: (-)0.10 + 0.88 reproduces the printed 0.98
+        # per cent exactly. The rightmost column is never the Total.
+        self.assertIsNone(cfa._sum_proof([0.10, 0.10, 0.88, 0.98]))
 
 
 if __name__ == "__main__":

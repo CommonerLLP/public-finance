@@ -474,6 +474,16 @@ class LMMHAPipelineTests(unittest.TestCase):
         self.assertIn('data-action="${esc(ch.action)}"', script)
         self.assertIn("const latestYear = years[years.length - 1]", script)
 
+    def test_published_sankey_payloads_carry_a_headline(self):
+        # publish_lod.yml copies these payloads to Pages unchanged, so a payload
+        # left unregenerated after a builder change ships a blank subtitle.
+        blank = []
+        for path in sorted(Path("references/lmmha/lod").glob("sankey_*.json")):
+            meta = json.loads(path.read_text(encoding="utf-8")).get("meta", {})
+            if isinstance(meta, dict) and "headline" in meta and not meta["headline"].strip():
+                blank.append(path.name)
+        self.assertEqual(blank, [], f"regenerate with viz/build_sankey.py: {blank}")
+
 
 if __name__ == "__main__":
     unittest.main()
