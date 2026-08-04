@@ -298,6 +298,39 @@ class ColumnRuleTests(unittest.TestCase):
         self.assertIn("manual review", heads.capital.note)
 
 
+class GramPanchayatAssistanceTests(unittest.TestCase):
+    """2205-00-198 — the head a State can route village-library money through.
+
+    Faithful trim of Karnataka 2023-24 Statement 15, where 105 and 198 print
+    adjacent and within 0.1 per cent of each other.
+    """
+
+    PAGE = (
+        "2205-Art and Culture\n"
+        "   104 Archives                                     472.89   428.19   (+) 10.44\n"
+        "   105 Public Libraries                           8,038.58 7,689.11   (+) 4.54\n"
+        "   196 Assistance to ZillaParishads / District Level Panchayats  ..  394.00 (-) 100.00\n"
+        "   198 Assistance to Gram Panchayats             8,029.80 8,037.69   (-) 0.10\n"
+    )
+
+    def test_198_is_read_separately_from_105(self):
+        heads = cfa.parse_pages([(1, self.PAGE)], unit="lakh")
+        self.assertEqual(heads.revenue.value_lakh, 8038.58)
+        self.assertEqual(heads.gp_assist.value_lakh, 8029.80)
+        self.assertEqual(heads.gp_assist.code, "2205-00-198")
+        self.assertTrue(heads.gp_assist.self_validated)
+
+    def test_198_is_not_folded_into_library_revenue(self):
+        row = cfa.parse_pages([(1, self.PAGE)], unit="lakh").as_row()
+        self.assertEqual(row["lib_rev_exp_cr"], 80.3858)
+        self.assertEqual(row["gp_assist_cr"], 80.298)
+
+    def test_zilla_parishad_sibling_is_not_mistaken_for_gram_panchayat(self):
+        page = self.PAGE.replace("   198 Assistance to Gram Panchayats             8,029.80 8,037.69   (-) 0.10\n", "")
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertIsNone(heads.gp_assist)
+
+
 class SchoolHeadTests(unittest.TestCase):
     """REQ-0047: the same reader over 2202-01/02/80 and 4202-01-201/202.
 

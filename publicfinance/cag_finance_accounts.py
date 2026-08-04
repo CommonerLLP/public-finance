@@ -217,6 +217,7 @@ class LibraryHeads:
     capital: HeadFigure | None = None
     loans: HeadFigure | None = None
     receipts: HeadFigure | None = None
+    gp_assist: HeadFigure | None = None
 
     def as_row(self) -> dict:
         def cr(h: HeadFigure | None) -> float | None:
@@ -226,6 +227,7 @@ class LibraryHeads:
             "lib_rev_exp_cr": cr(self.revenue),
             "lib_cap_exp_cr": cr(self.capital),
             "lib_loans_cr": cr(self.loans),
+            "gp_assist_cr": cr(self.gp_assist),
         }
 
     def all_self_validated(self) -> bool:
@@ -267,6 +269,17 @@ LIBRARY_SPECS = (
              minor="105", total_code="105", name_re=_LIBRARY_RE),
     HeadSpec("loans", "6202-04-105", frozenset({"6202"}), "block",
              minor="105", total_code="105", name_re=_LIBRARY_RE),
+    # 2205-00-198 is NOT a library head — it is the Art-and-Culture transfer to
+    # gram panchayats. It is read because it is the route a State can use to
+    # fund village libraries outside head 105, and reading only 105 then halves
+    # the State's library spending. Verified for Karnataka 2023-24, whose whole
+    # 2205-198 provision is one scheme, "Gram Panchayat Libraries & Information
+    # Centre" (Demand 07, sub-head 2205-00-198-1-02): head 105 ₹80.39 cr and
+    # head 198 ₹80.30 cr sit adjacent in Statement 15, within 0.1 per cent of
+    # each other. Whether a given State's 198 is library money is a per-State
+    # question the panel does not answer — see the README.
+    HeadSpec("gp_assist", "2205-00-198", frozenset({"2205"}), "inline",
+             minor="198", name_re=re.compile(r"assistance\s+to\s+gram\s+panchayat", re.IGNORECASE)),
 )
 
 # REQ-0047 (theright2read): school-education heads on the same reader.
