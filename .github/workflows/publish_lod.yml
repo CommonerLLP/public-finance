@@ -23,6 +23,10 @@ on:
       - 'references/lmmha/lod/sankey_manifest.json'
       - 'references/lmmha/lod/sankey_*.json'
       - 'viz/build_browser_data.py'
+      # reference panels served under /data (whole lod dir is staged, so a
+      # data-only change must be able to trigger the deploy on its own)
+      - 'references/lmmha/lod/*.csv'
+      - 'references/lmmha/lod/README-*.md'
       - '.github/workflows/publish_lod.yml'
   workflow_dispatch:
 
