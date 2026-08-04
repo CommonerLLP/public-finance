@@ -13,6 +13,27 @@ The four heads (all amounts converted lakh → crore):
 | 4202-04-105 Public Libraries (capital expenditure) | `lib_cap_exp_cr` |
 | 6202-04-105 Public Libraries (loans) | `lib_loans_cr` |
 
+Plus one head that is **not** a library head:
+
+| head | column |
+|---|---|
+| 2205-00-198 Assistance to Gram Panchayats (revenue expenditure) | `gp_assist_cr` |
+
+It is read because it is the route a State can use to fund village libraries
+outside head 105. **It is not library spending by definition** — it is the
+Art-and-Culture transfer to gram panchayats, whatever the State puts in it. Do
+not add it to `lib_rev_exp_cr` without checking that State's own budget
+documents first.
+
+Karnataka 2023-24 is the case that put it here. Its entire 2205-198 provision is
+a single scheme, "Gram Panchayat Libraries & Information Centre"
+(`2205-00-198-1-02`, Demand 07 Rural Development and Panchayat Raj), so head 105
+₹80.39 cr and head 198 ₹80.30 cr are both library money and sit adjacent in
+Statement 15, within 0.1 per cent of each other. Reading 105 alone halves the
+State's library spending; mistaking one for the other is easier still. The
+sibling head 2205-00-196 (Assistance to Zilla Parishads / District Level
+Panchayats) can carry the same traffic and is not yet read.
+
 ## Files
 
 - `cag_library_four_head.csv` — the multi-year panel (2021-22 → 2024-25 where
