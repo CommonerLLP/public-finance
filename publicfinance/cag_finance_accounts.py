@@ -54,17 +54,28 @@ _AMOUNT_RE = re.compile(r"\d{1,3}(?:,\d{2,3})*\.\d+")
 _MAJOR_RE = re.compile(r"^\(?(\d{4})\)?\s*[-–—]?\s*(?=[A-Za-z])")
 _MINOR_RE = re.compile(r"\b(105|102)\b")
 _LIBRARY_RE = re.compile(r"public\s+librar", re.IGNORECASE)
+# A sub-major head opens with a two-digit code then its name ("01 Elementary
+# Education", "04 Art and Culture"). Needed to tell 4202-01-201 (school capital)
+# from a minor 201 under any other sub-major.
+_SUBMAJOR_RE = re.compile(r"^(\d{2})\s*[-–—]?\s+(?=[A-Za-z])")
 # Bounds for a capital block scan.
-_MINOR_TOTAL_105_RE = re.compile(r"^Total\s*[-–—]?\s*105\b", re.IGNORECASE)  # the wanted minor total
 _ANY_TOTAL_RE = re.compile(r"^Total\b", re.IGNORECASE)                       # sub-major/major total -> stop
-_NEW_HEAD_RE = re.compile(r"^\(?\d{3,4}\b(?!\.\d)")                          # a new minor/major head -> stop; (?!\.\d) keeps a wrapped bare amount ("117.37") from reading as a head
+_FY_TOKEN_RE = re.compile(r"^\(?\d{4}\s*[-–—]\s*\d{2,4}\b")                  # "2022-2023" column header, never a head
+_NEW_HEAD_RE = re.compile(r"^\(?\d{3,4}\b(?!\.\d)")                       # a new minor/major head -> stop; (?!\.\d) keeps a wrapped bare amount ("117.37") from reading as a head
 
-_REVENUE = ({"2205"}, "105")
-_CAPITAL = ({"4202"}, "105")
-_LOANS = ({"6202"}, "105")
-_RECEIPTS = ({"0202", "0210"}, "102")
 
-_SPILL_SCAN_LINES = 25  # Assam lists ~12 sub-head lines before its Total-105
+def _total_re(code: str) -> re.Pattern:
+    """``Total - <code>`` for the wanted head, anchored so 201 never matches 20."""
+    return re.compile(rf"^Total\s*[-–—]?\s*{code}\b", re.IGNORECASE)
+
+
+_MINOR_TOTAL_105_RE = _total_re("105")
+
+# Assam lists ~12 sub-head lines before its Total-105, and its 4202-01-201 block
+# runs over two page breaks (page headers included) before its Total-201. The
+# block still stops at the first new head or foreign Total, so the window only
+# has to be long enough, not tight.
+_SPILL_SCAN_LINES = 120
 # Tolerance (percentage points) for matching a row's own increase/decrease col.
 _PCT_TOL = 0.6
 
@@ -80,6 +91,31 @@ _PCT_SIGN_RE = re.compile(r"\(\s*([+-])\s*\)\s*(\d{1,3}(?:,\d{2,3})*\.\d+)\s*$")
 def _pct_sign(line: str) -> str | None:
     m = _PCT_SIGN_RE.search(line)
     return m.group(1) if m else None
+
+
+def _sum_proof(nums: list[float]) -> float | None:
+    """Return the Total column when the row's own arithmetic proves it.
+
+    CAG prints ``State Fund Expenditure | Central Assistance | Total`` next to
+    each other, so a value equal to the exact sum of the two (or three) values
+    immediately before it is the Total. Requires a UNIQUE such value, and both
+    addends non-zero, so a row of dots or a repeated figure cannot fake it.
+    """
+    hits = []
+    # The rightmost column is never the in-year Total (it is the per-cent in
+    # Statements 15/16, a closing balance in 18), so excluding it costs nothing
+    # and kills the false accept found on Tamil Nadu 2022-23 loans, where
+    # (-)0.10 + 0.88 = 0.98 reproduced the trailing 0.98 exactly.
+    for i in range(2, len(nums) - 1):
+        for width in (2, 3):
+            if i - width < 0:
+                continue
+            parts = nums[i - width:i]
+            if all(p > 0 for p in parts) and abs(sum(parts) - nums[i]) <= 0.02 and nums[i] > 0:
+                hits.append(round(nums[i], 2))
+                break
+    uniq = sorted(set(hits))
+    return uniq[0] if len(uniq) == 1 else None
 
 
 def _pick_current_year(nums: list[float], pct_sign: str | None = None) -> tuple[float | None, bool]:
@@ -140,6 +176,14 @@ def _pick_current_year(nums: list[float], pct_sign: str | None = None) -> tuple[
             repeated = [v for v in uniq if counts[v] >= 2]
             if len(repeated) == 1:
                 return repeated[0], True
+    # Second proof, for rows whose per-cent column is a BARE INTEGER ("(+)136")
+    # and so invisible to the decimal-only amount rule — common in Assam and in
+    # every sub-major total. CAG prints State Fund + Central Assistance = Total
+    # on the same row, so a value that is the exact sum of the columns before it
+    # is the Total column, proved by the row's own arithmetic.
+    summed = _sum_proof(nums)
+    if summed is not None:
+        return summed, True
     # No self-validating per-cent (a first-year / no-previous-year head). The
     # current-year total still prints as voted AND total (charged nil), so it
     # appears at least twice; the (larger) expenditure-to-end column appears
@@ -188,19 +232,59 @@ class LibraryHeads:
         return all(h.self_validated for h in (self.revenue, self.capital, self.loans, self.receipts) if h)
 
 
-def _classify(cur_major: str | None, minor: str) -> tuple[str, str] | None:
-    if cur_major in _REVENUE[0] and minor == _REVENUE[1]:
-        return "revenue", "2205-00-105"
-    if cur_major in _CAPITAL[0] and minor == _CAPITAL[1]:
-        return "capital", "4202-04-105"
-    if cur_major in _LOANS[0] and minor == _LOANS[1]:
-        return "loans", "6202-04-105"
-    if cur_major in _RECEIPTS[0] and minor == _RECEIPTS[1]:
-        return "receipts", "0202-04-102"
-    return None
+@dataclass(frozen=True)
+class HeadSpec:
+    """One wanted head and how its figure is printed.
+
+    ``mode`` is the shape of the read, not the account class:
+
+    * ``inline`` — the figure sits on the minor-head line itself
+      (2205-00-105, 0202-04-102 in Statement 15).
+    * ``block``  — the minor head opens a block of sub-head lines closed by a
+      ``Total - <total_code>`` line (Statement 16 capital/loans, and the school
+      capital minors 4202-01-201/202).
+    * ``total``  — the head is a SUB-MAJOR whose block runs over several pages,
+      so only its printed ``Total - <total_code>`` line is read (2202-01/02/80).
+      Reading the sub-major total is what REQ-0047 needs: 2202-01 has a dozen
+      minor heads and no single line carries the sub-major figure.
+    """
+    label: str
+    code: str
+    majors: frozenset[str]
+    mode: str
+    total_code: str = ""
+    minor: str = ""
+    submajor: str = ""
+    name_re: re.Pattern | None = None
 
 
-def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, bool, str]:
+LIBRARY_SPECS = (
+    HeadSpec("receipts", "0202-04-102", frozenset({"0202", "0210"}), "inline",
+             minor="102", name_re=_LIBRARY_RE),
+    HeadSpec("revenue", "2205-00-105", frozenset({"2205"}), "inline",
+             minor="105", name_re=_LIBRARY_RE),
+    HeadSpec("capital", "4202-04-105", frozenset({"4202"}), "block",
+             minor="105", total_code="105", name_re=_LIBRARY_RE),
+    HeadSpec("loans", "6202-04-105", frozenset({"6202"}), "block",
+             minor="105", total_code="105", name_re=_LIBRARY_RE),
+)
+
+# REQ-0047 (theright2read): school-education heads on the same reader.
+SCHOOL_SPECS = (
+    HeadSpec("elementary_rev", "2202-01", frozenset({"2202"}), "total", total_code="01"),
+    HeadSpec("secondary_rev", "2202-02", frozenset({"2202"}), "total", total_code="02"),
+    HeadSpec("general_rev", "2202-80", frozenset({"2202"}), "total", total_code="80"),
+    HeadSpec("elementary_cap", "4202-01-201", frozenset({"4202"}), "block",
+             minor="201", submajor="01", total_code="201",
+             name_re=re.compile(r"elementary\s+education", re.IGNORECASE)),
+    HeadSpec("secondary_cap", "4202-01-202", frozenset({"4202"}), "block",
+             minor="202", submajor="01", total_code="202",
+             name_re=re.compile(r"secondary\s+education", re.IGNORECASE)),
+)
+
+
+def _capital_block(lines: list[str], start: int, total_code: str = "105",
+                   own_codes: frozenset[str] = frozenset()) -> tuple[float | None, str, bool, str]:
     """Read a capital/loans minor-head figure that may spill past its head line.
 
     Returns (value_lakh, raw_line, self_validated, note). Prefers a ``Total-105``
@@ -209,6 +293,7 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
     Records a confident NIL (0.0) only when the whole block has no decimal figure.
     """
     head = lines[start].strip()
+    wanted_total = _total_re(total_code)
     total_line: str | None = None
     subheads: list[tuple[float, str, bool]] = []
     saw_any_amount = bool(_amounts(head))
@@ -216,20 +301,27 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
         s = lines[k].strip()
         if not s:
             continue
-        if _MINOR_TOTAL_105_RE.match(s):        # the wanted minor-head total
-            total_line = s
+        if wanted_total.match(s):               # the wanted minor-head total
             # Some volumes wrap the total's figures onto the next line(s)
             # (Assam prints "Total 105" and the amounts a line below). A line
             # opening a NEW head ("106 Museums") is never a continuation.
-            for w in range(k + 1, min(k + 3, len(lines))):
-                nxt = lines[w].strip()
-                if nxt and not nxt[:1].isalpha() and not _NEW_HEAD_RE.match(nxt):
-                    total_line += " " + nxt
-                elif nxt:
-                    break
+            total_line = _absorb_wrap(lines, k, s)
             if _amounts(total_line):            # total figures veto a "confident NIL"
                 saw_any_amount = True
             break
+        # Page furniture between the head and its Total: the printed page number
+        # ("269"), the column-number rule ("1 2 3 4 5 6"), and the repeated column
+        # header ("2022-2023   Expenditure   Assistance"). Each reads as a new head
+        # if left alone, which ends the block one page short of its Total.
+        if s.replace(" ", "").isdigit() or _FY_TOKEN_RE.match(s):
+            continue
+        # A head line carrying one of the block's OWN codes is a restatement, not
+        # a new head: CAG repeats major / sub-major / minor lines after every page
+        # break ("4202 ... - Contd.", "201 Elementary Education - Concld."), and
+        # Assam restates its minor head twice in a row. Breaking there truncates
+        # the block before its Total and silently records NIL.
+        if _NEW_HEAD_RE.match(s) and any(re.match(rf"^\(?{c}\b", s) for c in own_codes):
+            continue
         if _ANY_TOTAL_RE.match(s) or _NEW_HEAD_RE.match(s):  # sub-major/major total, or next head
             break
         if not s[:1].isalpha():                 # bare numeric line = column-wrap fragment
@@ -271,13 +363,18 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
     if sv_subs and len(sv_subs) == len(subheads):
         return (sum(v for v, _, _ in sv_subs), "; ".join(l for _, l, _ in sv_subs)[:90],
                 True, f"sum of {len(sv_subs)} self-validated sub-heads")
-    if sv_subs:
+    # A partial sub-head sum understates, so it is rejected — but only the SUM is
+    # unusable. A Total-105/head figure that is complete-but-unvalidated is still
+    # the best available read, so fall through to the unvalidated fallback below.
+    if sv_subs and not (tl or hl):
         return (None, "; ".join(l for _, l, _ in subheads)[:90], False,
                 f"mixed block: {len(sv_subs)}/{len(subheads)} sub-heads validated — review")
     # 2) a value is present but not %-validated (first-year head, no comparator) — flag it.
+    mixed = (f"mixed block: {len(sv_subs)}/{len(subheads)} sub-heads validated; "
+             if sv_subs else "")
     for c in (tl, hl):
         if c:
-            return c[0], c[1], False, "value present, NOT %-validated — review"
+            return c[0], c[1], False, f"{mixed}value present, NOT %-validated — review"
     if subheads:
         return subheads[0][0], subheads[0][1], False, "sub-head value, NOT %-validated — review"
     # 3) no decimal figure anywhere in the block -> genuine NIL.
@@ -286,56 +383,109 @@ def _capital_block(lines: list[str], start: int) -> tuple[float | None, str, boo
     return None, head, False, "figures present but none self-validated — needs manual review"
 
 
-def parse_pages(pages, *, unit: str = "lakh", pdf: str = "") -> LibraryHeads:
-    """Scan ``(physical_page_no, layout_text)`` pairs for the four library heads.
+def _absorb_wrap(lines: list[str], k: int, line: str) -> str:
+    """Append column-wrap continuation lines to a total line.
 
-    Pure over its input, so it is unit-testable with synthetic page text; the
-    PDF-reading front door is :func:`extract_library_heads`. A head absent from
-    the volume stays ``None``. ``cur_major`` is carried ACROSS pages: CAG detailed
-    statements run a major head's minor rows over several pages, so a "105 Public
-    Libraries" row often sits on the page after its major-head line.
+    A sub-major total often prints its charged (italic) figure on the total line
+    and the State Fund / Central / Total / previous-year / per-cent columns on
+    the next line (Gujarat "Total - 01"). A line opening a new head is never a
+    continuation.
     """
-    result = LibraryHeads(pdf=pdf, unit=unit)
-    slot = {"revenue": "revenue", "capital": "capital", "loans": "loans", "receipts": "receipts"}
-    cur_major: str | None = None
+    for w in range(k + 1, min(k + 3, len(lines))):
+        nxt = lines[w].strip()
+        if not nxt:
+            continue
+        if nxt[:1].isalpha() or _NEW_HEAD_RE.match(nxt) or _SUBMAJOR_RE.match(nxt):
+            break
+        line += " " + nxt
+    return line
+
+
+def parse_specs(pages, specs, *, unit: str = "lakh") -> dict[str, HeadFigure]:
+    """Scan ``(physical_page_no, layout_text)`` pairs for each :class:`HeadSpec`.
+
+    Pure over its input, so it is unit-testable with synthetic page text. A head
+    absent from the volume is absent from the result. ``cur_major`` and
+    ``cur_submajor`` are carried ACROSS pages: CAG detailed statements run a
+    head's rows over several pages, so a wanted row often sits on the page after
+    the line that scopes it. First occurrence of a head wins.
+    """
+    # Flattened once, because a head's block can run past a page break: Assam's
+    # 4202-01-201 opens on one page and closes on its "Total 201" two pages on.
+    flat: list[str] = []
+    page_of: list[int] = []
     for page_no, page_text in pages:
-        lines = page_text.splitlines()
-        for i, line in enumerate(lines):
-            stripped = line.strip()
-            mjr = _MAJOR_RE.match(stripped)
-            if mjr:
-                cur_major = mjr.group(1)
-            if not _LIBRARY_RE.search(stripped):
-                continue
-            minor_m = _MINOR_RE.search(stripped)
-            if not minor_m:
-                continue
-            hit = _classify(cur_major, minor_m.group(1))
-            if hit is None:
-                continue
-            label, code = hit
-            if getattr(result, slot[label]) is not None:
-                continue  # first occurrence wins
+        for line in page_text.splitlines():
+            flat.append(line)
+            page_of.append(page_no)
 
-            if label in ("capital", "loans"):
-                value_lakh, raw, sv, note = _capital_block(lines, i)
-            else:  # revenue / receipts: figure is on the head line
-                value_lakh, sv = _pick_current_year(_amounts(stripped), _pct_sign(stripped))
-                raw, note = stripped, ("self-validated" if sv else "NOT self-validated (fell back to first column)")
+    found: dict[str, HeadFigure] = {}
+    cur_major: str | None = None
+    cur_submajor: str | None = None
+    for i, line in enumerate(flat):
+        stripped = line.strip()
+        mjr = _MAJOR_RE.match(stripped)
+        if mjr:
+            cur_major, cur_submajor = mjr.group(1), None
+        else:
+            sub = _SUBMAJOR_RE.match(stripped)
+            if sub:
+                cur_submajor = sub.group(1)
+        for spec in specs:
+            if spec.label in found or cur_major not in spec.majors:
+                continue
+            if spec.submajor and cur_submajor != spec.submajor:
+                continue
 
-            setattr(result, slot[label], HeadFigure(
-                code=code,
-                label=label,
+            if spec.mode == "total":
+                if not _total_re(spec.total_code).match(stripped):
+                    continue
+                raw = _absorb_wrap(flat, i, stripped)
+                value_lakh, sv = _pick_current_year(_amounts(raw), _pct_sign(raw))
+                note = "self-validated"
+                if not sv:
+                    # An unproved pick on a sub-major total row is a mis-picked
+                    # column (charged, previous-year, cumulative), not an
+                    # approximate figure. Report the gap, never the guess.
+                    value_lakh, note = None, "sub-major total not proved — review"
+            else:
+                if spec.name_re is not None and not spec.name_re.search(stripped):
+                    continue
+                if spec.minor and not re.search(rf"\b{spec.minor}\b", stripped):
+                    continue
+                if spec.mode == "block":
+                    own = frozenset({spec.minor, spec.submajor, *spec.majors} - {""})
+                    value_lakh, raw, sv, note = _capital_block(flat, i, spec.total_code, own)
+                else:  # inline: the figure is on the head line itself
+                    value_lakh, sv = _pick_current_year(_amounts(stripped), _pct_sign(stripped))
+                    raw = stripped
+                    note = "self-validated" if sv else "NOT self-validated (fell back to first column)"
+
+            found[spec.label] = HeadFigure(
+                code=spec.code,
+                label=spec.label,
                 value_lakh=value_lakh,
                 value_crore=to_crore(value_lakh, unit) if value_lakh is not None else None,
                 self_validated=sv,
-                physical_page=page_no,
+                physical_page=page_of[i],
                 raw_line=raw,
                 note=note,
-            ))
-    return result
+            )
+            break
+    return found
+
+
+def parse_pages(pages, *, unit: str = "lakh", pdf: str = "") -> LibraryHeads:
+    """Scan pages for the four public-library heads (:data:`LIBRARY_SPECS`)."""
+    found = parse_specs(pages, LIBRARY_SPECS, unit=unit)
+    return LibraryHeads(pdf=pdf, unit=unit, **found)
 
 
 def extract_library_heads(pdf_path: Path, *, unit: str = "lakh") -> LibraryHeads:
     """Extract the four public-library heads from a CAG Finance Accounts Vol-II."""
     return parse_pages(iter_pdf_pages(Path(pdf_path)), unit=unit, pdf=str(pdf_path))
+
+
+def extract_school_heads(pdf_path: Path, *, unit: str = "lakh") -> dict[str, HeadFigure]:
+    """Extract the five school-education heads (:data:`SCHOOL_SPECS`) from a Vol-II."""
+    return parse_specs(iter_pdf_pages(Path(pdf_path)), SCHOOL_SPECS, unit=unit)
