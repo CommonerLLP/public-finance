@@ -467,39 +467,12 @@ class TamilNaduBudgetsScraper(StateBudgetScraper):
                 )
         return documents
 
-    def crawl_legacy(self, url=TAMIL_NADU_LEGACY_BASE_URL, fiscal_year="2017-18", dry_run=False, force=False, limit=None):
+    def crawl_legacy(self, url=TAMIL_NADU_LEGACY_BASE_URL, fiscal_year="2017-18", dry_run=False,
+                     force=False, limit=None, detailed=False):
         documents = self.discover_legacy_documents(url=url, fiscal_year=fiscal_year)
         if limit is not None:
             documents = documents[:limit]
-        return self._crawl_documents(documents, dry_run=dry_run, force=force)
-
-    def _crawl_documents(self, documents, dry_run=False, force=False):
-        saved = skipped = failed = 0
-        for document in documents:
-            if dry_run:
-                print(
-                    f"{document.state} | {document.fiscal_year} | "
-                    f"{document.extension.upper()} | {document.section or '-'} | "
-                    f"{document.document_type} | {document.source_url}"
-                )
-                continue
-            if document.local_path.exists() and document.local_path.stat().st_size > 0 and not force:
-                skipped += 1
-                self._index(document)
-                continue
-            if self.fetch_and_save_file(document.source_url, str(document.local_path)):
-                saved += 1
-                self._index(document)
-            else:
-                failed += 1
-        if dry_run:
-            print(f"\nDiscovered {len(documents)} {self.state} documents.")
-        else:
-            print(
-                f"{self.state} crawl complete. "
-                f"Saved {saved}; skipped {skipped}; failed {failed}; discovered {len(documents)}."
-            )
-        return documents
+        return self._crawl_documents(documents, dry_run=dry_run, force=force, detailed=detailed)
 
     def _section_for_link(self, element):
         headings = element.xpath("preceding::*[self::h1 or self::h2 or self::h3 or self::h4][1]//text()")
