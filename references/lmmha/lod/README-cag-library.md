@@ -18,6 +18,7 @@ Plus one head that is **not** a library head:
 | head | column |
 |---|---|
 | 2205-00-198 Assistance to Gram Panchayats (revenue expenditure) | `gp_assist_cr` |
+| 2205-00-196 Assistance to Zilla Parishads / District Level Panchayats | `zp_assist_cr` |
 
 It is read because it is the route a State can use to fund village libraries
 outside head 105. **It is not library spending by definition** — it is the
@@ -31,8 +32,15 @@ a single scheme, "Gram Panchayat Libraries & Information Centre"
 ₹80.39 cr and head 198 ₹80.30 cr are both library money and sit adjacent in
 Statement 15, within 0.1 per cent of each other. Reading 105 alone halves the
 State's library spending; mistaking one for the other is easier still. The
-sibling head 2205-00-196 (Assistance to Zilla Parishads / District Level
-Panchayats) can carry the same traffic and is not yet read.
+The sibling head 2205-00-196 is read on the same terms — the same transfer one
+tier up, to the district panchayat instead of the village one.
+
+Across the 72 state-years in the panel, **only Karnataka uses either head under
+2205**. For 2021-22 it reports all three: 105 ₹71.20 cr, 196 ₹2.65 cr, 198
+₹72.51 cr — ₹146.36 cr against the ₹71.20 cr a single-head reading records.
+Other States are empty because the heads are absent from their books, not
+because the reader missed them: 2205's minor-head list was enumerated for
+Kerala, Madhya Pradesh and Uttar Pradesh and none carries 196 or 198.
 
 ## Files
 

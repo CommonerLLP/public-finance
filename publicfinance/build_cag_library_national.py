@@ -27,9 +27,9 @@ from .cag_finance_accounts import extract_library_heads
 FIELDS = [
     "state", "fy",
     "lib_receipts_cr", "lib_rev_exp_cr", "lib_cap_exp_cr", "lib_loans_cr",
-    "gp_assist_cr",
-    "cap_to_rev_pct", "rev_self_validated", "cap_self_validated", "gp_assist_self_validated",
-    "source_statement", "source_url", "cap_source_line", "rev_source_line", "gp_assist_source_line",
+    "gp_assist_cr", "zp_assist_cr",
+    "cap_to_rev_pct", "rev_self_validated", "cap_self_validated", "gp_assist_self_validated", "zp_assist_self_validated",
+    "source_statement", "source_url", "cap_source_line", "rev_source_line", "gp_assist_source_line", "zp_assist_source_line",
 ]
 
 
@@ -72,9 +72,9 @@ def build(cag_dir: Path, out: Path) -> list[dict]:
         row = by_state_year.setdefault(key, {
             "state": rec["state"], "fy": rec["year"],
             "lib_receipts_cr": None, "lib_rev_exp_cr": None,
-            "lib_cap_exp_cr": None, "lib_loans_cr": None, "gp_assist_cr": None,
+            "lib_cap_exp_cr": None, "lib_loans_cr": None, "gp_assist_cr": None, "zp_assist_cr": None,
             "rev_self_validated": None, "cap_self_validated": None,
-            "gp_assist_self_validated": None,
+            "gp_assist_self_validated": None, "zp_assist_self_validated": None,
             "source_statement": "CAG Finance Accounts Vol-II (Statements 15/16)",
             "source_url": rec["url"], "cap_source_line": "", "rev_source_line": "",
             "gp_assist_source_line": "",
@@ -90,6 +90,7 @@ def build(cag_dir: Path, out: Path) -> list[dict]:
         _acc("lib_cap_exp_cr", heads.capital)
         _acc("lib_loans_cr", heads.loans)
         _acc("gp_assist_cr", heads.gp_assist)
+        _acc("zp_assist_cr", heads.zp_assist)
         # self-validation flags: AND across parts (Karnataka), False if any part unvalidated
         if heads.revenue:
             row["rev_self_validated"] = (row["rev_self_validated"] if row["rev_self_validated"] is not None else True) and heads.revenue.self_validated
@@ -97,6 +98,10 @@ def build(cag_dir: Path, out: Path) -> list[dict]:
             row["cap_self_validated"] = (row["cap_self_validated"] if row["cap_self_validated"] is not None else True) and heads.capital.self_validated
         if heads.capital and heads.capital.raw_line:
             row["cap_source_line"] = heads.capital.raw_line[:90]
+        if heads.zp_assist:
+            row["zp_assist_self_validated"] = (row["zp_assist_self_validated"] if row["zp_assist_self_validated"] is not None else True) and heads.zp_assist.self_validated
+        if heads.zp_assist and heads.zp_assist.raw_line:
+            row["zp_assist_source_line"] = heads.zp_assist.raw_line.strip()[:90]
         if heads.gp_assist:
             row["gp_assist_self_validated"] = (row["gp_assist_self_validated"] if row["gp_assist_self_validated"] is not None else True) and heads.gp_assist.self_validated
         if heads.revenue and heads.revenue.raw_line:
