@@ -330,6 +330,19 @@ class GramPanchayatAssistanceTests(unittest.TestCase):
         heads = cfa.parse_pages([(1, page)], unit="lakh")
         self.assertIsNone(heads.gp_assist)
 
+    def test_196_read_separately_and_197_not_caught(self):
+        # Karnataka's own 196 row is "..  394.00  (-) 100.00": the in-year
+        # columns are dots and the printed (-)100.00 IS the figure — a
+        # validated zero, not the 394.00 previous-year column. 197 (Block
+        # Panchayats) is a third head and must not be picked up by either spec.
+        page = self.PAGE + "   197 Assistance to Block Panchayats                12.00    24.00   (-) 50.00\n"
+        heads = cfa.parse_pages([(1, page)], unit="lakh")
+        self.assertEqual(heads.zp_assist.code, "2205-00-196")
+        self.assertEqual(heads.zp_assist.value_lakh, 0.0)
+        self.assertTrue(heads.zp_assist.self_validated)
+        self.assertEqual(heads.gp_assist.value_lakh, 8029.80)
+        self.assertEqual(heads.revenue.value_lakh, 8038.58)
+
 
 class SchoolHeadTests(unittest.TestCase):
     """REQ-0047: the same reader over 2202-01/02/80 and 4202-01-201/202.

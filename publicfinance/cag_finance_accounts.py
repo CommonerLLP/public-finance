@@ -218,6 +218,7 @@ class LibraryHeads:
     loans: HeadFigure | None = None
     receipts: HeadFigure | None = None
     gp_assist: HeadFigure | None = None
+    zp_assist: HeadFigure | None = None
 
     def as_row(self) -> dict:
         def cr(h: HeadFigure | None) -> float | None:
@@ -228,6 +229,7 @@ class LibraryHeads:
             "lib_cap_exp_cr": cr(self.capital),
             "lib_loans_cr": cr(self.loans),
             "gp_assist_cr": cr(self.gp_assist),
+            "zp_assist_cr": cr(self.zp_assist),
         }
 
     def all_self_validated(self) -> bool:
@@ -280,6 +282,13 @@ LIBRARY_SPECS = (
     # question the panel does not answer — see the README.
     HeadSpec("gp_assist", "2205-00-198", frozenset({"2205"}), "inline",
              minor="198", name_re=re.compile(r"assistance\s+to\s+gram\s+panchayat", re.IGNORECASE)),
+    # 2205-00-196 is 198's sibling one tier up — the same transfer, to the
+    # district panchayat instead of the village one, and it can carry library
+    # money for the same reason. Read on the same terms and with the same
+    # warning: it is not library spending by definition.
+    HeadSpec("zp_assist", "2205-00-196", frozenset({"2205"}), "inline",
+             minor="196",
+             name_re=re.compile(r"assistance\s+to\s+zill?a|district\s+level\s+panchayat", re.IGNORECASE)),
 )
 
 # REQ-0047 (theright2read): school-education heads on the same reader.
