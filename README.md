@@ -142,3 +142,9 @@ Financial year is Apr–Mar, recorded as `YYYY-YY` (e.g. `2023-24`). All output 
 - Never commit `data/`, `db/`, or `notes/` — they are gitignored for a reason.
 - See [ROADMAP.md](ROADMAP.md) for version milestones, known gaps, and the path to 1.0.0.
 - See [CHANGELOG.md](CHANGELOG.md) for per-release notes.
+
+---
+
+## License
+
+Code: [AGPL-3.0](LICENSE) · Data & content: [CC-BY-4.0](DATA-LICENSE) (the underlying government records are free to use — cite the primary source).
