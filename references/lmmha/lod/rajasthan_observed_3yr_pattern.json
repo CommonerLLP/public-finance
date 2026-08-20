@@ -49,7 +49,7 @@
           "page_start": 95,
           "page_end": 96,
           "code_family": "2205",
-          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "source_path": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
           "text_length": 11349
         },
         {
@@ -59,7 +59,7 @@
           "page_start": 27,
           "page_end": 32,
           "code_family": "4202",
-          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "source_path": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 3a _ Capital Expenditure.pdf",
           "text_length": 23897
         }
       ]
@@ -103,7 +103,7 @@
           "page_start": 95,
           "page_end": 96,
           "code_family": "2205",
-          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2023-24/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "source_path": "data/state_budgets/Rajasthan/2023-24/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
           "text_length": 11822
         },
         {
@@ -113,7 +113,7 @@
           "page_start": 27,
           "page_end": 32,
           "code_family": "4202",
-          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2023-24/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "source_path": "data/state_budgets/Rajasthan/2023-24/State Budget/Volume 3a _ Capital Expenditure.pdf",
           "text_length": 32720
         }
       ]
@@ -157,7 +157,7 @@
           "page_start": 95,
           "page_end": 96,
           "code_family": "2205",
-          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+          "source_path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
           "text_length": 12958
         },
         {
@@ -167,7 +167,7 @@
           "page_start": 27,
           "page_end": 32,
           "code_family": "4202",
-          "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2025-26/State Budget/Volume 3a _ Capital Expenditure.pdf",
+          "source_path": "data/state_budgets/Rajasthan/2025-26/State Budget/Volume 3a _ Capital Expenditure.pdf",
           "text_length": 23421
         }
       ]

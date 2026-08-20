@@ -24,7 +24,7 @@
         1.0
       ],
       "raw_line": "9,11,39\t8,21\t9,39,30\t36,62\t1\t9,41,10\t12,52\t1\tसार्वजनिक पुस्तकालय\t9,90,31\t15,22\t10,05,53\t1",
-      "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2016-17/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+      "source": "references/lmmha/lod/surya/rajasthan/2016-17/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
       "source_engine": "surya_ocr",
       "document_type": "budget_statement_revenue_social_services",
       "window_pages": [
@@ -44,7 +44,7 @@
       "page_start": 80,
       "page_end": 125,
       "code_family": "2205",
-      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2016-17/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "source_path": "data/state_budgets/Rajasthan/2016-17/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
       "text_length": 243620
     },
     {
@@ -54,7 +54,7 @@
       "page_start": 27,
       "page_end": 32,
       "code_family": "4202",
-      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2016-17/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "source_path": "data/state_budgets/Rajasthan/2016-17/State Budget/Volume 3a _ Capital Expenditure.pdf",
       "text_length": 28083
     }
   ]

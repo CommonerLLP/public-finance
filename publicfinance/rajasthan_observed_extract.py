@@ -21,6 +21,30 @@ from publicfinance import observed_state_profiles as state_profiles
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _repo_relative(path: Path | str) -> str:
+    """A path as this repo records it: relative to the repo root.
+
+    Emitted records are tracked and public. An absolute path names the machine
+    that produced them, which the org leak check forbids and which makes the
+    record unreadable on any other machine. A path outside the repo is returned
+    unchanged, because silently truncating it would be worse than showing it.
+
+    The comparison is lexical, and deliberately so. ``resolve()`` follows
+    symlinks, and ``data/`` here is a symlink to an external volume, so a
+    resolved path lands outside the repo root, fails the relative test, and is
+    emitted absolute — re-introducing the leak and adding the volume name to it.
+    """
+    path = Path(path)
+    if not path.is_absolute():
+        return path.as_posix()
+    try:
+        return path.relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
 TARGETS = (
     "2202-00-105",
     "2205-00-105",
@@ -460,7 +484,7 @@ def _extract_surya_summary_matches_from_results(results_path: Path) -> list[dict
                             "selected_amount_thousand_rupees": _select_surya_amount(cells, amounts),
                             "amount_candidates_thousand_rupees": amounts,
                             "raw_line": "\t".join(cells),
-                            "source": str(results_path),
+                            "source": _repo_relative(results_path),
                             "source_engine": "surya_ocr",
                         }
                     )
@@ -549,7 +573,6 @@ def extract_year(state: str, fy: str) -> dict:
     surya_matches = _extract_surya_summary_matches(state, fy)
 
     for document, window, target in windows:
-        source_path = REPO_ROOT / window.source_relpath
         text = _extract_window_text(window)
         parsed_windows.append(
             {
@@ -559,7 +582,7 @@ def extract_year(state: str, fy: str) -> dict:
                 "page_start": window.page_start,
                 "page_end": window.page_end,
                 "code_family": window.code_family,
-                "source_path": str(source_path),
+                "source_path": window.source_relpath,
                 "text_length": len(text),
             }
         )

@@ -353,3 +353,57 @@ class RajasthanObservedExtractorTests(unittest.TestCase):
         self.assertIsNotNone(match)
         self.assertEqual(match.match_type, "line_hint")
         self.assertEqual(extractor._target_for_match(match, _canonical_map()), "2205-00-105")
+
+
+class RepoRelativePathTests(unittest.TestCase):
+    """Emitted records are tracked and public, so they must carry no absolute
+    path. 115 of them did, across 18 files, and the org leak check refused
+    every push from this repo until they were stripped."""
+
+    def test_a_path_under_the_repo_becomes_relative(self):
+        from publicfinance.rajasthan_observed_extract import REPO_ROOT, _repo_relative
+
+        self.assertEqual(
+            _repo_relative(REPO_ROOT / "data/state_budgets/Rajasthan/x.pdf"),
+            "data/state_budgets/Rajasthan/x.pdf",
+        )
+
+    def test_the_data_symlink_does_not_defeat_it(self):
+        """`data/` is a symlink to an external volume. An implementation that
+        calls `resolve()` follows it, lands outside the repo root, fails the
+        relative test and emits the absolute path — re-introducing the leak
+        and adding the volume name to it."""
+        from publicfinance.rajasthan_observed_extract import REPO_ROOT, _repo_relative
+
+        result = _repo_relative(REPO_ROOT / "data/state_budgets/Rajasthan/x.pdf")
+        # The forbidden strings are derived, never written literally: the leak
+        # check reads this file too, and a test that spells out the pattern it
+        # forbids blocks the very commit that fixes the leak.
+        self.assertNotIn(str(Path.home()), result)
+        self.assertNotIn(str(REPO_ROOT), result)
+        self.assertFalse(Path(result).is_absolute())
+
+    def test_an_already_relative_path_is_unchanged(self):
+        from publicfinance.rajasthan_observed_extract import _repo_relative
+
+        self.assertEqual(_repo_relative("data/x.pdf"), "data/x.pdf")
+
+    def test_a_path_outside_the_repo_is_shown_not_truncated(self):
+        from publicfinance.rajasthan_observed_extract import _repo_relative
+
+        self.assertEqual(_repo_relative("/etc/hosts"), "/etc/hosts")
+
+
+class ReferenceDataCarriesNoAbsolutePathTests(unittest.TestCase):
+    """The committed reference JSONs are the artefact the leak check reads."""
+
+    def test_no_observed_record_carries_a_home_path(self):
+        from publicfinance.rajasthan_observed_extract import REPO_ROOT
+
+        home = str(Path.home())
+        offenders = [
+            path.relative_to(REPO_ROOT).as_posix()
+            for path in (REPO_ROOT / "references/lmmha/lod").rglob("*.json")
+            if home in path.read_text(encoding="utf-8")
+        ]
+        self.assertEqual(offenders, [])
