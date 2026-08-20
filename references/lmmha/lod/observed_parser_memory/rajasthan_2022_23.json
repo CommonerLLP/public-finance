@@ -411,7 +411,7 @@
       "state": "Rajasthan",
       "fy": "2022-23",
       "document_type": "pwd_works_part_i_1",
-      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
       "document_family": "works_book",
       "ocr": {
         "source_type": "pdf_text",
@@ -449,7 +449,7 @@
       "state": "Rajasthan",
       "fy": "2022-23",
       "document_type": "pwd_works_part_i_2",
-      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-2.pdf",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-2.pdf",
       "document_family": "works_book",
       "ocr": {
         "source_type": "pdf_text",
@@ -721,7 +721,7 @@
       "state": "Rajasthan",
       "fy": "2022-23",
       "document_type": "pwd_works_part_ii_8",
-      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4c _ Details of PWD Works Part II-1.pdf",
       "document_family": "works_book",
       "ocr": {
         "source_type": "pdf_text",
@@ -793,7 +793,7 @@
       "state": "Rajasthan",
       "fy": "2022-23",
       "document_type": "green_budget",
-      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4d _ Agriculture Budget.pdf",
+      "source_relpath": "data/state_budgets/Rajasthan/2022-23/State Budget/Volume 4d _ Agriculture Budget.pdf",
       "document_family": "thematic_budget",
       "ocr": {
         "source_type": "pdf_text",

@@ -17,7 +17,7 @@
         133997.0
       ],
       "raw_line": "11,08,29\t..\t13,69,10\t..\t11,89,44\t..\tसार्वजनिक पुस्तकालय\t13,39,97\t..\t13,39,97",
-      "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2021-22/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+      "source": "references/lmmha/lod/surya/rajasthan/2021-22/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
       "source_engine": "surya_ocr",
       "document_type": "budget_statement_revenue_social_services",
       "window_pages": [
@@ -36,7 +36,7 @@
         1.0
       ],
       "raw_line": "..\t..\t1\t..\t1\t..\tलघु शीर्ष - 105 योग\t1\t..\t1",
-      "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2021-22/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
+      "source": "references/lmmha/lod/surya/rajasthan/2021-22/vol3a_repair/Volume 3a _ Capital Expenditure/results.json",
       "source_engine": "surya_ocr",
       "document_type": "budget_statement_capital_expenditure",
       "window_pages": [
@@ -53,7 +53,7 @@
       "page_start": 80,
       "page_end": 125,
       "code_family": "2205",
-      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2021-22/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "source_path": "data/state_budgets/Rajasthan/2021-22/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
       "text_length": 307188
     },
     {
@@ -63,7 +63,7 @@
       "page_start": 27,
       "page_end": 32,
       "code_family": "4202",
-      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2021-22/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "source_path": "data/state_budgets/Rajasthan/2021-22/State Budget/Volume 3a _ Capital Expenditure.pdf",
       "text_length": 22717
     }
   ]

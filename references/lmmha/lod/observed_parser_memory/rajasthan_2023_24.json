@@ -793,7 +793,7 @@
       "state": "Rajasthan",
       "fy": "2023-24",
       "document_type": "green_budget",
-      "source_relpath": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2023-24/State Budget/Volume 4d _ Agriculture Budget.pdf",
+      "source_relpath": "data/state_budgets/Rajasthan/2023-24/State Budget/Volume 4d _ Agriculture Budget.pdf",
       "document_family": "thematic_budget",
       "ocr": {
         "source_type": "pdf_text",

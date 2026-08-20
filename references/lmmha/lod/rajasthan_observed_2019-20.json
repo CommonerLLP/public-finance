@@ -20,7 +20,7 @@
         124160.0
       ],
       "raw_line": "9,77,17\t..\t12,65,53\t1\t11,41,18\t1\tसार्वजनिक पुस्तकालय\tद\t12,41,59\t1\t12,41,60",
-      "source": "/Users/aakash/Developer/CommonerLLP/public-finance/references/lmmha/lod/surya/rajasthan/2019-20/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
+      "source": "references/lmmha/lod/surya/rajasthan/2019-20/vol2c_repair/Volume 2c _ Revenue Expenditure-Social Services/results.json",
       "source_engine": "surya_ocr",
       "document_type": "budget_statement_revenue_social_services",
       "window_pages": [
@@ -40,7 +40,7 @@
       "page_start": 80,
       "page_end": 125,
       "code_family": "2205",
-      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2019-20/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
+      "source_path": "data/state_budgets/Rajasthan/2019-20/State Budget/Volume 2c _ Revenue Expenditure-Social Services.pdf",
       "text_length": 260620
     },
     {
@@ -50,7 +50,7 @@
       "page_start": 27,
       "page_end": 32,
       "code_family": "4202",
-      "source_path": "/Users/aakash/Developer/CommonerLLP/public-finance/data/state_budgets/Rajasthan/2019-20/State Budget/Volume 3a _ Capital Expenditure.pdf",
+      "source_path": "data/state_budgets/Rajasthan/2019-20/State Budget/Volume 3a _ Capital Expenditure.pdf",
       "text_length": 18650
     }
   ]
