@@ -1,5 +1,5 @@
 # Union Budget + RBI State-Finances acquisition is delegated to commoner-probe.
-commoner-probe[budget]==0.16.0
+commoner-probe[budget]==0.18.0
 beautifulsoup4==4.14.3
 google-genai==2.10.0
 lxml==6.1.0
