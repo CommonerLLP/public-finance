@@ -4,7 +4,9 @@
 # render correct citations automatically. Update `version`, `date-released`,
 # and `doi` on each tagged release.
 cff-version: 1.2.0
+# Citation metadata.
 title: "public-finance: An extraction and analysis pipeline for the Raja Rammohun Roy Library Foundation Annual Reports"
+# The title identifies this repository.
 message: "If you use this software or the data it produces, please cite it as below."
 type: software
 authors:
@@ -15,19 +17,16 @@ repository-code: "https://github.com/CommonerLLP/public-finance"
 url: "https://theright2read.org"
 abstract: >
   An extraction, OCR, and analysis pipeline for RRRLF Annual Reports
-  (40th–51st editions, financial years 2011-12 through 2022-23). Produces
-  a canonical JSON of state-level participation, matching-book scheme
-  disbursements, GoI grant lines, and the editorial charts used in
-  the Right to Read campaign’s NML research note.
-# Dual-licensing — set in the repo's LICENSE files, not a single CFF field:
-#   Code               → PolyForm Noncommercial 1.0.0  (see LICENSE)
-#   Data (JSON)        → ODbL 1.0                       (see DATA-LICENSE)
-#   Written analysis / → CC BY-NC-SA 4.0                (see CONTENT-LICENSE)
-#     charts / PDFs
-# CITATION.cff's `license` field uses an SPDX identifier; the closest single
-# match for the code is the line below. The actual licence terms for data
-# and content are in the sibling LICENSE files.
-license: PolyForm-Noncommercial-1.0.0
+  (40th–51st editions, financial years 2011-12 through 2022-23). It produces
+  a canonical JSON with state-level participation, matching-book scheme
+  disbursements, and GoI grant lines. It also produces editorial charts for
+  the Right to Read campaign's NML research note.
+# Repository licenses:
+#   Code → GNU AGPL-3.0-only (see LICENSE)
+#   CommonerLLP-authored data and content → CC-BY-4.0 (see DATA-LICENSE)
+#   Third-party source material → excluded from the DATA-LICENSE grant
+# The CFF `license` field describes the software.
+license: AGPL-3.0-only
 keywords:
   - public libraries
   - India

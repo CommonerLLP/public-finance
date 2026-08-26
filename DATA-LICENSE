@@ -1,10 +1,10 @@
-Data and content license for this repository
-=============================================
+Data and original content license
+=================================
 
-The curated datasets, reference tables, and derived files this repository
-ships (everything under `references/`, and any published CSV/JSON built by
-its extractors) are licensed under the Creative Commons Attribution 4.0
-International License (CC-BY-4.0).
+Unless a file or directory says otherwise, CC-BY-4.0 covers CommonerLLP's
+original curated datasets and reference tables. It also covers CommonerLLP's
+derived data and written content. CommonerLLP grants rights only for material
+it owns or can license.
 
   https://creativecommons.org/licenses/by/4.0/
 
@@ -12,11 +12,12 @@ Attribution: "CommonerLLP public-finance", with a link to this repository.
 Where a file carries a `source_url` or provenance column, cite that primary
 source as well.
 
-The underlying government records (budget documents, CAG Finance Accounts,
-RBI publications, and similar official material) are not ours to license.
-Facts are not copyrightable, and reproduction of official government
-reports is exempt under §52(1)(q) of the Indian Copyright Act; treat the
-primary record as free to use and cite it directly.
+Third-party and source material is excluded from this license grant. This
+includes government publications, PDFs, HTML snapshots, images, and other
+source records stored under `references/` or elsewhere in the repository.
+CommonerLLP does not license that material. Its source terms and applicable
+law continue to apply. A provenance entry does not place source material
+under CC-BY-4.0.
 
 The code in this repository is licensed separately — see LICENSE
-(GNU AGPL-3.0).
+(GNU AGPL-3.0-only).
