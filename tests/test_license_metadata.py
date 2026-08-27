@@ -26,3 +26,11 @@ def test_readme_license_summary_matches_license_files():
 
     assert "[AGPL-3.0](LICENSE)" in readme
     assert "[CC-BY-4.0](DATA-LICENSE)" in readme
+
+
+def test_readme_license_summary_excludes_third_party_source_material():
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+
+    assert "free to use" not in readme
+    assert "CommonerLLP-authored data and content" in readme
+    assert "excluded from that grant" in readme
