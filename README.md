@@ -147,4 +147,4 @@ Financial year is Apr–Mar, recorded as `YYYY-YY` (e.g. `2023-24`). All output 
 
 ## License
 
-Code: [AGPL-3.0](LICENSE) · Data & content: [CC-BY-4.0](DATA-LICENSE) (the underlying government records are free to use — cite the primary source).
+Code: [AGPL-3.0](LICENSE) · CommonerLLP-authored data and content: [CC-BY-4.0](DATA-LICENSE). Third-party source records — government publications, PDFs, HTML snapshots — are excluded from that grant. Their own source terms apply. Cite the primary source.
